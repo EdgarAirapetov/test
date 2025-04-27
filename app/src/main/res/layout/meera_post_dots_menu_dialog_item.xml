@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.meera.uikit.widgets.cell.UiKitCell
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/v_menu_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_icon"
+        tools:cellCityValue=""
+        app:layout_constrainedWidth="true"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"/>

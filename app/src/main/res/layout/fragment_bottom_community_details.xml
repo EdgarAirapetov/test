@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/coffee_gift_bottom_sheet_thumb" />
+
+    <ProgressBar
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/background_bottom_sheet"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ll_header_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_bottom_sheet"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_edit"
+            style="@style/PurpleSemiBold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ripple_rounded_square_8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/community_edit_text_short"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_community_title"
+            style="@style/BlackBold18"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            tools:text="Community" />
+
+        <TextView
+            android:id="@+id/tv_created"
+            style="@style/GrayRegular14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            tools:text="Сообцество создано 6 мая 2014" />
+
+        <View
+            android:id="@+id/divider_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/color_divider_gray" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white">
+
+
+            <TextView
+                android:id="@+id/tv_description_title"
+                style="@style/BlackBold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/community_information_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_description_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_description"
+                app:layout_constraintStart_toStartOf="@id/tv_description_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_description_title" />
+
+            <TextView
+                android:id="@+id/tv_description_text"
+                style="@style/Black85Regular16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="@id/tv_description_title"
+                app:layout_constraintStart_toEndOf="@id/iv_description_icon"
+                app:layout_constraintTop_toTopOf="@id/iv_description_icon"
+                tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." />
+
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/color_divider_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_description_text" />
+
+            <TextView
+                android:id="@+id/tv_subscribers_title"
+                style="@style/BlackBold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/community_subscribers_title"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/ll_subscribers_container"
+                app:layout_constraintStart_toStartOf="@id/divider_2"
+                app:layout_constraintTop_toBottomOf="@id/divider_2"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_subscribers_quantity"
+                style="@style/GrayRegular18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:maxLines="1"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_subscribers_title"
+                app:layout_constraintStart_toEndOf="@id/tv_subscribers_title"
+                app:layout_constraintTop_toTopOf="@id/tv_subscribers_title"
+                tools:text="34 556"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_subscribers_requests"
+                style="@style/PurpleRegular18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:maxLines="1"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_subscribers_title"
+                app:layout_constraintStart_toEndOf="@id/tv_subscribers_quantity"
+                app:layout_constraintTop_toTopOf="@id/tv_subscribers_title"
+                tools:text="(+5)"
+                tools:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/ll_subscribers_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/tv_all_subscribers_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_subscribers_title" />
+
+            <TextView
+                android:id="@+id/tv_all_subscribers_btn"
+                style="@style/PurpleSemiBold16"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/purple_rounded_button_background"
+                android:gravity="center"
+                android:text="@string/community_subscribers_all_button"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ll_subscribers_container"
+                app:layout_constraintStart_toStartOf="@id/ll_subscribers_container"
+                app:layout_constraintTop_toBottomOf="@id/ll_subscribers_container"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

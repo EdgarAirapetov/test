@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dark Text Color for Light Background -->
+    <color name="text_dark_primary">#DE000000</color>       <!--DE for %87 opacity-->
+    <color name="text_dark_secondary">#8A000000</color>     <!--8A for %54 opacity-->
+    <color name="text_dark_disabled">#61000000</color>      <!--61 for %38 opacity-->
+
+    <!-- White Text Color for Dark Background -->
+    <!--%100 opacity-->
+    <color name="text_light_secondary">#B2FFFFFF</color>    <!--B2 for %70 opacity-->
+    <!--80 for %50 opacity-->
+    <color name="color_divider_gray">#EEEEEE</color>
+
+
+    <!--reds-->
+    <color name="red_500">#F44336</color>
+    <color name="red_900">#B71C1C</color>
+
+    <!-- pinks -->
+
+    <!-- purples -->
+    <color name="purple_200">#CE93D8</color>
+    <color name="purple_500">#9C27B0</color>
+
+    <!-- deep purples -->
+    <color name="deep_purple_700">#512DA8</color>
+
+    <!-- notifications (snackbar) -->
+    <color name="color_notificaton_red">#fd6565</color>
+    <color name="color_notificaton_green">#63c367</color>
+    <color name="color_notificaton_blue">#2eb8f7</color>
+
+
+    <!-- indigo -->
+
+    <!--blue-->
+
+    <!-- light blue-->
+
+    <!-- cyan -->
+
+    <!-- teal -->
+
+    <!-- green -->
+
+    <!--light green-->
+
+    <!-- lime-->
+
+    <!--yellow -->
+
+    <!--amber-->
+
+    <!--orange-->
+
+    <!--deep orange-->
+
+    <!--brown -->
+
+    <!--grey-->
+    <color name="grey_400">#BDBDBD</color>
+    <color name="black_1000">#000000</color>
+    <color name="black_85">#D9000000</color>
+    <color name="white_1000">#ffffff</color>
+    <color name="white_85">#D9FFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="transparent_black">#A81B1B1B</color>
+    <color name="transparent_white">#CDFFFFFF</color>
+    <color name="black_preview_toolbar">#1b1b1b</color>
+
+
+
+
+    <color name="status_bar_semi_transparent">#1E000000</color>
+
+
+    <!--blue grey-->
+
+</resources>

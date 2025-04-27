@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/mm"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_group_chat_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <View
+            android:id="@+id/status_bar_group_chat_edit"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white_1000"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Toolbar
+            android:id="@+id/toolbar_group_chat_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/material16">
+
+            <TextView
+                android:id="@+id/tv_header_group_chat_edit_top"
+                style="@style/BlackSemibold18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/about_chat" />
+
+
+            <ImageView
+                android:id="@+id/iv_group_chat_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="8dp"
+                android:padding="8dp"
+                android:src="@drawable/chat_setting"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/iv_group_chat_avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/image_group_chat_empty"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_created"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_name" />
+
+
+    <TextView
+        android:id="@+id/tv_group_chat_name"
+        style="@style/BlackBold18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/padding32"
+        android:layout_marginEnd="@dimen/padding20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/iv_group_chat_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_group_chat_edit"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Chat name" />
+
+    <TextView
+        android:id="@+id/tv_group_chat_created"
+        style="@style/GrayRegular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:lineSpacingExtra="4sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_group_chat_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_chat_name"
+        app:layout_constraintVertical_bias="0.23000002"
+        tools:text="Created 01.01.2001" />
+
+
+    <TextView
+        android:id="@+id/tv_group_chat_description"
+        style="@style/BlackRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="@dimen/padding20"
+        android:lineSpacingExtra="4sp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_chat_created"
+        tools:text="Description" />
+
+    <View
+        android:id="@+id/chat_group_divider_1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_divider_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_chat_description" />
+
+    <TextView
+        android:id="@+id/tv_group_chat_members"
+        style="@style/BlackBold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/members"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat_group_divider_1" />
+
+    <TextView
+        android:id="@+id/tv_group_chat_members_count"
+        style="@style/GrayRegular18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_members"
+        app:layout_constraintStart_toEndOf="@+id/tv_group_chat_members"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_members"
+        tools:text="0" />
+
+
+    <LinearLayout
+        android:id="@+id/members_pin_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_members"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_group_chat_members_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_members">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_group_chat_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
+
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_group_chat_members"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_members"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_group_chat_members_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_members" />-->
+
+    <View
+        android:id="@+id/group_chat_divider_2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_divider_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_chat_members" />
+
+
+    <TextView
+        android:id="@+id/tv_group_chat_admins"
+        style="@style/BlackBold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/administrators"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_chat_divider_2" />
+
+    <TextView
+        android:id="@+id/tv_group_chat_admins_count"
+        style="@style/GrayRegular18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_admins"
+        app:layout_constraintStart_toEndOf="@+id/tv_group_chat_admins"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_admins"
+        tools:text="0" />
+
+
+    <LinearLayout
+        android:id="@+id/admins_pins_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_admins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_group_chat_admins_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_admins">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_group_chat_admins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
+
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_group_chat_admins"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_group_chat_admins"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_group_chat_admins_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_group_chat_admins" />-->
+
+    <View
+        android:id="@+id/chat_group_divider_3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/color_divider_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_group_chat_admins" />
+
+
+    <TextView
+        android:id="@+id/tv_group_chat_add_members"
+        style="@style/PurpleSemiBold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/iconadd_purple"
+        android:drawablePadding="8dp"
+        android:text="@string/add_members"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat_group_divider_3" />
+
+
+    <TextView
+        android:id="@+id/tv_delete_group_chat"
+        style="@style/RedBold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:drawableLeft="@drawable/delete_red_small"
+        android:drawablePadding="8dp"
+        android:text="@string/delete_chat"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

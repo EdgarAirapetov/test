@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/uiKitColorForegroundInvers"
+        android:stateListAnimator="@drawable/selector_appbar_elevation"
+        app:elevation="0dp">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/v_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/subscribers_list_screen_title">
+
+            <ImageView
+                android:id="@+id/iv_user_add"
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_outlined_user_add_m"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.meera.uikit.widgets.nav.UiKitNavView>
+
+        <com.meera.uikit.widgets.UiKitInputSearch
+            android:id="@+id/v_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="0dp"
+            app:searchHint="@string/general_search" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout
+        android:id="@+id/sr_layout_subscriptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_subscription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/material8"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_shimmer_subscription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/material8"
+            android:visibility="visible"
+            tools:listitem="@layout/meera_cell_shimmer_item" />
+
+        <LinearLayout
+            android:id="@+id/meera_placeholder_empty_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_empty_list"
+                android:layout_width="136dp"
+                android:layout_height="136dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_i_dont_know" />
+
+            <TextView
+                android:id="@+id/tv_button_empty_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/create_group_placeholder"
+                android:textAppearance="@style/UiKit.Body.Normal"
+                android:textColor="@color/uiKitColorForegroundSecondary" />
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/v_search_group_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="@string/find_group"
+                app:buttonHeightMode="buttonText36" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

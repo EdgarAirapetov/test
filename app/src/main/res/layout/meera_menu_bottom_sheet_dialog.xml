@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:cellPosition="top"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_download_m"
+        app:cellTitleValue="@string/save_image"
+        tools:cellCityValue="" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_make_an_avatar_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellPosition="middle"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_girl_m"
+        app:cellTitleValue="@string/user_personal_info_bottom_menu_make_avatar"
+        tools:cellCityValue="" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_delete_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellPosition="bottom"
+        android:layout_marginBottom="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconAndTitleColor="@color/uiKitColorAccentWrong"
+        app:cellLeftIconSrc="@drawable/ic_outlined_delete_l"
+        app:cellTitleValue="@string/delete"
+        tools:cellCityValue="" />
+
+</LinearLayout>

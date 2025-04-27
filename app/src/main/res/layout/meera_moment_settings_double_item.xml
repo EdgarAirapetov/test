@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_margin="16dp">
+
+    <TextView
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/moment_settings_visible_title"
+        android:textColor="@color/colorGray9298A0"
+        android:paddingBottom="8dp"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/vg_moment_settings_show_only_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellTitleValue="@string/moment_settings_show_only_friend"
+        android:backgroundTint="#F5F6F7"
+        app:cellPosition="top"
+        app:cellRightElement="right_switch"
+        app:cellRightElementColor="@color/map_friend_A6C90D"
+        tools:cellCityValue="" />
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_moment_settings_hide_moment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellTitleValue="@string/moment_settings_hide_moment_title"
+        android:backgroundTint="#F5F6F7"
+        app:cellPosition="middle"
+        app:cellArrowRight="true"
+        app:cellRightElement="right_text"
+        app:cellRightTextValue="@string/settings_add"
+        app:cellRightElementColor="@color/map_friend_A6C90D"
+        tools:cellCityValue="" />
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_moment_settings_hide_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellTitleValue="@string/moment_settings_hide_from_title"
+        android:backgroundTint="#F5F6F7"
+        app:cellPosition="bottom"
+        app:cellArrowRight="true"
+        app:cellRightElement="right_text"
+        app:cellRightTextValue="@string/settings_add"
+        app:cellRightElementColor="@color/map_friend_A6C90D"
+        tools:cellCityValue="" />
+
+</LinearLayout>

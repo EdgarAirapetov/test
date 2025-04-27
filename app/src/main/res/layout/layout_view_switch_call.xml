@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ml_switch_container"
+    android:layout_width="wrap_content"
+    android:layout_height="?attr/actionBarSize"
+    android:orientation="vertical"
+    android:saveEnabled="false"
+    app:layoutDescription="@xml/scene_switch_call_allowed"
+    tools:showPaths="true">
+    
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcv_text_container"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:saveEnabled="false"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        app:cardBackgroundColor="@color/white_1000"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_text_left"
+            style="@style/GrayRegular12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="35dp"
+            android:alpha="0"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/text_red"
+            android:textSize="11sp"
+            tools:alpha="1"
+            tools:text="Запретить"
+            tools:visibility="visible" />
+        
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_text_right"
+            style="@style/GrayRegular12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="34dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/ui_gray"
+            android:textSize="11sp"
+            tools:alpha="1"
+            tools:visibility="invisible"
+            tools:text="Разрешить" />
+    
+    </com.google.android.material.card.MaterialCardView>
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_switch_button_left"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="6dp"
+        android:src="@drawable/switch_call_inactive"
+        app:layout_constraintBottom_toBottomOf="@+id/mcv_text_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mcv_text_container" />
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_switch_button_right"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/switch_call_block"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_switch_button_left"
+        app:layout_constraintEnd_toEndOf="@+id/iv_switch_button_left"
+        app:layout_constraintStart_toStartOf="@+id/iv_switch_button_left"
+        app:layout_constraintTop_toTopOf="@+id/iv_switch_button_left" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

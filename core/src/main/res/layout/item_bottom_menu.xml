@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/v_top_separator"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/colorBackgroundLightPurple"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/iv_bottom_menu_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_bottom_menu_back"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_bottom_menu_header"
+            style="@style/BlackSemibold18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:text="Разрешать комментарии" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_bottom_menu_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_bottom_menu_title"
+            style="@style/BlackRegular18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_bottom_menu"
+            style="@style/BlackRegular18"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_new_item"
+            style="@style/PurpleRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="@string/latest"
+            android:visibility="gone"
+            tools:text="@string/latest"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_bottom_menu_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_bottom_menu_arrow"
+            tools:visibility="visible" />
+
+        <RadioButton
+            android:id="@+id/rg_bottom_menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:button="@null"
+            android:clickable="false"
+            android:drawableStart="@drawable/icon_check_violet"
+            android:focusable="false"
+            android:layoutDirection="rtl"
+            android:theme="@style/RadioButtonStyle"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/v_bottom_separator"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="54dp"
+        android:background="@color/gray_separator"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

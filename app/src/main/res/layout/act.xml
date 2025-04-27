@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.core.utils.layouts.intercept.InterceptTouchFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_layout_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        >
+
+        <com.numplates.nomera3.presentation.view.navigator.NavigatorViewPager
+            android:id="@+id/navigator_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            android:visibility="visible"
+            />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/auth_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <com.numplates.nomera3.modules.upload.ui.view.UploadStatusToast
+        android:id="@+id/uploadStatusToastView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_enableMergePathsForKitKatAndAbove="true"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/fireworks"
+        app:lottie_renderMode="hardware"
+        />
+
+</com.meera.core.utils.layouts.intercept.InterceptTouchFrameLayout>
+
+
+
+

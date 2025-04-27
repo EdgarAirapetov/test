@@ -1,0 +1,99 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/black"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <Space
+        android:id="@+id/space_avatar_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_weight="0.19"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_avatar"
+        app:layout_constraintStart_toStartOf="@id/guideline_avatar_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_avatar_end"/>
+
+    <ImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/circle_image_bg"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintTop_toBottomOf="@id/space_avatar_top"
+        app:layout_constraintEnd_toEndOf="@id/guideline_avatar_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_avatar_start"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/v_avatar_mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/ui_black_20"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar"
+        app:layout_constraintEnd_toEndOf="@+id/iv_avatar"
+        app:layout_constraintStart_toStartOf="@+id/iv_avatar"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_avatar_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_avatar_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.89"/>
+
+    <ImageView
+        android:id="@+id/iv_avatar_crown"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_crown"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@id/space_crown"
+        app:layout_constraintBottom_toTopOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/space_avatar_top"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent="0.4"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_holiday_hat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:visibility="visible"
+        android:rotation="-12"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintWidth_percent="0.55"
+        app:layout_constraintTop_toTopOf="@+id/iv_avatar_crown"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_avatar_crown"
+        app:layout_constraintRight_toRightOf="@+id/space_crown" />
+
+    <Space
+        android:id="@+id/space_crown"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.295"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"
+        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+        app:layout_constraintEnd_toEndOf="@id/iv_avatar"/>
+
+</merge>

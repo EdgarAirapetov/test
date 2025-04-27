@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_shake_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/background_bottom_sheet"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/nv_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/actions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showBackArrow="false"
+        app:showCloseButton="true" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_add_to_friend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_user_add_m"
+        app:cellPosition="top"
+        app:cellTitleValue="@string/add_to_friends"
+        app:layout_constraintTop_toBottomOf="@id/nv_delete" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_subscribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="12dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_flag_m"
+        app:cellPosition="bottom"
+        app:cellTitleValue="@string/general_subscribe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cell_add_to_friend" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

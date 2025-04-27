@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/ui_white">
+
+    <View
+        android:id="@+id/v_top_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_profile_header"
+        style="@style/BlackSemibold16"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/settings_profile_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_top_divider" />
+
+    <LinearLayout
+        android:id="@+id/vg_close_profile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?android:selectableItemBackground"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile_header">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BlackRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/material16"
+            android:layout_weight="1"
+            android:text="@string/settings_profile_close_profile" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_switcher_close_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/material16"
+            android:layout_weight="1"
+            android:enabled="false" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_close_profile_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_close_profile" />
+
+    <TextView
+        android:id="@+id/tv_closed_profile_hint"
+        android:layout_width="match_parent"
+        style="@style/SansProRegular14Gray"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundLightPurple"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:text="@string/settings_profile_close_profile_hint"
+        app:layout_constraintTop_toBottomOf="@id/v_close_profile_divider" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:background="@color/colorBackgroundLightPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_closed_profile_hint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

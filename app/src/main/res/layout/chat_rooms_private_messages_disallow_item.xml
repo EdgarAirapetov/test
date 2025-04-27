@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/material8"
+    android:layout_marginHorizontal="@dimen/material16"
+    android:background="@color/ui_purple_super_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivChatDisallowMessageIcon"
+        android:layout_width="@dimen/material24"
+        android:layout_height="@dimen/material24"
+        android:layout_marginStart="@dimen/material16"
+        android:layout_marginTop="@dimen/material16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_chat_disallowed_messages" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvChatDisallowMessageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/material16"
+        android:fontFamily="@font/source_sans_pro"
+        android:text="@string/personal_messages_chat_list_message"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivChatDisallowMessageIcon"
+        app:layout_constraintTop_toTopOf="@+id/ivChatDisallowMessageIcon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvChatDisallowMessageChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/ui_purple"
+        android:clickable="true"
+        android:focusable="true"
+        android:textSize="16sp"
+        android:fontFamily="@font/source_sans_pro"
+        android:layout_marginBottom="@dimen/material16"
+        android:text="@string/change"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvChatDisallowMessageTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvChatDisallowMessageTitle"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

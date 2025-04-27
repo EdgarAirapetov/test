@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="282dp"
+    android:layout_height="136dp"
+    android:layout_marginBottom="@dimen/offset_4dp"
+    android:orientation="horizontal"
+    app:cardBackgroundColor="@color/ui_pale_purple"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/ib_close_related"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="6dp"
+            android:src="@drawable/ic_close_purple_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/vv_recommended_people"
+            android:layout_width="106dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/fill_8" />
+
+        <TextView
+            android:id="@+id/tv_recommended_people_name"
+            style="@style/BlackSemibold16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/offset_12dp"
+            android:layout_marginTop="@dimen/offset_12dp"
+            android:layout_marginEnd="@dimen/offset_12dp"
+            android:ellipsize="end"
+            android:lines="1"
+            app:layout_constraintEnd_toStartOf="@+id/ib_close_related"
+            app:layout_constraintStart_toEndOf="@+id/vv_recommended_people"
+            app:layout_constraintTop_toTopOf="@+id/vv_recommended_people"
+            tools:text="James Gosling" />
+
+        <TextView
+            android:id="@+id/tv_recommended_people_age_city"
+            style="@style/GrayA7A5Regular16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/offset_12dp"
+            android:ellipsize="end"
+            android:lines="1"
+            app:layout_constraintEnd_toStartOf="@+id/ib_close_related"
+            app:layout_constraintStart_toStartOf="@+id/tv_recommended_people_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recommended_people_name"
+            tools:text="55, California" />
+
+        <com.numplates.nomera3.presentation.view.widgets.MutualFriendsView
+            android:id="@+id/vg_mutual_recommendation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/offset_8dp"
+            app:iconHeight="20dp"
+            app:iconWidth="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_recommended_people_age_city"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recommended_people_age_city"
+            app:mutualTextColor="@color/black"
+            app:mutualTextSize="16sp"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_recommended_people_add"
+            style="@style/WhiteRegular16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/material12"
+            android:layout_marginBottom="@dimen/offset_12dp"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/vg_mutual_recommendation"
+            app:layout_constraintTop_toBottomOf="@+id/vg_mutual_recommendation"
+            app:layout_constraintVertical_bias="1.0"
+            tools:background="@drawable/background_rect_purple"
+            tools:text="@string/user_personal_info_add_photo_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.meera.uikit.widgets.cell.UiKitCell
+            android:id="@+id/cell_vehicle_info_menu_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:cellArrowRight="false"
+            app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+            app:cellDescription="false"
+            app:cellLeftElement="left_icon"
+            app:cellLeftIconSrc="@drawable/ic_outlined_car_m"
+            app:cellPosition="top"
+            app:cellRightElement="right_none"
+            app:cellSubtitle="false"
+            app:cellTitleValue="@string/meera_garage_edit_vehicle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.meera.uikit.widgets.cell.UiKitCell
+            android:id="@+id/cell_vehicle_info_menu_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="32dp"
+            app:cellArrowRight="false"
+            app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+            app:cellDescription="false"
+            app:cellLeftElement="left_icon"
+            app:cellLeftIconAndTitleColor="@color/uiKitColorAccentDarkError"
+            app:cellLeftIconSrc="@drawable/ic_outlined_delete_m"
+            app:cellPosition="bottom"
+            app:cellRightElement="right_none"
+            app:cellSubtitle="false"
+            app:cellTitleValue="@string/general_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cell_vehicle_info_menu_edit" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

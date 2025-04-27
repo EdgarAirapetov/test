@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/llPosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:foreground="@drawable/ripple_background_100"
+        android:orientation="horizontal"
+        android:paddingVertical="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_posts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="8dp"
+            android:text="@string/profile_posts"
+            android:textAppearance="@style/UiKit.Header.Subtitle"
+            android:textColor="@color/uiKitColorForegroundPrimary" />
+
+        <TextView
+            android:id="@+id/tv_posts_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingHorizontal="4dp"
+            android:text="0"
+            android:textAppearance="@style/UiKit.Body.Description"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            tools:text="12" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/add_post"
+        layout="@layout/meera_layout_new_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llPosts" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/g_empty_road"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_road_placeholder,iv_road_placeholder,tv_road_placeholder_description,btn_write_post_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_road_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/meera_place_holder_user_post_list"
+        android:textAppearance="@style/UiKit.Header.H3"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_post" />
+
+    <ImageView
+        android:id="@+id/iv_road_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="70dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_alien_posts_viewed"
+        app:layout_constraintDimensionRatio="194:88"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_road_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_road_placeholder_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="@string/meera_place_holder_user_post_list_description"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_road_placeholder" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_write_post_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/meera_create_post"
+        app:buttonHeightMode="buttonText36"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_road_placeholder_description" />
+
+
+    <View
+        android:id="@+id/v_empty_road"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_write_post_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_road_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

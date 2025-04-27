@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_background">#F5F6F7</color>
+    <color name="selection_border">#D0EF10</color>
+    <color name="uiKitColorForegroundPrimary">#262626</color>
+
+</resources>

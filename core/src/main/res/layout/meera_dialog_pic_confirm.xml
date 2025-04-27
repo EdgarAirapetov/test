@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/ui_white">
+
+    <ImageView
+        android:id="@+id/iv_dialog_pic"
+        android:layout_width="256dp"
+        android:layout_height="232dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="16dp"
+        android:src="@mipmap/ic_launcher_change_settings"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_dialog_pic_first_point"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_dialog_pic"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="@color/map_friend_A6C90D"/>
+
+    <TextView
+        android:id="@+id/tv_dialog_pic_description_first_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/cv_dialog_pic_first_point"
+        app:layout_constraintTop_toTopOf="@+id/cv_dialog_pic_first_point"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_dialog_pic_first_point"
+        android:layout_marginStart="8dp"
+        style="@style/UiKit.Body.Normal"
+        android:textSize="16sp"
+        tools:text="Description first - hsdgd hgsdhgs hgdhgs"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_dialog_pic_second_point"
+        android:layout_width="4dp"
+        android:layout_height="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_pic_description_first_line"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        app:cardElevation="0dp"
+        android:backgroundTint="@color/map_friend_A6C90D"/>
+
+    <TextView
+        android:id="@+id/tv_dialog_pic_description_second_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/cv_dialog_pic_second_point"
+        app:layout_constraintTop_toTopOf="@+id/cv_dialog_pic_second_point"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_dialog_pic_second_point"
+        android:layout_marginStart="8dp"
+        style="@style/UiKit.Body.Normal"
+        android:textSize="16sp"
+        tools:text="Description second - hsdgd hgsdhgs hgdhgs"/>
+
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_top_dialog_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_pic_description_second_line"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/uikit_bg_button_filled_error"
+        android:tint="@color/ui_white"
+        tools:text="Accept"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_bottom_dialog_pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_top_dialog_pic"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:buttonType="transparent"
+        tools:text="Cancel"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

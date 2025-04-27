@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_blogger_video_root"
+    android:layout_width="146dp"
+    android:layout_height="225dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <ImageView
+        android:id="@+id/iv_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/pv_video_blogger_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="zoom"
+        android:alpha="0"
+        app:shutter_background_color="@color/colorTransparent"
+        app:surface_type="texture_view"
+        app:use_controller="false" />
+
+    <include
+        android:id="@+id/v_video_duration"
+        layout="@layout/blogger_media_duration_controller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/vg_media_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ui_pale_purple"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_blogger_media_placeholder"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_gallery_road" />
+
+        <TextView
+            android:id="@+id/tv_blogger_media_placeholder"
+            style="@style/PurpleRegular16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/watch_all" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

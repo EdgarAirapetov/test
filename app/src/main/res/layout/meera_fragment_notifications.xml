@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cl_notifications_root"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/v_top"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/default_ui_kit_bottom_sheet_dialog_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.grabber.UiKitGrabberView
+        android:id="@+id/v_grabber"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/uiKitColorBackgroundPrimary"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <TextView
+                android:id="@+id/tv_notifications_zero_data"
+                style="@style/GrayRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/notifications_zero_data"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/meera_hole"
+                tools:visibility="visible" />
+
+            <com.meera.uikit.widgets.nav.UiKitNavView
+                android:id="@+id/notifications_fragment_naw"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:elevation="22dp"
+                android:title="@string/notification_screen_header"
+                app:showBackArrow="false">
+
+                <TextView
+                    android:id="@+id/iv_remove_all_notifications"
+                    style="@style/UiKit.Body.Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/delete_all_notification_section"
+                    android:textColor="@color/uiKitColorForegroundLink"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+            </com.meera.uikit.widgets.nav.UiKitNavView>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_notifications"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="56dp"
+                android:clipToPadding="false"
+                android:paddingBottom="82dp" />
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/btn_refresh_notifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="90dp"
+                android:text="@string/notification_show_new"
+                android:visibility="gone"
+                android:paddingStart="@dimen/padding20"
+                android:paddingEnd="@dimen/padding20"
+                android:paddingTop="@dimen/padding8"
+                android:paddingBottom="@dimen/padding8"
+                app:buttonHeightMode="buttonText36"
+                app:buttonType="elevated"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_notifications_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/uiKitColorAccentPrimary"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

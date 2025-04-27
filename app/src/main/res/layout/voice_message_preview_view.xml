@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/bg_voice_message_preview">
+
+    <ImageView
+        android:id="@+id/iv_play_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_gravity="center_vertical"
+        app:srcCompat="@drawable/ic_play_voice_preview" />
+
+    <com.numplates.nomera3.modules.chat.views.VoiceMessagePreviewBarsView
+        android:id="@+id/view_amplitude_bars"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_marginStart="46dp"
+        android:layout_gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/tv_voice_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/WhiteRegular13"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="11dp"
+        tools:text="0:20"/>
+
+</FrameLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_empty_list_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@color/white_1000"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_subscription_empty_road_bunny"
+            />
+
+        <TextView
+            style="@style/GrayRegular22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/subscription_empty_placeholder_title"
+            />
+
+        <TextView
+            style="@style/GrayRegular14"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/subscription_empty_placeholder_description"
+            />
+
+        <FrameLayout
+            android:id="@+id/vg_subscription_placeholder_button"
+            android:layout_width="264dp"
+            android:layout_height="44dp"
+            android:layout_margin="40dp"
+            android:background="@drawable/purple_go_to_recommendation_button_ripple"
+            >
+
+            <TextView
+                style="@style/WhiteBold16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/subscription_empty_placeholder_button_label"
+                />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

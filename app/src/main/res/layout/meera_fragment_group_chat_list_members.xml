@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/uiKitColorBackgroundPrimary">
+
+    <LinearLayout
+        android:id="@+id/vg_appbar_group_chat_list_mebers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/uiKitColorBackgroundPrimary"
+        android:orientation="vertical">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/chat_list_members_naw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <com.meera.uikit.widgets.UiKitInputSearch
+            android:id="@+id/is_search_members"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:closeButtonText="@string/general_cancel"
+            app:searchHint="@string/general_search" />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_members"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/ll_friend_list_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility = "visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/meera_ghost_placeholder"/>
+
+            <TextView
+                android:id="@+id/tv_friend_list_placeholder_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                style="@style/UiKit.Header.Subtitle"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                android:textSize="16sp"
+                tools:text="List friends is empty"/>
+
+        </LinearLayout>
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_next_create_group_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:visibility="visible"
+            tools:visibility="visible"
+            android:enabled="false"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="42dp"
+            android:text="@string/next"
+            app:buttonHeightMode="buttonText48" />
+
+    </FrameLayout>
+
+</LinearLayout>

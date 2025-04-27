@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/uiKitColorBackgroundPrimary">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/chat_members_naw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fake_status_bar">
+
+        <TextView
+            android:id="@+id/tv_chat_members_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="4 members"
+            style="@style/UiKit.Header.H3"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+    <TextView
+        android:id="@+id/tv_add_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundLink"
+        android:textSize="16sp"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:text="@string/meera_add_administrator"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_members"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

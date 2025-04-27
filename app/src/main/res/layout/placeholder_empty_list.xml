@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_empty_list_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:background="@color/white_1000">
+
+    <ImageView
+        android:id="@+id/iv_empty_list"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        android:scaleType="fitCenter"
+        tools:src="@drawable/empty_vehicles" />
+
+    <TextView
+        android:id="@+id/tv_empty_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        tools:text="@string/placeholder_empty_blacklist_friends" />
+
+    <TextView
+        android:id="@+id/tv_button_empty_list"
+        style="@style/PurpleSemiBold16"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:foreground="@drawable/ripple_background_23"
+        android:gravity="center"
+        android:padding="12dp"
+        android:textAllCaps="true"
+        tools:text="Add vehicle" />
+
+</LinearLayout>

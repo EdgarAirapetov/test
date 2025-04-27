@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_white"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000"
+        android:stateListAnimator="@drawable/selector_appbar_elevation"
+        >
+
+        <View
+            android:id="@+id/status_bar_send_gift"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            app:layout_collapseMode="pin"
+            app:titleTextColor="@color/ui_black"
+            >
+
+            <TextView
+                android:id="@+id/tv_send_gift_toolbar"
+                style="@style/BlackSemibold18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="64dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                tools:text="Title"
+                />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/ivGift"
+                android:layout_width="260dp"
+                android:layout_height="260dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="35dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_user_who_sent_gift"
+                tools:srcCompat="@tools:sample/avatars"
+                />
+
+            <TextView
+                android:id="@+id/tv_date_when_sent_gift"
+                style="@style/GrayRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding20"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_user_who_sent_gift"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_user_who_sent_gift"
+                tools:text="123123123"
+                />
+
+            <TextView
+                android:id="@+id/tv_user_who_sent_gift"
+                style="@style/BlackSemibold18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_user_who_sent_gift"
+                app:layout_constraintEnd_toStartOf="@+id/tv_date_when_sent_gift"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/iv_user_who_sent_gift"
+                app:layout_constraintTop_toTopOf="@+id/iv_user_who_sent_gift"
+                tools:text="123123123"
+                tools:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/tv_message_gift"
+                style="@style/BlackRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/ivGift"
+                app:layout_constraintStart_toStartOf="@+id/ivGift"
+                app:layout_constraintTop_toBottomOf="@+id/ivGift"
+                tools:text="Подарочек =)"
+                tools:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/label_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_gradient"
+                android:paddingStart="22dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="22dp"
+                android:paddingBottom="8dp"
+                android:text="@string/new_gift"
+                android:textColor="@color/white_1000"
+                android:textSize="14sp"
+                android:translationX="-60dp"
+                android:translationY="-10dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/ivGift"
+                app:layout_constraintTop_toTopOf="@+id/ivGift"
+                tools:ignore="SmallSp"
+                tools:visibility="visible"
+                />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/separator_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_message_gift"
+                />
+
+            <com.numplates.nomera3.presentation.view.widgets.VipView
+                android:id="@+id/iv_user_who_sent_gift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:size="SIZE_41"
+                tools:visibility="visible"
+                />
+
+            <TextView
+                android:id="@+id/show_this_to_cashbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/show_this_to_cashbox"
+                android:textColor="@color/colorGrey8080"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view10"
+                />
+
+            <TextView
+                android:id="@+id/promo_code"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_background_gray"
+                android:backgroundTint="@color/tale_purple"
+                android:gravity="center"
+                android:text="*** *** *** ***"
+                android:textColor="@color/black_1000"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/show_this_to_cashbox"
+                tools:text="099 999 990 999"
+                />
+
+            <FrameLayout
+                android:id="@+id/tv_where_can_get_coffee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/promo_code"
+                >
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="1dp"
+                    android:src="@drawable/icon_map_purple"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/where_can_get_coffee"
+                    android:textAppearance="@style/PurpleRegular16"
+                    />
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/view13"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/separator_gray_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_where_can_get_coffee"
+                />
+
+            <TextView
+                android:id="@+id/extra_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/extra_information"
+                android:textColor="@color/colorGrey8080"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view13"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_coffee_of_choice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_background_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/extra_information"
+                >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/coffee_of_choice"
+                    android:textAppearance="@style/BlackSemibold18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Кофе на выбор"
+                    />
+
+                <TextView
+                    android:id="@+id/subTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/coffe_promo_descr_received"
+                    android:textAppearance="@style/BlackRegular16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/title"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="146dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_radio_cell_default"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_suggestion_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="transparent"
+        android:tint="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_outlined_close_s" />
+
+    <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+        android:id="@+id/upi_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:userpicSize="Size88"
+        app:userpicStories="NoStories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/vg_suggestion_name"
+        android:layout_marginTop="4dp"
+        android:layout_marginHorizontal="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upi_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="23dp">
+
+        <com.meera.uikit.widgets.people.UiKitUsernameView
+            android:id="@+id/tv_suggestion_name"
+            style="@style/GraphikCompactRegular.16_22"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:includeFontPadding="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            tools:drawableEnd="@drawable/ic_filled_verified_s"
+            tools:drawableTint="@color/uiKitColorAccentPrimary90"
+            tools:text="Васи" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/UiKit.Body.Description"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:layout_marginHorizontal="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_suggestion_name"
+        tools:text="\@Sergeev" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_people_subscribe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:isDescriptionTextStyle="true"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        app:buttonHeightMode="buttonText36"
+        android:paddingVertical="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description"
+        tools:text="@string/group_join" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_vehicles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/profile_vehicle"
+        android:textAppearance="@style/UiKit.Header.Subtitle"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_vehicles_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="4dp"
+        android:textAppearance="@style/UiKit.Body.Description"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintBottom_toBottomOf="@id/tv_vehicles"
+        app:layout_constraintEnd_toStartOf="@id/button_add_vehicle"
+        app:layout_constraintStart_toEndOf="@id/tv_vehicles"
+        app:layout_constraintTop_toTopOf="@id/tv_vehicles"
+        tools:text="12" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/button_add_vehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/everyone"
+        android:visibility="gone"
+        app:buttonHeightMode="buttonText48"
+        app:buttonType="transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.numplates.nomera3.presentation.view.ui.OrientationAwareRecyclerView
+        android:id="@+id/rvGarage"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="14dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_vehicles" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_empty_garage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="iv_empty_garage,tv_empty_garage,btn_empty_garage" />
+
+    <ImageView
+        android:id="@+id/iv_empty_garage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/ic_profile_garage_empty"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="343:100"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_vehicles" />
+
+    <TextView
+        android:id="@+id/tv_empty_garage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="@string/meera_profile_add_first_transport"
+        android:textAppearance="@style/UiKit.Body.Description"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty_garage" />
+
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_empty_garage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buttonHeightMode="buttonText36"
+        android:text="@string/meera_profile_add_auto_or_moto"
+        android:layout_marginTop="12dp"
+        app:buttonType="outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_empty_garage" />
+
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_empty_garage"
+        app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.core.utils.layouts.intercept.InterceptTouchConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/comment_bottom_sheet_container_bg"
+    >
+
+    <FrameLayout
+        android:id="@+id/vg_post_comment_first_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.20"
+        >
+
+        <include layout="@layout/meera_item_empty_comments_placeholder" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_moment_comments_sheet"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/uiKitColorAccentPrimary"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265"
+        />
+
+    <!--  ВНИМАНИЕ, не убирать тут layout_height="match_parent", иначе сломается SwipyRefreshLayout
+      с параметром srl_direction="bottom"-->
+    <com.numplates.nomera3.presentation.view.ui.swiperefresh.SwipyRefreshLayout
+        android:id="@+id/vg_refresh_comments"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_moment_comments_sheet_title"
+        app:srl_direction="bottom"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_moment_comments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="56dp" />
+
+    </com.numplates.nomera3.presentation.view.ui.swiperefresh.SwipyRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/vg_blocked_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#F5F5F5"
+        android:elevation="@dimen/material16"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tv_block_message"
+            android:textAppearance="@style/UiKit.Header.H2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="33dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding10"
+            android:paddingBottom="@dimen/padding10"
+            android:text="@string/you_was_blocked_by_user"
+            />
+
+    </LinearLayout>
+</com.meera.core.utils.layouts.intercept.InterceptTouchConstraintLayout>

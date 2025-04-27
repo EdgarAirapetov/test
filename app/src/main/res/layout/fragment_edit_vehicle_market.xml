@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_groups_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/status_bar_market"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:srcCompat="@drawable/ic_close_crose_black" />
+
+                <ImageView
+                    android:id="@+id/iv_save_btn"
+                    android:layout_marginEnd="@dimen/material16"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:padding="4dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/icon_check_violet"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/BlackBold18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editing"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_save_btn"
+                    app:layout_constraintStart_toEndOf="@+id/iv_close"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layout_add_image"
+                layout="@layout/layout_add_image"
+                android:layout_width="match_parent"
+                android:layout_height="350dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_gray" />
+
+            <LinearLayout
+                android:id="@+id/nv_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginTop="@dimen/padding20"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_marginBottom="@dimen/material16">
+
+                <com.numplates.nomera3.presentation.view.widgets.numberplateview.NumberPlateEditView
+                    android:id="@+id/nv_number_plate"
+                    android:layout_width="138dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    tools:background="@drawable/number_ru_auto"
+                    app:readOnly="true" />
+
+            </LinearLayout>
+
+            <com.numplates.nomera3.presentation.view.widgets.NumberNew
+                android:id="@+id/nv_without_number"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/padding10"
+                android:layout_width="120dp"
+                android:layout_marginTop="@dimen/material16"
+                android:layout_marginBottom="12dp"
+                android:layout_height="60dp"/>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_gray" />
+
+            <TextView
+                android:id="@+id/tv_brand_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding20"
+                android:paddingEnd="@dimen/padding20"
+                android:paddingBottom="@dimen/material16"
+                android:paddingTop="@dimen/padding20"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                style="@style/BlackRegular16"
+                tools:text="BMW"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_gray" />
+
+            <TextView
+                android:id="@+id/tv_brand_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding20"
+                android:paddingEnd="@dimen/padding20"
+                android:paddingBottom="@dimen/material16"
+                android:paddingTop="@dimen/padding20"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                style="@style/BlackRegular16"
+                tools:text="M2"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/material16"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginEnd="@dimen/material16"
+                android:layout_marginTop="@dimen/material16">
+
+                <EditText
+                    android:id="@+id/et_vehicle_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/BlackRegular16"
+                    android:maxLength="255"
+                    android:background="@null"
+                    android:hint="@string/description_txt"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material16"
+                android:layout_marginTop="@dimen/padding20"
+                android:layout_marginEnd="@dimen/material16"
+                android:layout_marginBottom="@dimen/material16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:text="@string/start_selling"
+                    android:textColor="@color/black_1000"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/switchStartSelling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/ui_gray" />
+
+            <ProgressBar
+                android:id="@+id/pb_edit_vehicle_market"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_edit_market"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

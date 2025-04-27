@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_video_duration_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/exo_position"
+        style="@style/UiKit.Body.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_rounded_corners_32"
+        android:backgroundTint="@color/uiKitColorBackgroundFadeBlack80"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="5dp"
+        android:textColor="@color/uiKitColorForegroundInvers"
+        tools:text="3:23" />
+
+</FrameLayout>

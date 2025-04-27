@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="94dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center|start">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="18dp"
+            tools:src="@color/ui_purple"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="20dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/BlackSemibold18"
+                android:singleLine="true"
+                android:ellipsize="end"
+                tools:text="Coffee Like"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/BlackRegular16"
+                android:maxLines="3"
+                android:ellipsize="end"
+                tools:text="Address hsgg hdgshdgs dhsgdhgsd  hdgsdhgshd hdgshdghs gfgff gafgfa a fgafsgaf gfagfsga s fsgasfagfsg gfasgfas ag sagfgadf gdfgsdf s"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="2"
+        android:background="@drawable/drawable_divider_decoration_gray"/>
+
+</LinearLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_share_community_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_repost_m"
+        app:cellTitleValue="@string/share_community"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_copy_community_link_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_copy_m"
+        app:cellPosition="middle"
+        app:cellTitleValue="@string/copy_link" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_community_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="bottom"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_settings_m"
+        app:cellTitleValue="@string/profile_settings"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"/>
+
+</LinearLayout>

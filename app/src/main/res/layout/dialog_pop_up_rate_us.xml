@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:minWidth="280dp"
+    android:background="@color/white_1000"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_rate_us_image"
+        android:layout_width="170dp"
+        android:layout_height="140dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_rating"
+        android:layout_marginTop="@dimen/padding10"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pop_up_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding32"
+        android:layout_marginEnd="@dimen/padding32"
+        android:fontFamily="@font/source_sanspro_bold"
+        android:lineSpacingExtra="3sp"
+        android:layout_marginTop="12dp"
+        android:text="@string/do_you_like_noomeera_app"
+        android:textColor="@color/colorBlack"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_rate_us_image" />
+
+    <TextView
+        android:id="@+id/pop_up_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding32"
+        android:layout_marginStart="@dimen/padding32"
+        android:text="@string/rate_us_message"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:textColor="@color/pop_up_description_color"
+        android:textSize="@dimen/textSize18"
+        android:lineSpacingExtra="6sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_up_title" />
+
+    <TextView
+        android:id="@+id/pop_up_rate_us_later"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding10"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:padding="@dimen/padding10"
+        android:text="@string/not_now_caps"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textSize16"
+        android:textColor="@color/ui_selected_tab"
+        app:layout_constraintBottom_toBottomOf="@+id/pop_up_rate_us_btn"
+        app:layout_constraintEnd_toStartOf="@+id/pop_up_rate_us_btn"
+        app:layout_constraintTop_toTopOf="@+id/pop_up_rate_us_btn" />
+
+    <TextView
+        android:id="@+id/pop_up_rate_us_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding32"
+        android:layout_marginBottom="@dimen/material8"
+        android:layout_marginTop="@dimen/material8"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:padding="@dimen/padding10"
+        android:text="@string/rate"
+        android:textSize="@dimen/textSize16"
+        android:textAllCaps="true"
+        android:textColor="@color/ui_selected_tab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rate_us_textInputLayout" />
+
+    <RatingBar
+        android:id="@+id/pop_up_rate_us_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/customRatingBar"
+        android:stepSize="1"
+        android:layout_marginTop="@dimen/material16"
+        android:layout_marginStart="@dimen/material16"
+        android:layout_marginEnd="@dimen/material16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_up_desc" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/rate_us_textInputLayout"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/material24"
+        android:layout_marginEnd="@dimen/material24"
+        android:layout_marginTop="@dimen/material8"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="120"
+        android:theme="@style/TextInputLayoutTheme"
+        app:boxStrokeColor="@color/ui_purple"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:hintTextAppearance="@style/TextInputLayoutHintTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_up_rate_us_rating_bar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/rate_us_comment"
+            android:layout_width="match_parent"
+            android:maxLines="3"
+            android:maxLength="120"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_your_comment" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

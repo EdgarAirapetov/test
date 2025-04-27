@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_communication_header"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/private_setting_communication" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_personal_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="top"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/private_setting_communication_messages"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_calls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="middle"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/settings_privacy_calls_title"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_online"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="middle"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/settings_privacy_online_status"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_sync_contacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="middle"
+        app:cellRightElement="right_switch"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/contacts_synchronization"
+        app:cellWidthType="with_margins" />
+
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_share_screenshot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="bottom"
+        app:cellRightElement="right_switch"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/share_screenshot"
+        app:cellWidthType="with_margins" />
+
+</LinearLayout>

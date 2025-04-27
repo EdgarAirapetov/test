@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_vip"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/uiKitColorForegroundInvers"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llPublicationTarget"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/UiKit.Header.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/meera_post_create_target"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.meera.uikit.widgets.cell.UiKitCell
+            android:id="@+id/cell_main_road"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+            app:cellDescription="false"
+            app:cellPosition="top"
+            app:cellRightElement="right_checkbox"
+            app:cellTitleValue="@string/meera_main_road"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_gender_header" />
+
+        <com.meera.uikit.widgets.cell.UiKitCell
+            android:id="@+id/cell_my_road"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+            app:cellPosition="bottom"
+            app:cellRightElement="right_checkbox"
+            app:cellTitleValue="@string/meera_my_road" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_who_can_comment"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/who_can_comment"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_comment_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="top"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/everyone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gender_header" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_comment_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/friends"
+        app:layout_constraintTop_toBottomOf="@+id/profile_param_checkbox_male" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_comment_nobody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="bottom"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/nobody"
+        app:layout_constraintTop_toBottomOf="@+id/profile_param_checkbox_male" />
+
+
+</LinearLayout>

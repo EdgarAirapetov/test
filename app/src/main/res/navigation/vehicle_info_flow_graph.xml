@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vehicle_info_flow_graph"
+    app:startDestination="@id/meeraVehicleInfoFragment">
+
+    <fragment
+        android:id="@+id/meeraVehicleInfoFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleInfoFragment"
+        android:label="MeeraVehicleInfoFragment"
+        tools:layout="@layout/meera_fragment_vehicle_info_static">
+
+<!--        <action-->
+<!--            android:id="@+id/action_meeraVehicleInfoFragment_to_meeraVehicleEditFragment"-->
+<!--            app:destination="@id/meeraVehicleEditFragment"-->
+<!--            app:enterAnim="@anim/meera_slide_left"-->
+<!--            app:exitAnim="@anim/meera_wait_anim"-->
+<!--            app:popEnterAnim="@anim/meera_wait_anim"-->
+<!--            app:popExitAnim="@anim/meera_slide_right" />-->
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/meeraVehicleEditFragment"-->
+<!--        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleEditFragment"-->
+<!--        android:label="MeeraVehicleEditFragment"-->
+<!--        tools:layout="@layout/meera_fragment_edit_vehicle" />-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/meeraVehicleSelectTypeFragment"-->
+<!--        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleSelectTypeFragment"-->
+<!--        android:label="MeeraVehicleSelectTypeFragment"-->
+<!--        tools:layout="@layout/meera_fragment_vehicle_select_type" >-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_meeraVehicleSelectTypeFragment_to_meeraVehicleEditFragment"-->
+<!--            app:destination="@id/meeraVehicleEditFragment"-->
+<!--            app:enterAnim="@anim/meera_slide_left"-->
+<!--            app:exitAnim="@anim/meera_wait_anim"-->
+<!--            app:popEnterAnim="@anim/meera_wait_anim"-->
+<!--            app:popExitAnim="@anim/meera_slide_right" />-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/meeraVehicleListFragment"-->
+<!--        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleListFragment"-->
+<!--        android:label="MeeraVehicleListFragment"-->
+<!--        tools:layout="@layout/meera_fragment_vehicle_list" >-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_meeraVehicleListFragment_to_meeraVehicleSelectTypeFragment"-->
+<!--            app:destination="@id/meeraVehicleSelectTypeFragment"-->
+<!--            app:enterAnim="@anim/meera_slide_left"-->
+<!--            app:exitAnim="@anim/meera_wait_anim"-->
+<!--            app:popEnterAnim="@anim/meera_wait_anim"-->
+<!--            app:popExitAnim="@anim/meera_slide_right" />-->
+<!--    </fragment>-->
+
+</navigation>

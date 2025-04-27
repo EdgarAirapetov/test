@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    tools:layout_height="200dp"
+    android:minHeight="80dp">
+
+    <FrameLayout
+        android:id="@+id/fl_media_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottomsheet_header"
+        app:layout_constrainedWidth="true"
+        tools:layout_height="200dp"
+        tools:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.numplates.nomera3.modules.uploadpost.ui.view.ScrollableImageView
+            android:id="@+id/iv_media_attachment"
+            android:background="@drawable/bg_bottomsheet_header"
+            android:layout_width="wrap_content"
+            tools:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:minWidth="40dp"
+            android:scaleType="matrix"
+            android:visibility="gone"
+            tools:src="@drawable/dialog_gift"
+            tools:visibility="visible" />
+
+        <com.numplates.nomera3.modules.uploadpost.ui.view.AddPostAttachmentItemGridView
+            android:id="@+id/apaig_grid_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:cardBackgroundColor="#26000000"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/fl_media_container"
+            app:layout_constraintEnd_toEndOf="@+id/fl_media_container"
+            app:layout_constraintStart_toStartOf="@+id/fl_media_container"
+            app:layout_constraintTop_toTopOf="@+id/fl_media_container">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_play_button_gray" />
+
+        </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/fl_media_container"
+        app:layout_constraintStart_toStartOf="@id/fl_media_container"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_delete_attachment"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="12dp"
+            android:background="@drawable/circle_image_bg"
+            android:backgroundTint="@color/ui_black_50"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_outlined_delete_m"
+            android:tint="@color/white"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/fl_edit_attachment_container"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_edit_attachment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:background="@drawable/circle_image_bg"
+                android:backgroundTint="@color/ui_black_50"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_outlined_pencil_m"
+                android:tint="@color/white"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/pb_attachment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_circle_purple"
+                android:indeterminateTint="@color/white_1000"
+                android:padding="2dp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

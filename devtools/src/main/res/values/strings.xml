@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_lang_ru">Ru</string>
+    <string name="menu_lang_en">En</string>
+
+    <string name="menu_language">Language</string>
+    <string name="menu_other">OTHER</string>
+    <string name="menu_on_leak_canary">Turn on memory dump</string>
+    <string name="menu_on_chucker">Turn on chucker</string>
+    <string name="menu_general">GENERAL APP INFO</string>
+    <string name="menu_logs">Logs</string>
+    <string name="menu_environment">Api environment</string>
+    <string name="menu_env_dev">Dev</string>
+    <string name="menu_env_stage">Stage</string>
+    <string name="menu_env_prod">Prod</string>
+    <string name="toggles">TOGGLES</string>
+    <string name="sticker_suggestions_debug_title">Sticker suggestions</string>
+    <string name="moments_debug_title">Moments</string>
+    <string name="detailed_reactions_post_debug_title">Detailed reactions for post</string>
+    <string name="detailed_reactions_comment_debug_title">Detailed reactions for comment</string>
+    <string name="hidden_age_and_sex_debug_title">Hide age and gender</string>
+    <string name="avatar_carousel_debug_title">Avatar carousel</string>
+    <string name="id_time_of_day_reactions">Time of day reactions</string>
+    <string name="edit_post_debug_toggle">Edit post</string>
+    <string name="moment_views_debug_toggle">Moment views</string>
+    <string name="shake">Shake</string>
+    <string name="video_editor_forced_resizing">Video Editor forced resizing</string>
+    <string name="video_road_custom_max_duration">Road Custom Max Video Duration</string>
+    <string name="feature_toggle_value_remote">Remote</string>
+    <string name="feature_toggle_value_enabled">Enabled</string>
+    <string name="feature_toggle_value_disabled">Disabled</string>
+    <string name="feature_toggle_map_events_title">Map events</string>
+    <string name="feature_toggle_map_friends_title">Map friends</string>
+    <string name="feature_toggle_chat_search_title">Chat search</string>
+</resources>

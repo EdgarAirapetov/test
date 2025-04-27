@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="26dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:ignore="ContentDescription">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        app:srcCompat="@drawable/nmrmedia_stories_icon_music" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_selected_track_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:paddingHorizontal="2dp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        tools:text="Artist Track - Artist Name long name long name long name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="74dp"
+        android:layout_height="18dp"
+        app:srcCompat="@drawable/ic_nmrmedia_stories_apple_music_label" />
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/app_hint_post_media_positioning_tooltip">
+
+<TextView
+    android:id="@+id/hint_text"
+    style="@style/TooltipText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="4dp"
+    android:includeFontPadding="false"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:text="@string/app_hint_post_media_positioning_text" />
+
+</FrameLayout>

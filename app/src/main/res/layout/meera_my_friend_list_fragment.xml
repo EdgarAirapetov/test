@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/mm"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout
+        android:id="@+id/sr_my_friends_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_friends_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/material8" />
+    </com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_shimmer_friends_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/material8"
+        android:visibility="gone" />
+    <!-- No friends placeholder -->
+    <LinearLayout
+        android:id="@+id/placeholder_no_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:src="@drawable/ic_i_dont_know" />
+
+        <TextView
+            android:id="@+id/tv_placeholder_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/friends_list_is_empty"
+            android:textAppearance="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundSecondary" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_search_friends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/find_friend"
+            android:visibility="gone"
+            app:buttonHeightMode="buttonText36" />
+
+    </LinearLayout>
+
+    <!-- No search friends result placeholder -->
+    <LinearLayout
+        android:id="@+id/placeholder_no_friends_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:src="@drawable/ic_search_people_empty" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/meera_settings_empty_state"
+            android:textAppearance="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundSecondary" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

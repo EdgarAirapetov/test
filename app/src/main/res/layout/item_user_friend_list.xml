@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/material16">
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/vip_view_friend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:size="SIZE_41" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp">
+
+        <TextView
+            android:id="@+id/tv_friend_name"
+            style="@style/SansProRegular18Black"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:lineHeight="@dimen/textSize22"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            tools:text="Annie Wellington" />
+
+        <TextView
+            android:id="@+id/tv_friend_unique_name"
+            style="@style/SansProRegular14Gray"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:lineHeight="@dimen/textSize18"
+            android:maxLines="1"
+            tools:text="\@koshechka" />
+
+    </LinearLayout>
+
+</LinearLayout>

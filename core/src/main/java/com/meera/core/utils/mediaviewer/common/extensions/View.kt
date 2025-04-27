@@ -1,0 +1,35 @@
+package com.meera.core.utils.mediaviewer.common.extensions
+
+import android.graphics.Rect
+import android.view.View
+
+internal val View?.localVisibleRect: Rect
+    get() = Rect().also { this?.getLocalVisibleRect(it) }
+
+internal val View?.globalVisibleRect: Rect
+    get() = Rect().also { this?.getGlobalVisibleRect(it) }
+
+internal val View?.hitRect: Rect
+    get() = Rect().also { this?.getHitRect(it) }
+
+internal val View?.isRectVisible: Boolean
+    get() = this != null && globalVisibleRect != localVisibleRect
+
+internal val View?.isVisible: Boolean
+    get() = this != null && visibility == View.VISIBLE
+
+internal inline fun <T : View> T.postApply(crossinline block: T.() -> Unit) {
+    post { apply(block) }
+}
+
+
+internal fun View.animateAlpha(from: Float?, to: Float?, duration: Long) {
+    alpha = from ?: 0f
+    clearAnimation()
+    animate()
+            .alpha(to ?: 0f)
+            .setDuration(duration)
+            .start()
+}
+
+

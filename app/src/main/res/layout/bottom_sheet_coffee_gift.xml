@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet_city_filter_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    >
+
+    <FrameLayout
+        android:id="@+id/coffee_select_mini_thumb"
+        android:layout_width="60dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/coffee_gift_bottom_sheet_thumb"
+        />
+
+    <LinearLayout
+        android:id="@+id/coffee_select_main_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/coffee_gift_bottom_sheet_bg"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:id="@+id/coffee_select_image"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/close_coffee_big"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/coffee_select_title"
+            android:textAppearance="@style/BlackSemibold22"
+            android:textColor="@color/color_soft_black"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/coffee_select_body"
+            android:textAppearance="@style/BlackRegular16"
+            android:textColor="@color/color_soft_black"
+            />
+
+        <LinearLayout
+            android:id="@+id/coffee_select_items_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+
+            <com.numplates.nomera3.modules.gift_coffee.ui.coffee_select.CoffeeButtonCustomView
+                android:id="@+id/coffee_select_cappuccino"
+                android:layout_width="0dp"
+                android:layout_height="126dp"
+                android:layout_weight="1"
+                app:coffee_label="@string/Cappuccino"
+                app:image_resource="@drawable/cappuccino_coffee_small"
+                />
+
+            <com.numplates.nomera3.modules.gift_coffee.ui.coffee_select.CoffeeButtonCustomView
+                android:id="@+id/coffee_select_latte"
+                android:layout_width="0dp"
+                android:layout_height="126dp"
+                android:layout_marginStart="@dimen/coffee_select_item_gap"
+                android:layout_weight="1"
+                app:coffee_label="@string/Latte"
+                app:image_resource="@drawable/latte_coffee_small"
+                />
+
+            <com.numplates.nomera3.modules.gift_coffee.ui.coffee_select.CoffeeButtonCustomView
+                android:id="@+id/coffee_select_raf"
+                android:layout_width="0dp"
+                android:layout_height="126dp"
+                android:layout_marginStart="@dimen/coffee_select_item_gap"
+                android:layout_weight="1"
+                app:coffee_label="@string/Raf"
+                app:image_resource="@drawable/raf_coffee_small"
+                />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/coffee_select_get_code_button"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/gradient_purple_button_ripple"
+            android:elevation="8dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/look_the_code"
+                android:textAppearance="@style/WhiteRegular18"
+                />
+
+            <ProgressBar
+                android:id="@+id/coffee_select_loader"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="90dp"
+                android:visibility="gone"
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/coffee_select_error_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:text="@string/coffee_select_error"
+            android:textAppearance="@style/BlackRegular16"
+            android:textColor="@color/ui_red"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="@dimen/material24"
+        android:textColor="@color/ui_black"
+        android:text="Все регионы"
+        android:lines="1"
+        android:ellipsize="end"
+        android:layout_marginEnd="@dimen/material24"
+        android:layout_marginTop="@dimen/padding20"
+        android:fontFamily="@font/source_sanspro_semibold"/>
+
+</LinearLayout>

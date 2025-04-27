@@ -1,0 +1,50 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="false">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        style="@style/UiKit.Body.Normal"
+        android:id="@+id/country_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellRightIconSrc="@drawable/ic_arrow_right"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundPrimary"
+        app:cellLeftElement="left_icon"
+        tools:cellTitleValue="Россия"
+        app:cellPosition="middle">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_country_flag_container"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            tools:src="@drawable/country_ru_darker"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/iv_country_flag"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/country_ru_darker" />
+        </androidx.cardview.widget.CardView>
+
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

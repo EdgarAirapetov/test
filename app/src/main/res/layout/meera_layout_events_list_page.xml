@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.events.list.MeeraEventsListRecyclerView
+        android:id="@+id/rv_layout_events_list_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="0dp"
+        tools:listitem="@layout/meera_item_events_list" />
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.events.MeeraEventsListEmptyWidget
+        android:id="@+id/elew_layout_events_list_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+</FrameLayout>

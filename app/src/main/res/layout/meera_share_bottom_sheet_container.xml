@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.UiKitInputSearch
+        android:id="@+id/appbar_share_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:colorButtonClose="@color/uiKitColorForegroundLink"
+        app:closeButtonText="Отменить"
+        android:layout_marginHorizontal="16dp"
+        app:searchHint="@string/share_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_share_post_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="330dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="40dp" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_post"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:cellDescription="true"
+        app:cellDescriptionIcon="true"
+        app:cellDescriptionValue="@string/chat_repost_message"
+        app:cellLeftElement="left_userPic56"
+        tools:cellCityValue=""
+        tools:layout_editor_absoluteX="0dp" />
+
+    <LinearLayout
+        android:id="@+id/v_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/meera_share_message_no_friends" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/v_search_friends_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="123dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+            android:text="@string/find_friend" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_group_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="92dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_meera_share_group_empty_state" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/meera_share_message_no_groups" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/v_search_group_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:text="@string/find_group" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_menu_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white"
+        tools:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@color/ui_white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_share_input_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:orientation="horizontal">
+
+                <com.meera.uikit.widgets.UiKitInput
+                    android:id="@+id/v_share_input"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+                    app:inputHint="@string/repost_hint_write_message" />
+
+                <com.meera.uikit.widgets.buttons.UiKitButton
+                    android:id="@+id/btn_share_send"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="14dp"
+                    android:src="@drawable/ic_outlined_send_m"
+                    app:buttonHeightMode="buttonIcon36"
+                    app:buttonType="filled" />
+            </LinearLayout>
+
+            <com.meera.uikit.widgets.tablayout.UiKitTwoLinesTabLayout
+                android:id="@+id/v_bottom_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:tabIconsIds="ic_outlined_message_m, ic_outlined_post_m, ic_outlined_group_m, ic_outlined_menu_circle_m"
+                app:tabTitleIds="to_chat, meera_to_my_feed_share, to_group, more_with_tab"
+                tools:selectedTabId="menu_icons" />
+
+            <com.meera.uikit.widgets.tablayout.UiKitTwoLinesTabLayout
+                android:id="@+id/v_bottom_menu_hide_road"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:tabIconsIds="ic_outlined_message_m, ic_outlined_group_m, ic_outlined_menu_circle_m"
+                app:tabTitleIds="to_chat, to_group, more_with_tab"
+                tools:selectedTabId="menu_icons" />
+
+            <com.meera.uikit.widgets.tablayout.UiKitTwoLinesTabLayout
+                android:id="@+id/v_bottom_menu_hide_road_and_group_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:tabGravity="center"
+                app:tabIconsIds="ic_outlined_message_m, ic_outlined_menu_circle_m"
+                app:tabTitleIds="to_chat, more_with_tab"
+                tools:selectedTabId="menu_icons" />
+
+            <com.meera.uikit.widgets.tablayout.UiKitTwoLinesTabLayout
+                android:id="@+id/v_bottom_menu_hide_more_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:tabGravity="center"
+                app:tabIconsIds="ic_outlined_message_m, ic_outlined_post_m, ic_outlined_group_m"
+                app:tabTitleIds="to_chat, meera_to_my_feed_share, to_group"
+                tools:selectedTabId="menu_icons" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <include
+        android:id="@+id/layout_event_share"
+        layout="@layout/meera_view_event_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</FrameLayout>

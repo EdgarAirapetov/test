@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="blocksDescendants"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BlackSemibold18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
+            tools:text="Name"/>
+
+        <TextView
+            android:id="@+id/tvCategorySize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/tvCategoryName"
+            app:layout_constraintTop_toTopOf="@+id/tvCategoryName"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCategoryName"
+            android:layout_marginStart="4dp"
+            style="@style/GrayRegular14"
+            tools:text="Size"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGifts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategoryName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/recycler_view_item_1"
+        tools:spanCount="5"
+        tools:layoutManager="GridLayoutManager" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

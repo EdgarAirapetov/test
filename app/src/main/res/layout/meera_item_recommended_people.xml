@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="152dp"
+    android:layout_marginBottom="@dimen/offset_4dp"
+    android:background="@drawable/bg_radio_cell_default">
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_close_related"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_outlined_close_s"
+        android:tint="@color/uiKitColorForegroundSecondary"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+        android:id="@+id/upi_recommended_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:userpicSize="Size88"
+        app:userpicStories="NoStories" />
+
+    <LinearLayout
+        android:id="@+id/vg_title_city_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="@dimen/offset_12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/btn_close_related"
+        app:layout_constraintStart_toEndOf="@id/upi_recommended_people"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.meera.uikit.widgets.people.UiKitUsernameView
+            android:id="@+id/tv_recommended_people_name"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:layout_constraintEnd_toStartOf="@id/btn_close_related"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/upi_recommended_people"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="James Gosling" />
+
+        <TextView
+            android:id="@+id/tv_recommended_people_age_city"
+            style="@style/UiKit.Body.Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="@dimen/offset_12dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            app:layout_constraintEnd_toStartOf="@id/btn_close_related"
+            app:layout_constraintStart_toStartOf="@+id/tv_recommended_people_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recommended_people_name"
+            tools:text="55, California" />
+
+    </LinearLayout>
+
+    <com.meera.uikit.widgets.UiKitMutualFriendsView
+        android:id="@+id/vg_mutual_recommendation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/vg_title_city_container"
+        app:layout_constraintTop_toBottomOf="@+id/vg_title_city_container" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_recommended_people_add"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        app:buttonHeightMode="buttonText36"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="@string/user_personal_info_add_photo_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

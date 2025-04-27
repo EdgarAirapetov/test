@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_mutual_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_mutual_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:elevation="1dp"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        tools:layout_height="33dp"
+        tools:layout_width="33dp"
+        tools:src="@drawable/fill_8_round" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_mutual_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        tools:layout_height="33dp"
+        tools:layout_width="33dp"
+        tools:src="@drawable/fill_8_round" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_mutual_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:elevation="-1dp"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        tools:layout_height="33dp"
+        tools:layout_width="33dp"
+        tools:src="@drawable/fill_8_round" />
+
+    <TextView
+        android:id="@+id/tv_mutual_users"
+        style="@style/common_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/material8"
+        tools:text="marinkaaa, neverager, Мальчик на Девятке и ещё 10 подписаны" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

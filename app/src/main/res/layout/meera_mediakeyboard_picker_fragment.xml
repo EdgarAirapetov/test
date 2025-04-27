@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_container_ted_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundSecondary"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/vg_recent"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:clickable="false"
+        android:gravity="center"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_recent_folder"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recent"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:lineHeight="22sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_recent_folder_arrow"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_outlined_chevron_down_s"
+            app:tint="@color/uiKitColorForegroundPrimary" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vg_permission_media_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_recent">
+
+        <TextView
+            style="@style/Legacy.Display.Normal_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:gravity="start"
+            android:maxLines="2"
+            android:text="@string/meera_permission_message"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_change_permission_red_media_visual"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|end"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:gravity="end"
+            android:text="@string/change"
+            android:textColor="@color/map_friend_A6C90D" />
+
+    </LinearLayout>
+
+    <com.meera.core.views.MeeraSetupPermissionsView
+        android:id="@+id/spv_permission_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/vg_buttons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_permission_media_request"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_permission_media_request" />
+
+    <LinearLayout
+        android:id="@+id/vg_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/v_media_keyboard_dismiss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            app:buttonType="elevated"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/v_media_keyboard_add_selected"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/v_media_keyboard_add_selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:text="@string/general_send"
+            android:visibility="gone"
+            app:buttonType="filled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/v_media_keyboard_dismiss"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

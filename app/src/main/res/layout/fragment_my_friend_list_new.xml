@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_1000"
+    android:orientation="vertical">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sr_my_friends_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_my_friends_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/material8" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_my_friends"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible" />
+
+
+    <!-- No friends placeholder -->
+    <LinearLayout
+        android:id="@+id/placeholder_no_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_empty_friends"/>
+
+        <TextView
+            style="@style/GrayRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/empty_friends_placeholder" />
+
+        <TextView
+            android:id="@+id/tv_search_friends"
+            style="@style/PurpleSemiBold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/padding20"
+            android:paddingTop="@dimen/padding10"
+            android:paddingEnd="@dimen/padding20"
+            android:paddingBottom="@dimen/padding10"
+            android:text="@string/find_friends_txt" />
+
+    </LinearLayout>
+
+
+    <!-- No incoming friends placeholder -->
+    <LinearLayout
+        android:id="@+id/placeholder_no_incoming_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="79dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="14dp"
+            android:src="@drawable/empty_incoming_friends" />
+
+        <TextView
+            style="@style/GrayRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding20"
+            android:layout_marginEnd="@dimen/padding20"
+            android:gravity="center"
+            android:text="@string/placeholder_not_incoming_friends" />
+
+    </LinearLayout>
+
+    <!-- No search friends result placeholder -->
+    <LinearLayout
+        android:id="@+id/placeholder_no_friends_search_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_empty_search_noomeera" />
+
+        <TextView
+            style="@style/GrayRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/placeholder_empty_search_result" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

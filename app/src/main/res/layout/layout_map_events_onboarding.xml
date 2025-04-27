@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_map_bottomsheet"
+    android:orientation="vertical"
+    android:paddingBottom="16dp">
+
+    <ImageButton
+        android:id="@+id/ib_map_events_onboarding_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="17dp"
+        android:src="@drawable/ic_close_small"
+        app:tint="@color/black" />
+
+    <com.numplates.nomera3.modules.maps.ui.events.EventsInfoView
+        android:id="@+id/eiv_events_onboarding_about_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_map_events_onboarding_types"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/map_item_event_type_height"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_map_event_type" />
+
+    <TextView
+        android:id="@+id/tv_map_events_onboarding_create"
+        style="@style/MapPopupActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/map_events_onboarding_create" />
+
+</LinearLayout>

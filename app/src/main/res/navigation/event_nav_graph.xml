@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/event_nav_graph"
+    app:startDestination="@id/meeraEventListFragment">
+
+    <fragment
+        android:id="@+id/meeraEventListFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.main.service.MeeraEventListFragment"
+        android:label="MeeraEventListFragment"
+        tools:layout="@layout/meera_fragment_event_list">
+
+        <action
+            android:id="@+id/action_emptyMapFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_emptyMapFragment_to_eventParticipantsListFragment"
+            app:destination="@id/eventParticipantsListFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraEventListFragment_to_meeraEventDetailsFragment"
+            app:destination="@id/meeraPostFragmentV2"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraEventDetailsFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.main.service.MeeraEventDetailsFragment"
+        android:label="MeeraEventDetailsFragment"
+        tools:layout="@layout/meera_fragment_event_details" />
+
+</navigation>

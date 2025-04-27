@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_chat_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:orientation="vertical">
+
+    <!-- Audio message view -->
+    <LinearLayout
+        android:id="@+id/ll_chat_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/ll_message_bubble_container_audio_sender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end">
+
+
+            <LinearLayout
+                android:id="@+id/audio_message_send_bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_chat_bubble_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/chat_message_shape_my"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/reply_container"
+                        layout="@layout/layout_reply_voice_send"/>
+
+                    <include
+                        android:id="@+id/forward_container_send"
+                        layout="@layout/forward_message_container_sender"
+                        android:visibility="visible"
+                        tools:visibility="visible" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="52dp"
+                        android:layout_marginStart="8dp" >
+
+                        <com.numplates.nomera3.presentation.audio.VoiceMessageView
+                            android:id="@+id/voice_message_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="61dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <LinearLayout
+                            android:id="@+id/container_timer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="29dp"
+                            android:layout_marginBottom="6dp"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="1"
+                            app:layout_constraintStart_toEndOf="@+id/voice_message_view">
+
+                            <TextView
+                                android:id="@+id/tv_chat_time"
+                                style="@style/WhiteRegular14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="3dp"
+                                tools:text="11:22"
+                                android:textColor="@color/ui_color_chat_send_grey"/>
+
+                            <ImageView
+                                android:id="@+id/iv_marker_sent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_sent_message"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/iv_marker_delivered"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_delivered_message"
+                                android:visibility="gone"
+                                tools:visibility="visible" />
+
+
+                            <ImageView
+                                android:id="@+id/iv_marker_read"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_read_message"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/iv_expand_collapse_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:visibility="invisible"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_expand_recognized_text_send"
+                            tools:visibility="visible" />
+
+                        <com.meera.core.utils.layouts.ExpandableLayout
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:id="@+id/expand_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="52dp"
+                            android:layout_marginEnd="8dp"
+                            app:el_duration="800"
+                            app:el_expanded="false"
+                            app:el_parallax="0.0">
+
+                            <LinearLayout
+                                android:id="@+id/container_recognized_text_sender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="26dp" >
+
+                                <View
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/ui_white_50"/>
+
+                                <TextView
+                                    android:id="@+id/tv_recognized_text_sender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/White85Regular14"
+                                    android:layout_marginStart="6dp"
+                                    tools:text="Lorem ipsum dolor sit amet fsdgsf gfsdgsf dfgsfdg dgfsg sgfsd dgsfd"/>
+
+                            </LinearLayout>
+
+                        </com.meera.core.utils.layouts.ExpandableLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/resend_tap_container"
+                android:layout_width="42dp"
+                android:layout_height="36dp"
+                android:layout_gravity="end|bottom">
+
+                <ImageView
+                    android:id="@+id/iv_sender_audio_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_send_error"
+                    android:layout_gravity="end|bottom"
+                    android:layout_marginEnd="16dp"
+                    android:visibility="gone"
+                    tools:visibility="gone" />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

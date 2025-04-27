@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        android:src="@drawable/meera_ic_sync_contacts_done"/>
+
+    <TextView
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/people_bloggers_placeholder_text"
+        android:gravity="center_horizontal"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

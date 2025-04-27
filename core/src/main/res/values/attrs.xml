@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="NumberPlateEditView">
+        <attr name="readOnly" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightLinearLayout">
+        <attr name="maxHeight" format="dimension|reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="OriginAspectRatioImageView">
+        <attr name="aspectRatio" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="FaceBarView">
+        <attr name="items_per_screen" format="integer" />
+        <attr name="selectable" format="boolean" />
+        <attr name="spacing" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ScalableImageView">
+        <!-- Scale factor for image enlarging -->
+        <attr name="scale" format="float" />
+        <!-- Coordinates for pivot point used for scaling -->
+        <attr name="scalePivotX" format="fraction" />
+        <attr name="scalePivotY" format="fraction" />
+        <!-- Max scale factor -->
+        <attr name="maxScale" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="NPriceView">
+        <attr name="cardCornerRadius" format="dimension" />
+        <attr name="iconWeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="NumberNew">
+        <attr name="textModelSize" format="dimension" />
+        <attr name="textNameSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="NSelectPhoto">
+        <attr name="srcImage" format="reference" />
+    </declare-styleable>
+
+    <!-- Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels. -->
+    <declare-styleable name="ButtonBarContainerTheme">
+        <attr name="metaButtonBarStyle" format="reference" />
+        <attr name="metaButtonBarButtonStyle" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="VipView">
+        <attr name="size">
+            <enum name="SIZE_100" value="1" />
+            <enum name="SIZE_80" value="2" />
+            <enum name="SIZE_70" value="7" />
+            <enum name="SIZE_60" value="3" />
+            <enum name="SIZE_48" value="6" />
+            <enum name="SIZE_45" value="4" />
+            <enum name="SIZE_41" value="5" />
+            <enum name="SIZE_35" value="8" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="SwitcherVipGold">
+        <attr name="cornerRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="EllipsizedTextView">
+        <attr name="ellipsis" format="string" />
+        <attr name="ellipsisColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="TedBottomPickerImageView">
+        <attr name="foreground" format="reference" />
+        <attr name="fit_mode" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="TedBottomPickerSquareView">
+        <attr name="matchHeightToWidth" format="boolean" />
+        <attr name="matchWidthToHeight" format="boolean" />
+    </declare-styleable>
+
+    <attr name="buttonText" format="string" />
+
+    <declare-styleable name="CustomCheckBox">
+        <attr name="buttonText" />
+        <attr name="textColor" format="color" />
+        <attr name="textColorLink" format="color" />
+        <attr name="boxImage" format="integer" />
+    </declare-styleable>
+
+    <attr name="headerText" format="string" />
+
+    <attr name="hintText" format="string" />
+
+    <declare-styleable name="BaseProfileEditText">
+        <attr name="headerText" />
+        <attr name="hintText" />
+    </declare-styleable>
+
+    <declare-styleable name="TextViewWithArrow">
+        <attr name="headerText" />
+        <attr name="hintText" />
+    </declare-styleable>
+
+
+    <declare-styleable name="BlurLayout">
+        <attr name="blk_downscaleFactor" format="float" />
+        <attr name="blk_blurRadius" format="integer" />
+        <attr name="blk_fps" format="integer" />
+        <attr name="blk_cornerRadius" format="dimension" />
+        <attr name="blk_alpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="DonutProgress">
+        <attr name="donut_progress" format="float"/>
+        <attr name="donut_max" format="integer"/>
+
+        <attr name="donut_unfinished_color" format="color"/>
+        <attr name="donut_finished_color" format="color"/>
+
+        <attr name="donut_finished_stroke_width" format="dimension"/>
+        <attr name="donut_unfinished_stroke_width" format="dimension"/>
+
+        <attr name="donut_text_size" format="dimension"/>
+        <attr name="donut_text_color" format="color"/>
+
+        <attr name="donut_prefix_text" format="string"/>
+        <attr name="donut_suffix_text" format="string"/>
+        <attr name="donut_text" format="string"/>
+
+        <attr name="donut_background_color" format="color"/>
+
+        <attr name="donut_inner_bottom_text" format="string"/>
+        <attr name="donut_inner_bottom_text_size" format="dimension"/>
+        <attr name="donut_inner_bottom_text_color" format="color"/>
+
+        <attr name="donut_circle_starting_degree" format="integer" />
+        <attr name="donut_show_text" format="boolean"/>
+        <attr name="donut_inner_drawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwipyRefreshLayout">
+        <attr name="srl_direction">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CoffeeButtonCustomView">
+        <attr name="coffee_label" format="string" />
+        <attr name="image_resource" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="RangeBar">
+        <attr name="mrb_tickStart" format="float" />
+        <attr name="mrb_tickEnd" format="float" />
+        <attr name="mrb_tickInterval" format="float" />
+        <attr name="mrb_tickHeight" format="dimension" />
+        <attr name="mrb_tickDefaultColor" format="color" />
+        <attr name="mrb_tickColors" format="reference" />
+        <attr name="mrb_tickLabelColor" format="color" />
+        <attr name="mrb_tickLabelSelectedColor" format="color" />
+        <attr name="mrb_tickBottomLabels" format="reference" />
+        <attr name="mrb_tickTopLabels" format="reference" />
+        <attr name="mrb_tickDefaultLabel" format="reference|string" />
+        <attr name="mrb_tickLabelSize" format="dimension" />
+        <attr name="mrb_barWeight" format="dimension" />
+        <attr name="mrb_rangeBarColor" format="reference|color" />
+        <attr name="mrb_minThumbDistance" format="float"/>
+        <attr name="mrb_thumbSize" format="dimension" />
+        <attr name="mrb_thumbBoundaryColor" format="reference|color" />
+        <attr name="mrb_thumbBoundarySize" format="dimension" />
+        <attr name="mrb_thumbColor" format="reference|color" />
+        <attr name="mrb_leftThumbColor" format="reference|color" />
+        <attr name="mrb_rightThumbColor" format="reference|color" />
+        <attr name="mrb_pinTextColor" format="reference|color" />
+        <attr name="mrb_pinColor" format="reference|color" />
+        <attr name="mrb_pinPadding" format="dimension" />
+        <attr name="mrb_pinMinFont" format="dimension" />
+        <attr name="mrb_pinMaxFont" format="dimension" />
+        <attr name="mrb_rangeBarPaddingBottom" format="dimension" />
+        <attr name="mrb_rangeBar" format="boolean" />
+        <attr name="mrb_temporaryPins" format="boolean" />
+        <attr name="mrb_rangeBar_rounded" format="boolean" />
+        <attr name="mrb_connectingLineWeight" format="dimension" />
+        <attr name="mrb_connectingLineColor" format="reference|color" />
+        <attr name="mrb_pinRadius" format="dimension" />
+        <attr name="mrb_connectingLineColors" format="reference" />
+        <attr name="mrb_onlyOnDrag" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="MusicPlayerCell">
+        <attr name="isVip" format="boolean" />
+        <attr name="show_action_button" format="boolean" />
+        <attr name="action_btn_src" format="integer"/>
+        <attr name="need_to_show_apple_music_label" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircularProgressBar">
+        <attr name="cpb_progress" format="integer" />
+        <attr name="cpb_progress_max" format="integer" />
+        <attr name="cpb_indeterminate_mode" format="boolean" />
+        <attr name="cpb_progressbar_color" format="color" />
+        <attr name="cpb_progressbar_color_start" format="color" />
+        <attr name="cpb_progressbar_color_end" format="color" />
+        <attr name="cpb_progressbar_color_direction">
+            <flag name="left_to_right" value="1" />
+            <flag name="right_to_left" value="2" />
+            <flag name="top_to_bottom" value="3" />
+            <flag name="bottom_to_top" value="4" />
+        </attr>
+        <attr name="cpb_background_progressbar_color" format="color" />
+        <attr name="cpb_background_progressbar_color_start" format="color" />
+        <attr name="cpb_background_progressbar_color_end" format="color" />
+        <attr name="cpb_background_progressbar_color_direction">
+            <flag name="left_to_right" value="1" />
+            <flag name="right_to_left" value="2" />
+            <flag name="top_to_bottom" value="3" />
+            <flag name="bottom_to_top" value="4" />
+        </attr>
+        <attr name="cpb_progressbar_width" format="dimension" />
+        <attr name="cpb_background_progressbar_width" format="dimension" />
+        <attr name="cpb_round_border" format="boolean" />
+        <attr name="cpb_start_angle" format="float" />
+        <attr name="cpb_progress_direction">
+            <flag name="to_right" value="1" />
+            <flag name="to_left" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ExpandableLayout">
+        <attr name="el_duration" format="integer" />
+        <attr name="el_expanded" format="boolean" />
+        <attr name="el_parallax" format="float" />
+        <attr name="android:orientation"/>
+    </declare-styleable>
+
+    <declare-styleable name="SlidingUpPanelLayout">
+        <attr name="umanoPanelHeight" format="dimension" />
+        <attr name="umanoShadowHeight" format="dimension" />
+        <attr name="umanoParallaxOffset" format="dimension" />
+        <attr name="umanoFadeColor" format="color" />
+        <attr name="umanoFlingVelocity" format="integer" />
+        <attr name="umanoDragView" format="reference" />
+        <attr name="umanoScrollableView" format="reference" />
+        <attr name="umanoOverlay" format="boolean"/>
+        <attr name="umanoClipPanel" format="boolean"/>
+        <attr name="umanoAnchorPoint" format="float" />
+        <attr name="umanoInitialState" format="enum">
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+            <enum name="anchored" value="2" />
+            <enum name="hidden" value="3" />
+        </attr>
+        <attr name="umanoScrollInterpolator" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ReadMoreScrollLayout">
+        <attr name="rmslExpandedMaxLines" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ReadMoreTextView">
+        <attr name="rmCollapsedMaxLines" format="integer" />
+        <attr name="rmExpandedMaxLines" format="integer" />
+        <attr name="rmReadMoreText" format="string" />
+        <attr name="rmTextSize" format="dimension" />
+        <attr name="rmTextColor" format="reference|color" />
+        <attr name="rmFontFamily" format="string" />
+        <attr name="rmTextStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="rmTypeface" format="integer">
+            <enum name="normal" value="0" />
+            <enum name="sans" value="1" />
+            <enum name="serif" value="2" />
+            <enum name="monospace" value="3" />
+        </attr>
+        <attr name="rmReadMoreTextAppearance" format="reference" />
+    </declare-styleable>
+</resources>

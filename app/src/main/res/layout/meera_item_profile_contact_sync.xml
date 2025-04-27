@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="146dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_radio_cell_default"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_contact_sync"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_recomendation_friends" />
+
+    <TextView
+        android:id="@+id/tv_contact_sync_label"
+        style="@style/UiKit.Body.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="8dp"
+
+        android:gravity="center"
+        android:text="@string/contact_sync_profile_description"
+        android:textColor="@color/uiKitColorForegroundPrimary" />
+
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/tv_contact_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/synchronize"
+        app:buttonHeightMode="buttonText36"
+        app:isDescriptionTextStyle="true" />
+</LinearLayout>

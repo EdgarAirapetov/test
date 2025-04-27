@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/subscribe_top_margin"
+    tools:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_add_friend"
+        android:layout_width="48dp"
+        android:layout_height="@dimen/subscribe_height"
+        android:layout_marginStart="@dimen/material16"
+        android:background="@drawable/background_friends_subscriptions_regular"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_add_friend" />
+
+
+    <LinearLayout
+        android:id="@+id/vg_subscribe"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/subscribe_height"
+        android:layout_marginHorizontal="@dimen/material16"
+        android:background="@drawable/background_white_rounded_default_radius"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/iv_add_friend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_add_friend"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_subscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:gravity="center"
+            android:text="@string/general_subscribe"
+            android:textColor="@color/ui_white"
+            android:textSize="@dimen/textSize16" />
+
+        <ImageView
+            android:id="@+id/iv_subscribe"
+            app:srcCompat="@drawable/downward_arrow"
+            android:layout_marginStart="4dp"
+            app:tint="@color/ui_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

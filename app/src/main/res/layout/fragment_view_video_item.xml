@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_block_touches_moment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <View
+        android:id="@+id/v_status_bar"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:background="@null"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/pv_view_video_player"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shutter_background_color="@color/transparent"
+        app:surface_type="texture_view"
+        app:use_controller="false"
+        tools:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/vg_view_video_skeleton_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_separator"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/vg_view_video_gestures"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/vg_view_video_toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_status_bar">
+
+        <ImageView
+            android:id="@+id/iv_back_toolbar"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:paddingHorizontal="24dp"
+            android:src="@drawable/ic_cross_common"
+            app:tint="@color/ui_white" />
+
+        <ImageView
+            android:id="@+id/iv_view_video_menu"
+            android:layout_width="64dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?actionBarItemBackground"
+            android:paddingVertical="16dp"
+            android:src="@drawable/ic_dots_menu"
+            android:visibility="visible"
+            app:tint="@color/ui_white" />
+
+    </FrameLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/cpi_view_video_loader"
+        style="@style/ViewVideoLoaderCircleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:minHideDelay="@integer/loader_hide_delay"
+        app:showDelay="@integer/loader_show_delay"
+        tools:visibility="visible" />
+
+    <com.numplates.nomera3.modules.feed.ui.view.MeeraPostLoaderView
+        android:id="@+id/plv_video_post_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:plv_maxSize="36dp"
+        app:plv_minSize="36dp"
+        app:plv_percentageHeight="0.3" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_view_video_volume_indicator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/ic_view_video_sound_indicator_background"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_view_video_sound_on"
+        tools:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_view_video_play_indicator"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_view_video_play"
+        tools:visibility="gone" />
+
+    <View
+        android:id="@+id/v_bottom_gradient"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/view_video_gradient_bottom"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/vg_bottom_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/vg_view_video_skeleton_body"
+            layout="@layout/video_item_fragment_shimmer"
+            android:visibility="gone" />
+
+        <com.numplates.nomera3.modules.viewvideo.presentation.view.ViewVideoHeaderView
+            android:id="@+id/vvhv_view_video_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/tv_view_video_expanding_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.meera.core.views.readmore.ReadMoreScrollLayout
+            android:id="@+id/rmsw_view_video_text_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdgeLength="32dp"
+            android:requiresFadingEdge="vertical"
+            app:rmslExpandedMaxLines="13">
+
+            <com.meera.core.views.readmore.ReadMoreTextView
+                android:id="@+id/tv_expandable_text_video"
+                style="@style/WhiteRegular16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:paddingHorizontal="16dp"
+                android:textColorLink="@color/ui_yellow"
+                app:rmCollapsedMaxLines="2"
+                app:rmReadMoreText="@string/more"
+                app:rmReadMoreTextAppearance="@style/GrayRegular16" />
+
+        </com.meera.core.views.readmore.ReadMoreScrollLayout>
+
+        <com.numplates.nomera3.modules.viewvideo.presentation.view.ViewVideoSmallSeekBarView
+            android:id="@+id/dtb_view_video_time_bar_small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-8dp"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="12dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.numplates.nomera3.modules.feed.ui.adapter.ContentActionBar
+            android:id="@+id/cab_view_video_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_view_video_time"
+        style="@style/WhiteSemiBold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/dtb_view_video_time_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="0:08 / 0:52" />
+
+    <com.numplates.nomera3.modules.viewvideo.presentation.view.ViewVideoSeekBarView
+        android:id="@+id/dtb_view_video_time_bar"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="68dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/inc_video_unavailable_layout"
+        layout="@layout/layout_media_unavailable"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

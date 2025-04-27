@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_profile_photo"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:shapeAppearance="@style/ShapeAppearanceOverlay.ImageViewOval"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                style="@style/UiKit.Header.H2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/messengerColorBackgroundSecondary"
+                android:gravity="center"
+                android:text="@string/meera_profile_avatar_post_update" />
+
+            <TextView
+                style="@style/SansProRegular18Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="@string/meera_profile_avatar_post_update_subtitle" />
+
+            <com.meera.uikit.widgets.cell.UiKitCell
+                android:id="@+id/sc_post_everytime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                app:cellTitleValue="@string/meera_profile_avatar_post_everytime"
+                app:cellCityValue=""
+                app:cellRightElement="right_checkbox"/>
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/tv_btn_publish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/image_share"
+                app:buttonHeightMode="buttonText48"
+                app:buttonType="filled"/>
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/tv_btn_no_thanks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/profile_avatar_no_post"
+                app:buttonHeightMode="buttonText48"
+                app:buttonType="transparent"/>
+
+            <androidx.legacy.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+        </LinearLayout>
+</LinearLayout>

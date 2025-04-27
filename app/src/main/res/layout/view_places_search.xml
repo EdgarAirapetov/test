@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp"
+    android:background="@color/ui_white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/v_places_search_input_bg"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="54dp"
+        android:background="@drawable/bg_places_search_input"
+        app:layout_constraintEnd_toStartOf="@id/btn_places_search_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_places_search_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_places_search"
+        app:layout_constraintBottom_toBottomOf="@id/v_places_search_input_bg"
+        app:layout_constraintStart_toStartOf="@id/v_places_search_input_bg"
+        app:layout_constraintTop_toTopOf="@id/v_places_search_input_bg" />
+
+    <EditText
+        android:id="@+id/et_places_search_input"
+        style="@style/BlackRegular16"
+        android:layout_width="@dimen/offset_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:hint="@string/places_search_hint"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/v_places_search_input_bg"
+        app:layout_constraintEnd_toStartOf="@id/iv_places_search_clear"
+        app:layout_constraintStart_toEndOf="@id/iv_places_search_icon"
+        app:layout_constraintTop_toTopOf="@id/v_places_search_input_bg" />
+
+    <ImageView
+        android:id="@+id/iv_places_search_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:src="@drawable/ic_places_search_clear"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/v_places_search_input_bg"
+        app:layout_constraintEnd_toEndOf="@id/v_places_search_input_bg"
+        app:layout_constraintTop_toTopOf="@id/v_places_search_input_bg"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btn_places_search_cancel"
+        style="@style/PlacesSearchCancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:text="@string/places_search_cancel"
+        app:layout_constraintBottom_toBottomOf="@id/v_places_search_input_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_places_search_input_bg" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_places_search_results"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_places_search_input_bg"
+        tools:listitem="@layout/item_place" />
+
+    <ProgressBar
+        android:id="@+id/pb_places_search_progress"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_places_search_input_bg"
+        app:layout_constraintVertical_bias="0.4"
+        tools:src="@drawable/img_places_search_no_results"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_places_search_info_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_places_search_input_bg"
+        app:layout_constraintVertical_bias="0.4"
+        tools:src="@drawable/img_places_search_no_results"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_places_search_info_text"
+        style="@style/GrayA7A5Regular18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_places_search_info_image"
+        tools:text="Нет результатов поиска"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hint_text"
+    style="@style/TooltipText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tooltip_background_add_new_post"
+    android:gravity="start|bottom"
+    android:includeFontPadding="false"
+    android:paddingStart="10dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="8dp"
+    android:text="@string/tooltip_add_new_post"
+    android:textColor="#B3FFFFFF" />

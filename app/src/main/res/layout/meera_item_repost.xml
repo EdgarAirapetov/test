@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical">
+
+        <com.numplates.nomera3.modules.posts.ui.view.MeeraPostHeaderView
+            android:id="@+id/phv_post_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--TODO(BR-19454) topMargin is currently being set in BasePostHolder.setTextMargin(),
+                find a way to handle it in a layout file -->
+        <com.numplates.nomera3.presentation.view.ui.MeeraTextViewWithImages
+            android:id="@+id/tvText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_horizontal_content_general"
+            android:layout_marginEnd="@dimen/margin_horizontal_content_general"
+            android:autoLink="web"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textAppearance="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textColorLink="@color/uiKitColorAccentPrimary"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phv_post_header"
+            tools:text="Разрабатываем новый функционал для приложения."
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/vg_parent_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/margin_vertical_content_general"
+            android:orientation="vertical"
+            android:padding="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvText">
+
+            <!-- re-post content -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/transparent"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_repost_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <com.numplates.nomera3.modules.posts.ui.view.MeeraPostHeaderView
+                        android:id="@+id/phv_parent_post_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.numplates.nomera3.modules.posts.ui.view.CommunityLabelView
+                        android:id="@+id/cl_parent_post_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/phv_parent_post_header"
+                        tools:visibility="visible" />
+
+                    <com.numplates.nomera3.modules.maps.ui.events.EventChipsView
+                        android:id="@+id/ecv_item_post_event_chips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_parent_post_header" />
+
+                    <TextView
+                        android:id="@+id/tv_deleted_parent_post_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="@dimen/margin_vertical_content_short"
+                        android:fontFamily="@font/source_sanspro_regular"
+                        android:lineSpacingExtra="4sp"
+                        android:text="@string/post_deleted"
+                        android:textColor="@color/deleted_parent_post_label_color"
+                        android:textSize="16sp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_parent_post_header"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/image_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_road_media"
+                        app:cardBackgroundColor="@color/transparent"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_parent_post_header">
+
+                        <ImageView
+                            android:id="@+id/ivPicture"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerCrop"
+                            tools:src="@drawable/ic_bmw" />
+
+                        <com.numplates.nomera3.modules.uploadpost.ui.view.MeeraPostTextBackgroundView
+                            android:id="@+id/v_text_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <com.numplates.nomera3.modules.maps.ui.events.EventChipsView
+                        android:id="@+id/ecv_item_post_event_chips_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/image_container"
+                        app:layout_constraintStart_toStartOf="@id/image_container" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/media_container"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_road_media"
+                        app:cardBackgroundColor="@color/transparent"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_container"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_parent_post_header">
+
+                        <com.google.android.exoplayer2.ui.PlayerView
+                            android:id="@+id/video_post_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:alpha="0"
+                            app:resize_mode="zoom"
+                            app:shutter_background_color="@color/colorTransparent"
+                            app:surface_type="texture_view"
+                            app:use_controller="false" />
+
+                        <include
+                            android:id="@+id/sensetive_content_repost"
+                            layout="@layout/meera_sensetive_content_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
+
+                        <include
+                            android:id="@+id/recognized_screenshot_content"
+                            layout="@layout/recognized_screenshot_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            tools:visibility="gone" />
+
+                        <com.numplates.nomera3.modules.feed.ui.view.MeeraPostLoaderView
+                            android:id="@+id/plv_post_loader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:plv_maxSize="36dp"
+                            app:plv_minSize="36dp"
+                            app:plv_percentageHeight="0.3" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_repost_multimedia_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="2dp"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="@id/image_container"
+                        app:layout_constraintTop_toTopOf="@+id/image_container"
+                        app:srcCompat="@drawable/ic_multiple_media_repost"
+                        tools:visibility="visible" />
+
+                    <com.numplates.nomera3.modules.posts.ui.view.VideoDurationView
+                        android:id="@+id/vdv_parent_post_video_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/video_duration_margin"
+                        android:layout_marginBottom="@dimen/video_duration_margin"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/image_container"
+                        app:layout_constraintEnd_toEndOf="@id/image_container" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lav_loader"
+                        style="@style/LavLoader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/media_container"
+                        app:layout_constraintEnd_toEndOf="@id/media_container"
+                        app:layout_constraintStart_toStartOf="@id/media_container"
+                        app:layout_constraintTop_toTopOf="@id/media_container"
+                        app:lottie_renderMode="software" />
+
+                    <com.numplates.nomera3.presentation.view.ui.customView.MusicPlayerCell
+                        android:id="@+id/mpc_media"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/parent_post_bottom_text_container"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/image_container"
+                        app:show_action_button="false" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/barrier_event_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="image_container,ecv_item_post_event_chips" />
+
+                    <TextView
+                        android:id="@+id/tv_event_status"
+                        style="@style/WhiteRegular14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_horizontal_content_short"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/map_events_status_starting"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@+id/parent_post_bottom_text_container"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/barrier_event_status" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/b_music_event"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="tv_event_status,mpc_media" />
+
+                    <LinearLayout
+                        android:id="@+id/parent_post_bottom_text_container"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="@dimen/margin_vertical_content_short"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/b_music_event">
+
+                        <com.numplates.nomera3.presentation.view.ui.MeeraTextViewWithImages
+                            android:id="@+id/tv_item_repost_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:autoLink="web"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:textAppearance="@style/UiKit.Body.Normal"
+                            android:textColor="@color/uiKitColorForegroundPrimary"
+                            android:textColorLink="@color/uiKitColorForegroundLink"
+                            android:textIsSelectable="true"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:text="text dsad dasdsa dasdas dasdas dasdas dsadsa dasdsa dasdas dasd" />
+
+                        <com.numplates.nomera3.presentation.view.ui.MeeraTextViewWithImages
+                            android:id="@+id/tvText_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:autoLink="web"
+                            android:textAppearance="@style/UiKit.Body.Normal"
+                            android:textColor="@color/uiKitColorForegroundPrimary"
+                            android:textColorLink="@color/uiKitColorForegroundLink"
+                            android:textSize="16sp"
+                            tools:text="ngsirugiuersh giuerh isue iusghriueuruergnerignkerggnrtg grtrjrjr"
+                            tools:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tv_show_more_text"
+                            android:textAppearance="@style/UiKit.Body.Normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:gravity="start"
+                            android:text="@string/more"
+                            android:visibility="gone"
+                            tools:visibility="gone" />
+
+                        <com.numplates.nomera3.modules.redesign.fragments.main.map.events.MeeraEventAddressView
+                            android:id="@+id/eav_distance_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="9dp"
+                            android:visibility="gone" />
+
+                        <com.numplates.nomera3.modules.redesign.fragments.main.map.participant.MeeraEventParticipantsView
+                            android:id="@+id/epv_event_participants"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lav_progress"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_rawRes="@raw/reaction_like"
+                        app:lottie_renderMode="software" />
+
+                    <com.numplates.nomera3.presentation.view.widgets.OnlyDoubleClickView
+                        android:id="@+id/odcv_double_click_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/parent_post_bottom_text_container"
+                        app:layout_constraintTop_toTopOf="@+id/media_container" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <com.numplates.nomera3.modules.feed.ui.adapter.MeeraContentActionBar
+            android:id="@+id/post_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vg_parent_content"
+            tools:layout_height="72dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+
+

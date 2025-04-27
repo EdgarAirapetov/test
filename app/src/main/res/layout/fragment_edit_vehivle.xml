@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:background="@color/white_1000">
+
+        <View
+            android:id="@+id/status_bar_edit_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            app:layout_collapseMode="pin"
+            app:titleTextColor="@color/ui_black" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_edit_vehicle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/BlackBold28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="28dp"
+                android:gravity="center_horizontal"
+                android:text="@string/garage_setup_vehicle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/bg_car"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.numplates.nomera3.presentation.view.widgets.numberplateview.NumberPlateEditView
+                    android:id="@+id/npdNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="8dp"
+                    android:nextFocusDown="@id/etMaker"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.numplates.nomera3.presentation.view.widgets.NumberNew
+                    android:id="@+id/npNoNumber"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_width="200dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginEnd="8dp"
+                    app:textNameSize="18sp"
+                    app:textModelSize="@dimen/textSize18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/tvAddPhoto"
+                style="@style/PurpleSemiBold18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center_horizontal"
+                android:text="@string/profile_add_photo" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/btn_rounded_shadow_nomera">
+
+
+                <EditText
+                    android:id="@+id/etMaker"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:saveEnabled="false"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="@dimen/padding20"
+                    android:layout_marginEnd="@dimen/padding20"
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:hint="@string/vehicle_brand_txt"
+                    android:nextFocusDown="@id/etModel"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:maxLength="30"
+                    android:textColorHint="@color/ui_transparent_black" />
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/btn_rounded_shadow_nomera">
+
+                <EditText
+                    android:id="@+id/etModel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="@dimen/padding20"
+                    android:layout_marginEnd="@dimen/padding20"
+                    android:layout_marginBottom="@dimen/padding20"
+                    android:singleLine="true"
+                    android:gravity="center"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:saveEnabled="false"
+                    android:focusable="true"
+                    android:hint="@string/vehicle_model_txt"
+                    android:nextFocusDown="@id/etDescription"
+                    android:padding="8dp"
+                    android:maxLength="30"
+                    android:textColorHint="@color/ui_transparent_black" />
+
+            </FrameLayout>
+
+
+            <EditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="4dp"
+                android:saveEnabled="false"
+                android:background="@null"
+                android:hint="@string/enter_description_txt"
+                android:nextFocusDown="@id/tvSend"
+                android:padding="8dp"
+                android:maxLength="1000"
+                android:inputType="textMultiLine"
+                android:textColorHint="@color/ui_transparent_black" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/material16"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tvSend"
+                    style="@style/WhiteRegular16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/selector_button_vehicle"
+                    android:foreground="@drawable/ripple_background_100"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/general_continue" />
+
+                <ProgressBar
+                    android:id="@+id/pb_edit_vehicle"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/ui_purple"
+                    android:indeterminateTintMode="src_atop"
+                    android:visibility="gone" />
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginEnd="@dimen/padding20"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/material8">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/start_selling" />
+
+                <Switch
+                    android:id="@+id/switch_vehicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_vehicle_params"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/material8"
+                android:clipToPadding="false"
+                android:paddingTop="2dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

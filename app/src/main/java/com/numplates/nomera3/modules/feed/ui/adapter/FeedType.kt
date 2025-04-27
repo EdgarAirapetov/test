@@ -1,0 +1,44 @@
+package com.numplates.nomera3.modules.feed.ui.adapter
+
+enum class FeedType(val viewType: Int) {
+
+    IMAGE_POST(0),
+    IMAGE_POST_VIP(1),
+
+    VIDEO_POST(2),
+    VIDEO_POST_VIP(3),
+
+    REPOST(4),
+    REPOST_VIP(5),
+
+    VIDEO_REPOST(6),
+    VIDEO_REPOST_VIP(7),
+
+    RATE_US(8),
+
+    PROGRESS(9),
+
+    CREATE_POST(10),
+
+    ANNOUNCEMENT(11),
+
+    EMPTY_PLACEHOLDER(12),
+
+    SHIMMER_PLACEHOLDER(13),
+
+    MOMENTS(14),
+
+    SHIMMER_MOMENTS_PLACEHOLDER(15),
+
+    SYNC_CONTACTS(16),
+
+    REFERRAL(17),
+
+    SUGGESTIONS(18),
+
+    POSTS_VIEWED_PROFILE(19),
+    POSTS_VIEWED_PROFILE_VIP(20),
+    POSTS_VIEWED_ROAD(21),
+
+    MULTIMEDIA_POST(22)
+}

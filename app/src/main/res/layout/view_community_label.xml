@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/communityPostContainer"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:gravity="center|start"
+    android:orientation="horizontal"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/tv_community_post_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:text="@string/community_post_text"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/tv_community_post_group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundLink"
+        android:textStyle="normal"
+        tools:text="BMW - жизнь на скорости" />
+
+</LinearLayout>

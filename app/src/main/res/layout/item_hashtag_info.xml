@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/cl_hashtag_info_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_1000"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_hashtag_avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_hashtag_avatar" />
+
+    <TextView
+        android:id="@+id/tv_title_hashtag_filtered_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/hashtag_filtered_posts_title"
+        android:textColor="@color/black_1000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_posts_with_hashtag"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_hashtag_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_hashtag_avatar" />
+
+    <TextView
+        android:id="@+id/tv_posts_with_hashtag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/GrayRegular16"
+        android:textColor="#A7A5B1"
+        app:layout_constraintBottom_toBottomOf="@id/iv_hashtag_avatar"
+        app:layout_constraintEnd_toEndOf="@id/tv_title_hashtag_filtered_list"
+        app:layout_constraintStart_toStartOf="@id/tv_title_hashtag_filtered_list"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_hashtag_filtered_list"
+        tools:text="всего постов: 3,4 тыс." />
+
+    <View
+        android:id="@+id/view_hashtag_toolbar_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_separator"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

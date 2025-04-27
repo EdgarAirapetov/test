@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_vip"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_black"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_bottom_sheet"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_survey_bottom_menu_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding20"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:text="@string/who_can_comment"
+            android:textColor="@color/black_1000"
+            android:textSize="@dimen/textSize18" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/fl_all_container"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/stroke_white_round_corners">
+
+                <TextView
+                    android:id="@+id/tv_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="center"
+                    android:text="@string/settings_everybody"
+                    android:textColor="@color/ui_gray"
+                    android:textSize="@dimen/textSize16" />
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/fl_friends_container"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="@dimen/padding20"
+                android:layout_weight="1"
+                android:background="@drawable/stroke_white_round_corners">
+
+                <TextView
+                    android:id="@+id/tv_friends_only"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="center"
+                    android:text="@string/settings_friends"
+                    android:textColor="@color/ui_gray"
+                    android:textSize="@dimen/textSize16" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_no_one_container"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginStart="@dimen/padding20"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="@dimen/padding20"
+            android:layout_marginBottom="22dp"
+            android:background="@drawable/stroke_white_round_corners">
+
+            <TextView
+                android:id="@+id/tv_no_one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:gravity="center"
+                android:text="@string/settings_nobody"
+                android:textColor="@color/ui_gray"
+                android:textSize="@dimen/textSize16" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_white">
+
+    <View
+        android:id="@+id/v_top_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_communication_header"
+        style="@style/BlackSemibold16"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/private_setting_communication"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_top_divider"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <include
+        android:id="@+id/vg_personal_messages"
+        layout="@layout/item_type_settings_communication_perssonal_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_communication_header" />
+
+    <include
+        android:id="@+id/vg_online"
+        layout="@layout/item_type_settings_communication_online"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_calls" />
+
+    <include
+        android:id="@+id/vg_calls"
+        layout="@layout/item_type_settings_communication_calls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_personal_messages" />
+
+    <include
+        android:id="@+id/vg_sync_contacts"
+        layout="@layout/item_type_settings_communication_sync_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_online" />
+
+    <include
+        android:id="@+id/vg_share_screenshot"
+        layout="@layout/item_type_settings_communication_share_screenshot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_sync_contacts" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:background="@color/colorBackgroundLightPurple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_share_screenshot"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottomsheet_header">
+
+    <View
+        android:id="@+id/v_registration_country_list_grabber"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/grabber_background_tertiary_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_country_code"
+        style="@style/UiKit.Header.H3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/meera_country_code"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_registration_country_list_grabber" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_registration_countries_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_outlined_close_m"
+        android:tint="@color/uiKitColorForegroundPrimary"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.UiKitInputSearch
+        android:id="@+id/is_registration_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_country_code"
+        app:searchHint="@string/meera_country_name" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_available_country_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/v_divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/is_registration_country"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/v_divider"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/above_shadow"
+        app:layout_constraintBottom_toTopOf="@id/tv_country_not_found"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_country_not_found"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/country_not_found_text"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_write_to_us"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:background="?selectableItemBackground"
+        android:text="@string/write_to_us"
+        android:textColor="@color/uiKitColorForegroundLink"
+        app:layout_constraintBottom_toBottomOf="@id/tv_country_not_found"
+        app:layout_constraintStart_toEndOf="@id/tv_country_not_found"
+        app:layout_constraintTop_toTopOf="@id/tv_country_not_found" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/v_item"
+    android:layout_width="45dp"
+    android:layout_height="2dp"
+    android:layout_marginHorizontal="2dp"
+    android:background="@drawable/rect_rad_4dp"
+    android:backgroundTint="@color/color_avatar_counter"
+    android:maxWidth="45dp"
+    android:minWidth="2dp" />

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="310dp"
+    android:layout_height="160dp"
+    android:layout_marginStart="20dp"
+    android:paddingEnd="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="30dp">
+
+    <LinearLayout
+        android:id="@+id/content_map_feed"
+        android:layout_width="310dp"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:foreground="@drawable/ripple_rounded_square_10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_card_avatar_container"
+            android:layout_width="124dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivPicture"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/fill_8" />
+
+            <View
+                android:id="@+id/premium_gradient"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:background="@drawable/premium_gradient_red" />
+
+            <ImageView
+                android:id="@+id/iv_crown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/crown_cropped"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCarMaker"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/circle_white_bg"
+                android:padding="4dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/iv_vehicle_number"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:src="@drawable/ic_honda"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/ivPremium"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="4dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/iv_vehicle_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@drawable/crown" />
+
+
+            <ImageView
+                android:id="@+id/iv_vehicle_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:adjustViewBounds="true"
+                android:maxHeight="40dp"
+                android:scaleType="fitStart"
+                app:layout_constraintBottom_toTopOf="@+id/nv_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.numplates.nomera3.presentation.view.widgets.numberplateview.NumberPlateEditView
+                android:id="@+id/nv_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:readOnly="true"
+                tools:background="@drawable/number_ua_auto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/userInfoContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start|top"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/source_sanspro_bold"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Марина" />
+
+                <TextView
+                    android:id="@+id/uniqueNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#80000000"
+                    android:textSize="14sp"
+                    tools:text="\@koshechka"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#99000000"
+                    android:textSize="14sp"
+                    tools:text="25, Москва" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivType"
+                android:layout_width="150dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="10dp"
+                android:scaleType="fitEnd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:src="@drawable/img_motorbike" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/color_separator"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/userInfoContainer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

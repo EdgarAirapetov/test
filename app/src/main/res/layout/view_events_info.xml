@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/map_events_about_height"
+    android:orientation="vertical">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/anim_events_onboarding"
+        app:lottie_renderMode="hardware" />
+
+    <TextView
+        style="@style/BlackSemibold22"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="start"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_events_info_title" />
+
+    <TextView
+        style="@style/BlackRegular16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:lineSpacingExtra="2sp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_events_info_message" />
+
+    <LinearLayout
+        style="@style/MapOnboardingBulletContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/MapOnboardingBullet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_map_events_info_available_count"
+            style="@style/MapOnboardingMessageBullet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_info_bullet_1_total" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/MapOnboardingBulletContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/MapOnboardingBullet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            style="@style/MapOnboardingMessageBullet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_info_bullet_2" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/MapOnboardingBulletContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/MapOnboardingBullet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_map_events_info_rules"
+            style="@style/MapOnboardingMessageBullet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_info_bullet_3" />
+
+    </LinearLayout>
+</LinearLayout>

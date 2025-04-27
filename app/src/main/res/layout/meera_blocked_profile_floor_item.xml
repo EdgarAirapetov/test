@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+    android:id="@+id/closed_profile_label"
+    style="@style/UiKit.Body.Normal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="64dp"
+    android:layout_marginHorizontal="16dp"
+    android:gravity="center"
+    android:text="@string/meera_profile_is_blocked"
+    android:visibility="visible" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/v_unblock_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="84dp"
+        android:text="@string/general_unblock"/>
+
+    <androidx.legacy.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="46dp" />
+</LinearLayout>

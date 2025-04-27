@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/road_filter_root_container_bg">
+
+    <LinearLayout
+        android:id="@+id/road_filter_root_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="@dimen/material16"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/reset_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|start"
+                android:background="@drawable/ripple_rounded_square_8dp"
+                android:fontFamily="@font/source_sanspro_semibold"
+                android:includeFontPadding="false"
+                android:paddingStart="6dp"
+                android:paddingEnd="6dp"
+                android:text="@string/road_filter_reset_button_text"
+                android:textColor="@color/active_reset_road_filter"
+                android:textSize="16sp" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/road_filter_header_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33000000"
+            android:visibility="gone" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/road_filter_params_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp"
+            android:scrollbars="none"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/country_filter_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sanspro_semibold"
+                    android:includeFontPadding="false"
+                    android:text="@string/road_filter_contry_filter_label"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/country_filter_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="32dp"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/road_filter_country_filter_desc"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/country_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    app:alignContent="flex_start"
+                    app:flexDirection="row"
+                    app:flexWrap="wrap"
+                    app:justifyContent="flex_start" />
+
+                <View
+                    android:id="@+id/road_filter_part_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#33000000" />
+
+                <TextView
+                    android:id="@+id/city_filter_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/source_sanspro_semibold"
+                    android:includeFontPadding="false"
+                    android:text="@string/city_filter_label_text"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/city_filter_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:includeFontPadding="false"
+                    android:text="@string/road_filter_city_filter_desc"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/city_search_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/city_search_container_bg"
+                    android:foreground="@drawable/ripple_rounded_square_8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="UnusedAttribute">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="9dp"
+                        android:background="@drawable/road_filter_city_search_icon_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sanspro_regular"
+                        android:includeFontPadding="false"
+                        android:text="@string/road_filter_city_search_hint"
+                        android:textColor="#A7A5B1"
+                        android:textColorHint="#A7A5B1"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/city_filter_label" />
+
+                </LinearLayout>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/selected_cities_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
+                    app:chipSpacing="0dp"
+                    app:chipSpacingHorizontal="4dp"
+                    app:chipSpacingVertical="0dp"
+                    app:singleLine="false" />
+
+                <!-- Этаж пол / возраст -->
+                <LinearLayout
+                    android:id="@+id/filter_user_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <View
+                        android:id="@+id/v_gender_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#33000000" />
+
+                    <TextView
+                        android:id="@+id/gender_filter_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/source_sanspro_semibold"
+                        android:includeFontPadding="false"
+                        android:text="@string/user_personal_info_gender_label"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:id="@+id/gender_button_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/btn_gender_any"
+                            style="@style/WhiteRegular16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/road_filter_country_item_bg"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/general_any"
+                            android:textColor="@drawable/selector_road_filter_text" />
+
+                        <TextView
+                            android:id="@+id/btn_gender_male"
+                            style="@style/GrayRegular16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/road_filter_country_item_bg"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/profile_male"
+                            android:textColor="@drawable/selector_road_filter_text" />
+
+                        <TextView
+                            android:id="@+id/btn_gender_female"
+                            style="@style/GrayRegular16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/road_filter_country_item_bg"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:paddingStart="8dp"
+                            android:paddingTop="6dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="7dp"
+                            android:text="@string/profile_female"
+                            android:textColor="@drawable/selector_road_filter_text" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/v_age_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:background="#33000000" />
+
+                    <TextView
+                        android:id="@+id/age_filter_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:fontFamily="@font/source_sanspro_semibold"
+                        android:includeFontPadding="false"
+                        android:text="@string/general_age"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp">
+
+                        <com.meera.core.views.rangeslider.NRangeBar
+                            android:id="@+id/range_bar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            app:mrb_barWeight="2dp"
+                            app:mrb_connectingLineColor="#A37DEE"
+                            app:mrb_pinColor="#fff"
+                            app:mrb_pinTextColor="#A7A5B1"
+                            app:mrb_rangeBarColor="#EEEEEF"
+                            app:mrb_temporaryPins="false"
+                            app:mrb_thumbColor="#A37DEE"
+                            app:mrb_thumbSize="10dp"
+                            app:mrb_tickEnd="80"
+                            app:mrb_tickHeight="0dp"
+                            app:mrb_tickStart="18" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_btn_apply_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/gradient_purple_button_ripple"
+                        android:gravity="center">
+
+                        <TextView
+                            style="@style/WhiteRegular16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/general_show" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/road_filter_bottom_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#33000000"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sort_filter_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/ui_white_100"
+        android:elevation="1dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/sort_filter_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:includeFontPadding="false"
+            android:text="@string/road_filter_sort_label_text"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/sort_filter_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:includeFontPadding="false"
+            android:text="@string/road_filter_sort_desc"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/sort_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn_sort_recommended"
+                style="@style/WhiteRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:background="@drawable/road_filter_country_item_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingStart="8dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="7dp"
+                android:text="@string/road_filter_sort_recommended"
+                android:textColor="@drawable/selector_road_filter_text" />
+
+            <TextView
+                android:id="@+id/btn_sort_new"
+                style="@style/GrayRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/road_filter_country_item_bg"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingStart="8dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="7dp"
+                android:text="@string/road_filter_sort_new"
+                android:textColor="@drawable/selector_road_filter_text" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

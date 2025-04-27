@@ -1,0 +1,92 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="false">
+
+    <TextView
+        style="@style/UiKit.Header.Subtitle"
+        android:id="@+id/tv_personal_info_input_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        tools:text="Страна"
+        android:textColor="@color/uiKitColorForegroundSecondary" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        style="@style/UiKit.Body.Normal"
+        android:id="@+id/personal_info_select_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_personal_info_input_header"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellRightIconSrc="@drawable/ic_arrow_right"
+        app:cellRightElementColor="@color/uiKitColorForegroundSecondary"
+        app:cellRightElement="right_icon"
+        app:cellLeftElement="left_icon"
+        tools:cellTitleValue="Россия"
+        android:backgroundTint="@color/uiKitColorBackgroundSecondary" >
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_country_flag_container"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            tools:src="@drawable/country_ru_darker"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_country_flag"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/country_ru_darker" />
+        </androidx.cardview.widget.CardView>
+    </com.meera.uikit.widgets.cell.UiKitCell>
+    <LinearLayout
+        android:id="@+id/vg_error_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/personal_info_select_item"
+        tools:visibility="visible"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_outlined_attention_s"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            app:tint="@color/ui_pink" />
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/ui_pink"
+            tools:text="Обязательное поле" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

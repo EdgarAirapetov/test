@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:selectableItemBackground"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginEnd="@dimen/padding20"
+        android:orientation="horizontal">
+
+        <!--    name + unique name + age + location container   -->
+        <LinearLayout
+            android:id="@+id/short_info_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="22dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vipView"
+            app:layout_constraintTop_toTopOf="@+id/vipView">
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/BlackBold18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                tools:text="Name" />
+
+            <TextView
+                android:id="@+id/uniqueNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#80000000"
+                android:textSize="16sp"
+                tools:text="\@koshechka"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvBirthLocation"
+                style="@style/BlackRegular16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                tools:text="18, City" />
+
+        </LinearLayout>
+
+        <com.numplates.nomera3.presentation.view.widgets.VipView
+            android:id="@+id/vipView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:size="SIZE_80" />
+
+        <LinearLayout
+            android:id="@+id/ll_number_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/material8"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/short_info_container"
+            app:layout_constraintTop_toBottomOf="@+id/short_info_container">
+
+            <com.numplates.nomera3.presentation.view.widgets.numberplateview.NumberPlateEditView
+                android:id="@+id/nv_number_plate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:readOnly="true"
+                tools:background="@drawable/number_ua_auto"
+                tools:height="10dp" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_logo_container"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/ll_number_container"
+            app:layout_constraintEnd_toEndOf="@+id/ll_number_container"
+            app:layout_constraintStart_toEndOf="@+id/ll_number_container"
+            app:layout_constraintTop_toTopOf="@+id/ll_number_container">
+
+            <ImageView
+                android:id="@+id/iv_logo_brand"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:padding="3dp"
+                android:src="@drawable/ic_bmw" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding20"
+        android:layout_marginEnd="@dimen/padding20"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/drawable_divider_decoration_gray" />
+
+</LinearLayout>

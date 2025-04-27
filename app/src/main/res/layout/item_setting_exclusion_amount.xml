@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/ui_white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/status_bar_semi_transparent" />
+
+    <TextView
+        android:id="@+id/tv_exclusion_users_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BlackSemibold16"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="@dimen/material16"
+        tools:text="0 Exclusions"/>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.numplates.nomera3.presentation.view.widgets.MutualFriendsView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_mutual_friends"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/material16"
+    android:layout_marginTop="2dp"
+    android:layout_marginEnd="@dimen/material16"
+    android:layout_marginBottom="2dp"
+    app:iconHeight="33dp"
+    app:iconWidth="33dp" />

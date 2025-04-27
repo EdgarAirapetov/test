@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:clickable="false"
+    android:id="@id/root"
+    android:focusable="false"
+    android:paddingStart="12dp">
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/vv_map_friend_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_width="64dp"
+        android:focusable="false"
+        android:clickable="true"
+        tools:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:size="SIZE_70" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="start|center"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="false"
+        android:id="@+id/ll_container"
+        app:layout_constraintBottom_toBottomOf="@+id/vv_map_friend_avatar"
+        app:layout_constraintEnd_toStartOf="@+id/iv_message"
+        app:layout_constraintStart_toEndOf="@+id/vv_map_friend_avatar"
+        app:layout_constraintTop_toTopOf="@+id/vv_map_friend_avatar">
+
+        <TextView
+            android:id="@+id/tv_item_map_friend_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:focusable="false"
+            android:clickable="false"
+            android:textAppearance="@style/BlackRegular16"
+            android:textColor="@color/color_soft_black"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="Nastasikffdsfdsffdsfsdfsfdkldkl" />
+
+        <TextView
+            android:id="@+id/tv_item_map_friend_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:textAppearance="@style/GrayRegular14"
+            android:textColor="@color/colorGray9298A0"
+            tools:text="@string/map_events_type_education" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_message"
+        android:layout_width="56dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        app:tint="@color/ui_gray_80"
+        android:background="?actionBarItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_repost_chat"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

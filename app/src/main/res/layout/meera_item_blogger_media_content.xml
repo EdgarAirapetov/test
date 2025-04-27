@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_blogger_video_root"
+    android:layout_width="146dp"
+    android:layout_height="225dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/vg_media_content_shimmer"
+        android:background="@drawable/meera_blogger_media_content_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/iv_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/pv_video_blogger_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        app:resize_mode="zoom"
+        app:shutter_background_color="@color/colorTransparent"
+        app:surface_type="texture_view"
+        app:use_controller="false" />
+
+    <com.meera.uikit.widgets.chips.UiKitChipView
+        android:id="@+id/cv_media_content_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="8dp"
+        app:chipType="dark_gray"
+        app:chip_size="size_24"
+        tools:text="3:23" />
+
+</androidx.cardview.widget.CardView>

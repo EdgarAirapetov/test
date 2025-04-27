@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_white"
+    android:orientation="vertical"
+    >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="@color/ui_gray_background"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/BlackSemibold16"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/moments_settings_comments_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <FrameLayout
+        android:id="@+id/moment_settings_allow_comment_container"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?android:selectableItemBackground"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/BlackRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/material16"
+            android:text="@string/moment_settings_allow_comments"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/moment_settings_allow_comment_type"
+            style="@style/PurpleRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="44dp"
+            android:text="@string/mini_map_visibility_everyone"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/ic_arrow_more"
+            />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray"
+        />
+
+</LinearLayout>

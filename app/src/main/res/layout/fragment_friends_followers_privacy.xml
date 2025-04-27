@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vg_friends_followers_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/material24"
+        app:layout_constraintBottom_toTopOf="@+id/tv_btn_ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+        android:id="@+id/spi_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_friends_followers_pager"
+        app:spi_dotColor="@color/gray_background_button"
+        app:spi_dotSelectedColor="@color/ui_purple"
+        app:spi_dotSelectedSize="@dimen/material8"
+        app:spi_dotSize="@dimen/material8" />
+
+    <TextView
+        android:id="@+id/tv_btn_ok"
+        style="@style/WhiteRegular16"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="@dimen/offset_16dp"
+        android:background="@drawable/button_selector_ui_purple"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="UnusedAttribute" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

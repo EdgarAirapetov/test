@@ -1,0 +1,9 @@
+package com.numplates.nomera3.modules.chat.toolbar.ui.utils
+
+const val ONLINE_STATUS_DURATION_MS = 450L
+const val AVATAR_GLIDE_TRANSITIONS_DURATION_MS = 200
+const val MENU_ANIMATE_DURATION_MS = 150L
+const val MENU_ANIMATE_HEIGHT = 58
+const val MENU_OPEN_ANIMATE_ROTATION_ANGLE = 90f
+const val MENU_CLOSE_ANIMATE_ROTATION_ANGLE = 270f
+const val MIN_MENU_HEIGHT = 10

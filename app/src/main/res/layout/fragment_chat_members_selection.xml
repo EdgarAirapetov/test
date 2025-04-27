@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="false">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/vg_appbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingHorizontal="@dimen/material16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000"
+        app:elevation="@dimen/offset_0dp">
+
+        <View
+            android:id="@+id/status_bar_friend_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:paddingVertical="@dimen/padding10">
+
+            <ImageView
+                android:id="@+id/btn_go_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?actionBarItemBackground"
+                android:padding="4dp"
+                android:src="@drawable/ic_arrow_back_new"/>
+
+            <TextView
+                android:id="@+id/tv_new_chat_screen_title"
+                android:gravity="center"
+                style="@style/SansProSemibold18Black"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="@string/members_selection" />
+
+            <TextView
+                android:id="@+id/tv_next_step"
+                android:text="@string/next"
+                style="@style/SansProSemibold18Gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end" />
+        </FrameLayout>
+
+        <com.numplates.nomera3.presentation.view.widgets.SearchBarView
+            android:id="@+id/sbv_members_filter"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/separator"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@drawable/drawable_friend_list_divider_decoration"
+        app:layout_constraintTop_toBottomOf="@+id/vg_appbar"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_friend_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <include
+        android:id="@+id/vg_placeholder_container"
+        layout="@layout/placeholder_image_message_action"
+        app:layout_constraintTop_toBottomOf="@id/vg_appbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

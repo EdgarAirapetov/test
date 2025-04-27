@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="?android:selectableItemBackground"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/common_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        >
+
+        <FrameLayout
+            android:id="@+id/notification_avatar_container"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:id="@+id/communityNotificationIcon"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:visibility="invisible"
+                    android:layout_gravity="center"/>
+
+                <com.numplates.nomera3.presentation.view.widgets.VipView
+                    android:id="@+id/notification_user_avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:size="SIZE_45" />
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/notification_type_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/ic_notification_type_gift"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tap_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/common_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/notification_avatar_container"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_notification_title"
+                        style="@style/BlackSemibold18"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        tools:text="User name: Syami silni, Kagesjk jgdsjgds , jagsasafs, jagsjasfa jsasgayg"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_notification_time"
+                            style="@style/GrayRegular14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            tools:text="7 дней назад"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_title_and_others"
+                            style="@style/BlackRegular18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="16dp"
+                            tools:text="и другие"
+                            android:visibility="gone"
+                            tools:visibility="visible"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_subtitle_black"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/BlackRegular16"
+                    android:layout_marginEnd="16dp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    tools:text="Subtitle black dsds dsdsdsds fsfdfdf dfdsfgf4r erfef fefef dcas"/>
+
+
+                <com.numplates.nomera3.presentation.view.ui.TextViewWithReactions
+                    android:id="@+id/tv_notification_subtitle"
+                    style="@style/GrayRegular16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Subtitle"
+                    />
+
+                <!-- Notifications Extras -->
+
+                <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+                    android:id="@+id/tv_notification_description"
+                    style="@style/BlackRegular16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="Description"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_music_info"
+                    style="@style/BlackRegular16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:drawableStartCompat="@drawable/ic_music_icon"
+                    tools:text="Dead blonde - Мальчик на девятке"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/notification_image_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/notification_image_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_btn_notification_action"
+                    style="@style/PurpleSemiBold16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/background_start_buisness_btn_checked"
+                    android:paddingStart="16dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/start_chat"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_right_image_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/background_image_carousel"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_notification_image_right"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/app_rating"
+                        tools:visibility="visible"
+                        />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_video_notif"
+                        android:layout_width="0dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="bottom"
+                        android:background="#73000000"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:visibility="visible"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_video_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/source_sanspro_semibold"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="0:52"
+                            />
+
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/ic_video"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_delete_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ec4d36"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="31dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:text="@string/general_delete"
+            android:textColor="@color/white_1000"
+            android:textSize="18sp"
+            />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/bottom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="18dp"
+        android:src="@drawable/drawable_divider_decoration_gray"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+</FrameLayout>

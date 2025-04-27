@@ -1,0 +1,31 @@
+#https://support.phrase.com/hc/ru/articles/5784093863964-Установка-CLI-Strings-
+#https://support.phrase.com/hc/en-us/articles/5808300599068 = DOC
+# Скачать строки командой в консоли - phrase pull
+
+phrase:
+  access_token: 099e36b009e3a6d0938896769b953ee2478657f5fcd62fe2f0d15fef33184b99
+  project_id: 68523ff4cecdbed6c8afd167b7cb6e23
+#  push:
+#    sources:
+#    - file: ./values-ru/strings.xml
+#      params:
+#        file_format: xml
+  pull:
+    targets:
+    - file: "./app/src/main/res/values-en/strings.xml"
+      params:
+        file_format: xml
+        locale_id: ru
+#        locale_id: en
+    - file: "./app/src/main/res/values-ru/strings.xml"
+      params:
+        file_format: xml
+        locale_id: ru
+    - file: "./app/src/main/res/values/strings.xml"
+      params:
+        file_format: xml
+        locale_id: ru
+#        locale_id: en
+
+
+

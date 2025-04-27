@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/llPosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/material16"
+        android:layout_marginEnd="@dimen/material16"
+        android:foreground="@drawable/ripple_background_100"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/profile_title_posts"
+            style="@style/BlackSemibold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="8dp"
+            android:text="@string/profile_posts"
+            />
+
+        <TextView
+            android:id="@+id/tvPostAmount"
+            style="@style/GrayRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+            android:text="0"
+            android:textColor="@color/ui_black_50"
+            tools:text="12"
+            />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/add_group_post"
+        layout="@layout/layout_new_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llPosts"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_empty_road"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="37dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/llPosts"
+        app:layout_constraintStart_toStartOf="@+id/llPosts"
+        app:layout_constraintTop_toBottomOf="@+id/add_group_post"
+        >
+
+        <ImageView
+            android:id="@+id/iv_road_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/road_empty"
+            />
+
+        <TextView
+            android:id="@+id/tv_road_placeholder"
+            style="@style/GrayRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material8"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/place_holder_user_post_list"
+            />
+
+        <TextView
+            android:id="@+id/tv_write_post_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:text="@string/create_post"
+            android:textColor="@color/ui_purple"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

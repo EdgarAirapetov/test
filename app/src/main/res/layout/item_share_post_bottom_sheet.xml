@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp">
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/vipview_share_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:foreground="?selectableItemBackgroundBorderless"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:size="SIZE_48" />
+
+    <TextView
+        android:id="@+id/tv_share_post_name"
+        style="@style/BlackBold16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/tv_share_post_age"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/vipview_share_post"
+        app:layout_constraintTop_toTopOf="@+id/vipview_share_post"
+        tools:text="Treq qwe, 21" />
+
+    <TextView
+        android:id="@+id/tv_share_post_age"
+        style="@style/BlackSemibold18"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_marginEnd="@dimen/padding20"
+        android:text=", 21"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_share_post_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_share_post_name" />
+
+
+    <TextView
+        android:id="@+id/tv_share_type"
+        style="@style/GrayRegular12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_repost_1"
+        android:drawablePadding="4dp"
+        android:text="@string/post"
+        app:layout_constraintStart_toStartOf="@+id/tv_share_post_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share_post_name" />
+
+    <com.numplates.nomera3.modules.maps.ui.events.EventChipsView
+        android:id="@+id/ecv_share_post_event_chips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_share_post_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share_type" />
+
+    <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+        android:id="@+id/tv_share_post_title"
+        style="@style/BlackSemibold14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_share_post_name"
+        app:layout_constraintTop_toBottomOf="@+id/ecv_share_post_event_chips"
+        app:layout_goneMarginTop="0dp"
+        tools:text="123 qwe qwe 123 qwe qwe 123 qwe qwe 123 qwe qwe 123 qwe qwe123 qwe qwe"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_goneMarginTop="0dp"
+        app:layout_constraintStart_toStartOf="@+id/tv_share_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share_post_title">
+
+        <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+            android:id="@+id/tv_share_post_text"
+            style="@style/Black85Regular14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="10"
+            app:layout_constraintBottom_toBottomOf="@+id/mcv_share_post_image"
+            app:layout_constraintEnd_toStartOf="@+id/mcv_share_post_image"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/tv_share_post_name"
+            app:layout_constraintTop_toTopOf="@+id/mcv_share_post_image"
+            app:layout_constraintVertical_bias="0"
+            tools:text="123 qwe qwe \nqwe qwe qwe qwe qwe \nqwe qwe \nqwe"
+            tools:visibility="visible" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcv_share_post_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tv_share_post_text"
+            app:layout_constraintTop_toBottomOf="@+id/tv_share_type">
+
+            <FrameLayout
+                android:layout_width="83dp"
+                android:layout_height="83dp">
+
+                <ImageView
+                    android:id="@+id/iv_share_post_image"
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    android:scaleType="centerCrop" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:layout_gravity="bottom"
+                    android:background="#73000000"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_video_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:fontFamily="@font/source_sanspro_semibold"
+                        android:text="0:52"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="8sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_video"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".modules.redesign.MeeraAct">
+
+    <View
+        android:id="@+id/status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar_layout"
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.meera.uikit.widgets.nav.UiKitToolbarView
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:meeraBackground="@color/uiKitColorBackgroundPrimary" />
+
+            <View
+                android:id="@+id/v_map_events_toolbar_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:visibility="gone"
+                android:background="@color/uiKitColorBackgroundFadeGrey" />
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="1dp">
+
+        <FrameLayout
+            android:id="@+id/fragment_map_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:layout_width="match_parent"
+                android:id="@+id/fragment_map"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:name="com.numplates.nomera3.modules.redesign.fragments.main.map.MainMapFragment"
+                android:layout_height="match_parent"/>
+<!--             Для примера карты-->
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_first_container_view"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        style="?attr/bottomSheetStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="2dp"
+        android:outlineProvider="none"
+        app:defaultNavHost="true"
+        android:background="@color/transparent"
+        app:layout_behavior="@string/bottom_sheet_behavior" />
+
+    <!-- Временный цвет-->
+    <com.numplates.nomera3.modules.chat.views.SupportDimView
+        android:id="@+id/alpha_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80807C7C"
+        android:elevation="8dp"
+        android:outlineProvider="none"
+        android:visibility="gone" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_second_container_view"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        style="?attr/bottomSheetStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:outlineProvider="none"
+        android:visibility="gone"
+        app:defaultNavHost="true"
+        android:background="@color/uiKitColorBackgroundPrimary"
+        app:layout_behavior="@string/bottom_sheet_behavior" />
+
+    <com.meera.uikit.widgets.navigation.UiKitNavigationBarView
+        android:id="@+id/nav_bar_ui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="3dp"
+        android:visibility="visible" />
+
+<!--    <com.meera.uikit.widgets.navigation.PrivateUiKitNavigationBarView-->
+<!--        android:id="@+id/nav_bar_ui_private"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal|bottom"-->
+<!--        android:layout_marginBottom="8dp"-->
+<!--        android:elevation="3dp"-->
+<!--        android:visibility="visible" />-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

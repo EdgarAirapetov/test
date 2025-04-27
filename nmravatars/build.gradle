@@ -1,0 +1,67 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    namespace 'com.noomeera.nmravatarssdk'
+}
+
+dependencies {
+    implementation(
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+        "androidx.fragment:fragment-ktx:$fragment_ktx_version",
+        "androidx.core:core-ktx:$android_core_ctx",
+        "com.google.android.material:material:$material_version",
+        "com.google.code.gson:gson:$gson_version",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version",
+        // UI
+        "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
+        "androidx.appcompat:appcompat:$appcompat_version",
+        "com.caverock:androidsvg-aar:$androidsvg_version",
+    )
+
+    testImplementation("junit:junit:$junit_version")
+
+    androidTestImplementation(
+        "androidx.test.ext:junit:$junit_ext_version",
+        "androidx.test.espresso:espresso-core:$espresso_version"
+    )
+}

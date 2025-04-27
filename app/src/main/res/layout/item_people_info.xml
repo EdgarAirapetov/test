@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/iv_people_avatar"
+        app:size="SIZE_35"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/offset_16dp"
+        android:layout_marginTop="@dimen/offset_16dp"
+        android:contentDescription="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/vg_user_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_16dp"
+        android:layout_marginEnd="@dimen/offset_12dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_people_avatar"
+        app:layout_constraintEnd_toStartOf="@+id/tv_people_subscribe"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/iv_people_avatar"
+        app:layout_constraintTop_toTopOf="@+id/iv_people_avatar">
+
+
+        <TextView
+            android:id="@+id/tv_people_name"
+            style="@style/BlackRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="Joshua Bloch" />
+
+        <TextView
+            android:id="@+id/tv_people_uniqname"
+            style="@style/GrayA7A5Regular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="12к подписчиков" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_people_subscribe"
+        style="@style/WhiteRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/offset_16dp"
+        android:gravity="center"
+        android:minWidth="100dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/vg_user_container"
+        app:layout_constraintTop_toTopOf="@+id/vg_user_container"
+        tools:background="@drawable/background_rect_purple"
+        tools:text="@string/group_join" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

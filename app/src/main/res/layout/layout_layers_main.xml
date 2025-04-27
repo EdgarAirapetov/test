@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/background_map_filters"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ukui_map_layers_avatar" />
+
+    <View
+        android:id="@+id/v_map_layers_avatar_bg"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_map_layers_avatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+        android:id="@+id/ukui_map_layers_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:isLegacy="@bool/isLegacy"
+        app:layout_constraintBottom_toBottomOf="@id/v_map_layers_avatar_bg"
+        app:layout_constraintEnd_toEndOf="@id/v_map_layers_avatar_bg"
+        app:layout_constraintStart_toStartOf="@id/v_map_layers_avatar_bg"
+        app:layout_constraintTop_toTopOf="@id/v_map_layers_avatar_bg"
+        app:userpicOnline="false"
+        app:userpicSize="Size72"
+        app:userpicStories="NoStories" />
+
+    <TextView
+        android:id="@+id/tv_map_layers_title"
+        style="@style/BlackSemibold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="63dp"
+        android:text="@string/map_layers_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_map_layers_avatar_bg" />
+
+    <ImageButton
+        android:id="@+id/iv_map_layers_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_close_small"
+        app:layout_constraintBottom_toBottomOf="@id/tv_map_layers_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_map_layers_title" />
+
+    <TextView
+        android:id="@+id/tv_map_layers_visibility_header"
+        style="@style/MapFiltersHeaderStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="@string/map_layers_visibility_header"
+        app:layout_constraintTop_toBottomOf="@id/tv_map_layers_title" />
+
+    <com.meera.uikit.widgets.infoview.UiKitInfoView
+        android:id="@+id/ukiv_map_layers_location_disabled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:infoViewAction="Включить"
+        app:infoViewIcon="@drawable/ic_geo"
+        app:infoViewMessage="@string/map_layers_geo_disabled_info_message"
+        app:infoViewOrientation="horizontal"
+        app:isLegacy="@bool/isLegacy"
+        app:layout_constraintTop_toBottomOf="@id/tv_map_layers_visibility_header"
+        tools:visibility="visible" />
+
+    <com.meera.uikit.widgets.segmentcontrols.UiKitSegmentControl
+        android:id="@+id/uksc_map_layers_user_visibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="10dp"
+        app:checkedSegment="map_layers_visibility_all"
+        app:isLegacy="@bool/isLegacy"
+        app:layout_constraintTop_toBottomOf="@id/tv_map_layers_visibility_header"
+        app:segments="map_layers_visibility_all,map_layers_visibility_friends,map_layers_visibility_nobody"
+        tools:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_map_layers_content_header"
+        style="@style/MapFiltersHeaderStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="@string/map_layers_content_header"
+        app:layout_constraintTop_toBottomOf="@id/tv_map_layers_visibility_header" />
+
+    <com.meera.uikit.widgets.map.UiKitMapLayerToggle
+        android:id="@+id/ukmlt_map_layers_people"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:checkedColor="#FAEDE2"
+        app:hasSettings="false"
+        app:icons="ic_layers_people_1,ic_layers_people_2,ic_layers_people_3,ic_layers_people_4,ic_layers_people_5"
+        app:isLegacy="@bool/isLegacy"
+        app:layout_constraintTop_toBottomOf="@id/tv_map_layers_content_header"
+        app:title="@string/map_layers_content_people"
+        app:titleColor="#262427"
+        app:uncheckedColor="#F9DDC5" />
+
+    <com.meera.uikit.widgets.map.UiKitMapLayerToggle
+        android:id="@+id/ukmlt_map_layers_events"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="16dp"
+        app:checkedColor="#ECFAFF"
+        app:hasSettings="true"
+        app:icon="@drawable/ic_layers_events"
+        app:isLegacy="@bool/isLegacy"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/ukmlt_map_layers_friends"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ukmlt_map_layers_people"
+        app:title="@string/map_layers_content_events"
+        app:titleColor="#2C397E"
+        app:uncheckedColor="#A8C6E8" />
+
+
+    <com.meera.uikit.widgets.map.UiKitMapLayerToggle
+        android:id="@+id/ukmlt_map_layers_friends"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:checkedColor="#FCE6FF"
+        app:hasSettings="false"
+        app:icon="@drawable/ic_layers_friends"
+        app:isLegacy="@bool/isLegacy"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ukmlt_map_layers_events"
+        app:layout_constraintTop_toBottomOf="@id/ukmlt_map_layers_people"
+        app:title="@string/map_layers_content_friends"
+        app:titleColor="#3F2930"
+        app:uncheckedColor="#F9CCFF" />
+
+    <View
+        android:id="@+id/v_map_layers_tooltip_anchor"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@id/ukmlt_map_layers_events"
+        app:layout_constraintEnd_toStartOf="@id/ukmlt_map_layers_friends"
+        app:layout_constraintStart_toEndOf="@id/ukmlt_map_layers_events"
+        app:layout_constraintTop_toBottomOf="@id/ukmlt_map_layers_people" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

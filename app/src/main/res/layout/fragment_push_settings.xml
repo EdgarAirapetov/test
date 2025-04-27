@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000">
+
+        <View
+            android:id="@+id/v_push_settings"
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_push_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_back_push_settings"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="6dp"
+                    android:src="@drawable/arrowback"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/BlackSemibold18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/material16"
+                    android:text="@string/notification_screen_header"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_notif"
+            android:layout_width="match_parent"
+            android:background="#f2f2f7"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/push_setting_include"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="#fbfaff"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Switch
+                        android:id="@+id/sw_all_notif"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginBottom="@dimen/material16"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_on_turn_on_push" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                </LinearLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container_messaging"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:background="#fbfaff"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/push_setting_include">
+
+                    <TextView
+                        android:id="@+id/tv_messaging"
+                        style="@style/BlackSemibold18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material16"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/material16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/rooms_messaging"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Switch
+                        android:id="@+id/sw_new_messages"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_on_messages"
+                        android:textSize="@dimen/textSize18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_messaging" />
+
+                    <View
+                        android:id="@+id/v_divider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:background="#1e000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sw_new_messages" />
+
+                    <Switch
+                        android:id="@+id/sw_show_message_text"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/show_message_content"
+                        android:textSize="@dimen/textSize18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_divider1" />
+
+                    <View
+                        android:id="@+id/v_divider2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:background="#1e000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sw_show_message_text" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_exceptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_divider2">
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/settings_exclude"
+                            android:textColor="#de000000"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_arrow_gray_open" />
+
+                        <TextView
+                            android:id="@+id/tv_always_allow"
+                            style="@style/PurpleRegular16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView17"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="5 чатов" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:id="@+id/v_divider3"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_exceptions" />
+
+                    <View
+                        android:id="@+id/v_divider4"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:background="#1e000000"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sw_chat_request_text" />
+
+                    <View
+                        android:id="@+id/v_disabled2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@color/white_70"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toTopOf="@id/cl_exceptions"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:visibility="visible" />
+
+                    <View
+                        android:id="@+id/v_disabled3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@color/white_70"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_exceptions"
+                        tools:visibility="visible" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_requests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fbfaff"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_messaging">
+
+                    <TextView
+                        style="@style/BlackSemibold18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material16"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/material16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/notification_requests_new" />
+
+                    <Switch
+                        android:id="@+id/sw_chat_request_text"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/rooms_chat_request_push"
+                        android:textSize="@dimen/textSize18"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/v_divider3" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_call_enabled"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_incoming_calls"
+                        android:textSize="@dimen/textSize18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_friend_request"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_new_add_to_friend"
+                        android:textSize="@dimen/textSize18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_group_request"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_new_add_to_community"
+                        android:textSize="@dimen/textSize18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/material16"
+                    android:background="#fbfaff"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_requests">
+
+                    <TextView
+                        style="@style/BlackSemibold18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material16"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/material16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/feed_back" />
+
+                    <Switch
+                        android:id="@+id/sw_new_group_comment"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/new_group_comment"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_post_comment"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_on_post_comments"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_moment_comment"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_on_moment_comments"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_post_comment_answer"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/post_comment_reply"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_moment_comment_answer"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/moment_comment_reply"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_show_comments_text"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/show_comments_text"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_post_reaction"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/post_reaction"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_moment_reaction"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/moment_reaction"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_post_comment_reaction"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/post_comments_reactions"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_new_moment_comment_reaction"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/moment_comments_reactions"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_about_me_photos_reaction"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/about_me_photos_reaction"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_mention"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/material16"
+                    android:background="#fbfaff"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_feedback">
+
+                    <TextView
+                        style="@style/BlackSemibold18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material16"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/material16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/notification_settings_mention" />
+
+                    <Switch
+                        android:id="@+id/sw_mention_group_chat"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_settings_mention_group_chat"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_mention_post"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_settings_mention_post"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <Switch
+                        android:id="@+id/sw_mention_comments"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/notification_settings_mention_komment"
+                        android:textSize="@dimen/textSize18"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_events"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/material16"
+                    android:background="#fbfaff"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_mention">
+
+                    <TextView
+                        style="@style/BlackSemibold18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material16"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/material16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/notification_events" />
+
+                    <Switch
+                        android:id="@+id/sw_new_gift"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/new_gift_received"
+                        android:textSize="@dimen/textSize18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                    <!-- https://zpl.io/b6noQ8j -->
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/receiveFriendBirthdayNotificationsSwitch"
+                        style="@style/BlackRegular16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="@dimen/padding10"
+                        android:paddingStart="@dimen/material16"
+                        android:paddingEnd="@dimen/material16"
+                        android:text="@string/receive_friends_birthday_notification_switch_text"
+                        android:textSize="@dimen/textSize18" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#1e000000" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/v_disabled"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/white_70"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toTopOf="@+id/container_messaging"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/push_setting_include" />
+
+                <View
+                    android:id="@+id/v_disabled1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/white_70"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_messaging" />
+
+
+                <LinearLayout
+                    android:id="@+id/container_sources"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#fbfaff"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/container_events">
+
+                    <TextView
+                        style="@style/BlackSemibold18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/material16"
+                        android:layout_marginTop="@dimen/padding10"
+                        android:layout_marginEnd="@dimen/material16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@string/notification_settings_sources" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_friends_subscriptions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground">
+
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/notification_settings_friends_and_subs"
+                            android:textColor="#de000000"
+                            android:textSize="16sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/imageView27"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_arrow_gray_open" />
+
+                        <TextView
+                            android:id="@+id/tv_add_friends_and_subscriptions"
+                            style="@style/PurpleRegular16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:text="@string/general_add"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imageView27"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

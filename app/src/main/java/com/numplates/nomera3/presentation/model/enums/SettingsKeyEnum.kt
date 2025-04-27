@@ -1,0 +1,31 @@
+package com.numplates.nomera3.presentation.model.enums
+
+enum class SettingsKeyEnum(val key: String) {
+    BLACKLIST("blacklist"),
+    HIDE_POSTS("hidePosts"),
+    CREATE_AVATAR_POST("createAvatarPost"),
+    HOW_CAN_CALL("howCanCall"),
+    IS_ANONYMOUS_BLOCKED("isAnonymousBlocked"),
+    PROFANITY_ENABLED("profanityEnabled"),
+    REMIND_MY_BIRTHDAY("remindBirthday"),
+    SHOW_BIRTHDAY("showBirthday"),
+    SHOW_GENDER("showGender"),
+    SHOW_ON_MAP("showOnMap"),
+    SHOW_ONLINE("showOnline"),
+    SHOW_ABOUT_ME("showAboutMe"),
+    SHOW_GARAGE("showVehicles"),
+    SHOW_GIFTS("showGifts"),
+    SHOW_PERSONAL_ROAD("showPersonalRoad"),
+    WHO_CAN_CHAT("whoCanChat"),
+    SHOW_FRIENDS_AND_FOLLOWERS("showFriendsAndSubscribers"),
+    CLOSED_PROFILE("closedProfile"),
+    ALLOW_SHAKE_GESTURE("allowShakeGesture"),
+    ALLOW_CONTACT_SYNC("allowContactSync"),
+    ALLOW_SCREENSHOT_SHARING("allowScreenshotSharing"),
+    MOMENTS_NOT_SHOW("momentsDoNotShow"),
+    MOMENTS_HIDE_FROM("momentsHideFrom"),
+    MOMENTS_ALLOW_COMMENT("whoCanCommentMoments"),
+    SHOW_MOMENTS_ONLY_FOR_FRIENDS("showMomentsOnlyForFriends"),
+    SAVE_MOMENTS_TO_GALLERY("saveMomentsToGallery"),
+    SAVE_MOMENTS_TO_ARCHIVE("saveMomentsToArchive")
+}

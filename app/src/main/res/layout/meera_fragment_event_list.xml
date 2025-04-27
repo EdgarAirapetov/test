@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_bottomsheet_header">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_uksc_events_lists_filter_participation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="top"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorGreyF4F4F4" />
+
+        <com.meera.uikit.widgets.segmentcontrols.UiKitSegmentControl
+            android:id="@+id/uksc_events_lists_filter_participation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:checkedSegment="map_events_list_filters_participant"
+            app:segments="map_events_list_filters_participant,map_events_list_filters_host" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <FrameLayout
+        android:id="@+id/vg_events_lists_bottomsheet"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/map_events_lists_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/layout_events_lists_main"
+            layout="@layout/meera_layout_events_lists_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/layout_events_lists_filters"
+            layout="@layout/meera_layout_events_lists_filters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

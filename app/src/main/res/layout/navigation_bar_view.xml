@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clBar"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:clickable="false">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@drawable/background_navigationbar_top"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="visible"/>
+
+    <com.numplates.nomera3.presentation.view.widgets.PreventTouchView
+        android:id="@+id/vButtonBarBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/ui_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/ivMapBtn"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="7dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="7dp"
+        android:src="@drawable/selector_button_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/ivChatBtn"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="9dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="9dp"
+        android:src="@drawable/selector_button_chat"
+        app:layout_constraintBottom_toTopOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.74"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMapBtn" />
+
+
+    <TextView
+        android:id="@+id/tvCallCounter"
+        style="@style/WhiteSemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/background_chat_button"
+        android:drawableEnd="@drawable/startcall_tiny"
+        android:drawablePadding="2dp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="0.5dp"
+        android:text="24"
+        android:textSize="12dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/ivChatBtn"
+        app:layout_constraintTop_toTopOf="@+id/ivChatBtn"
+        />
+
+    <ImageView
+        android:id="@+id/ivRoadBtn"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_road_button"
+        android:paddingStart="13.5dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="13.5dp"
+        android:paddingBottom="14dp"
+        android:src="@drawable/selector_button_road"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <View
+        android:id="@+id/v_road_btn"
+        android:layout_width="50dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="14.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ivRoadBtn"
+        app:layout_constraintStart_toStartOf="@+id/ivRoadBtn"
+        app:layout_constraintTop_toTopOf="@+id/ivRoadBtn" />
+
+    <ImageView
+        android:id="@+id/ivFriendListBtn"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="7dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="7dp"
+        android:paddingBottom="2dp"
+        android:src="@drawable/selector_button_groups"
+        app:layout_constraintBottom_toTopOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMapBtn" />
+
+    <View
+        android:id="@+id/v_cover_dot_people_notification"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@drawable/background_road_avatar_white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot_people_notification"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dot_people_notification"
+        app:layout_constraintStart_toStartOf="@+id/iv_dot_people_notification"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot_people_notification"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_dot_people_notification"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:src="@drawable/background_chat_button"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/ivFriendListBtn"
+        app:layout_constraintTop_toTopOf="@+id/ivFriendListBtn"/>
+
+    <ImageView
+        android:id="@+id/ivProfileBtn"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="8dp"
+        android:src="@drawable/selector_button_profile"
+        app:layout_constraintBottom_toTopOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivMapBtn" />
+
+    <View
+        android:id="@+id/v_cover_dot_profile_notification"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@drawable/background_road_avatar_white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot_profile_notification"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dot_profile_notification"
+        app:layout_constraintStart_toStartOf="@+id/iv_dot_profile_notification"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot_profile_notification"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_dot_profile_notification"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:src="@drawable/background_chat_button"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/ivProfileBtn"
+        app:layout_constraintTop_toTopOf="@+id/ivProfileBtn"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="8dp"/>
+
+
+    <View
+        android:id="@+id/v_cover_dot_unread_counter"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:background="@drawable/background_road_avatar_white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dot_unread_counter"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dot_unread_counter"
+        app:layout_constraintStart_toStartOf="@+id/iv_dot_unread_counter"
+        app:layout_constraintTop_toTopOf="@+id/iv_dot_unread_counter"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_dot_unread_counter"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:src="@drawable/background_chat_button"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/ivChatBtn"
+        app:layout_constraintTop_toTopOf="@+id/ivChatBtn"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tvChatCounter"
+        style="@style/WhiteSemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="16dp"
+        android:layout_marginStart="22.5dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/background_chat_button"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:paddingStart="5.5dp"
+        android:paddingEnd="5.5dp"
+        android:paddingBottom="0.5dp"
+        android:text="!"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/ivChatBtn"
+        app:layout_constraintTop_toTopOf="@+id/ivChatBtn"
+        />
+
+    <TextView
+        android:id="@+id/tv_map"
+        style="@style/GraySemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="4dp"
+        android:text="@string/map"
+        android:textColor="@drawable/selector_text_bottom_bar"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toEndOf="@+id/ivMapBtn"
+        app:layout_constraintStart_toStartOf="@+id/ivMapBtn"
+        app:layout_constraintTop_toBottomOf="@+id/ivMapBtn" />
+
+    <TextView
+        android:id="@+id/tv_peoples"
+        style="@style/GraySemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="4dp"
+        android:text="@string/profile_people"
+        android:textColor="@drawable/selector_text_bottom_bar"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="@+id/ivFriendListBtn"
+        app:layout_constraintStart_toStartOf="@+id/ivFriendListBtn"
+        app:layout_constraintTop_toTopOf="@+id/tv_map" />
+
+    <TextView
+        android:id="@+id/tv_road"
+        style="@style/GraySemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="4dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="@string/profile_posts"
+        android:textColor="@drawable/selector_text_bottom_bar"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="@+id/ivRoadBtn"
+        app:layout_constraintStart_toStartOf="@+id/ivRoadBtn"
+        app:layout_constraintTop_toTopOf="@+id/tv_map" />
+
+    <TextView
+        android:id="@+id/tv_messenger"
+        style="@style/GraySemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="4dp"
+        android:text="@string/messenger"
+        android:textColor="@drawable/selector_text_bottom_bar"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="@+id/ivChatBtn"
+        app:layout_constraintStart_toStartOf="@+id/ivChatBtn"
+        app:layout_constraintTop_toTopOf="@+id/tv_map" />
+
+    <TextView
+        android:id="@+id/tv_profile"
+        style="@style/GraySemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="4dp"
+        android:text="@string/profile_info"
+        android:textColor="@drawable/selector_text_bottom_bar"
+        android:textSize="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_map"
+        app:layout_constraintEnd_toEndOf="@+id/ivProfileBtn"
+        app:layout_constraintStart_toStartOf="@+id/ivProfileBtn"
+        app:layout_constraintTop_toTopOf="@+id/tv_map" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

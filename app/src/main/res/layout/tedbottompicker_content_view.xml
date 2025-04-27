@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_container_ted_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="UseAppTint">
+
+    <RelativeLayout
+        android:id="@+id/view_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tedbottompicker_title"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/selected_photos_container_frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tedbottompicker_selected_image_height"
+        android:visibility="gone">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/tedbottompicker_selected"
+            android:fillViewport="false"
+
+            android:foregroundGravity="left">
+
+            <LinearLayout
+                android:id="@+id/selected_photos_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:animateLayoutChanges="false"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/selected_photos_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/no_image"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?attr/colorAccent" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorWhite">
+
+        <ImageButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="false"
+            android:visibility="invisible"
+            android:src="@drawable/arrowback" />
+
+        <LinearLayout
+            android:id="@+id/ll_recent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="false"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_toolbar_name"
+                style="@style/BlackRegular18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/recent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <ImageView
+                android:id="@+id/iv_toolbar_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/material8"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/icon_arrow_gray"
+                android:tint="@color/colorGrayC4C4C4" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_counter_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/cancelBtn"
+            android:layout_toStartOf="@+id/btn_done"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/tv_img_count"
+                style="@style/BlackRegular18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Выбрано 5 фотографий" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/btn_done"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="13dp"
+            android:src="@drawable/icon_check_violet"
+            android:textColor="?attr/colorAccent"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <!-- TODO: Test layout -->
+    <!--<LinearLayout
+        android:id="@+id/container_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#00BCD4">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFC107"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/cl_dragging_panel"
+                android:background="#FF0000"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <ImageButton
+                    android:id="@+id/btn_done_1"
+                    android:layout_width="@dimen/material24"
+                    android:layout_height="@dimen/material24"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/icon_check_violet" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="50dp"
+                    android:layout_height="3dp"
+                    app:cardBackgroundColor="#d8d8d8"
+                    app:cardCornerRadius="1.5dp"
+                    app:cardElevation="0dp" />
+
+                <TextView
+                    android:id="@+id/tv_media_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    style="@style/BlackSemibold16"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:layout_marginStart="@dimen/padding20"
+                    android:text="Выбрано 5 фотографий" />
+
+            </LinearLayout>
+
+
+            &lt;!&ndash; TODO Recycler &ndash;&gt;
+            <LinearLayout
+                android:background="#673AB7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rc_gallery"
+                    android:background="#fafafa"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/ll_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/ui_white"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_dragging_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material8"
+            android:layout_marginBottom="@dimen/material8"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/btn_done_1"
+                android:layout_width="@dimen/material24"
+                android:layout_height="@dimen/material24"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_check_violet"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                app:cardBackgroundColor="#d8d8d8"
+                app:cardCornerRadius="1.5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_media_counter"
+                style="@style/BlackSemibold16"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/padding20"
+                android:text="Выбрано 5 фотографий"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.meera.core.utils.layouts.FrameTouchEventInterceptorLayout
+            android:id="@+id/fteil_gallery_touch_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1AC8C8CC"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp" />
+
+        </com.meera.core.utils.layouts.FrameTouchEventInterceptorLayout>
+
+    </LinearLayout>
+
+    <com.meera.core.views.SetupPermissionsView
+        android:id="@+id/spv_permission_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>

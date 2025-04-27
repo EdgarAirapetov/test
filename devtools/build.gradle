@@ -1,0 +1,69 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'com.gladed.androidgitversion' version '0.4.14'
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    def gitVersion = providers.exec {
+        commandLine("git", "rev-parse", "--abbrev-ref", "HEAD")
+    }.standardOutput.asText.get().trim()
+
+    def getVersionCode =
+        providers.exec { commandLine("git", "rev-list", "--first-parent", "--count", "HEAD") }
+            .standardOutput.asText.get().trim()
+
+    def gitVersionName =
+        providers.exec { commandLine("git", "describe", "--tags", "--dirty") }
+            .standardOutput.asText.get().trim()
+
+    buildTypes {
+        debug {
+            buildConfigField("long", "GIT_VERSION_CODE", "${getVersionCode}")
+            buildConfigField("String", "GIT_VERSION_NAME", "\"${gitVersionName}\"")
+            buildConfigField("String", "GIT_BRANCH_NAME", "\"${gitVersion}\"")
+            buildConfigField("long", "BUILD_TIME", System.currentTimeMillis() + "L")
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    namespace 'com.numplates.devtools'
+}
+
+dependencies {
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation project(path: ':bridge')
+    implementation "androidx.annotation:annotation:$androidx_annotation_version"
+    // Flipper
+    def flipper_version = "0.247.0"
+    debugImplementation "com.facebook.flipper:flipper:$flipper_version"
+    debugImplementation "com.facebook.flipper:flipper-network-plugin:$flipper_version"
+    debugImplementation "com.facebook.soloader:soloader:$facebook_soloader_version"
+
+    //beagle
+    def beagle_version = "2.9.2"
+    debugImplementation "io.github.pandulapeter.beagle:ui-drawer:$beagle_version"
+
+    def leakcanary_version = "2.13"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+}

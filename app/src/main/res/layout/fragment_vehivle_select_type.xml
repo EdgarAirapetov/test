@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_white"
+    android:baselineAligned="false"
+    android:clickable="true"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        android:background="@color/white_1000">
+
+        <View
+            android:id="@+id/status_bat_vehicle_select"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            android:paddingTop="@dimen/topMargin"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:layout_collapseMode="pin"
+            app:titleTextColor="@color/ui_black" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            style="@style/BlackBold28"
+            android:layout_marginTop="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/garage_add_vehicle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvVehicleType"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            tools:listitem="@layout/item_vehicvle_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material16"
+            android:layout_marginBottom="@dimen/material16"
+            app:layout_constraintBottom_toTopOf="@+id/flCountry"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <FrameLayout
+            android:id="@+id/flCountry"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_btn"
+            app:layout_constraintBottom_toTopOf="@+id/cv_vehicle_select_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/ivPicture"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:background="@drawable/background_rounded_gray_light"
+                android:padding="2dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical"
+                android:visibility="gone"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                tools:src="@drawable/toyota" />
+
+            <EditText
+                android:id="@+id/etCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:focusable="false"
+                android:saveEnabled="false"
+                android:gravity="center"
+                android:hint="@string/garage_select_country"
+                android:textColorHint="@color/ui_transparent_black" />
+        </FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_vehicle_select_container"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:cardBackgroundColor="@color/ui_gray"
+            app:cardCornerRadius="22.5dp"
+            app:cardElevation="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvSend"
+                style="@style/WhiteRegular16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_button_vehicle"
+                android:gravity="center"
+                android:text="@string/general_continue" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

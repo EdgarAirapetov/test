@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+        android:id="@+id/upi_people_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:contentDescription="@null"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:userpicSize="Size48"
+        app:userpicStories="NoStories" />
+
+    <LinearLayout
+        android:id="@+id/vg_user_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/upi_people_avatar"
+        app:layout_constraintEnd_toStartOf="@id/btn_subscribe"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@id/upi_people_avatar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.meera.uikit.widgets.people.UiKitUsernameView
+            android:id="@+id/tv_people_name"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            tools:text="Алекса Сергеевна" />
+
+        <TextView
+            android:id="@+id/tv_people_uniqname"
+            style="@style/UiKit.Body.Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="12dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            app:layout_constraintEnd_toStartOf="@id/btn_subscribe"
+            app:layout_constraintStart_toStartOf="@id/tv_people_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_people_name"
+            tools:text="\@alex_23" />
+
+    </LinearLayout>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_subscribe"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/subscribe"
+        app:buttonHeightMode="buttonText36"
+        app:buttonType="filled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

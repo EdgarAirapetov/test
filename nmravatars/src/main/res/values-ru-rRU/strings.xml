@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PART_SELECTOR_HEAD">Лицо</string>
+    <string name="PART_SELECTOR_HAIR">Волосы</string>
+    <string name="PART_SELECTOR_EYES">Глаза</string>
+    <string name="PART_SELECTOR_EYEBROWS">Брови</string>
+    <string name="PART_SELECTOR_NOSE">Нос</string>
+    <string name="PART_SELECTOR_MOUTH">Рот</string>
+    <string name="PART_SELECTOR_BEARD">Борода и усы</string>
+    <string name="PART_SELECTOR_SHIRT">Одежда</string>
+    <string name="PART_SELECTOR_HAT">Головной убор</string>
+    <string name="PART_SELECTOR_BACKGROUND">Задний фон</string>
+    <string name="PART_SELECTOR_ACCSESSORIES">Аксессуары</string>
+    <string name="ALERT_DIALOG_EXIT_TITLE">Выйти из редактора?</string>
+    <string name="ALERT_DIALOG_EXIT_MESSAGE">Изменения не будут сохранены</string>
+    <string name="ALERT_DIALOG_EXIT_CONFIRM">Выйти</string>
+    <string name="ALERT_DIALOG_EXIT_CANCEL">Отмена</string>
+</resources>

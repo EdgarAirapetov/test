@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_road_header"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/settings_privacy_road_title" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_personal_road"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="top"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellRightTextValue="@string/mini_map_visibility_everyone"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/personal_road"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_road_hidden_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:visibility="gone"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="top"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellRightTextValue="@string/mini_map_visibility_everyone"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/settings_privacy_hide_posts"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_new_avatar_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="middle"
+        app:cellRightElement="right_switch"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/settings_privacy_new_avatar_post_redesigned"
+        app:cellWidthType="with_margins" />
+
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_abscene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="bottom"
+        app:cellRightElement="right_switch"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/settings_privacy_anti_obscene"
+        app:cellWidthType="with_margins" />
+
+    <TextView
+        style="@style/UiKit.Body.Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:paddingTop="4dp"
+        android:text="@string/settings_privacy_anti_obscene_description"
+        android:textColor="@color/uiKitColorForegroundSecondary" />
+
+</LinearLayout>
+
+
+

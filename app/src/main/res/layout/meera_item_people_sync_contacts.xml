@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.uikit.widgets.infoview.UiKitInfoView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/uikit_info_view_1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:infoViewAction="@string/enable_contacts_permission"
+    app:infoViewCanClose="false"
+    app:infoViewIcon="@drawable/ic_outlined_contact_m"
+    app:infoViewMessage="@string/add_friends_from_contacts"
+    app:infoViewOrientation="vertical" />

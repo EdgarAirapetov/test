@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <TextView
+        android:id="@+id/tv_map_filters_event_types_header"
+        style="@style/MapFiltersHeaderStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/map_layers_events_header_types"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/vg_map_filters_event_types"
+        style="@style/MapFiltersCheckableItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_map_filters_event_types_header">
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_all"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/map_layers_events_dates_all" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_education"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_education" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_art"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_art" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_concert"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_concert" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_sport"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_sport" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_tourism"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_tourism" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_games"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_games" />
+
+        <com.meera.uikit.widgets.chips.UiKitCheckableChipView
+            android:id="@+id/ukccv_event_filters_event_type_party"
+            style="@style/MapFiltersCheckableItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_events_type_party" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</merge>

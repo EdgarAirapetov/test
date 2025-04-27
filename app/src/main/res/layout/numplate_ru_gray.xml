@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:id="@+id/alPlate"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/number_editor_gray_background">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tv_prefix"
+            style="@style/numplate_input_number_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false"
+            android:hint="A"
+            android:maxLength="1"
+            android:inputType="textCapCharacters"
+            android:nextFocusDown="@id/tv_number"
+            android:letterSpacing="0.1"
+            android:paddingStart="8dp"
+            android:paddingTop="6dp"
+            android:saveEnabled="false"
+            android:textAllCaps="true"
+            android:textSize="36sp"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tv_number"
+            style="@style/numplate_input_number_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false"
+            android:hint="000"
+            android:maxLength="3"
+            android:inputType="number"
+            android:letterSpacing="0.1"
+            android:nextFocusDown="@id/tv_suffix"
+            android:paddingTop="6dp"
+            android:saveEnabled="false"
+            android:textAllCaps="true"
+            android:textSize="36sp"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tv_suffix"
+            style="@style/numplate_input_number_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:cursorVisible="false"
+            android:hint="AA"
+            android:maxLength="2"
+            android:letterSpacing="0.1"
+            android:inputType="textCapCharacters"
+            android:nextFocusDown="@id/tvRegion"
+            android:paddingTop="6dp"
+            android:paddingEnd="8dp"
+            android:saveEnabled="false"
+            android:textAllCaps="true"
+            android:textSize="36sp"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/tv_region"
+        style="@style/numplate_input_number_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/number_editor_gray_background"
+        android:cursorVisible="false"
+        android:hint="000"
+        android:maxLength="3"
+        android:letterSpacing="0.1"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:paddingStart="4dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="4dp"
+        android:saveEnabled="false"
+        android:textAllCaps="true"
+        android:textSize="36sp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/iv_country_flag"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:adjustViewBounds="true"
+        android:elevation="0dp"
+        app:cardCornerRadius="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/gray_flag_border">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_flag_of_russia" />
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SwitchPreference
+        android:key="KEY_PUSH_ON"
+        android:title="@string/notification_on_turn_on"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_MESSAGE"
+        android:title="@string/notification_on_messages"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_FRIEND_REQUEST"
+        android:title="@string/notification_on_friend"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_GROUP_INVITE"
+        android:title="@string/notification_on_groups"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_NEW_GIFT"
+        android:title="@string/notification_on_gift"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_POST_COMMENT"
+        android:title="@string/notification_on_post_comments"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_POST_GROUP"
+        android:title="@string/notification_on_post_group"
+        android:defaultValue="true"/>
+
+    <CheckBoxPreference
+        android:key="KEY_PUSH_ON_ANSWER_COMMENT"
+        android:title="@string/notification_on_comment_answer"
+        android:defaultValue="true"/>
+
+    <!--<PreferenceCategory-->
+        <!--android:title="@string/frag_settings_appearance_header">-->
+
+        <!--<ListPreference-->
+            <!--android:title="@string/frag_settings_select_font"-->
+            <!--android:key="KEY_FONT_MODE"-->
+            <!--android:defaultValue="1"-->
+            <!--android:entries="@array/font_entities"-->
+            <!--android:entryValues="@array/font_values" />-->
+
+    <!--</PreferenceCategory>-->
+    <!--android:summary="This is a switch"-->
+
+</PreferenceScreen>

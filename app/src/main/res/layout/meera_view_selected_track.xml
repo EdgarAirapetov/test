@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="24dp"
+    android:background="@drawable/nmrmedia_stories_current_track_bg"
+    android:backgroundTint="@color/nmrMediaCancelButtonColor">
+
+    <HorizontalScrollView
+        android:id="@+id/hsv_selected_track_container"
+        android:layout_width="165dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:clipToPadding="false"
+        android:scrollbars="none"
+        android:fadingEdge="horizontal"
+        android:requiresFadingEdge="horizontal"
+        android:fadingEdgeLength="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.numplates.nomera3.modules.moments.show.presentation.view.music.MeeraSelectedTrackContentView
+                android:id="@+id/stcv_selected_track_content_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="5dp"/>
+
+            <com.numplates.nomera3.modules.moments.show.presentation.view.music.MeeraSelectedTrackContentView
+                android:id="@+id/stcv_selected_track_content_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</FrameLayout>

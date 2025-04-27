@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_reaction_vertical_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:clipChildren="false"
+        android:orientation="horizontal">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_reaction"
+            android:layout_width="@dimen/reaction_bottom_sheet_vertical_icon_size"
+            android:layout_height="@dimen/reaction_bottom_sheet_vertical_icon_size"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/tv_reaction_name"
+            style="@style/BlackRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Ха-ха!" />
+
+        <TextView
+            android:id="@+id/tv_reaction_number"
+            style="@style/GrayRegular16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="end"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="504" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/v_reaction_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="68dp"
+        android:visibility="gone"
+        android:background="@drawable/drawable_divider_decoration_gray"
+        tools:visibility="visible" />
+
+</LinearLayout>

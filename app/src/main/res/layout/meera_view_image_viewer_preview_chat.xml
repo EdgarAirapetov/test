@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0.0"
+    android:background="@color/ui_black"
+    android:fitsSystemWindows="false"
+    tools:alpha="1.0">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_hint_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="17dp"
+        android:alpha="0.0"
+        android:translationZ="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:alpha="1">
+
+        <TextView
+            android:id="@+id/toast_text"
+            android:layout_width="241dp"
+            android:layout_height="51dp"
+            android:background="@drawable/ic_shape_preview_photo"
+            android:gravity="center"
+            android:paddingTop="@dimen/material8"
+            android:text="@string/you_can_add_5_objects"
+            android:textColor="@color/ui_white"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/dismissContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_viewer_nav_bar">
+
+        <FrameLayout
+            android:id="@+id/transitionImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/transitionImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+        <com.numplates.nomera3.presentation.view.ui.mediaViewer.common.pager.MultiTouchViewPager
+            android:id="@+id/imagesPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/about_fragment_fake_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/sv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/status_bar_semi_transparent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="200dp"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_overlay_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:autoLink="web"
+            android:clickable="false"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:textColor="@color/ui_white"
+            android:textColorLink="@color/ui_white"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:text="fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh"
+            tools:visibility="visible" />
+
+    </ScrollView>
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_viewer_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/ui_black"
+        app:iconsTint="@color/uiKitColorForegroundInvers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_fragment_fake_status_bar"
+        tools:title="1 из 200">
+
+        <TextView
+            style="@style/Legacy.Body.Description"
+            android:textSize="14sp"
+            android:textColor="@color/uiKitColorPrimaryBlack"
+            android:id="@+id/tv_selected_media"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/margin16"
+            android:background="@drawable/white_ring_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+    <!-- меню с рекомендациями уник имен-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/inputContainer"
+        app:layout_constraintTop_toBottomOf="@id/v_viewer_nav_bar">
+
+        <include
+            android:id="@+id/uniqueNameSuggestionMenuL"
+            layout="@layout/meera_user_tags_coordinator" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputContainer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="46dp"
+        android:background="@color/ui_black"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/v_edit_btn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="2dp"
+            android:backgroundTint="@color/transparent"
+            android:src="@drawable/ic_outlined_pencil_l"
+            android:tint="@color/ui_white"
+            app:buttonHeightMode="buttonIcon48"
+            app:buttonType="elevated"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center|start"
+            android:layout_marginVertical="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/color_soft_black"
+            android:gravity="start|center_vertical"
+            app:cardBackgroundColor="@color/uiKitColorBackgroundSecondary"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/vg_send_container"
+            app:layout_constraintStart_toEndOf="@+id/v_edit_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="16dp">
+
+            <com.meera.core.views.MeeraEditTextExtended
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="12dp"
+                android:background="@null"
+                android:hint="@string/meera_add_image_description"
+                android:inputType="textMultiLine"
+                android:maxLines="2"
+                android:textColorHint="@color/colorGray9298A0" />
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/vg_send_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/iv_btn_continue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:src="@drawable/ic_outlined_send_m"
+                app:buttonHeightMode="buttonIcon36"
+                app:buttonType="filled" />
+
+            <TextView
+                android:id="@+id/tv_selected_count"
+                style="@style/UiKit.Body.Description"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end"
+                android:background="@drawable/meera_white_ring_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lines="1"
+                android:paddingTop="1dp"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                android:textSize="14sp"
+                tools:text="2" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/v_event_filters_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/bg_bottomsheet_header"
+        android:orientation="vertical" />
+
+    <View
+        android:layout_width="48dp"
+        android:layout_height="3dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/bg_bottomsheet_top_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_event_filters_bg" />
+
+    <ImageView
+        android:id="@+id/iv_event_filters_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/ic_map_layers_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_event_filters_bg" />
+
+    <TextView
+        android:id="@+id/iv_event_filters_title"
+        style="@style/BlackSemibold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/map_filters_title"
+        app:layout_constraintBottom_toBottomOf="@id/iv_event_filters_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_event_filters_back" />
+
+    <com.numplates.nomera3.modules.maps.ui.events.list.filters.EventFilterTypeWidget
+        android:id="@+id/efw_event_filter_type"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_event_filters_back" />
+
+    <com.numplates.nomera3.modules.maps.ui.events.list.filters.EventFilterDateWidget
+        android:id="@+id/efw_event_filter_date"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/efw_event_filter_type" />
+
+    <TextView
+        android:id="@+id/tv_map_filters_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_layers_events_clear"
+        android:textAppearance="@style/BlackRegular16"
+        android:textColor="@color/map_button_text_color_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

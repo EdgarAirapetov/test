@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/content"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="6dp"
+	android:layout_marginEnd="6dp"
+	android:descendantFocusability="blocksDescendants"
+	android:orientation="vertical">
+	
+	<ImageView
+		android:id="@+id/ivGift"
+		android:layout_width="88dp"
+		android:layout_height="88dp"
+		android:scaleType="centerCrop"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@drawable/ic_fi_camera" />
+	
+	<TextView
+		android:id="@+id/tvPrice"
+		style="@style/GrayRegular14"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="@+id/ivGift"
+		app:layout_constraintStart_toStartOf="@+id/ivGift"
+		app:layout_constraintTop_toBottomOf="@+id/ivGift"
+		tools:text="Цена" />
+	
+	<TextView
+		android:id="@+id/label_new"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/rounded_gradient"
+		android:paddingStart="7dp"
+		android:paddingTop="3dp"
+		android:paddingEnd="7dp"
+		android:paddingBottom="3dp"
+		android:text="@string/new_gift"
+		android:textColor="@color/white_1000"
+		android:textSize="6sp"
+		android:visibility="gone"
+		android:translationX="-10dp"
+		app:layout_constraintEnd_toEndOf="@+id/ivGift"
+		app:layout_constraintStart_toEndOf="@+id/ivGift"
+		app:layout_constraintTop_toTopOf="@+id/ivGift"
+		tools:ignore="SmallSp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

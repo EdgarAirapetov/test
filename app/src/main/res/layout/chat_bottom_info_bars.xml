@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Group chat user blocked notification container -->
+    <LinearLayout
+        android:id="@+id/layout_chat_user_blocked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundLightPurple"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_user_blocked_me"
+            style="@style/BlackRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="12dp"
+            android:text="@string/chat_user_blocked" />
+
+
+        <TextView
+            android:id="@+id/tv_user_blocked_by_me"
+            style="@style/PurpleRegular16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="14dp"
+            android:paddingHorizontal="16dp"
+            android:lineHeight="20sp"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/unblock_user_txt" />
+
+    </LinearLayout>
+
+    <!-- Group chat disabled receive anonymous message container -->
+    <LinearLayout
+        android:id="@+id/layout_chat_disable_anonymous_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundLightPurple"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            style="@style/BlackRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="@string/chat_user_disable_anonymous_message" />
+
+    </LinearLayout>
+
+    <!-- Group chat deleted notification container -->
+    <LinearLayout
+        android:id="@+id/layout_chat_deleted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackgroundLightPurple"
+        android:gravity="center"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_delete_chat_message"
+            style="@style/BlackRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="@string/group_chat_deleted_message" />
+
+    </LinearLayout>
+
+    <include layout="@layout/chat_private_messages_disallow_by_companion"
+        android:id="@+id/lChatDisallowByCompanion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include layout="@layout/chat_private_messages_disallow_by_me"
+        android:id="@+id/lChatDisallowByMe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <include layout="@layout/chat_group_blocked_by_moderator"
+        android:id="@+id/vg_group_chat_blocked_by_moderator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</LinearLayout>

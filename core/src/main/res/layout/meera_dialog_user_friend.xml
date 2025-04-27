@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_dialog_confirm_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:cellPosition="top"
+        app:cellLeftElement="left_icon"
+        app:cellTitleValue="@string/everyone"
+        app:cellCityValue=""
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"/>
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_dialog_confirm_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:cellPosition="middle"
+        app:cellLeftElement="left_icon"
+        app:cellTitleValue="@string/friends"
+        app:cellCityValue=""
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"/>
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_dialog_confirm_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:cellLeftIconAndTitleColor="@color/uiKitColorAccentWrong"
+        app:cellPosition="bottom"
+        app:cellLeftElement="left_icon"
+        app:cellTitleValue="@string/nobody"
+        app:cellCityValue=""
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+</LinearLayout>

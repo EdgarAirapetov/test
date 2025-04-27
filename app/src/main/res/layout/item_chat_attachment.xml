@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="68dp"
+    android:layout_height="68dp"
+    android:layout_marginHorizontal="2dp"
+    android:animateLayoutChanges="false"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/btn_delete_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:padding="4dp"
+        android:src="@drawable/ic_delete_attachment" />
+
+    <FrameLayout
+        android:id="@+id/cl_video"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/meera_shadow_media_tile">
+
+        <TextView
+            android:id="@+id/tv_video_time"
+            style="@style/UiKit.Body.Description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="2dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/uiKitColorForegroundInvers"
+            tools:text="0:52" />
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

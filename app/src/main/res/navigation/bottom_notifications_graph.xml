@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_test_flow"
+    app:startDestination="@id/notificationFragment">
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.numplates.nomera3.modules.notifications.ui.fragment.MeeraNotificationsFragment"
+        android:label="NotificationFragment"
+        tools:layout="@layout/meera_fragment_notifications"/>
+
+    <fragment
+        android:id="@+id/meeraCommunityMembersContainerFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.members.MeeraCommunityMembersContainerFragment"
+        android:label="MeeraCommunityMembersContainerFragment"
+        tools:layout="@layout/meera_community_members_container_fragment" />
+
+    <fragment
+        android:id="@+id/meeraChatFragment"
+        android:name="com.numplates.nomera3.modules.chat.MeeraChatFragment"
+        android:label="MeeraChatFragment"
+        tools:layout="@layout/meera_chat_fragment" />
+
+    <fragment
+        android:id="@+id/notificationDetailFragment"
+        android:name="com.numplates.nomera3.modules.notifications.ui.fragment.MeeraNotificationDetailFragment"
+        android:label="NotificationDetailFragment"
+        tools:layout="@layout/meera_fragment_notifications" />
+
+    <fragment
+        android:id="@+id/meeraGridProfilePhotoFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.profilephoto.MeeraGridProfilePhotoFragment"
+        android:label="MeeraGridProfilePhotoFragment"
+        tools:layout="@layout/meera_grid_photo_layout_fragment"/>
+
+    <fragment
+        android:id="@+id/meeraVehicleListFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleListFragment"
+        android:label="MeeraVehicleListFragment"
+        tools:layout="@layout/meera_fragment_vehicle_list"/>
+
+    <dialog
+        android:id="@+id/meeraVehicleInfoFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleInfoFragment"
+        android:label="MeeraVehicleInfoFragment"
+        tools:layout="@layout/meera_fragment_vehicle_info_static"/>
+
+    <fragment
+        android:id="@+id/meeraFriendsHostFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraFriendsHostFragment"
+        android:label="MeeraFriendsHostFragment"
+        tools:layout="@layout/meera_fragment_friends_host" />
+
+    <fragment
+        android:id="@+id/meeraProfilePhotoViewerFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.profilephoto.MeeraProfilePhotoViewerFragment"
+        android:label="MeeraProfilePhotoViewerFragment"
+        tools:layout="@layout/meera_fragment_gallery_fullscreen" />
+
+    <fragment
+        android:id="@+id/meeraUserGiftsFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraUserGiftsFragment"
+        android:label="MeeraUserGiftsFragment"
+        tools:layout="@layout/meera_gift_user_fragment">
+
+        <action
+            android:id="@+id/action_meeraUserGiftsFragment_to_meeraGiftsListFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraGiftsListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraGiftsListFragment"
+        android:name="com.numplates.nomera3.modules.purchase.ui.gift.MeeraGiftsListFragment"
+        android:label="MeeraGiftsListFragment"
+        tools:layout="@layout/meera_gift_list_fragment">
+
+        <action
+            android:id="@+id/action_meeraGiftsListFragment_to_meeraSendGiftFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraSendGiftFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraSendGiftFragment"
+        android:name="com.numplates.nomera3.modules.purchase.ui.send.MeeraSendGiftFragment"
+        android:label="MeeraSendGiftFragment"
+        tools:layout="@layout/meera_send_gift_fragment">
+
+        <action
+            android:id="@+id/action_meeraSendGiftFragment_to_meeraSuccessSentGiftFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraSuccessSentGiftFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraSuccessSentGiftFragment"
+        android:name="com.numplates.nomera3.modules.purchase.ui.send.MeeraSuccessSentGiftFragment"
+        android:label="MeeraSuccessSentGiftFragment"
+        tools:layout="@layout/meera_success_send_gift_fragment"/>
+
+    <fragment
+        android:id="@+id/meeraPostFragmentV2"
+        android:name="com.numplates.nomera3.modules.comments.ui.fragment.MeeraPostFragmentV2"
+        android:label="MeeraPostFragmentV2"
+        tools:layout="@layout/fragment_postv2"/>
+
+    <fragment
+        android:id="@+id/meeraCommunityRoadFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.MeeraCommunityRoadFragment"
+        android:label="MeeraCommunityRoadFragment"
+        tools:layout="@layout/meera_fragment_show_community"/>
+
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.numplates.nomera3.modules.userprofile.ui.fragment.MeeraUserInfoFragment"
+        android:label="MeeraUserInfoFragment"
+        tools:layout="@layout/meera_fragment_user_info"/>
+
+    <fragment
+        android:id="@+id/mainMapFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.main.map.MainMapFragment"
+        android:label="MainMapFragment"
+        tools:layout="@layout/meera_fragment_map"/>
+
+    <fragment
+        android:id="@+id/meeraViewMomentFragment"
+        android:name="com.numplates.nomera3.modules.moments.show.presentation.fragment.MeeraViewMomentFragment"
+        android:label="MeeraViewMomentFragment"
+        tools:layout="@layout/fragment_view_moment_container" />
+
+</navigation>

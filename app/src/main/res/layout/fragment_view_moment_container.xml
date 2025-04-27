@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_view_moment_root_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:visibility="visible"
+        android:alpha="1">
+
+        <View
+            android:id="@+id/v_status_bar"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:background="@null"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.numplates.nomera3.presentation.view.ui.ExtendedGestureOverlayView
+            android:id="@+id/gov_view_moment_gesture_interceptor"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gestureColor="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_status_bar">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_view_moment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.numplates.nomera3.presentation.view.ui.ExtendedGestureOverlayView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

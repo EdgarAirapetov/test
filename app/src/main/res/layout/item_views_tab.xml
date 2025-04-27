@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_all_views"
+    style="@style/UiKit.Body.Normal"
+    android:textColor="@color/uiKitColorForegroundPrimary"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:includeFontPadding="false"
+    android:layout_gravity="center"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="12dp"
+    android:text="@string/moment_views_all"/>

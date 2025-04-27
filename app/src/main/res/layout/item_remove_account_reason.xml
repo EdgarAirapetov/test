@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/BlackSemibold18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/remove_account_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/BlackRegular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/remove_account_subtitle" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_reasons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/reason1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_leaving_while"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_difficult_figure"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_dont_feel_safe_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_ugly_app_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_dont_like_moderation_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_unpleasant_communication_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_uninteresting_content_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_spend_too_much_time_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="52dp"
+            android:background="@color/gray_separator" />
+
+        <RadioButton
+            android:id="@+id/reason9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="16dp"
+            android:text="@string/remove_account_reason_another_reason_action"
+            android:textAppearance="@style/BlackRegular16" />
+
+
+    </RadioGroup>
+
+</LinearLayout>

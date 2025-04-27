@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="146dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_radio_cell_default"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/circle_shimmer"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <View
+            android:layout_width="114dp"
+            android:layout_height="8dp"
+            android:background="@drawable/line_shimmer"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+        <View
+            android:layout_width="114dp"
+            android:layout_height="8dp"
+            android:background="@drawable/line_shimmer"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"/>
+
+        <View
+            android:layout_width="130dp"
+            android:layout_height="36dp"
+            android:background="@drawable/line_shimmer"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+    </LinearLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

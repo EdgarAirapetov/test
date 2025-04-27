@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/uikit_cell_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:cellPosition="alone"
+        app:cellRightElement="right_none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:userCellType="friend_subscriber_subscribe" />
+
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/button_decline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/general_decline"
+        app:buttonHeightMode="buttonText36"
+        app:buttonType="outline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/button_approve"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/uikit_cell_user" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/button_approve"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/friends_confirm"
+        app:buttonHeightMode="buttonText36"
+        app:buttonType="filled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_decline"
+        app:layout_constraintTop_toBottomOf="@id/uikit_cell_user" />
+
+    <View
+        android:id="@+id/v_action_done"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:background="@drawable/rect_rad_32dp"
+        android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/button_approve"
+        app:layout_constraintEnd_toEndOf="@id/button_approve"
+        app:layout_constraintStart_toStartOf="@id/button_decline"
+        app:layout_constraintTop_toTopOf="@id/button_approve" />
+
+
+    <ImageView
+        android:id="@+id/iv_mark"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginEnd="@dimen/offset_8dp"
+        android:src="@drawable/ic_outlined_check_s"
+        android:tint="@color/uiKitColorForegroundSecondary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/v_action_done"
+        app:layout_constraintEnd_toStartOf="@id/tv_done"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/v_action_done"
+        app:layout_constraintTop_toTopOf="@id/v_action_done" />
+
+    <TextView
+        android:id="@+id/tv_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/request_acepted"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/v_action_done"
+        app:layout_constraintEnd_toEndOf="@id/v_action_done"
+        app:layout_constraintStart_toEndOf="@id/iv_mark"
+        app:layout_constraintTop_toTopOf="@id/v_action_done" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

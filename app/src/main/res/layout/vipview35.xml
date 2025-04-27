@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_container"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="6dp"
+        app:cardCornerRadius="19dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <View
+            android:id="@+id/v_avatar_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/ui_black_20"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.numplates.nomera3.presentation.view.widgets.MomentsCircleIndicatorView
+            android:id="@+id/mciv_moments_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/iv_avatar_crown"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/crown_45"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/cv_container"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/iv_holiday_hat"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/holidayHatSpaceVertical"
+        app:layout_constraintStart_toEndOf="@id/holidayHatSpaceHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/regular"
+        tools:visibility="gone" />
+
+    <Space
+        android:id="@+id/holidayHatSpaceVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/cv_container"
+        app:layout_constraintEnd_toEndOf="@id/cv_container"
+        app:layout_constraintHeight_percent=".303" />
+
+    <Space
+        android:id="@+id/holidayHatSpaceHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/cv_container"
+        app:layout_constraintStart_toStartOf="@id/cv_container"
+        app:layout_constraintWidth_percent=".24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

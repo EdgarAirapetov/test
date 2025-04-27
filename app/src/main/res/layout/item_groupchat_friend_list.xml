@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/material16"
+    android:paddingVertical="@dimen/material12">
+
+    <ImageView
+        android:id="@+id/iv_groupchat_icon"
+        android:paddingHorizontal="3dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="4dp"
+        android:layout_width="@dimen/material40"
+        android:layout_height="@dimen/material40"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/add_group_chat"/>
+
+    <TextView
+        android:paddingHorizontal="@dimen/material8"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/tv_new_groupchat_Text"
+        style="@style/SansProRegular18Purple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:lineHeight="@dimen/textSize22"
+        android:text="@string/create_new_group_chat" />
+
+</LinearLayout>

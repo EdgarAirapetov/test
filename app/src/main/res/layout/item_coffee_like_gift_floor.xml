@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="20dp"
+	android:layout_marginEnd="20dp"
+	android:background="@drawable/rounded_border_gray"
+	android:clickable="true"
+	android:focusable="true">
+	
+	<ImageView
+		android:id="@+id/gift"
+		android:layout_width="110dp"
+		android:layout_height="110dp"
+		android:layout_marginTop="6dp"
+		android:layout_marginBottom="6dp"
+		android:scaleType="centerCrop"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@drawable/ic_settings" />
+
+	<LinearLayout
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="8dp"
+		android:gravity="center|start"
+		android:orientation="vertical"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toEndOf="@+id/gift"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<TextView
+			android:id="@+id/title"
+			style="@style/BlackSemibold18"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			tools:text="Кофе на выбор" />
+
+		<TextView
+			android:id="@+id/subTitle"
+			style="@style/BlackRegular14"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="4dp"
+			android:layout_marginEnd="24dp"
+			tools:text="Хороший кофе - отличный подарок!" />
+
+		<TextView
+			android:id="@+id/price"
+			style="@style/GrayRegular14"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="4dp"
+			tools:text="249.00p" />
+
+
+	</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

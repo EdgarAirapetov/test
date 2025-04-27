@@ -1,0 +1,16 @@
+package com.numplates.nomera3.presentation.view.fragments.privacysettings
+
+import com.numplates.nomera3.R
+import com.numplates.nomera3.presentation.view.fragments.privacysettings.basefragments.MeeraSettingsUserSearchFragment
+import com.numplates.nomera3.presentation.view.fragments.privacysettings.viewmodels.PersonalMessagesAddBlackListViewModel
+
+class MeeraPersonalMessageAddBlackListFragment: MeeraSettingsUserSearchFragment() {
+
+    override fun getViewModel() = PersonalMessagesAddBlackListViewModel()
+
+    override fun screenConfiguration() = BaseSettingsUserSearchConfiguration(
+            screenTitle = getString(R.string.general_add),
+            isRequestGetUsers = true,
+            isShowConfirmBottomButton = true
+    )
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="1dp">
+
+    <FrameLayout
+        android:id="@+id/placeholder_background"
+        android:visibility="gone"
+        tools:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/no_chat_media_placeholder_bgr" />
+
+    <ImageView
+        android:id="@+id/iv_placeholder"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/no_chat_media_placeholder" />
+
+    <com.numplates.nomera3.modules.chat.views.RoundedFrameLayout
+        android:id="@+id/vg_post_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_post_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop" />
+
+    </com.numplates.nomera3.modules.chat.views.RoundedFrameLayout>
+
+    <ImageView
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/iv_giphy_watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="12dp"
+        app:srcCompat="@drawable/giphy_watermark" />
+
+</FrameLayout>
+

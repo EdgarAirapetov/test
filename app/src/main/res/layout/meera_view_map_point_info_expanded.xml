@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_view_map_point_expanded"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_map_point_info_weather_animation"
+        android:layout_width="48dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_map_point_info_weather_description"
+        app:layout_constraintEnd_toStartOf="@id/tv_map_point_info_weather_description"
+        app:layout_constraintTop_toTopOf="@+id/tv_map_point_info_weather_description"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_map_point_info_weather_description"
+        style="@style/UiKit.Body.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/map_point_info_widget_text"
+        app:layout_constraintBottom_toBottomOf="@id/tv_map_point_info_address_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_map_point_info_address_secondary"
+        tools:text="Облачно 26°С"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_map_point_info_weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="lav_map_point_info_weather_animation,tv_map_point_info_weather_description" />
+
+    <TextView
+        android:id="@+id/tv_map_point_info_address_primary"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/map_point_info_widget_text"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/tv_map_point_info_address_secondary"
+        app:layout_constraintEnd_toStartOf="@id/barrier_map_point_info_weather"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        tools:text="пр. ЦентральныйЦентральный" />
+
+    <com.numplates.nomera3.modules.maps.ui.widget.MapPointInfoScrollingTextView
+        android:id="@+id/mpistv_map_point_info_address_scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        app:layout_constrainedWidth="true"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/tv_map_point_info_address_secondary"
+        app:layout_constraintEnd_toStartOf="@id/tv_map_point_info_weather_description"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mpistv_map_point_info_address_scroll_secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="110dp"
+        android:visibility="invisible"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/iv_map_point_info_divider"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.weather.MeeraMapPointInfoScrollingTextView
+        android:id="@+id/tv_map_point_info_address_secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/map_point_info_widget_text"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="110dp"
+        android:visibility="invisible"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/iv_map_point_info_divider"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        tools:text="пр. Центральный Центральный1321321332132133213213" />
+
+    <ImageView
+        android:id="@+id/iv_map_point_info_divider"
+        android:layout_width="3dp"
+        android:layout_height="3dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/tv_map_point_info_address_secondary"
+        android:src="@drawable/bg_divider_dot"
+        app:layout_constraintBottom_toBottomOf="@id/tv_map_point_info_address_secondary"
+        app:layout_constraintEnd_toStartOf="@id/tv_map_point_info_time"
+        app:layout_constraintTop_toTopOf="@id/tv_map_point_info_address_secondary"
+        app:tint="@color/map_point_info_widget_text" />
+
+    <TextView
+        android:id="@+id/tv_map_point_info_time"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/map_point_info_widget_text"
+        app:layout_constraintBottom_toBottomOf="@id/iv_map_point_info_divider"
+        app:layout_constraintEnd_toStartOf="@+id/barrier_map_point_info_weather"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/tv_map_point_info_address_secondary"
+        app:layout_constraintTop_toTopOf="@id/iv_map_point_info_divider"
+        tools:text="9:41"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

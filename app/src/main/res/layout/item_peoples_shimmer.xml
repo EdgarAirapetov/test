@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_peoples_shimmer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_16dp"
+        android:layout_marginTop="@dimen/offset_16dp">
+
+        <ImageView
+            android:id="@+id/iv_peoples_shimmer_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@null"
+            android:src="@drawable/circle_shimmer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/v_peoples_shimmer_name"
+            android:layout_width="141dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="@dimen/offset_16dp"
+            app:cardBackgroundColor="@color/shimmer_color"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_peoples_shimmer_icon"
+            app:layout_constraintStart_toEndOf="@+id/iv_peoples_shimmer_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_peoples_shimmer_icon"
+            app:layout_constraintVertical_bias="0.25" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/v_peoples_shimmer_description"
+            android:layout_width="100dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="@dimen/offset_8dp"
+            app:cardBackgroundColor="@color/shimmer_color"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="@+id/v_peoples_shimmer_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/v_peoples_shimmer_name"
+            app:layout_constraintTop_toBottomOf="@+id/v_peoples_shimmer_name" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/v_peoples_shimmer_button"
+            android:layout_width="112dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/shimmer_color"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_peoples_shimmer_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@id/iv_peoples_shimmer_icon" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/vg_peoples_content_shimmer"
+            android:layout_width="146dp"
+            android:layout_height="224dp"
+            android:layout_marginTop="@dimen/offset_16dp"
+            android:layout_marginBottom="@dimen/offset_16dp"
+            app:cardBackgroundColor="@color/shimmer_color"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_peoples_shimmer_icon" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/vg_peoples_content_shimmer_two"
+            android:layout_width="146dp"
+            android:layout_height="224dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/offset_16dp"
+            android:layout_marginBottom="@dimen/offset_16dp"
+            app:cardBackgroundColor="@color/shimmer_color"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vg_peoples_content_shimmer"
+            app:layout_constraintTop_toBottomOf="@+id/iv_peoples_shimmer_icon" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="146dp"
+            android:layout_height="224dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/offset_16dp"
+            android:layout_marginBottom="@dimen/offset_16dp"
+            app:cardBackgroundColor="@color/shimmer_color"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vg_peoples_content_shimmer_two"
+            app:layout_constraintTop_toBottomOf="@+id/iv_peoples_shimmer_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

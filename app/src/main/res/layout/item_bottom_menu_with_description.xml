@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingTop="@dimen/material16"
+    android:paddingBottom="12dp"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <ImageView
+        android:id="@+id/iv_bottom_menu_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/icon_bicycle"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_bottom_menu_title"
+        style="@style/BlackRegular18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginEnd="@dimen/material16"
+        android:layout_marginStart="@dimen/material16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_bottom_menu_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Удаление" />
+
+    <TextView
+        android:id="@+id/tv_bottom_menu_description"
+        style="@style/GrayRegular13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="@dimen/material16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_bottom_menu_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_bottom_menu_title"
+        tools:text="Пользователь будет удалён из списка ваших друзей" />
+</androidx.constraintlayout.widget.ConstraintLayout>

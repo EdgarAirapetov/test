@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Большая область для тапа открывающего профиль -->
+        <!-- https://overflow.io/s/87FE6M?node=912d7044 -->
+        <LinearLayout
+            android:id="@+id/profile_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- аватарка -->
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical|start"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="5dp">
+
+                <com.numplates.nomera3.presentation.view.widgets.VipView
+                    android:id="@+id/vipView_friend_holder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:size="SIZE_80" />
+            </FrameLayout>
+
+
+            <!-- имя, возраст, город -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    style="@style/BlackBold18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="Annie Wellington" />
+
+                <TextView
+                    android:id="@+id/uniqueNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="#80000000"
+                    android:textSize="14sp"
+                    tools:text="\@koshechka"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_user_age_loc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textSize16"
+                    android:visibility="gone"
+                    tools:text="25, Москва"
+                    tools:visibility="visible" />
+
+                <LinearLayout
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:id="@+id/btn_actions_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_action_accept"
+                        android:layout_width="114dp"
+                        android:layout_height="34dp"
+                        style="@style/PurpleRegular16"
+                        android:lineSpacingExtra="4sp"
+                        android:gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/background_btn_purple"
+                        android:text="@string/friends_confirm"/>
+
+                    <TextView
+                        android:id="@+id/tv_action_reject"
+                        android:layout_width="114dp"
+                        android:layout_height="34dp"
+                        style="@style/RedRegular16"
+                        android:gravity="center"
+                        android:lineSpacingExtra="4sp"
+                        android:background="@drawable/background_btn_red"
+                        android:text="@string/general_reject"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- контейнер для увеличения площади нажатия -->
+        <FrameLayout
+            android:id="@+id/action_icon_container"
+            tools:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0">
+
+            <!-- может принимать два типа иконок удалить / отписаться -->
+            <ImageView
+                android:id="@+id/ivStatus"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="20dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                tools:src="@drawable/confirmed" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:visibility="gone"
+        android:id="@+id/v_separator_user"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/gray_20" />
+
+</LinearLayout>

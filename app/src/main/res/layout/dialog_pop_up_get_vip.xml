@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/popUpWidth"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/get_vip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/get_vip"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:lineSpacingExtra="3sp"
+        android:fontFamily="@font/source_sanspro_bold"
+        android:layout_marginTop="@dimen/material24"
+        android:layout_marginStart="@dimen/material24"
+        android:layout_marginEnd="@dimen/material24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_sms_code"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:background="@drawable/white_rounded_shape35"
+        android:textStyle="bold"
+
+        android:imeOptions="actionDone"
+        android:textSize="@dimen/textSize32"
+        android:maxLength="6"
+        android:maxLines="1"
+        android:gravity="center"
+        android:elevation="6dp"
+        android:lineSpacingExtra="2sp"
+        android:singleLine="true"
+        android:layout_marginStart="@dimen/material24"
+        android:layout_marginEnd="@dimen/material24"
+        android:layout_marginTop="@dimen/material8"
+        android:textColorHint="@color/text_dark_secondary"
+        android:textCursorDrawable="@drawable/cursor_sms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_up_desc" />
+
+
+    <TextView
+        android:id="@+id/pop_up_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_referral_code_one_day_txt"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/material8"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:textColor="@color/colorGrey"
+        android:lineSpacingExtra="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/get_vip"
+        app:layout_constraintStart_toStartOf="@+id/get_vip"
+        app:layout_constraintTop_toBottomOf="@+id/get_vip" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pop_up_activate_code_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/material8"
+        android:background="@drawable/selector_button_vehicle"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/activate_code"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/input_sms_code"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/input_sms_code"
+        app:layout_constraintTop_toBottomOf="@+id/input_sms_code" />
+
+    <TextView
+        android:id="@+id/pop_up_skip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/material24"
+        android:layout_marginTop="@dimen/material8"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/general_close"
+        android:textColor="@color/ui_selected_tab"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_up_vip_error_message" />
+
+    <TextView
+        android:id="@+id/pop_up_vip_error_message"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/material8"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:textSize="@dimen/textSize12"
+        android:textColor="@color/ui_red"
+        android:text="@string/wrong_code_try_again"
+        app:layout_constraintEnd_toEndOf="@+id/pop_up_activate_code_btn"
+        app:layout_constraintStart_toStartOf="@+id/pop_up_activate_code_btn"
+        app:layout_constraintTop_toBottomOf="@+id/pop_up_activate_code_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

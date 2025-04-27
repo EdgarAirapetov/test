@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_chat_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_deleted_my_message"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_deleted_chat_message" />
+
+        <TextView
+            android:id="@+id/tv_delete_message_title_sender"
+            style="@style/PinkRegular18Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="9dp"
+            android:text="@string/chat_message_you_delete" />
+
+        <TextView
+            android:id="@+id/tv_sender_created_at"
+            style="@style/PinkRegular14Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginEnd="6dp"
+            android:text="00:00" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="@dimen/material8"
+            android:layout_marginBottom="6dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_read_message" />
+
+    </LinearLayout>
+
+</LinearLayout>

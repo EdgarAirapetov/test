@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_allow_contacts_sync"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/nv_change_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/settings_change_profile_settings_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBackArrow="false"
+            app:showCloseButton="true" />
+
+        <ImageView
+            android:id="@+id/iv_change_profile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
+            android:src="@drawable/img_change_profile_settings"
+            app:layout_constraintDimensionRatio="256:232"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nv_change_profile" />
+
+        <View
+            android:id="@+id/v_change_profile_desc_1"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/oval"
+            android:backgroundTint="@color/uiKitColorForegroundLink"
+            app:layout_constraintBottom_toBottomOf="@id/tv_change_profile_desc_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_change_profile_desc_1" />
+
+        <TextView
+            android:id="@+id/tv_change_profile_desc_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/settings_change_profile_settings_open_profile"
+            android:textAppearance="@style/UiKit.Body.Description"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_change_profile_desc_1"
+            app:layout_constraintTop_toBottomOf="@id/iv_change_profile" />
+
+        <View
+            android:id="@+id/v_change_profile_desc_2"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/oval"
+            android:backgroundTint="@color/uiKitColorForegroundLink"
+            app:layout_constraintBottom_toBottomOf="@id/tv_change_profile_desc_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_change_profile_desc_2" />
+
+        <TextView
+            android:id="@+id/tv_change_profile_desc_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/settings_change_profile_settings_settings_not_change"
+            android:textAppearance="@style/UiKit.Body.Description"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_change_profile_desc_2"
+            app:layout_constraintTop_toBottomOf="@id/tv_change_profile_desc_1" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/button_change_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/settings_change_profile_settings_btn"
+            app:buttonHeightMode="buttonText48"
+            app:layout_constraintTop_toBottomOf="@id/tv_change_profile_desc_2" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/button_change_profile_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/general_cancel"
+            app:buttonHeightMode="buttonText48"
+            app:buttonType="transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_change_profile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

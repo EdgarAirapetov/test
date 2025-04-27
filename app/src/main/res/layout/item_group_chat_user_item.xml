@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_chat_user_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_white">
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/iv_group_user_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:size="SIZE_80" />
+
+    <LinearLayout
+        android:id="@+id/user_short_info_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_group_user_dots_menu"
+        app:layout_constraintStart_toEndOf="@+id/iv_group_user_avatar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_group_user_name"
+            style="@style/BlackBold18"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            tools:text="Валентина" />
+
+        <TextView
+            android:id="@+id/uniqueNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:textColor="#80000000"
+            android:textSize="14sp"
+            tools:text="\@koshechka"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_group_user_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="center_vertical"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSize16"
+            tools:text="25, Москва" />
+
+        <TextView
+            android:id="@+id/tv_group_user_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding20"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bgr_member_type"
+            android:fontFamily="@font/source_sanspro_bold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingStart="7dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="7dp"
+            android:paddingBottom="4dp"
+            android:textAllCaps="true"
+            android:textColor="#6b48d8"
+            android:textSize="8sp"
+            android:visibility="gone"
+            tools:text="Администратор"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_group_user_dots_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_dots_menu_short"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

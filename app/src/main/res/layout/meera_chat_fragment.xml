@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_chat_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_chat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:outlineProvider="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <include
+                android:id="@+id/meera_chat_toolbar"
+                layout="@layout/meera_chat_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <View
+            android:id="@+id/v_toolbar_shadow"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:alpha="0.25"
+            android:background="@drawable/below_shadow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_chat" />
+
+        <ImageView
+            android:id="@+id/iv_image_background_overlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="56dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/meera_img_birthday_chat_background"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vg_chat_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_chat">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_chat"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:scrollbars="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toTopOf="@+id/vg_white_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:reverseLayout="true"
+                app:stackFromEnd="false" />
+
+            <!-- TODO optimize it -->
+            <View
+                android:id="@+id/v_stickers_suggestions_background"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/bg_sticker_suggestions_list"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/rv_stickers_suggestions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rv_stickers_suggestions"
+                tools:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_stickers_suggestions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/vg_white_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/vg_send_container_shadow"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:alpha="0.25"
+                android:background="@drawable/above_shadow"
+                app:layout_constraintBottom_toTopOf="@+id/vg_white_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Белая подложка под поле ввода сообщения -->
+            <FrameLayout
+                android:id="@+id/vg_white_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@color/uiKitColorBackgroundPrimary"
+                app:layout_constraintBottom_toTopOf="@+id/vg_send_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <include
+                    android:id="@+id/cl_reply"
+                    layout="@layout/meera_layout_chat_reply_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="bottom"
+                    android:visibility="gone"
+                    tools:visibility="gone" />
+
+                <include
+                    android:id="@+id/layout_edit_preview"
+                    layout="@layout/meera_layout_chat_edit_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_gravity="bottom"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/uiKitColorBackgroundPrimary"
+                app:layout_constraintBottom_toBottomOf="@+id/vg_send_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/vg_send_container" />
+
+            <!-- Voice record motion container -->
+            <com.numplates.nomera3.modules.chat.helpers.ClickableMotionLayout
+                android:id="@+id/voice_record_motion_container"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="-6dp"
+                android:clipChildren="false"
+                app:layoutDescription="@xml/meera_chat_voice_record_motion_scene"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <FrameLayout
+                    android:id="@+id/voice_blink"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="-4dp"
+                    android:layout_marginBottom="-4dp"
+                    android:background="@drawable/meera_voice_record_circle_background"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_cancel_text"
+                    style="@style/UiKit.Body.Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="4dp"
+                    android:gravity="top"
+                    android:includeFontPadding="false"
+                    android:paddingBottom="2dp"
+                    android:text="@string/cancel"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/ic_outlined_arrow_left_s"
+                    app:drawableTint="@color/uiKitColorForegroundSecondary"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btn_voice_message"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/btn_voice_message_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_outlined_mic_m" />
+
+                <com.numplates.nomera3.modules.chat.views.MeeraBlockVoiceMessageRecordButton
+                    android:id="@+id/btn_lock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </com.numplates.nomera3.modules.chat.helpers.ClickableMotionLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/uniquename_menu_container"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/vg_send_container"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/uniqueNameSuggestionMenuL"
+                    layout="@layout/user_tags_coordinator"
+                    android:visibility="gone"
+                    tools:visibility="gone" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <!--Bottom input block with info bars-->
+            <FrameLayout
+                android:id="@+id/vg_send_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <include
+                    android:id="@+id/send_message_container"
+                    layout="@layout/meera_send_message_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <include
+                    android:id="@+id/voice_record_process_container"
+                    layout="@layout/meera_chat_voice_record_process_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="bottom" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lav_voice_garbage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginBottom="4dp"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="false"
+                    app:lottie_loop="false"
+                    app:lottie_rawRes="@raw/voice_garbage"
+                    app:lottie_renderMode="hardware"
+                    tools:visibility="visible" />
+
+                <include
+                    android:id="@+id/bottom_info_bars"
+                    layout="@layout/meera_bottom_info_bars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    tools:visibility="invisible" />
+
+            </FrameLayout>
+
+            <!-- Unread message counter -->
+            <com.numplates.nomera3.modules.chat.views.ChatScrollDownButton
+                android:id="@+id/scroll_down_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toTopOf="@+id/vg_send_container_shadow"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/loading_messages_progress_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="96dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/uiKitColorAccentPrimary"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/loading_messages_progress_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/uiKitColorAccentPrimary"
+        android:indeterminateTintMode="src_atop"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <com.numplates.nomera3.modules.chat.views.SupportDimView
+        android:id="@+id/menu_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_35"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/mediakeyboard"
+            layout="@layout/meera_layout_mediakeyboard"
+            tools:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--  Реализация не лучшая. Нужен рефакторинг и перенос кода внутрь контекстного меню.  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_media_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.numplates.nomera3.modules.chat.views.SupportDimView
+            android:id="@+id/v_media_preview_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/black_35"
+            android:duplicateParentState="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_media_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="300dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/vg_video_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="300dp"
+            android:visibility="gone"
+            app:controller_layout_id="@layout/layout_media_preview_player"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/pv_video_preview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:controller_layout_id="@layout/layout_media_preview_player" />
+
+        </FrameLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_media_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="300dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

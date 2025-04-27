@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_overlay_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        tools:alpha="1">
+
+        <LinearLayout
+            android:id="@+id/ll_hint_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|top"
+            android:translationZ="1dp"
+            android:layout_marginTop="86dp"
+            android:layout_marginEnd="17dp"
+            android:alpha="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/toast_text"
+                android:layout_width="241dp"
+                android:layout_height="51dp"
+                android:background="@drawable/ic_shape_preview_photo"
+                android:gravity="center"
+                android:paddingTop="@dimen/material8"
+                android:text="Вы можете добавить до 5 объектов"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/dismissContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/material8"
+            android:layout_marginBottom="@dimen/material16"
+            app:layout_constraintBottom_toTopOf="@+id/cv_btn_continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+            <FrameLayout
+                android:id="@+id/transitionImageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UselessParent">
+
+                <ImageView
+                    android:id="@+id/transitionImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:ignore="ContentDescription" />
+
+            </FrameLayout>
+
+            <com.numplates.nomera3.presentation.view.ui.mediaViewer.common.pager.MultiTouchViewPager
+                android:id="@+id/imagesPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view_overlay_statusbar"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@color/black_preview_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/sv_description"
+            android:layout_width="0dp"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:background="@color/status_bar_semi_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="200dp"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_overlay_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoLink="web"
+                android:clickable="false"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/ui_white"
+                android:textColorLink="@color/ui_white"
+                android:textIsSelectable="true"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:text="fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh"
+                tools:visibility="visible" />
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black_preview_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_overlay_statusbar">
+
+            <ImageButton
+                android:id="@+id/ib_cancel_preview"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/arrowback"
+                android:tint="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_overlay_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/ui_white"
+                android:textSize="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/ib_cancel_preview"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1 из 3"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_overlay_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_dots_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_selected_media_btn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/white_ring_bg"
+                android:layout_marginEnd="@dimen/padding20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_selected_count"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/material8"
+                android:background="@drawable/white_ring_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:textColor="@color/colorWhite"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_selected_media_btn"
+                app:layout_constraintEnd_toStartOf="@+id/iv_selected_media_btn"
+                app:layout_constraintTop_toTopOf="@+id/iv_selected_media_btn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="bottom|center"
+            app:cardBackgroundColor="@color/ui_purple"
+            android:layout_marginBottom="@dimen/material24"
+            android:layout_marginStart="@dimen/padding20"
+            android:layout_marginEnd="@dimen/padding20"
+            app:cardCornerRadius="23dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TextView
+                android:id="@+id/tvContinue"
+                style="@style/WhiteRegular16"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_button_vehicle"
+                android:focusable="false"
+                android:gravity="center"
+                android:text="Добавить фотографию" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/cv_btn_continue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardBackgroundColor="@color/ui_color_edit_viewer"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="17dp"
+            android:layout_marginBottom="@dimen/material16"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_edit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                style="@style/WhiteRegular14"
+                android:paddingEnd="@dimen/material16"
+                android:paddingStart="@dimen/material16"
+                android:text="@string/common_edit"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_edit"
+
+                />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

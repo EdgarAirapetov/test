@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_image_group"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/uiKitColorBackgroundSecondary"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/v_edit_image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+        android:src="@drawable/ic_outlined_pencil_m"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="filled"
+        app:layout_constraintEnd_toEndOf="@+id/iv_image_group"
+        app:layout_constraintTop_toTopOf="@+id/iv_image_group"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/v_delete_image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+        android:src="@drawable/ic_outlined_delete_m"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="filled"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_image_group"
+        app:layout_constraintEnd_toEndOf="@+id/iv_image_group"
+        android:visibility="invisible"
+        tools:visibility="visible"/>
+
+    <View
+        android:id="@+id/iv_empty_image_state"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/uiKitColorBackgroundSecondary"/>
+
+    <LinearLayout
+        android:id="@+id/v_photo_empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_empty_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="58dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/ic_outlined_photo_l" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/add_photo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:buttonHeightMode="buttonText48"
+            android:text="@string/profile_add_photo" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.Header.Subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image_group"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/group_edit_fragment_main_info_header"
+        android:textColor="@color/uiKitColorForegroundPrimary"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_service_message"
+        style="@style/UiKit.Body.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="12dp"
+        android:background="@drawable/bg_field_gray"
+        android:backgroundTint="@color/uiKitColorBackFadeGrey"
+        android:includeFontPadding="false"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="4.5dp"
+        android:paddingBottom="5.5dp"
+        android:text="@string/general_subscribe"
+        android:textColor="@color/uiKitColorBackgroundPrimary"
+        android:textSize="14sp"
+        app:lineHeight="18sp"
+        tools:text="Сегодня" />
+
+</FrameLayout>

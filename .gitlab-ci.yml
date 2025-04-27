@@ -1,0 +1,15 @@
+image: registry.nomera.com/nomera/numad/androidtools-jdk17:latest
+variables:
+    ANDROID_HOME: "/home/gradle/android-home"
+
+unit_tests:
+    script:
+        - gradle testDebugUnitTest
+    only:
+        - merge_requests
+
+detekt:
+    script:
+        - gradle detekt
+    only:
+        - merge_requests

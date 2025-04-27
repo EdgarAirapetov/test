@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_silver_gold_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/padding10"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/color_switcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardElevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:cardCornerRadius="@dimen/material100" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_silver_gold_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/padding10"
+        android:layout_marginTop="@dimen/padding10"
+        android:layout_marginBottom="@dimen/padding10"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardElevation="@dimen/material8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:cardCornerRadius="@dimen/material100">
+
+        <TextView
+            android:id="@+id/tv_vip_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/material8"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:gravity="center"
+            android:text="@string/upgrade_silver"
+            android:textColor="@color/ui_black"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_silver_gold_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/padding10"
+        android:layout_marginEnd="@dimen/padding10"
+        android:layout_marginBottom="@dimen/padding10"
+        app:cardBackgroundColor="@color/colorTransparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:cardCornerRadius="@dimen/material100">
+
+        <TextView
+            android:id="@+id/tv_gold_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/material8"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:gravity="center"
+            android:text="@string/upgrade_golden"
+            android:textColor="@color/ui_black"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

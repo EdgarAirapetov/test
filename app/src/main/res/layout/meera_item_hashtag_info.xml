@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_hashtag_info_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="16dp">
+
+    <ImageView
+        android:id="@+id/iv_hashtag_avatar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ll_info_hashtag_filtered_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ic_outlined_hash_m" />
+
+    <LinearLayout
+        android:id="@+id/ll_info_hashtag_filtered_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_hashtag_avatar"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_title_hashtag_filtered_list"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hashtag_filtered_posts_title"
+            android:textColor="@color/uiKitColorForegroundPrimary" />
+
+        <TextView
+            android:id="@+id/tv_posts_with_hashtag"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            tools:text="Всего постов: 3,4 тыс." />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

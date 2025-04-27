@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- notifications (snackbar) -->
+    <!--<color name="color_notificaton_red">#fd6565</color>
+    <color name="color_notificaton_green">#63c367</color>
+    <color name="color_notificaton_blue">#2eb8f7</color>
+    <color name="white_1000">#ffffff</color>-->
+
+
+    <color name="colorPrimary">@color/ui_purple</color>
+    <color name="colorPrimaryDark">#39296d</color>
+    <color name="colorAccent">@color/ui_purple</color>
+    <color name="colorNewLauncher">#1D1E38</color>
+
+    <color name="colorBackgroundSecondary">#EFF4F6</color>
+    <color name="colorBackgroundLightPurple">#f2f2f7</color>
+    <color name="colorAlphaGrayF2F2">#F2F2FA</color>
+    <color name="colorGrey8080">#808080</color>
+    <color name="colorPurple6D4ADA">#6D4ADA</color>
+    <color name="colorPurple806D4ADA">#1A6D4ADA</color>
+    <color name="colorPurple8D6DF3">#8D6DF3</color>
+    <color name="colorBlack">#000</color>
+    <color name="soft_black">#171717</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorDarkGrey">#222222</color>
+    <color name="colorGrey">#555555</color>
+    <color name="colorGrayLight">#EEE</color>
+    <color name="colorGrayLightBg">#F9F9F9</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorGlassDark">#AA000000</color>
+    <color name="colorGrayDividersMigration">#44888888</color>
+    <color name="colorUpgradeBlack">#1a1a1a</color>
+    <color name="colorGreyWithAlpha">#81CCCCCC</color>
+    <color name="colorVipRed">#ee2121</color>
+    <color name="colorVipPurple">#865ee3</color>
+    <color name="colorVipBlue">#1899df</color>
+    <color name="colorVipGreen">#09b36c</color>
+    <color name="colorVipPink">#e73ea9</color>
+
+    <color name="colorVipRedLight">#E65454</color>
+    <color name="colorVipPurpleLight">#9678DF</color>
+    <color name="colorVipBlueLight">#59A8D5</color>
+    <color name="colorVipGreenLight">#51B98D</color>
+    <color name="colorVipSilverLight">#7784b1</color>
+    <color name="colorVipPinkLight">#DB68B1</color>
+
+    <color name="colorVipRedG1">#CCee2121</color>
+    <color name="colorVipPurpleG1">#8E77D5</color>
+    f
+    <color name="colorVipPostGoldBlack">#1a1a1a</color>
+
+    <color name="colorVipRedG2">#44ee2121</color>
+
+
+    <color name="ui_white_100">#ffffff</color>
+    <color name="ui_black">#000000</color>
+    <color name="ui_black_light">#d9000000</color>
+    <color name="ui_black_upgrade_to_vip">#050505</color>
+    <color name="ui_white">#FFFFFF</color>
+    <color name="ui_white_light">#d9ffffff</color>
+    <color name="ui_white_50">#80FFFFFF</color>
+    <color name="ui_white_80">#CCFFFFFF</color>
+    <color name="ui_text_gray">#7f7f7f</color>
+    <color name="colorGrayA7A5">#A7A5B1</color>
+    <color name="colorGrayC4C4C4">#C4C4C4</color>
+    <color name="ui_purple">#6A48D9</color>
+    <color name="ui_purple_alpha_50">#806A48D9</color>
+    <color name="ui_purple_text">#6A48D9</color>
+    <color name="ui_blue_purple">#6040c1</color>
+    <color name="ui_light_purple">#D8D0F6</color>
+    <color name="ui_purple_image_card">#7252DB</color>
+
+    <color name="ui_blur_image_card">#898696</color>
+    <color name="ui_bg_media_gallery">#126A47D8</color>
+    <color name="ui_pink">#ee2166</color>
+    <color name="ui_yellow">#f7d354</color>
+    <color name="ui_yellow_light">#FDF6DD</color>
+    <color name="ui_yellow_70">#B3F7D354</color>
+    <color name="ui_gray">#a7a5b1</color>
+    <color name="ui_gray_80">#808080</color>
+    <color name="ui_light_gray">#ccc</color>
+    <color name="ui_transparent_black">#33000000</color>
+    <color name="ui_transparent_gray">#33a7a5b1</color>
+    <color name="ui_chat_background">#FBFAFF</color>
+    <color name="ui_rooms_background">#F2EFFF</color>
+    <color name="ui_purple_gradient_mid">#5a38c9</color>
+    <color name="separator_gray_color">#2B979797</color>
+    <color name="colorGray8181">#818181</color>
+    <color name="colorPurpleA47e">#A47EEE</color>
+    <color name="colorGreenSuccess">#09B36C</color>
+    <color name="colorGrayC7C7">#C7C7CC</color>
+
+    <color name="text_red">#ff3753</color>
+
+    <color name="colorC0B0">#C0B0E4</color>
+    <color name="color00FB">#00FBFAFF</color>
+
+    <color name="ui_green">#36c59d</color>
+    <color name="ui_placeholder_gradient">#5f5a70</color>
+    <color name="ui_red">#ee2166</color>
+    <color name="ui_selected_tab">#6b48d8</color>
+
+    <color name="ui_yellow_tint">#cb8d3c</color>
+    <color name="light_separator">#EEEEF1</color>
+
+
+    <color name="purple_voice_message_recrd">#54FFD5FB</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="color_separator">#ebebeb</color>
+    <color name="color_switcher">#f7f5fe</color>
+    <color name="colorWhite20">#33FFFFFF</color>
+    <color name="ui_black_100">#000000</color>
+    <color name="ui_black_60">#99000000</color>
+    <color name="ui_black_50">#80000000</color>
+    <color name="ui_black_40">#66000000</color>
+    <color name="ui_black_70">#B3000000</color>
+    <color name="ui_black_10">#1A000000</color>
+    <color name="ui_black_20">#33000000</color>
+    <color name="ui_white_10">#1AFFFFFF</color>
+    <color name="ui_black_vip_background">#313131</color>
+    <color name="ui_gray_background">#F2F2F7</color>
+    <color name="ui_blur_gray_background">#33D4D4D4</color>
+    <color name="pop_up_description_color">#8a000000</color>
+    <color name="menu_gray_color">#9f9caa</color>
+    <color name="ui_purple_alpha03">#4D6A48D9</color>
+
+    <color name="color_call_switch_button_background_gray">#E3E3E4</color>
+
+
+    <color name="tedbottompicker_gallery">#ccc</color>
+    <color name="tedbottompicker_selected">#f0f0f0</color>
+    <color name="deleted_parent_post_label_color">#4D000000</color>
+    <color name="deleted_parent_post_label_color_vip">#4DFFFFFF</color>
+
+    <color name="ui_purple_100">#6A48D8</color>
+
+    <color name="map_friend_A6C90D">#A6C90D</color>
+
+    <color name="active_reset_road_filter">#6A47D8</color>
+    <color name="inactive_reset_road_filter">#C8C8CC</color>
+    <color name="gray_20">#33000000</color>
+
+    <color name="ui_active_filter">#A7A5B1</color>
+    <color name="light_separator_20">#EEEEF1</color>
+
+    <color name="colorGoldCB8D">#CB8D3C</color>
+    <color name="colorGoldHoliday">#F2DA80</color>
+
+    <color name="color_white_f4f">#f4f1fc</color>
+    <color name="ui_color_edit_viewer">#CC6A47D8</color>
+
+    <color name="gray_separator">#C7C7C7</color>
+    <color name="tooltip_text_color">#C7C7C7</color>
+    <color name="color_action_bar_light_text_color">#C7C7C7</color>
+    <color name="tale_purple">#f1eeff</color>
+
+    <color name="ui_color_chat_send_grey">#e5dffa</color>
+    <color name="ui_color_voice_preview_bar">#A691E8</color>
+    <color name="black_banner_text_descr">#CC1F1F1F</color>
+    <color name="black_banner_text_header">#1f1f1f</color>
+    <color name="shimmer_color">#D8D8D8</color>
+    <color name="ui_purple_super_light">#e9e4f9</color>
+    <color name="vip_map_distance_color">#F7D354</color>
+    <color name="common_map_distance_color">#A7A5B1</color>
+    <color name="ripple_color">#999F9CAA</color>
+    <color name="light_black">#252526</color>
+    <color name="color_reply_recive">#ece6ff</color>
+    <color name="ui_purple1">#6a48d9</color>
+    <color name="color_reply_send">#4f389c</color>
+    <color name="reply_text_send_color">#d8cff6</color>
+
+    <color name="color_soft_black">#262626</color>
+    <color name="tale_white">#F9F8FA</color>
+    <color name="gray_gradient_end">#BBC4E8</color>
+    <color name="gray_gradient_start">#909BBF</color>
+    <color name="hint_text_color">#61000000</color>
+    <color name="purple_button">#EDE9FA</color>
+    <color name="community_member_count_color">#A7A5B1</color>
+    <color name="group_default_image_container_backgound_color">#33E5DFFA</color>
+    <color name="gray_flag_border">#eeeeef</color>
+    <color name="gray_background_button">#E1E0E5</color>
+    <color name="blur_gray_background_button">#B34E4E4E</color>
+    <color name="light_purple">#EDE9FA</color>
+    <color name="white_alpha_40">#66FFFFFF</color>
+    <color name="wrong_code_color">#FDE9E9</color>
+    <color name="profile_statistics_step_unchecked">#E1E1E1</color>
+    <color name="vip_gold">#F7D354</color>
+
+    <color name="profile_statistics_green">#1DBA24</color>
+    <color name="profile_statistics_red">#EE2166</color>
+
+    <color name="color_reaction_default">#EE2121</color>
+    <color name="color_reaction_vip">#F7D354</color>
+    <color name="color_reaction_green_light">#38A76B</color>
+    <color name="color_reaction_blue">@color/colorVipBlue</color>
+    <color name="color_reaction_purple">@color/ui_purple1</color>
+    <color name="friend_list_searchbar_background">#EEEEEF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent80">#33FFFFFF</color>
+    <color name="gray_transparent_30">#76B6B6B6</color>
+    <color name="black_transparent_10">#26000000</color>
+</resources>

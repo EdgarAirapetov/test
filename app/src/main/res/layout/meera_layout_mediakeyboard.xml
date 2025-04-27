@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet_recycler"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="335dp"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <FrameLayout
+        android:id="@+id/vg_mediakeyboard_header"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/meera_bg_mediakeyboard_tabs"
+        android:visibility="invisible"
+        tools:layout_height="wrap_content"
+        tools:visibility="visible">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="3dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="9dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_header_picer_line" />
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_mediakeyboard_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/uiKitColorBackgroundPrimary"
+        android:clipToPadding="false"
+        android:nestedScrollingEnabled="false"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_mediakeyboard_pages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/uiKitColorBackgroundPrimary" />
+
+</LinearLayout>

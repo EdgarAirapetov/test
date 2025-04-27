@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/road_filter_root_container_bg">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/road_filter_root_container_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="136dp">
+
+            <TextView
+                android:id="@+id/tv_country_title"
+                style="@style/UiKit.Header.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/road_filter_contry_filter_label"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_country_description"
+                style="@style/UiKit.Body.Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="32dp"
+                android:text="@string/meera_road_filter_country_filter_desc"
+                android:textColor="@color/uiKitColorForegroundSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_title" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/vg_countries"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:alignContent="flex_start"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:justifyContent="flex_start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_country_description" />
+
+            <TextView
+                android:id="@+id/tv_city_title"
+                style="@style/UiKit.Header.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/city_filter_label_text"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vg_countries" />
+
+            <TextView
+                android:id="@+id/tv_city_description"
+                style="@style/UiKit.Body.Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/meera_road_filter_city_filter_desc"
+                android:textColor="@color/uiKitColorForegroundSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_city_title" />
+
+            <com.meera.uikit.widgets.UiKitInputSearch
+                android:id="@+id/is_filters_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:transitionName="input_search_transition"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_city_description"
+                app:searchHint="@string/meera_search_by_cities" />
+
+            <View
+                android:id="@+id/v_input_clickable"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/is_filters_search"
+                app:layout_constraintEnd_toEndOf="@id/is_filters_search"
+                app:layout_constraintStart_toStartOf="@id/is_filters_search"
+                app:layout_constraintTop_toTopOf="@id/is_filters_search" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/vg_selected_cities"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:chipSpacingHorizontal="4dp"
+                app:chipSpacingVertical="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/is_filters_search"
+                app:singleLine="false" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/uiKitColorBackgroundPrimary"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_filters_apply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/general_apply" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/road_filter_reset_button_text"
+            app:buttonType="transparent" />
+
+    </LinearLayout>
+
+</FrameLayout>

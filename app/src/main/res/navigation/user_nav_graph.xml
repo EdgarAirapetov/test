@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_graph"
+    app:startDestination="@id/userInfoFragment">
+
+    <navigation
+        android:id="@+id/mediaNavGraph"
+        app:startDestination="@id/media_nav_graph">
+
+        <include app:graph="@navigation/media_nav_graph" />
+
+    </navigation>
+    <action
+        android:id="@+id/action_userInfoFragment_to_meeraProfilePhotoViewerFragment2"
+        app:destination="@id/meeraProfilePhotoViewerFragment"
+        app:enterAnim="@anim/meera_slide_left"
+        app:exitAnim="@anim/meera_wait_anim"
+        app:popEnterAnim="@anim/meera_wait_anim"
+        app:popExitAnim="@anim/meera_slide_right" />
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.numplates.nomera3.modules.userprofile.ui.fragment.MeeraUserInfoFragment"
+        android:label="MeeraUserInfoFragment"
+        tools:layout="@layout/meera_fragment_user_info">
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_vehicleSelectTypeFragment"
+            app:destination="@id/meeraVehicleSelectTypeFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraFriendsHostFragment"
+            app:destination="@id/meeraFriendsHostFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraSubscribersListFragment"
+            app:destination="@id/meeraSubscribersListFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraSubscriptionsListFragment"
+            app:destination="@id/meeraSubscriptionsListFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraGridProfilePhotoFragment2"
+            app:destination="@id/meeraGridProfilePhotoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraProfileSettingsFragment"
+            app:destination="@id/meeraProfileSettingsFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraSearchMainFragment"
+            app:destination="@id/meeraSearchMainFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraContainerAvatarFragment"
+            app:destination="@id/meeraContainerAvatarFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraUserComplaintDetailsFragment"
+            app:destination="@id/meeraUserComplaintDetailsFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_peoplesFragment"
+            app:destination="@id/peoplesFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_userInfoFragment_to_meeraChatFragment"
+            app:destination="@id/meeraChatFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraUserInfoFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraUserInfoFragment_to_meeraViewMultimediaFragment"
+            app:destination="@id/mediaNavGraph"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraUserInfoFragment_to_meeraViewVideoFragment"
+            app:destination="@id/meeraViewVideoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_meeraHashtagFragment"
+        app:destination="@id/meeraHashTagFragment"
+        app:enterAnim="@anim/meera_slide_left"
+        app:exitAnim="@anim/meera_wait_anim"
+        app:popEnterAnim="@anim/meera_wait_anim"
+        app:popExitAnim="@anim/meera_slide_right" />
+
+    <fragment
+        android:id="@+id/meeraHashTagFragment"
+        android:name="com.numplates.nomera3.modules.hashtag.ui.fragment.MeeraHashtagFragment"
+        tools:layout="@layout/meera_fragment_hashtag"
+        android:label="MeeraHashTagFragment" >
+
+        <action
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            android:id="@+id/action_meeraHashTagFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCreatePostFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.secondary.MeeraCreatePostFragment"
+        android:label="MeeraCreatePostFragment"
+        tools:layout="@layout/meera_create_post_fragment" />
+
+    <fragment
+        android:id="@+id/meeraChatFragment"
+        android:name="com.numplates.nomera3.modules.chat.MeeraChatFragment"
+        android:label="MeeraChatFragment"
+        tools:layout="@layout/meera_chat_fragment" />
+
+    <fragment
+        android:id="@+id/meeraContainerAvatarFragment"
+        android:name="com.numplates.nomera3.modules.avatar.MeeraContainerAvatarFragment"
+        android:label="MeeraContainerAvatarFragment"
+        tools:layout="@layout/fragment_container_avatar" />
+
+    <fragment
+        android:id="@+id/meeraUserComplaintDetailsFragment"
+        android:name="com.numplates.nomera3.modules.complains.ui.details.MeeraUserComplaintDetailsFragment"
+        android:label="MeeraUserComplaintDetailsFragment"
+        tools:layout="@layout/meera_add_complaint_fragment" />
+
+    <fragment
+        android:id="@+id/meeraGridProfilePhotoFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.profilephoto.MeeraGridProfilePhotoFragment"
+        android:label="MeeraGridProfilePhotoFragment"
+        tools:layout="@layout/meera_grid_photo_layout_fragment" >
+
+        <action
+            android:id="@+id/action_meeraGridProfilePhotoFragment_to_meeraProfilePhotoViewerFragment"
+            app:destination="@id/meeraProfilePhotoViewerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraProfilePhotoViewerFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.profilephoto.MeeraProfilePhotoViewerFragment"
+        android:label="MeeraProfilePhotoViewerFragment"
+        tools:layout="@layout/meera_fragment_gallery_fullscreen"/>
+
+    <dialog
+        android:id="@+id/meeraVehicleInfoFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleInfoFragment"
+        android:label="MeeraVehicleInfoFragment"
+        tools:layout="@layout/meera_fragment_vehicle_info_static">
+
+        <action
+            android:id="@+id/action_meeraVehicleInfoFragment_to_meeraVehicleEditFragment"
+            app:destination="@id/meeraVehicleEditFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/meeraVehicleEditFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.vehicleedit.MeeraVehicleEditFragment"
+        android:label="MeeraVehicleEditFragment"
+        tools:layout="@layout/meera_fragment_edit_vehicle" />
+
+    <fragment
+        android:id="@+id/meeraVehicleSelectTypeFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleSelectTypeFragment"
+        android:label="MeeraVehicleSelectTypeFragment"
+        tools:layout="@layout/meera_fragment_vehicle_select_type">
+
+        <action
+            android:id="@+id/action_meeraVehicleSelectTypeFragment_to_meeraVehicleEditFragment"
+            app:destination="@id/meeraVehicleEditFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraVehicleListFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraVehicleListFragment"
+        android:label="MeeraVehicleListFragment"
+        tools:layout="@layout/meera_fragment_vehicle_list">
+
+        <action
+            android:id="@+id/action_meeraVehicleListFragment_to_meeraVehicleSelectTypeFragment"
+            app:destination="@id/meeraVehicleSelectTypeFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/meeraFriendsHostFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraFriendsHostFragment"
+        android:label="MeeraFriendsHostFragment"
+        tools:layout="@layout/meera_friends_host_fragment">
+
+        <action
+            android:id="@+id/action_meeraMyFriendListFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraMyFriendListFragment_to_meeraPeoplesFragment"
+            app:destination="@id/peoplesFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraFriendsHostFragment_to_meeraPeoplesFragment"
+            app:destination="@id/peoplesFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraSubscribersListFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraSubscribersListFragment"
+        android:label="MeeraSubscribersListFragment"
+        tools:layout="@layout/meera_subscriptions_list_fragment">
+
+        <action
+            android:id="@+id/action_meeraSubscribersListFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraSubscribersListFragment_to_peoplesFragment"
+            app:destination="@id/peoplesFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraSubscriptionsListFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraSubscriptionsListFragment"
+        android:label="MeeraSubscriptionsListFragment"
+        tools:layout="@layout/meera_subscriptions_list_fragment">
+
+        <action
+            android:id="@+id/action_meeraSubscriptionsListFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraSubscriptionsListFragment_to_peoplesFragment"
+            app:destination="@id/peoplesFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_meeraIncomingFriendListFragment_to_userInfoFragment"
+        app:destination="@id/userInfoFragment"
+        app:enterAnim="@anim/meera_slide_left"
+        app:exitAnim="@anim/meera_wait_anim"
+        app:popEnterAnim="@anim/meera_wait_anim"
+        app:popExitAnim="@anim/meera_slide_right" />
+    <fragment
+        android:id="@+id/meeraOutgoingFriendListFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.MeeraOutgoingFriendListFragment"
+        android:label="MeeraOutgoingFriendListFragment"
+        tools:layout="@layout/meera_my_friend_list_fragment">
+
+        <action
+            android:id="@+id/action_meeraOutgoingFriendListFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraBaseSettingsUserSearchFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.privacysettings.basefragments.MeeraBaseSettingsUserSearchFragment"
+        android:label="MeeraBaseSettingsUserSearchFragment"
+        tools:layout="@layout/meera_moment_settings_user_add_fragment">
+
+        <action
+            android:id="@+id/action_meeraBaseSettingsUserSearchFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraViewVideoFragment"
+        android:name="com.numplates.nomera3.modules.viewvideo.presentation.MeeraViewVideoFragment"
+        android:label="MeeraViewVideoFragment"
+        tools:layout="@layout/meera_fragment_view_video">
+
+        <action
+            android:id="@+id/action_meeraViewVideoFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraViewVideoFragment_to_meeraHashTagFragment"
+            app:destination="@id/meeraHashTagFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/meeraMomentCommentsBottomSheetFragment"
+        android:name="com.numplates.nomera3.modules.moments.comments.presentation.MeeraMomentCommentsBottomSheetFragment"
+        android:label="MeeraMomentCommentsBottomSheetFragment"
+        tools:layout="@layout/meera_moment_comments_bottom_sheet">
+
+        <action
+            android:id="@+id/action_meeraMomentCommentsBottomSheetFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </dialog>
+
+</navigation>

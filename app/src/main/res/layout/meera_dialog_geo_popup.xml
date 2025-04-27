@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_map_bottomsheet"
+    android:orientation="vertical"
+    android:paddingBottom="24dp">
+
+    <com.meera.uikit.widgets.grabber.UiKitGrabberView
+        android:id="@+id/ukgv_event_navigation_grabber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="9dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/nv_geo_popup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:title="@string/geo_popup_enable"
+        app:showBackArrow="false"
+        app:showCloseButton="true" />
+
+    <ImageView
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/meera_img_geo_popup" />
+
+    <TextView
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/geo_popup_message"
+        android:textColor="@color/uiKitColorForegroundPrimary" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_geo_popup_enable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/geo_popup_enable"
+        app:buttonHeightMode="buttonText48"
+        app:buttonType="filled" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_geo_popup_skip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:gravity="center"
+        android:text="@string/general_later"
+        app:buttonHeightMode="buttonText48"
+        app:buttonType="transparent" />
+
+</LinearLayout>

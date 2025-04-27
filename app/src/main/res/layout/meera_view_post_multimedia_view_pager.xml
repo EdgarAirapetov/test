@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_post_multimedia_pager_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_post_multimedia_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <View
+        android:id="@+id/v_bottom_gradient"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="@drawable/gradient_smooth_bottom_round"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+        android:id="@+id/spi_post_multimedia_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_4dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:spi_dotColor="@color/white_alpha_40"
+        app:spi_dotSelectedColor="@color/white"
+        app:spi_dotSelectedSize="@dimen/material6"
+        app:spi_dotSize="@dimen/material6"
+        app:spi_dotSpacing="@dimen/material6"
+        app:spi_visibleDotCount="5"
+        app:spi_visibleDotThreshold="2" />
+
+    <FrameLayout
+        android:id="@+id/fl_post_multimedia_count_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_post_multimedia_count_indicator"
+            style="@style/WhiteRegular13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_attachment_counter"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="5dp"
+            tools:text="3/3" />
+
+    </FrameLayout>
+
+    <com.numplates.nomera3.modules.posts.ui.view.VideoDurationView
+        android:id="@+id/vdv_post_multimedia_video_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/video_duration_margin"
+        android:layout_marginBottom="@dimen/video_duration_margin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/vp_post_multimedia_pager"
+        app:layout_constraintEnd_toEndOf="@id/vp_post_multimedia_pager" />
+
+    <ImageView
+        android:id="@+id/iv_post_multimedia_media_expand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="2dp"
+        android:src="@drawable/ic_expand_image"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/vp_post_multimedia_pager"
+        app:layout_constraintStart_toStartOf="@id/vp_post_multimedia_pager" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

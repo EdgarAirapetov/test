@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="55dp"
+    android:layout_height="55dp">
+
+        <com.numplates.nomera3.presentation.view.widgets.VipView
+            android:id="@+id/double_avatar_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            app:size="SIZE_35"/>
+
+        <com.numplates.nomera3.presentation.view.widgets.VipView
+            android:id="@+id/double_avatar_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:size="SIZE_35"/>
+
+    <ImageView
+        android:id="@+id/notification_type_icon_double"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_notification_type_gift" />
+
+    </FrameLayout>
+
+
+

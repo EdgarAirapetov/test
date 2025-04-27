@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.core.utils.layouts.LinearEnableTouchLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_reaction_like_button"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
+    android:paddingStart="6dp"
+    android:paddingEnd="6dp">
+
+    <ImageView
+        android:id="@+id/iv_reaction_like_icon"
+        android:layout_width="24dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_outlined_like_m" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_reaction_like_icon"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_reaction_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="12sp"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        style="@style/UiKit.Display.Caps_12"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:text="@string/reaction_green_light" />
+
+    <TextView
+        android:id="@+id/tv_reaction_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:textSize="12sp"
+        style="@style/UiKit.Display.Medi_14"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:text="@string/reaction_green_light" />
+
+</com.meera.core.utils.layouts.LinearEnableTouchLayout>

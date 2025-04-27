@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_people_second_step_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/vg_second_people_onboarding_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_people_second_step"
+            android:layout_width="256dp"
+            android:layout_height="174dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="17dp"
+            app:srcCompat="@drawable/meera_img_people_onboarding_second_step" />
+
+        <TextView
+            style="@style/UiKit.Header.Subtitle"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/first_people_content_here_type" />
+
+        <TextView
+            style="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical|start"
+            android:text="@string/people_approved_profiles"
+            app:drawableStartCompat="@drawable/ic_filled_verified_m"
+            app:drawableTint="@color/uiKitColorAccentPrimary" />
+
+        <TextView
+            style="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical|start"
+            android:text="@string/people_interesting_authors"
+            app:drawableStartCompat="@drawable/ic_filled_verified_flame_m_colored" />
+
+        <TextView
+            android:id="@+id/tv_people_onboarding_description"
+            style="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/second_people_tab_description" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

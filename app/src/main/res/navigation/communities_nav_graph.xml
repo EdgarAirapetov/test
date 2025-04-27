@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/communities_graph"
+    app:startDestination="@id/meeraCommunitiesListsContainerFragment">
+
+    <fragment
+        android:id="@+id/meeraCommunitiesListsContainerFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.list.MeeraCommunitiesListsContainerFragment"
+        android:label="MeeraCommunitiesListsContainerFragment"
+        tools:layout="@layout/meera_fragment_group">
+
+        <action
+            android:id="@+id/action_meeraCommunitiesListsContainerFragment_to_meeraCommunityEditFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityEditFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunitiesListsContainerFragment_to_meeraCommunityRoadFragment"
+            app:destination="@id/meeraCommunityRoadFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCommunityEditFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.MeeraCommunityEditFragment"
+        android:label="MeeraCommunityEditFragment"
+        tools:layout="@layout/meera_edit_group_fragment">
+        <action
+            android:id="@+id/action_meeraCommunityEditFragment_to_meeraCommunityRoadFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityRoadFragmentMainFlow" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_meeraHashtagFragment"
+        app:destination="@id/meeraHashTagFragment"
+        app:enterAnim="@anim/meera_slide_left"
+        app:exitAnim="@anim/meera_wait_anim"
+        app:popEnterAnim="@anim/meera_wait_anim"
+        app:popExitAnim="@anim/meera_slide_right" />
+
+    <fragment
+        android:id="@+id/meeraHashTagFragment"
+        android:name="com.numplates.nomera3.modules.hashtag.ui.fragment.MeeraHashtagFragment"
+        tools:layout="@layout/meera_fragment_hashtag"
+        android:label="MeeraHashTagFragment" >
+
+        <action
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            android:id="@+id/action_meeraHashTagFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCommunityRoadFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.MeeraCommunityRoadFragment"
+        android:label="MeeraCommunityRoadFragment"
+        tools:layout="@layout/meera_fragment_show_community">
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraCreatePostFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCreatePostFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraChatFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraChatFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraSearchFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraSearchMainFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraCommunityMembersContainerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityMembersContainerFragmentNew" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraCommunityEditFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityEditFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraCommunityModeratorDashboardFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityModeratorDashboardFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraCommunityCreatorDashboardFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityCreatorDashboardFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraProfilePhotoViewerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraProfilePhotoViewerFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityRoadFragment_to_meeraCommunitiesListsContainerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunitiesListsContainerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCommunityMembersContainerFragmentNew"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.members.MeeraCommunityMembersContainerFragment"
+        android:label="MeeraCommunityMembersContainerFragment"
+        tools:layout="@layout/meera_community_members_container_fragment"/>
+
+    <fragment
+        android:id="@+id/meeraCommunityModeratorDashboardFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.dashboard.MeeraCommunityModeratorDashboardFragment"
+        android:label="MeeraCommunityModeratorDashboardFragment"
+        tools:layout="@layout/meera_community_administration_fragment">
+
+        <action
+            android:id="@+id/action_meeraCommunityModeratorDashboardFragment_to_meeraCommunityBlacklistFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityBlacklistFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityModeratorDashboardFragment_to_meeraCommunityMembersContainerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityMembersContainerFragmentNew" />
+        <action
+            android:id="@+id/action_meeraCommunityModeratorDashboardFragment_to_meeraCommunityEditFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCommunityCreatorDashboardFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.dashboard.MeeraCommunityCreatorDashboardFragment"
+        android:label="MeeraCommunityCreatorDashboardFragment"
+        tools:layout="@layout/meera_community_administration_fragment">
+
+        <action
+            android:id="@+id/action_meeraCommunityCreatorDashboardFragment_to_meeraCommunityMembersContainerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityMembersContainerFragmentNew" />
+
+        <action
+            android:id="@+id/action_meeraCommunityCreatorDashboardFragment_to_meeraCommunityEditFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityEditFragment" />
+
+        <action
+            android:id="@+id/action_meeraCommunityCreatorDashboardFragment_to_meeraCommunityBlacklistFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/meeraCommunityBlacklistFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraProfilePhotoViewerFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.profilephoto.MeeraProfilePhotoViewerFragment"
+        android:label="MeeraProfilePhotoViewerFragment"
+        tools:layout="@layout/meera_fragment_gallery_fullscreen"/>
+
+    <fragment
+        android:id="@+id/meeraCommunityBlacklistFragment"
+        android:name="com.numplates.nomera3.modules.communities.ui.fragment.MeeraCommunityBlacklistFragment"
+        android:label="MeeraCommunityBlacklistFragment"
+        tools:layout="@layout/meera_fragment_community_blacklist"/>
+
+    <fragment
+        android:id="@+id/meeraCreatePostFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.secondary.MeeraCreatePostFragment"
+        android:label="MeeraCreatePostFragment"
+        tools:layout="@layout/meera_create_post_fragment" />
+
+    <fragment
+        android:id="@+id/meeraChatFragment"
+        android:name="com.numplates.nomera3.modules.chat.MeeraChatFragment"
+        android:label="MeeraChatFragment"
+        tools:layout="@layout/meera_chat_fragment" />
+
+    <fragment
+        android:id="@+id/meeraSearchMainFragment"
+        android:name="com.numplates.nomera3.modules.search.ui.fragment.MeeraSearchMainFragment"
+        android:label="MeeraSearchMainFragment"
+        tools:layout="@layout/meera_fragment_search_main"/>
+
+</navigation>

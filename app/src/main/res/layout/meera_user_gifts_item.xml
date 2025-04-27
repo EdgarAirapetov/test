@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:layout_marginTop="16dp"
+    android:descendantFocusability="blocksDescendants">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_header_gift_cell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="4dp"
+        tools:cellLeftElement="left_userPic40"
+        tools:cellTitleValue="Алена Котикова"
+        tools:cellCityValue="\@kotik222">
+
+        <TextView
+            android:id="@+id/tv_header_gift_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="1 час назад"/>
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+    <ImageView
+        android:id="@+id/iv_image_gift"
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_header_gift_cell"
+        tools:src="@drawable/ic_no_gifts"/>
+
+    <TextView
+        style="@style/UiKit.Body.Normal"
+        android:id="@+id/tv_gift_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_image_gift"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorGray9298A0"
+        tools:text="=)"/>
+
+    <com.meera.uikit.widgets.chips.UiKitChipView
+        android:id="@+id/v_gift_state_new"
+        style="@style/UiKit.Body.Description"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_image_gift"
+        android:layout_marginEnd="12dp"
+        app:chipType="secondary"
+        android:text="@string/new_gift"
+        app:chip_size="size_24"
+        tools:visibility="visible"
+        android:visibility="gone"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/v_btn_send_gift_return"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_gift_comment"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="16dp"
+        android:text="@string/gifts_send_gift_back"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

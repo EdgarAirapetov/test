@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_banner_root"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_gravity="center_horizontal"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_happy_birthday_meera"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/iv_image_pony"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/ic_happy_birthday_pony"/>
+
+        <TextView
+            android:id="@+id/tv_happy_birthday_text"
+            style="@style/UiKit.Header.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/iv_image_pony"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/meera_birthday_banner_header_message"
+            android:textColor="@color/uiKitColorForegroundPrimary"/>
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/happy_birthday_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/iv_image_pony"
+            app:layout_constraintTop_toBottomOf="@+id/tv_happy_birthday_text"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:buttonType="elevated"
+            android:text="@string/congratulation_txt"
+            app:buttonHeightMode="buttonText36"/>
+
+        <ImageView
+            android:id="@+id/iv_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_outlined_close_s" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

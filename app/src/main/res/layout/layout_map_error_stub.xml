@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/map_events_configuration_bottomsheet_height"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/bg_map_bottomsheet"
+    android:orientation="vertical"
+    android:paddingTop="33dp">
+
+    <include layout="@layout/view_something_wrong_error" />
+
+    <androidx.legacy.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_map_error_stub_action"
+        style="@style/UserSnippetErrorButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/map_error_stub_btn" />
+</LinearLayout>

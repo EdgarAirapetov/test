@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tab_title"
+        tools:text="Tab title"
+        android:textColor="@drawable/selector_tab_text_rooms_container"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tab_count"
+        android:visibility="gone"
+        android:textSize="12sp"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:lines="1"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:background="@drawable/circle_tab_bg"
+        tools:text="+22"
+        android:ellipsize="end"
+        tools:visibility="visible"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        tools:ignore="SmallSp" />
+</LinearLayout>

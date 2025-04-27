@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/iv_event_pin_large_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-19dp"
+        android:background="@drawable/bg_event_pin_large"
+        android:minWidth="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_event_pin_large_event_bg">
+
+        <!-- Padding here to fix black corners when image is set via setImageBitmap() -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_event_pin_large_image"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:padding="1dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/EventPinLargeImageShapeOverlay"
+            tools:src="@drawable/ic_flag_of_belarus"
+            tools:visibility="visible" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_event_pin_large_image_placeholder"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@color/map_event_pin_img_error_bg"
+            android:scaleType="centerInside"
+            android:src="@drawable/img_image_error"
+            app:layout_constraintBottom_toBottomOf="@id/iv_event_pin_large_image"
+            app:layout_constraintEnd_toEndOf="@id/iv_event_pin_large_image"
+            app:layout_constraintStart_toStartOf="@id/iv_event_pin_large_image"
+            app:layout_constraintTop_toTopOf="@id/iv_event_pin_large_image"
+            app:shapeAppearanceOverlay="@style/EventPinLargeImageShapeOverlay"
+            tools:visibility="gone" />
+
+        <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+            android:id="@+id/tv_event_pin_large_event_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:gravity="start|center_vertical"
+            android:maxWidth="168dp"
+            android:maxLines="2"
+            android:textAppearance="@style/BlackRegular16"
+            app:layout_constraintBottom_toBottomOf="@id/iv_event_pin_large_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_event_pin_large_image"
+            app:layout_constraintTop_toTopOf="@id/iv_event_pin_large_image"
+            app:layout_goneMarginBottom="12dp"
+            app:layout_goneMarginStart="12dp"
+            app:layout_goneMarginTop="12dp"
+            tools:text="Кто пойдёт на пробежку?" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/iv_event_pin_small_shadow"
+        android:layout_width="8dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="-3.1dp"
+        android:layout_marginTop="-2.5dp"
+        android:background="@drawable/ic_event_add_marker_shadow"
+        app:layout_constraintStart_toStartOf="@id/iv_event_pin_large_stem"
+        app:layout_constraintTop_toBottomOf="@id/iv_event_pin_large_stem" />
+
+    <ImageView
+        android:id="@+id/iv_event_pin_large_stem"
+        android:layout_width="16dp"
+        android:layout_height="24dp"
+        android:src="@drawable/img_pin_stem"
+        android:scaleType="fitXY"
+        android:layout_marginTop="-2dp"
+        app:layout_constraintEnd_toEndOf="@id/iv_event_pin_large_background"
+        app:layout_constraintStart_toStartOf="@id/iv_event_pin_large_background"
+        app:layout_constraintTop_toBottomOf="@id/iv_event_pin_large_background" />
+
+    <View
+        android:id="@+id/iv_event_pin_large_event_bg"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="-19dp"
+        android:background="@drawable/avatar_view_background"
+        app:layout_constraintStart_toEndOf="@id/iv_event_pin_large_background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_event_pin_large_event"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/avatar_view_background"
+        android:padding="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_event_pin_large_event_bg"
+        app:layout_constraintEnd_toEndOf="@id/iv_event_pin_large_event_bg"
+        app:layout_constraintStart_toStartOf="@id/iv_event_pin_large_event_bg"
+        app:layout_constraintTop_toTopOf="@id/iv_event_pin_large_event_bg"
+        tools:backgroundTint="@color/map_event_education_bg"
+        tools:src="@drawable/ic_map_event_education" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white_1000"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:stateListAnimator="@drawable/selector_appbar_elevation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/status_bar_gift_user"
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_gift_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            app:layout_collapseMode="pin"
+            app:titleTextColor="@color/ui_black">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/my_gifts"
+                android:textColor="@color/black_1000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendMeGiftLayout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/sendMeGiftIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/gift_purple_v3"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sendMeGiftText"
+            app:layout_constraintEnd_toStartOf="@id/sendMeGiftText"
+            app:layout_constraintBottom_toBottomOf="@id/sendMeGiftText"/>
+
+        <TextView
+            android:id="@+id/sendMeGiftText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/PurpleRegular16"
+            android:text="@string/gifts_send_gift_to_me_btn_label"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sendMeGiftIcon"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/sendMeGiftSeparator"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_separator"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_user_gifts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_gift_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="100dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/ll_user_gifts_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_gift_big" />
+
+                <TextView
+                    style="@style/GrayRegular18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="40dp"
+                    android:gravity="center"
+                    android:text="@string/profile_user_gifts_empty" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bt_send_gift"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="@dimen/padding20"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn"
+                android:layout_marginEnd="@dimen/padding20"
+                app:cardBackgroundColor="#F7D354"
+                android:foreground="@drawable/ripple_background_100"
+                android:paddingBottom="20dp"
+                app:cardElevation="8dp"
+                android:visibility="gone"
+                app:cardCornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn" />
+
+                <TextView
+                    android:id="@+id/tvSend"
+                    style="@style/BlackRegular16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/icongift_copy"
+                    android:drawablePadding="6dp"
+                    android:gravity="start|center_vertical"
+                    android:text="@string/gifts_send_gift_btn_label" />
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

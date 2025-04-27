@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.meera.analytics'
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation (
+        "com.google.dagger:dagger:$dagger_main_version",
+        "com.amplitude:android-sdk:$amplitude_version",
+        "com.yandex.android:mobmetricalib:$app_metrica",
+        "com.jakewharton.timber:timber:$timber_version"
+    )
+
+    kapt(
+        "org.jetbrains.kotlinx:kotlinx-metadata-jvm:$kotlinx_metadata_version",
+        "com.google.dagger:dagger-compiler:$dagger_version"
+    )
+    testImplementation "junit:junit:$junit_version"
+}

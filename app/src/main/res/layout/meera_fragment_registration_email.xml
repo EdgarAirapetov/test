@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_reg_email_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/nv_registration_phone_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:title="@string/meera_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showBackArrow="true">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_help_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help"
+            app:buttonHeightMode="buttonText48"
+            app:buttonType="transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+    <LinearLayout
+        android:id="@+id/vg_reg_email_buttons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.meera.uikit.widgets.UiKitInput
+            android:id="@+id/uki_registration_email"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginHorizontal="16dp"
+            app:inputHint="@string/meera_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nv_registration_phone_email"
+            app:showInputDescription="false"
+            app:showInputDescriptionIcon="false"
+            app:showInputInformation="false"
+            app:showInputInformationIcon="false"
+            app:showLeftIcon="false"
+            app:showRightButton1="false"
+            app:showRightButton2="false" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rules_description"
+            style="@style/UiKit.Body.Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="@dimen/offset_16dp"
+            android:text="@string/continue_if_agree"
+            android:textAlignment="center"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uki_registration_email" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_rules_description" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

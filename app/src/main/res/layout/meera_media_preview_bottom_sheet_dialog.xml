@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_item_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_send_m"
+        app:cellTitleValue="@string/general_send"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_item_add_to_favorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_fav_m"
+        app:cellTitleValue="@string/add_to_favorites"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_item_remove_from_favorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_fav_off_m"
+        app:cellTitleValue="@string/remove_from_favorites"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_item_remove_from_recent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_clear_recent_m"
+        app:cellTitleValue="@string/remove_from_recents"/>
+
+</LinearLayout>

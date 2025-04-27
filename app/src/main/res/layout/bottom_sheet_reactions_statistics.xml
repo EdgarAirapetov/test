@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/road_filter_root_container_bg"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_reaction_title"
+            style="@style/SansProSemibold18Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/reactions" />
+
+        <ImageView
+            android:id="@+id/iv_close_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="@dimen/material16"
+            android:layout_marginBottom="@dimen/material16"
+            android:background="?actionBarItemBackground"
+            android:src="@drawable/ic_close_light"
+            app:tint="@color/colorBlack" />
+    </FrameLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/sfl_reaction_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/item_reaction_first_tab_shimmer" />
+
+            <include layout="@layout/item_reaction_tab_shimmer" />
+
+            <include layout="@layout/item_reaction_tab_shimmer" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout_reactions_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:visibility="gone"
+        app:tabIndicatorHeight="2dp"
+        app:tabMinWidth="0dp"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="4dp"
+        app:tabPaddingStart="4dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/v_divider"
+        android:background="@color/color_divider_gray" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_reactions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="480dp"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_reactions_empty"
+        android:layout_width="match_parent"
+        style="@style/SansProRegular18Gray"
+        android:layout_height="480dp"
+        android:gravity="center"
+        android:minHeight="480dp"
+        android:text="@string/reactions_empty"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</LinearLayout>

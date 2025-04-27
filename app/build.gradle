@@ -1,0 +1,378 @@
+def getProperties(propFile) {
+    def propertiesFile = rootProject.file(propFile)
+    def properties = new Properties()
+    properties.load(new FileInputStream(propertiesFile))
+    return properties
+}
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'com.google.firebase.crashlytics'
+    id 'appmetrica-plugin'
+}
+
+//https://appmetrica.yandex.ru/docs/mobile-sdk-dg/android/about/android-build-plugin.html#plugin
+appmetrica {
+    postApiKey = { applicationVariant -> getProperties('apikey.properties')['appMetricaKey'] }
+    // or postApiKey = "Post Api key"
+    mappingBuildTypes = ['release']                 // Optional.
+    offline = false                                 // Optional.
+    mappingFile = { applicationVariant -> null }    // Optional.
+    enableAnalytics = true                          // Optional.
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.numplates.nomera3"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 303341
+        versionName "5.0.0"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += [
+                    "room.schemaLocation"  : "$projectDir/schemas".toString(),
+                    "room.incremental"     : "true",
+                    "room.expandProjection": "true"
+                ]
+            }
+        }
+
+        Properties signProperties = getProperties('keystore.properties')
+
+        signingConfigs {
+            debug {
+                storeFile rootProject.file(signProperties['storeFile2'])
+                storePassword signProperties['storePassword2']
+                keyAlias signProperties['keyAlias2']
+                keyPassword signProperties['keyPassword2']
+            }
+
+            release {
+                storeFile rootProject.file(signProperties['storeFile2'])
+                storePassword signProperties['storePassword2']
+                keyAlias signProperties['keyAlias2']
+                keyPassword signProperties['keyPassword2']
+            }
+        }
+
+        generatedDensities = []
+    }
+
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [
+                appIcon     : "@mipmap/ic_launcher_redesign",
+                appIconRound: "@mipmap/ic_launcher_redesign_round"
+            ]
+            debuggable true
+            minifyEnabled false
+            applicationIdSuffix '.dev'
+            ext.enableCrashlytics = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            resValue "string", "gmaps_api_key", getProperties('apikey.properties')['gmaps_api_key']
+        }
+
+        release {
+            manifestPlaceholders = [
+                appIcon     : "@mipmap/ic_launcher_redesign",
+                appIconRound: "@mipmap/ic_launcher_redesign_round"
+            ]
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            resValue "string", "gmaps_api_key", getProperties('apikey.properties')['gmaps_api_key']
+        }
+    }
+
+
+    compileOptions {
+        // Flag to enable support for the new language APIs on older android versions
+        // https://developer.android.com/studio/write/java8-support#library-desugaring
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = rootProject.ext.javaVersion
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+    androidResources {
+        additionalParameters '--no-version-vectors'
+    }
+    lint {
+        abortOnError true
+        checkReleaseBuilds false
+        disable 'ContentDescription'
+    }
+
+    namespace 'com.numplates.nomera3'
+
+    assetPacks = [":assets_pack"]
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'androidx.core'
+            && (details.requested.name == 'core' || details.requested.name == 'core-ktx')
+            && details.requested.version == '+') {
+            details.useVersion "$android_core_ctx"
+            details.because 'avoid "+" sign on android.core lib version, used version from the core module'
+        }
+    }
+}
+
+dependencies {
+    // Dependency to enable support for the new language APIs on older android versions
+    // https://developer.android.com/studio/write/java8-support#library-desugaring
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+
+    implementation(
+        project(':core'),
+        project(':database'),
+        project(':bridge'),
+        project(':nmravatars'),
+        project(':webrtc'),
+
+        // Временное решение, необходимо обсуждение как имплементить модуль аналитики
+        project(':analytics'),
+
+        project(':feature:referrals'),
+        project(':feature:mediacontroller:media_controller_api'),
+        project(':feature:application_api')
+    )
+    debugImplementation(
+        project(':devtools')
+    )
+
+    implementation project(':feature:mediacontroller:media_controller_implementation')
+    implementation project(':feature:mediacontroller:media_controller_api')
+    implementation project(':feature:mediacontroller:media_controller_common')
+    implementation "com.noomeera:NMRMediaTools:$photo_video_editor_version"
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    implementation "androidx.core:core-splashscreen:$splash_screen"
+    implementation "androidx.recyclerview:recyclerview:$recycler_version"
+    implementation "androidx.preference:preference-ktx:$androidx_preference"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "com.google.android.flexbox:flexbox:$flexbox_version"
+
+    //Billing
+    implementation "com.android.billingclient:billing:$billing_client_version"
+    implementation "com.android.billingclient:billing-ktx:$billing_client_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "com.googlecode.libphonenumber:libphonenumber:$libphonenumber_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    debugImplementation "com.github.bumptech.glide:annotations:$glide_version"
+    implementation("com.github.bumptech.glide:recyclerview-integration:$glide_preload_version") {
+        // Excludes the support library because it's already included by Glide.
+        transitive = false
+    }
+
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java2_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android2_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rx_kotlin_version"
+    implementation "com.tbruyelle.rxpermissions2:rxpermissions:$rx_permissions_version"
+    implementation "com.f2prateek.rx.preferences2:rx-preferences:$rx_preferences_version"
+
+    implementation "androidx.paging:paging-runtime-ktx:$paging_verion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.activity:activity-ktx:$activity_ktx_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_ktx_version"
+
+    implementation "androidx.work:work-rxjava2:$work_version"
+    implementation "androidx.work:work-runtime-ktx:$work_runtime_version"
+
+    implementation "androidx.camera:camera-core:$camera_version"
+    implementation "androidx.camera:camera-camera2:$camera_version"
+    implementation "androidx.camera:camera-lifecycle:$camera_version"
+    implementation "androidx.camera:camera-view:$camera_view_version"
+
+
+    implementation "com.google.code.gson:gson:$gson_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$gson_converter_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okio:okio:$okio_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation("io.socket:socket.io-client:$socket_io_version") {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    implementation "com.github.dsrees:JavaPhoenixClient:$java_phoenix_client_version"
+
+    //room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    implementation "com.google.android.gms:play-services-location:$play_services_location_version"
+    implementation "com.google.android.gms:play-services-maps:$play_services_maps_version"
+    implementation "com.google.maps.android:android-maps-utils:$android_maps_utils_version"
+    implementation "com.google.android.gms:play-services-auth:$play_services_auth_version"
+    implementation "com.google.android.gms:play-services-auth-api-phone:$play_services_auth_phone_version"
+
+    implementation "com.google.firebase:firebase-core:$firebase_core_verion"
+    implementation "com.google.firebase:firebase-messaging:$firebase_messaging_version"
+    implementation "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
+    implementation "com.android.installreferrer:installreferrer:$install_referrer_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    implementation "gun0912.ted:tedonactivityresult:$tedonactivityresult_version"
+
+    implementation "androidx.legacy:legacy-support-v4:$egacy_support_v4_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    implementation "com.googlecode.libphonenumber:libphonenumber:$libphonenumber_version"
+    implementation("commons-validator:commons-validator:$commons_validator_version") {
+        exclude group: 'commons-logging', module: 'commons-logging'
+    }
+
+    implementation "com.airbnb.android:lottie:$lottie_version"
+
+    implementation "com.github.chrisbanes:PhotoView:$photo_view_version"
+
+    implementation "com.andkulikov:transitionseverywhere:$transitionseverywhere_version"
+
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger:$dagger_main_version"
+    kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:$kotlinx_metadata_version"
+
+    implementation "com.twilio:audioswitch:$audio_switch"
+
+    implementation "com.androidadvance:topsnackbar:$topsnackbar_version"
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinx_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
+    implementation group: 'org.jetbrains.kotlinx', name: 'kotlinx-coroutines-rx2', version: "$kotlinx_coroutines_version"
+
+
+    implementation "tech.escape-team.meera:library-webrtc:1.0-alpha.2"
+    implementation "pl.droidsonroids.gif:android-gif-drawable:$pl_gif_version"
+    implementation "com.github.piasy:GlideImageLoader:$piasy_version"
+    implementation "com.github.piasy:BigImageViewer:$piasy_version"
+    implementation "com.github.piasy:GlideImageViewFactory:$piasy_version"
+
+    implementation "ru.egslava:MaskedEditText:$masked_edit_text_version"
+
+    //ViewPager indicators
+    implementation "fr.avianey.com.viewpagerindicator:library:$viewpagerindicator_version"
+    implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:$scrolling_pager_version"
+
+    implementation "com.github.skydoves:baserecyclerviewadapter:$baserecyclerviewadapter_version"
+
+    implementation "com.thoughtbot:expandablerecyclerview:$expandablerecyclerview_version"
+    implementation "com.thoughtbot:expandablecheckrecyclerview:$expandablecheckrecycle_version"
+
+    implementation "com.google.android.exoplayer:exoplayer:$exo_player_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$exo_player_version"
+
+    implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapter_delegates_version"
+
+    // Import the BoM for the Firebase platform
+    implementation platform("com.google.firebase:firebase-bom:$firebase_analytics_version")
+
+    // Declare the dependency for the Analytics library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-config-ktx'
+
+    //Need to search for ANR
+    // implementation 'com.github.anrwatchdog:anrwatchdog:1.4.0'
+
+    // AppsFlyer Analytics
+    implementation "com.appsflyer:af-android-sdk:$appsflyer_version"
+
+    //Amplitude Analytics
+    implementation "com.amplitude:android-sdk:$amplitude_version"
+
+    // Analytics AppMetrica
+    implementation "com.yandex.android:mobmetricalib:$app_metrica"
+
+    // AppMetrica PUSH SDK
+    implementation "com.yandex.android:mobmetricapushlib:$app_metrica_push"
+
+    implementation "androidx.camera:camera-extensions:$camera_version"
+
+    //Video converter
+    implementation "com.linkedin.android.litr:litr:$video_converter_version"
+
+    //shimmer
+    implementation "com.facebook.shimmer:shimmer:$shimmer"
+
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "androidx.test:runner:1.5.2"
+    testImplementation "androidx.test.ext:junit:1.1.5"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    //Mockito
+    testImplementation 'org.mockito:mockito-core:4.5.1'
+    testImplementation 'org.mockito.kotlin:mockito-kotlin:3.2.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+
+}
+
+//At any enexpected situation: gradle assemble --stacktrace
+//Don't move google-services plugin apply to the above or project will fail to build
+apply plugin: 'com.google.gms.google-services'

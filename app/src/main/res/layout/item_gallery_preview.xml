@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llContent"
+    android:layout_width="96dp"
+    android:layout_height="96dp"
+    android:background="@color/ui_white">
+
+    <ImageView
+        android:id="@+id/ivPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+
+    <com.meera.uikit.widgets.blur.UiKitRealtimeBlurView
+        android:id="@+id/ukrbv_sensitive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:realtimeBlurRadius="11dp"
+        app:realtimeOverlayColor="@color/ui_black_80"
+        tools:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tv_sensitive"
+        style="@style/WhiteRegular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/sensitive_18_plus"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+</FrameLayout>

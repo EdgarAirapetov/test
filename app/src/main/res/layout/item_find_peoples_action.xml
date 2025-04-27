@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_find_peoples_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/offset_8dp"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/ib_find_people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_search_ui_purple" />
+
+    <TextView
+        android:id="@+id/tv_find_people"
+        style="@style/BlackRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/offset_8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/ib_find_people"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/search_by_name" />
+
+    <TextView
+        android:id="@+id/tv_find_people_description"
+        style="@style/GrayA7A5Regular13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/find_friends_in_whole_world"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_find_people"
+        app:layout_constraintTop_toBottomOf="@+id/tv_find_people" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

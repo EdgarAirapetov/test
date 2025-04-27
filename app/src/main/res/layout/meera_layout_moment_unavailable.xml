@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:background="@color/uiKitColorBackgroundInvers">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_moment_unavailable_icon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:srcCompat="@drawable/ic_moment_empty_state" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_moment_unavailable_header"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/uiKitColorForegroundInvers"
+        android:text="@string/moments_unavailable_default_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_moment_unavailable_message"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:text="@string/meera_moments_unavailable_time_out_message" />
+
+</LinearLayout>

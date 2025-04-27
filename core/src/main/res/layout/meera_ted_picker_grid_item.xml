@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.core.utils.tedbottompicker.view.TedSquareFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fafafa"
+    app:matchHeightToWidth="true">
+
+    <FrameLayout
+        android:id="@+id/fl_img_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.meera.core.utils.tedbottompicker.view.TedSquareImageView
+            android:id="@+id/iv_thumbnail_with_padding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:background="@color/ui_yellow"
+            tools:visibility="visible"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@+id/fl_video_selected"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient_tile_smooth_bottom"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_video_time_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                tools:text="0:52"
+                android:textAppearance="@style/UiKit.Body.Description"
+                android:textColor="@color/uiKitColorForegroundInvers"
+                android:textSize="14sp" />
+
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/v_camera_background"
+            android:visibility="gone"
+            android:background="@color/color_soft_black"
+            android:layout_width="122dp"
+            android:layout_height="122dp"/>
+
+        <androidx.camera.view.PreviewView
+            android:visibility="gone"
+            android:id="@+id/preview_camera"
+            android:backgroundTint="@color/color_soft_black"
+            android:layout_width="122dp"
+            android:layout_height="122dp"
+            android:scaleType="fitCenter"/>
+
+        <com.meera.core.utils.tedbottompicker.view.TedSquareImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside" />
+
+        <FrameLayout
+            android:id="@+id/fl_video"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/gradient_tile_smooth_bottom">
+
+            <TextView
+                android:id="@+id/tv_video_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="@style/UiKit.Body.Description"
+                android:textColor="@color/uiKitColorForegroundInvers"
+                android:textSize="14sp"
+                tools:text="0:52" />
+
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/v_white_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/white_70"/>
+
+    <FrameLayout
+        android:id="@+id/fl_container_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp">
+
+        <TextView
+            android:textAppearance="@style/Legacy.Body.Description"
+            android:id="@+id/tv_selected"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/uiKitColorPrimaryBlack"
+            android:gravity="center"
+            android:layout_margin="9dp"
+            android:lines="1"
+            android:background="@drawable/meera_circle_tab_bg"
+            android:ellipsize="end"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_selected"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:src="@drawable/icon_check_violet"
+            app:tint="@color/uiKitColorForegroundPrimary" />
+
+    </FrameLayout>
+
+</com.meera.core.utils.tedbottompicker.view.TedSquareFrameLayout>

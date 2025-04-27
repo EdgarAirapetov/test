@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/nv_registration_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:title="@string/meera_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showBackArrow="true">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_help_registration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/help"
+            app:buttonHeightMode="buttonText48"
+            app:buttonType="transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+    <TextView
+        android:id="@+id/tv_code_sent_description"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nv_registration_code"
+        tools:text="отправлен на номер" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/vg_send_code_phone_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_code_sent_description">
+
+        <TextView
+            android:id="@+id/tv_send_to_country_code"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvCodeSentDescription"
+            app:layout_constraintEnd_toStartOf="@+id/et_code_send_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/mcvCodeInput"
+            app:layout_constraintTop_toBottomOf="@id/tvCodeSentDescription"
+            tools:text="+7"
+            tools:visibility="visible" />
+
+        <com.meera.uikit.widgets.maskededittext.MaskedEditText
+            android:id="@+id/et_code_send_to"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeMinTextSize="16sp"
+            android:autoSizeStepGranularity="2sp"
+            android:background="@null"
+            android:enabled="false"
+            android:focusable="false"
+            android:inputType="none"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:visibility="invisible"
+            app:allowed_chars="1234567890"
+            app:mask="### ###-##-##"
+            tools:text="999 999 99 932132131232133213219"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <com.meera.uikit.widgets.UiKitInput
+        android:id="@+id/uki_registration_code"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vg_send_code_phone_email" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_resend_code_time"
+        style="@style/UiKit.Body.Description"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uki_registration_code"
+        tools:text="Запроси код повторно через час" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_resend_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/meera_send_again"
+        app:buttonHeightMode="buttonText48"
+        app:buttonType="transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_resend_code_time" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

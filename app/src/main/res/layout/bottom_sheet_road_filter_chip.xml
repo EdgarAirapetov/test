@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:chipStartPadding="2dp"
+    app:chipEndPadding="8dp"
+    android:textColor="#9F9CAA"
+    app:chipBackgroundColor="#FFFFFF"
+    android:fontFamily="@font/source_sanspro_regular"
+    app:chipStrokeColor="#9F9CAA"
+    app:chipStrokeWidth="1dp"
+    app:chipCornerRadius="12dp"
+    app:chipMinTouchTargetSize="40dp"
+    app:closeIcon="@drawable/road_filter_selected_city_ic_remove"
+    app:closeIconTint="#9F9CAA"
+    app:closeIconEnabled="true"
+    app:closeIconSize="12dp"
+    tools:text="Магадан" />

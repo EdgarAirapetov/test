@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_post_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <include layout="@layout/post_text_background_shimmer_progress"
+        android:id="@+id/l_progress"
+        android:visibility="gone"/>
+
+    <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+        android:id="@+id/tv_post_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginVertical="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textAppearance="@style/UiKit.Header.H1"
+        android:gravity="center"
+        android:hyphenationFrequency="none"
+        android:maxLength="2500"
+        android:textIsSelectable="true"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:autoSizeMaxTextSize="32sp"
+        app:autoSizeMinTextSize="16sp"
+        app:autoSizeStepGranularity="4dp"
+        app:autoSizeTextType="uniform" />
+
+    <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+        android:id="@+id/et_post_text_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="28dp"
+        android:background="@null"
+        android:textAppearance="@style/UiKit.Header.H1"
+        android:gravity="center"
+        android:hint="@string/what_is_new"
+        android:hyphenationFrequency="none"
+        android:inputType="textMultiLine|textCapSentences|textNoSuggestions"
+        android:maxLength="2500"
+        android:saveEnabled="false"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:textColorHint="@color/uiKitColorForegroundSecondary"
+        android:textSize="32sp"
+        android:visibility="invisible" />
+
+</FrameLayout>

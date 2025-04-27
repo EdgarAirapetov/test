@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundLightPurple"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/statusBarStub"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/ui_white_100" />
+
+    <FrameLayout
+        android:id="@+id/toolbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white_100">
+
+        <FrameLayout
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/iv_group_info_toolbar_arrow_back"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/arrowback" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/headerTextView"
+            style="@style/BlackSemibold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="@string/community_blacklist_fragment_title" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:background="@color/gray_separator" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/blacklistPlaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/blacklistPlaceholderHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/blacklist_placeholder_header_text"
+                android:textAppearance="@style/BlackSemibold22" />
+
+            <TextView
+                android:id="@+id/blacklistPlaceholderTextOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/blacklist_placeholder_text_one"
+                android:textAppearance="@style/GrayRegular18"
+                android:textColor="@color/ui_gray_80" />
+
+            <TextView
+                android:id="@+id/blacklistPlaceholderTextTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/blacklist_placeholder_text_two"
+                android:textAppearance="@style/GrayRegular18"
+                android:textColor="@color/ui_gray_80" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/blacklist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="16dp"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

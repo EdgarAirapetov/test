@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/profile_groups"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="16dp"
+        style="@style/UiKit.Header.Subtitle"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:src="@drawable/meera_ic_services_communities_placeholder"
+        android:layout_marginTop="44dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
+
+    <TextView
+        android:text="@string/meera_services_communities_placeholder_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_find_community"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/find_group"
+        android:layout_marginTop="12dp"
+        app:buttonType="outline"
+        app:buttonHeightMode="buttonText36"
+        android:layout_marginBottom="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

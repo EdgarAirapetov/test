@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_empty_list_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="@color/transparent"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:text="@string/search_result_list_title"/>
+
+    <ImageView
+        android:id="@+id/iv_empty_list_new"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_search_people_empty" />
+
+    <TextView
+        android:id="@+id/tv_button_empty_list"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/friends_list_search_is_empty"
+        android:textColor="@color/uiKitColorForegroundSecondary"/>
+
+</LinearLayout>

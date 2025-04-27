@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_shake_header"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/shake" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_shake"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="alone"
+        app:cellRightElement="right_switch"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/shake_call_by_sensor"
+        app:cellWidthType="with_margins" />
+</LinearLayout>

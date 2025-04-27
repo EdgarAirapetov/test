@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filters_nav_graph"
+    app:startDestination="@id/meeraFilterBottomSheetDialog">
+
+    <fragment
+        android:id="@+id/meeraFilterBottomSheetDialog"
+        android:name="com.numplates.nomera3.modules.search.filters.ui.fragment.MeeraFilterBottomSheetDialog"
+        tools:layout="@layout/meera_dialog_filters"
+        android:label="MeeraFilterBottomSheetDialog" >
+        <action
+            android:id="@+id/action_meeraFilterBottomSheetDialog_to_meeraFilterCitiesBottomSheet"
+            app:destination="@id/meeraFilterCitiesBottomSheet" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraFilterCitiesBottomSheet"
+        tools:layout="@layout/meera_dialog_city_filter"
+        android:name="com.numplates.nomera3.modules.search.filters.ui.fragment.MeeraFilterCitiesBottomSheet"
+        android:label="MeeraFilterCitiesBottomSheet" />
+
+</navigation>

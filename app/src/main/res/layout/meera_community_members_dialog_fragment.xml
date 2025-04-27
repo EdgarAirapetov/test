@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_first_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_icon"
+        app:cellPosition="top"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_second_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_icon"
+        app:cellPosition="middle"
+        android:layout_marginHorizontal="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_third_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_icon"
+        app:cellPosition="bottom"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"/>
+
+</LinearLayout>

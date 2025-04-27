@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="14dp"
+    android:background="@drawable/background_radius_12"
+    android:backgroundTint="@color/colorDarkGrey90">
+
+    <TextView
+        android:id="@+id/tv_card_toast_text"
+        style="@style/WhiteRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/moment_download_success"
+        android:gravity="center" />
+
+</FrameLayout>

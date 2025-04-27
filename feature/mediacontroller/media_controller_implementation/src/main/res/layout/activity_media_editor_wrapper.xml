@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/soft_black"
+    tools:context=".presentation.MediaControllerWrapperActivity"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    >
+
+    <FrameLayout
+        android:id="@+id/video_wrapper_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</FrameLayout>

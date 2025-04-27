@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_same_subscription_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:orientation="vertical">
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout
+        android:id="@+id/vg_user_mutual_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vg_user_mutual_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/material8"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vg_shimmer_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/material8"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:visibility="gone"/>
+
+    </com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/vg_user_mutual_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_placeholder"
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:layout_marginEnd="14dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_i_dont_know" />
+
+        <TextView
+            android:id="@+id/tv_placeholder"
+            style="@style/GrayRegular18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding20"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/padding20"
+            android:gravity="center"
+            tools:text="@string/placeholder_not_incoming_friends" />
+
+    </LinearLayout>
+</FrameLayout>

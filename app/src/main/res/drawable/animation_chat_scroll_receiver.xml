@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+	android:oneshot="true">
+
+	<item
+		android:interpolator="@android:anim/accelerate_interpolator"
+		android:drawable="@drawable/transparent"
+		android:duration="300" />
+	<item
+		android:interpolator="@android:anim/accelerate_interpolator"
+		android:drawable="@drawable/receiver_chat_replay_gradient"
+		android:duration="1000" />
+	<item
+		android:interpolator="@android:anim/accelerate_interpolator"
+		android:drawable="@drawable/transparent"
+		android:duration="800" />
+
+</animation-list>

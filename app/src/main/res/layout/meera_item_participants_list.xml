@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/white">
+
+    <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+        android:id="@+id/iv_item_participants_list_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/anonymous"
+        app:userpicSize="Size40" />
+
+    <TextView
+        android:id="@+id/tv_item_participants_list_name"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/tv_item_participants_list_host_label"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/iv_item_participants_list_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_item_participants_list_avatar"
+        tools:text="AlexAlexAlexAlexAlexAlexAlexAlexAlexAlexAlexAlexAlex" />
+
+    <TextView
+        android:id="@+id/tv_item_participants_list_host_label"
+        style="@style/UiKit.Body.Description"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingStart="6dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="4dp"
+        android:text="@string/map_events_participants_host"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_participants_list_name"
+        app:layout_constraintEnd_toStartOf="@id/iv_item_participants_list_options"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/tv_item_participants_list_name"
+        app:layout_constraintTop_toTopOf="@id/tv_item_participants_list_name"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_item_participants_list_uniquename"
+        style="@style/UiKit.Body.Description"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/iv_item_participants_list_options"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/tv_item_participants_list_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_participants_list_name"
+        tools:text="\@alexpersonalexpersonalexpersonalexpersonalexperson" />
+
+    <TextView
+        android:id="@+id/tv_item_participants_list_age_location"
+        style="@style/UiKit.Body.Description"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:layout_constraintStart_toStartOf="@id/tv_item_participants_list_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_participants_list_uniquename"
+        tools:text="26, Красноперекопск" />
+
+    <ImageView
+        android:id="@+id/iv_item_participants_list_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:layout_marginTop="16dp"
+        android:background="?actionBarItemBackground"
+        android:src="@drawable/ic_outlined_kebab_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

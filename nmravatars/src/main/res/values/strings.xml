@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PART_SELECTOR_HEAD">Face</string>
+    <string name="PART_SELECTOR_HAIR">Hair</string>
+    <string name="PART_SELECTOR_EYES">Eyes</string>
+    <string name="PART_SELECTOR_EYEBROWS">Eyebrows</string>
+    <string name="PART_SELECTOR_NOSE">Nose</string>
+    <string name="PART_SELECTOR_MOUTH">Mouth</string>
+    <string name="PART_SELECTOR_BEARD">Facial hair</string>
+    <string name="PART_SELECTOR_SHIRT">Clothes</string>
+    <string name="PART_SELECTOR_HAT">Hat</string>
+    <string name="PART_SELECTOR_BACKGROUND">Background</string>
+    <string name="PART_SELECTOR_ACCSESSORIES">Accessories</string>
+    <string name="ALERT_DIALOG_EXIT_TITLE">Exit editor?</string>
+    <string name="ALERT_DIALOG_EXIT_MESSAGE">Changes will not be saved</string>
+    <string name="ALERT_DIALOG_EXIT_CONFIRM">Exit</string>
+    <string name="ALERT_DIALOG_EXIT_CANCEL">Cancel</string>
+</resources>

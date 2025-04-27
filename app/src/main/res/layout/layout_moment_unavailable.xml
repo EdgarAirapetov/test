@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_moment_unavailable_icon"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="8dp"
+        app:srcCompat="@drawable/icon_invisible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_moment_unavailable_header"
+        style="@style/GrayA7A5SemiBold22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/moments_unavailable_default_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_moment_unavailable_message"
+        style="@style/GrayA7A5Regular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:text="@string/moments_unavailable_time_out_message" />
+
+</LinearLayout>

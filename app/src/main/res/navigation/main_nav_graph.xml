@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/meeraMainContainerFragment">
+
+    <fragment
+        android:id="@+id/meeraMainContainerFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.main.MeeraMainContainerFragment"
+        android:label="MeeraMainContainerFragment"
+        tools:layout="@layout/meera_main_container_fragment">
+
+        <action
+            android:id="@+id/action_meeraMainContainerFragment_to_navigation3"
+            app:destination="@id/navigation_auth"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:popUpTo="@id/meeraMainContainerFragment" />
+
+    </fragment>
+
+    <navigation
+        android:id="@+id/navigation_auth"
+        app:startDestination="@id/auth_flow_graph">
+
+        <action
+            android:id="@+id/action_global_meeraMainContainerFragment"
+            app:destination="@id/meeraMainContainerFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:popUpTo="@id/main_navigation" />
+
+        <include app:graph="@navigation/auth_flow_graph" />
+
+    </navigation>
+
+</navigation>

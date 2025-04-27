@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_outlined_arrow_left_m"
+        android:tint="@color/uiKitColorForegroundPrimary"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/UiKit.Header.H1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:includeFontPadding="false"
+        android:text="@string/your_birthday_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/meera_registration_birthday_description"
+        android:textColorHint="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <LinearLayout
+        android:id="@+id/vg_error_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/et_birthday"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_outlined_attention_s"
+            app:tint="@color/uiKitColorAccentDarkError" />
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:includeFontPadding="false"
+            android:textColor="@color/uiKitColorAccentDarkError"
+            tools:text="Может содержать не более 30 символов" />
+
+    </LinearLayout>
+
+    <com.meera.uikit.widgets.maskededittext.MaskedEditText
+        android:id="@+id/et_birthday"
+        style="@style/UiKit.Header.H1"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="276dp"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:hint="@string/birthdate_hint"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLines="3"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:textColorHint="@color/uiKitColorForegroundSecondary"
+        android:textCursorDrawable="@color/uiKitColorForegroundLink"
+        app:allowed_chars="1234567890"
+        app:keep_hint="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:mask="##.##.####" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_outlined_arrow_right_m"
+        app:buttonHeightMode="buttonIcon48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

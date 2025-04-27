@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="max_video_duration_sec">Максимальная длительность - %d секунд</string>
+    <string name="max_video_duration_min">Максимальная длительность - %d минут</string>
+    <string name="video_could_be_cut_in_editor">Видео можно обрезать в редакторе</string>
+</resources>

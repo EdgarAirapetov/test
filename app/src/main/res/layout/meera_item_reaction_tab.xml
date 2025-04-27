@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_border_reaction"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="8dp"
+    android:orientation="horizontal"
+    android:paddingBottom="4dp">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_reaction_3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-7dp"
+        android:adjustViewBounds="true"
+        android:elevation="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lav_reaction_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_loop="true"
+        tools:src="@drawable/reaction_green_light"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/v_reaction_2_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="3dp"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="@id/lav_reaction_2"
+        app:layout_constraintEnd_toEndOf="@id/lav_reaction_2"
+        app:layout_constraintStart_toStartOf="@id/lav_reaction_2"
+        app:layout_constraintTop_toTopOf="@id/lav_reaction_2" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_reaction_2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="-7dp"
+        android:adjustViewBounds="true"
+        android:elevation="1dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lav_reaction_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_loop="true"
+        tools:src="@drawable/reaction_green_light"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/v_reaction_1_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/lav_reaction_1"
+        app:layout_constraintEnd_toEndOf="@id/lav_reaction_1"
+        app:layout_constraintStart_toStartOf="@id/lav_reaction_1"
+        app:layout_constraintTop_toTopOf="@id/lav_reaction_1" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_reaction_1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="9dp"
+        android:adjustViewBounds="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_loop="true"
+        tools:src="@drawable/reaction_green_light"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="6dp"
+        android:paddingStart="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/lav_reaction_3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/date/hhmm" />
+</androidx.constraintlayout.widget.ConstraintLayout>

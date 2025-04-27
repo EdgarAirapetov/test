@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/showOnMapContainer"
+    android:layout_marginTop="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- макет блока показать на карте https://zpl.io/brdRl7W -->
+
+    <!-- иконка загрузки всего блока -->
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/miniMapLoader"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:indeterminateTint="@color/ui_purple"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showOnMapLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/showOnMapLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:text="@string/mini_map_block_header"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/distanceToUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:textColor="#A7A5B1"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_user_profile_location_distance_regular"
+        app:layout_constraintBottom_toBottomOf="@+id/showOnMapLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/showOnMapLabel"
+        tools:text="120 м"/>
+
+    <!-- контейнер для мини карты -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/miniMapContainer"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:minWidth="120dp"
+        android:translationZ="0.1dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/miniMapViewBarrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showOnMapLabel">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/miniMap"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:liteMode="true"
+            app:uiMapToolbar="false"
+            app:mapType="none" />
+
+        <FrameLayout
+            android:id="@+id/miniMapClickArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ripple_rounded_square_10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- заглушка для мини карты -->
+    <FrameLayout
+        android:id="@+id/miniMapStub"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/mini_map_settings_empty_map_background_regular"
+        android:minWidth="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/miniMapViewBarrier"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showOnMapLabel" />
+
+    <!-- пин пользователя на карте -->
+    <com.numplates.nomera3.presentation.view.widgets.facebar.AvatarView
+        android:id="@+id/miniMapUserAvatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:translationZ="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/miniMapViewBarrier"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showOnMapLabel"/>
+
+    <!-- разделитель миникарты и элемента с настройками -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/miniMapViewBarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="145dp" />
+
+    <FrameLayout
+        android:id="@+id/miniMapSettingsContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/miniMapViewBarrier"
+        app:layout_constraintTop_toBottomOf="@+id/showOnMapLabel">
+
+        <TextView
+            android:id="@+id/miniMapSettingsVisibleForNobody"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="start|center_vertical"
+            android:lineSpacingExtra="2sp"
+            android:text="@string/mini_map_text_nobody_visible_regular"
+            android:textColor="#000000"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="14sp"
+            android:textStyle="normal" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/miniMapSettingsVisibleForAllOrFriendsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/mini_map_settings_background_regular"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ripple_rounded_square_10dp"/>
+
+            <TextView
+                android:id="@+id/miniMapSettingsVisibleForAllOrFriendsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/source_sanspro_semibold"
+                android:lineSpacingExtra="6sp"
+                android:text="@string/mini_map_settings_header_visible_for_all"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/miniMapSettingsVisibleForAllOrFriendsText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/miniMapSettingsVisibleForAllOrFriendsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:lineSpacingExtra="8sp"
+                android:text="@string/mini_map_settings_visible_for_all"
+                android:textColor="#d9000000"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/miniMapSettingsVisibleForAllOrFriendsLabel"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <ImageView
+                android:id="@+id/miniMapSettingsArrowIcon"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_mini_map_settings_arrow_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/v_map_separator"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/gray_separator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/miniMapSettingsContainer"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

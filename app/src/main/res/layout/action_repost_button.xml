@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.core.utils.layouts.LinearEnableTouchLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_action_repost_button"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:orientation="horizontal"
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp"
+    android:background="@drawable/background_content_action_bar_button">
+
+    <ImageView
+        android:id="@+id/iv_action_repost_icon"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/post_action_bar_repost_icon" />
+
+    <TextView
+        android:id="@+id/tv_action_repost_count"
+        style="@style/Gray80Semibold16"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingStart="6dp"
+        android:paddingEnd="0dp"
+        android:gravity="center"
+        tools:text="952k" />
+
+</com.meera.core.utils.layouts.LinearEnableTouchLayout>

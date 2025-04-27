@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/constraintLayout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/ui_purple"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_vehicle_separator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/toyota" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_car_maker_container"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardCornerRadius="17.5dp"
+        app:cardElevation="18dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
+
+        <ImageView
+            android:id="@+id/ivCarMaker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/background_road_button"
+            android:padding="2dp"
+            android:src="@drawable/toyota"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvMainVehicle"
+        style="@style/BlackSemibold14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_main_vehicle"
+        android:elevation="4dp"
+        android:paddingStart="10dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="4dp"
+        android:text="@string/garage_main_vehicle"
+        app:layout_constraintBottom_toTopOf="@+id/view_vehicle_separator"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvMaker"
+        style="@style/BlackSemibold18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Maker. Its a veryyy looooonggggg striiiiiiiingggggg" />
+
+    <TextView
+        android:id="@+id/tvModel"
+        style="@style/BlackRegular16"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:singleLine="true"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="@+id/tvMaker"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tvMaker"
+        tools:text="Model Its a veryyy looooonggggg striiiiiiiingggggg" />
+
+    <com.numplates.nomera3.presentation.view.widgets.NumberNew
+        android:id="@+id/nv_number_new"
+        android:layout_width="129dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="@+id/tvModel"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ll_number_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/view_vehicle_separator"
+        app:layout_constraintStart_toStartOf="@+id/tvModel"
+        app:layout_constraintTop_toBottomOf="@+id/tvModel"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.numplates.nomera3.presentation.view.widgets.numberplateview.NumberPlateEditView
+            android:id="@+id/nvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:readOnly="true"
+            tools:background="@drawable/number_ua_auto"
+            tools:height="20dp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_vehicle_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/material16"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="@dimen/material16"
+        android:background="@color/color_separator"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

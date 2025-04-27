@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:cardBackgroundColor="@color/colorTransparent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_music_album"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:src="@drawable/def_album_cover_color" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_play_button_purple" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_container"
+        app:layout_constraintStart_toEndOf="@+id/cv_container"
+        app:layout_constraintTop_toTopOf="@+id/cv_container">
+
+        <TextView
+            android:id="@+id/tv_music_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:textColor="@color/black_1000"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toRightOf="@+id/iv_album"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Мальчик На Девятке" />
+
+        <TextView
+            android:id="@+id/tv_music_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:textColor="@color/colorGrey8080"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_music_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_music_title"
+            tools:text="Dead Blonde" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

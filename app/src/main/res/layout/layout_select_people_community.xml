@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_menu_people"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/vg_select_people_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/material8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/BlackRegular16"
+            android:id="@+id/tv_select_people_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="@dimen/offset_16dp"
+            android:lineSpacingExtra="4sp"
+            android:paddingStart="@dimen/offset_16dp"
+            android:paddingTop="13dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="13dp"
+            android:text="@string/profile_people"
+            app:drawableStartCompat="@drawable/ic_people_purple_24" />
+
+        <TextView
+            style="@style/BlackRegular16"
+            android:id="@+id/tv_select_community_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackground"
+            android:drawablePadding="@dimen/offset_16dp"
+            android:lineSpacingExtra="4sp"
+            android:paddingStart="@dimen/material16"
+            android:paddingTop="13dp"
+            android:paddingEnd="0dp"
+            android:paddingBottom="13dp"
+            android:text="@string/search_tab_community"
+            app:drawableStartCompat="@drawable/ic_community_purple_24" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <View
+        android:id="@+id/v_shadow"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/ui_black_60"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vg_select_people_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

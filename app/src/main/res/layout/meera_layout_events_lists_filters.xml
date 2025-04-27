@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.meera.uikit.widgets.grabber.UiKitGrabberView
+        android:id="@+id/ukgv_events_lists_filters_grabber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_events_lists_filters_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_map_layers_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/iv_events_lists_filters_title"
+        style="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/map_events_list_filters_title"
+        app:layout_constraintBottom_toBottomOf="@id/iv_events_lists_filters_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_events_lists_filters_back" />
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.filters.MeeraEventFilterTypeWidget
+        android:id="@+id/efw_events_lists_filter_type_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_events_lists_filters_back" />
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.filters.MeeraEventFilterDateWidget
+        android:id="@+id/efw_events_lists_filter_date_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/efw_events_lists_filter_type_widget" />
+
+    <TextView
+        android:id="@+id/tv_events_lists_filters_reset"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_events_list_filters_clear"
+        android:textAppearance="@style/BlackRegular16"
+        android:textColor="@color/uiKitColorAccentPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/efw_events_lists_filter_date_widget" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_map_bottomsheet"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="16dp">
+
+    <View
+        android:background="@drawable/meera_modal_drag_view"
+        android:layout_marginVertical="8dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="80dp"
+        android:layout_height="3dp"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/ib_map_events_onboarding_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="transparent"
+        android:tint="@color/black"
+        android:layout_marginEnd="12dp"
+        android:layout_marginVertical="4dp"
+        android:src="@drawable/ic_outlined_close_m" />
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.events.MeeraEventsInfoView
+        android:id="@+id/eiv_events_onboarding_about_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_map_events_onboarding_types"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_map_event_type" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/tv_map_events_onboarding_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        app:buttonType="filled"
+        android:text="@string/map_events_onboarding_create" />
+
+</LinearLayout>

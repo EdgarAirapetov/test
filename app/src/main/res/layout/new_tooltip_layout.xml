@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:id="@+id/tooltip_root"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/tooltip_top_pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/tooltip_pointer"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tooltip_text"
+        style="@style/TooltipText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/new_tooltip_main_background"
+        android:gravity="start|top"
+        android:includeFontPadding="false"
+        android:padding="10dp"
+        android:text="@string/app_hint_about_unique_name_user_info"
+        android:textColor="#BFFFFFFF"
+        android:textSize="13sp"
+        android:drawablePadding="8dp" />
+
+    <ImageView
+        android:id="@+id/tooltip_bottom_pointer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="-1dp"
+        android:background="@drawable/tooltip_pointer"
+        android:rotation="180"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

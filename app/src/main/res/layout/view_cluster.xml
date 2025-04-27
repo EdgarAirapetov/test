@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_cluster_user_bottom"
+        android:layout_width="@dimen/event_participants_item_size"
+        android:layout_height="@dimen/event_participants_item_size"
+        android:layout_marginStart="8dp"
+        tools:src="@drawable/ic_anon_map" />
+
+    <ImageView
+        android:id="@+id/iv_cluster_user_middle"
+        android:layout_width="@dimen/event_participants_item_size"
+        android:layout_height="@dimen/event_participants_item_size"
+        android:layout_marginStart="4dp"
+        tools:src="@drawable/ic_anon_map" />
+
+    <ImageView
+        android:id="@+id/iv_cluster_user_top"
+        android:layout_width="@dimen/event_participants_item_size"
+        android:layout_height="@dimen/event_participants_item_size"
+        android:foreground="@drawable/bg_user_avatar_overlay"
+        tools:src="@drawable/ic_anon_map" />
+
+    <TextView
+        android:id="@+id/tv_cluster_capacity"
+        android:layout_width="@dimen/event_participants_item_size"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="4dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textAppearance="@style/WhiteRegular14"
+        tools:text="5K+" />
+
+</FrameLayout>

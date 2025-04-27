@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_map_bottomsheet"
+    android:orientation="vertical"
+    android:paddingBottom="12dp">
+
+    <ImageButton
+        android:id="@+id/ib_map_events_about_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:padding="17dp"
+        android:src="@drawable/ic_close_small"
+        app:tint="@color/black" />
+
+    <com.numplates.nomera3.modules.redesign.fragments.main.map.events.MeeraEventsInfoView
+        android:id="@+id/eiv_events_about_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/tv_events_about_okay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/map_events_info_okay" />
+
+</LinearLayout>

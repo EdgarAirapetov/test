@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_restore_defaults"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center|start"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/settings_restore_defaults"
+            android:textColor="@color/colorVipRed"
+            android:textSize="16sp" />
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/drawable_divider_decoration_gray" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center|start"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/settings_restore_defaults_description"
+        android:textColor="@color/colorGrayA7A5"
+        android:textSize="13sp" />
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_birthday_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/background_bottom_sheet"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:padding="@dimen/offset_16dp"
+        android:src="@drawable/ic_black_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/vg_birthday_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_16dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lv_birthday_icon"
+                android:layout_width="256dp"
+                android:layout_height="256dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/birthday_congratulations_lottie"
+                app:lottie_renderMode="hardware"
+                tools:src="@drawable/anonymous" />
+
+            <TextView
+                android:id="@+id/tv_birthday_title"
+                style="@style/BlackSemibold18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="@dimen/offset_8dp"
+                android:layout_marginEnd="48dp"
+                android:fontFamily="@font/source_sanspro_bold"
+                android:gravity="center"
+                android:text="@string/happy_birthday_dialog"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                style="@style/BlackRegular16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="@dimen/offset_8dp"
+                android:layout_marginEnd="48dp"
+                android:gravity="center"
+                android:text="@string/default_birthday_wish" />
+
+            <TextView
+                android:id="@+id/tv_btn_ok"
+                style="@style/WhiteRegular16"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginBottom="@dimen/offset_16dp"
+                android:background="@drawable/background_violet_rounded_6dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/hooray"
+                tools:ignore="UnusedAttribute" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

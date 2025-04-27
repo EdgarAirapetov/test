@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_allow_contacts_sync"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/nv_open_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/settings_open_profile_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBackArrow="false"
+            app:showCloseButton="true" />
+
+
+        <ImageView
+            android:id="@+id/iv_open_profile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="60dp"
+            android:src="@drawable/img_open_profile"
+            app:layout_constraintDimensionRatio="256:232"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nv_open_profile" />
+
+
+        <TextView
+            android:id="@+id/tv_open_profile_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/settings_open_profile_profile_info"
+            android:textAppearance="@style/UiKit.Body.Description"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_open_profile" />
+
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/button_open_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/settings_open_profile_btn"
+            app:buttonHeightMode="buttonText48"
+            app:layout_constraintTop_toBottomOf="@id/tv_open_profile_desc" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/button_open_profile_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/general_cancel"
+            app:buttonHeightMode="buttonText48"
+            app:buttonType="transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_open_profile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

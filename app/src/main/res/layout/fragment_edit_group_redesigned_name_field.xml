@@ -1,0 +1,108 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/vg_group_name_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_name_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/group_name_label_text"
+                android:textColor="@color/ui_black_50"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_name_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:gravity="start|center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/nickname_edit_text_error"
+                android:textColor="#D61835"
+                android:textSize="13sp"
+                android:visibility="gone"
+                tools:text="Не может быть несколько точек подряд" />
+
+            <LinearLayout
+                android:id="@+id/vg_name_typed_char_count_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/tv_name_typed_char_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="21"
+                    android:textColor="@color/ui_purple_text"
+                    android:textSize="13sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="/"
+                    android:textColor="@color/ui_black_100"
+                    android:textSize="13sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="start|center_vertical"
+                    android:includeFontPadding="false"
+                    android:text="45"
+                    android:textColor="@color/ui_black_100"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_profile_custom_edittext"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:hint="@string/type_group_name_hint_text"
+            android:includeFontPadding="false"
+            android:inputType="textMultiLine"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/ui_black_100"
+            android:textColorHint="@color/hint_text_color"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</merge>

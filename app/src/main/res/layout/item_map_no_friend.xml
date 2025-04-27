@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mcv_item_events_list_background"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_marginTop="16dp"
+    android:layout_height="358dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/v_item_events_list_event_type"
+            android:layout_width="344dp"
+            android:layout_height="184dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/map_friend_no_friends"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_map_no_friend_title"
+            style="@style/BlackSemibold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/friends_list_is_empty"
+            app:layout_constraintEnd_toEndOf="@+id/v_item_events_list_event_type"
+            app:layout_constraintStart_toStartOf="@+id/v_item_events_list_event_type"
+            app:layout_constraintTop_toBottomOf="@+id/v_item_events_list_event_type" />
+
+        <TextView
+            android:id="@+id/tv_map_no_friend_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/GrayRegular16"
+            android:layout_marginTop="4dp"
+            android:text="@string/placeholder_map_friend_empty_search_result"
+            app:layout_constraintEnd_toEndOf="@+id/v_item_events_list_event_type"
+            app:layout_constraintStart_toStartOf="@+id/v_item_events_list_event_type"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_no_friend_title" />
+
+        <TextView
+            android:id="@+id/tv_find_friends"
+            style="@style/GraphikRegular.16_22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:textColor="@color/ui_purple_text"
+            android:text="@string/find_friend"
+            app:layout_constraintEnd_toEndOf="@+id/v_item_events_list_event_type"
+            app:layout_constraintStart_toStartOf="@+id/v_item_events_list_event_type"
+            app:layout_constraintTop_toBottomOf="@+id/tv_map_no_friend_subtitle" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

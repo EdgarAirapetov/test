@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tvLikes"
+        style="@style/post_actions"
+        android:background="@drawable/btn_post_like"
+        tools:text="likes"/>
+
+    <TextView
+        android:id="@+id/tvDislikes"
+        style="@style/post_actions"
+        android:background="@drawable/btn_post_dislike"
+        tools:text="dislikes"/>
+
+    <TextView
+        android:id="@+id/tvComments"
+        style="@style/post_actions"
+        android:background="@drawable/btn_post_comments"
+        tools:text="comments"/>
+
+    <TextView
+        android:id="@+id/tvComplaint"
+        style="@style/post_actions"
+        android:background="@drawable/btn_post_complaint"
+        tools:text="Complaint"/>
+
+</LinearLayout>

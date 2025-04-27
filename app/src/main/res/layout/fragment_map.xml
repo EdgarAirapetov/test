@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_map_container"
+    style="@style/mm">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_1000"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mvMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/map_back_button"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            android:paddingTop="8dp"
+            android:src="@drawable/arrowback"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="6dp" />
+
+        <com.numplates.nomera3.presentation.view.widgets.NavigationBarView
+            android:id="@+id/nbBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vg_map_layers"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/bg_map_button"
+            android:clipToPadding="false"
+            android:elevation="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/nbBar"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_map_layers"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_map_layers"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/v_map_non_default_layers_settings_indicator"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="7dp"
+                android:background="@drawable/bg_non_default_indicator"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_map_layers"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/iv_current_location"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_map_button"
+            android:elevation="5dp"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_map_location_inactive"
+            app:layout_constraintBottom_toTopOf="@+id/vg_map_add_event"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_goneMarginBottom="-4dp" />
+
+        <FrameLayout
+            android:id="@+id/vg_map_add_event"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/bg_map_button"
+            android:elevation="5dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/nbBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/iv_map_add_event"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_add_event" />
+
+            <ProgressBar
+                android:id="@+id/pb_map_add_event"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_map_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/ukb_map_events_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="3dp"
+            android:layout_marginStart="12dp"
+            android:text="@string/map_events_lists_button"
+            android:visibility="gone"
+            app:buttonHeightMode="buttonText40"
+            app:buttonType="elevated"
+            app:isLegacy="@bool/isLegacy"
+            app:layout_constraintBottom_toBottomOf="@id/vg_map_layers"
+            app:layout_constraintStart_toEndOf="@+id/vg_map_layers"
+            app:layout_constraintTop_toTopOf="@id/vg_map_layers"
+            tools:visibility="visible" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/ukb_map_friends_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/map_friends_list_button"
+            android:visibility="gone"
+            android:layout_marginStart="12dp"
+            app:buttonHeightMode="buttonText40"
+            app:buttonType="elevated"
+            app:isLegacy="@bool/isLegacy"
+            app:layout_constraintBottom_toBottomOf="@id/vg_map_layers"
+            app:layout_constraintStart_toEndOf="@+id/ukb_map_events_list"
+            app:layout_constraintTop_toTopOf="@id/vg_map_layers"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.numplates.nomera3.modules.maps.ui.widget.MapPointInfoWidget
+        android:id="@+id/mpiw_map_widget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top" />
+
+    <com.numplates.nomera3.modules.maps.ui.events.EventConfigurationWidget
+        android:id="@+id/ecw_map_events_configuration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.numplates.nomera3.modules.places.ui.PlacesSearchView
+        android:id="@+id/psv_map_search_places"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.numplates.nomera3.modules.maps.ui.view.MapSnippetViewPager
+        android:id="@+id/msvp_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:paddingTop="56dp" />
+
+    <com.numplates.nomera3.modules.maps.ui.friends.MapFriendsListsWidget
+        android:id="@+id/elw_map_friends_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="54dp"
+        android:layout_height="match_parent" />
+
+    <com.numplates.nomera3.modules.maps.ui.snippet.UserSnippetBottomSheetWidget
+        android:id="@+id/usbs_widget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.numplates.nomera3.modules.maps.ui.events.list.EventsListsWidget
+        android:id="@+id/elw_map_events_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="89dp">
+
+    <TextView
+        android:id="@+id/tv_visitors_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/source_sanspro_bold"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        tools:text="321 234 774" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="4dp"
+        android:includeFontPadding="false"
+        android:fontFamily="@font/source_sanspro_bold"
+        android:textColor="@color/black"
+        app:lineHeight="30sp"
+        android:textSize="28sp"
+        tools:text="посетили твой профиль вчера" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:textColor="#262626"
+        android:textSize="16sp"
+        tools:text="Это на 58 939 838 больше, чем неделю назад. Похоже, кое-кто становится популярным: продолжай в том же духе!" />
+
+</LinearLayout>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/BlackSemibold18"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/remove_account_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/BlackRegular16"
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="20dp"
+        android:text="@string/remove_account_subtitle" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/leaving_while"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="top"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_leaving_while"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/difficult_figure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leaving_while"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_difficult_figure"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/dont_feel_safe_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/difficult_figure"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_dont_feel_safe_action"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/ugly_app_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dont_feel_safe_action"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_ugly_app_action"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/dont_like_moderation_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ugly_app_action"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_dont_like_moderation_action"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/unpleasant_communication_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dont_like_moderation_action"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_unpleasant_communication_action"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/uninteresting_content_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unpleasant_communication_action"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_uninteresting_content_action"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/spend_too_much_time_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uninteresting_content_action"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="middle"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_spend_too_much_time_action"
+        app:cellWidthType="with_margins" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/technical_support"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spend_too_much_time_action"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellPosition="bottom"
+        app:cellRightElement="right_checkbox"
+        app:cellTitleValue="@string/remove_account_reason_technical_support"
+        app:cellWidthType="with_margins" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

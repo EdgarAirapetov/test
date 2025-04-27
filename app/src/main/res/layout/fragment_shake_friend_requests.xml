@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_shake_friend_requests_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_gradient"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_friend_requests_constrain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_shake_friend_requests_name"
+            style="@style/WhiteBold22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/cv_shake_friend_requests_avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Ты шейкнулся с «Оля»" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_shake_friend_requests_avatar"
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="68dp"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/vg_shake_friends_mutual_friends"
+            app:layout_constraintEnd_toEndOf="@+id/tv_shake_friend_requests_name"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/tv_shake_friend_requests_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shake_friend_requests_name">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_shake_friend_requests_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:padding="3dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/fill_8_round" />
+
+        </androidx.cardview.widget.CardView>
+
+        <com.numplates.nomera3.presentation.view.ui.customView.MutualUsersView
+            android:id="@+id/vg_shake_friends_mutual_friends"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="38dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_shake_friends_friend_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cv_shake_friend_requests_avatar"
+            app:mutualIconHeight="33dp"
+            app:mutualIconWidth="33dp"
+            app:mutualUsersTextColor="@color/white"
+            app:mutualUsersTextSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_shake_friends_friend_action"
+            style="@style/Black2626BoldRegular16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/white_rectangle_11_radus"
+            android:foreground="?attr/selectableItemBackground"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/tv_shake_friends_decline_request"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vg_shake_friends_mutual_friends"
+            tools:text="Добавить в друзья" />
+
+        <TextView
+            android:id="@+id/tv_shake_friends_decline_request"
+            style="@style/WhiteSemiBold16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="@string/general_decline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_shake_friends_friend_action" />
+
+        <TextView
+            android:id="@+id/tv_shake_friends_close"
+            style="@style/WhiteSemiBold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/general_close"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shake_friends_decline_request"
+            app:layout_constraintVertical_bias="0.9" />
+
+        <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+            android:id="@+id/pi_friend_requests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_shake_friends_decline_request"
+            app:layout_constraintVertical_bias="0.9"
+            app:spi_dotColor="@color/colorGrayA7A5"
+            app:spi_dotSelectedColor="@color/white"
+            app:spi_dotSelectedSize="8dp"
+            app:spi_dotSize="6dp"
+            app:spi_visibleDotCount="3"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

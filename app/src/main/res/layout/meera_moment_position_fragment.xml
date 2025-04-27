@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.core.utils.layouts.intercept.MeeraMomentInterceptTouchFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_block_touches_moment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_moment_aspect_ratio_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/cab_view_moment_action_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.numplates.nomera3.modules.moments.show.presentation.view.FitWidthImageView
+            android:id="@+id/iv_view_moment_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            tools:visibility="visible" />
+
+        <com.numplates.nomera3.modules.moments.show.presentation.view.FitWidthPlayerView
+            android:id="@+id/pv_view_moment_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:player_layout_id="@layout/layout_moment_player"
+            app:resize_mode="fill"
+            app:shutter_background_color="@color/transparent"
+            app:surface_type="texture_view"
+            app:use_controller="false"
+            tools:visibility="visible" />
+
+        <com.numplates.nomera3.modules.moments.show.presentation.view.FitWidthImageView
+            android:id="@+id/iv_view_moment_video_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/inc_moments_unavailable_layout"
+        layout="@layout/meera_layout_moment_unavailable"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/inc_moments_age_restrictions"
+        layout="@layout/meera_layout_moment_age_restrictions"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/v_top_gradient"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:background="@drawable/gradient_view_moment_top"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/v_bottom_gradient"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/gradient_view_moment_top"
+        android:rotation="180"
+        android:tag="view_may_be_hidden"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <include
+        android:id="@+id/vg_shimmer_layout"
+        layout="@layout/meera_moment_position_shimmer_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/epmv_moments_progress_bar" />
+
+    <View
+        android:id="@+id/v_tap_handler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.numplates.nomera3.modules.moments.show.presentation.view.progress.ExactProgressMomentsView
+        android:id="@+id/epmv_moments_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/vv_view_moment_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_horizontal_content_general"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/tv_view_moment_date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vg_view_moment_name_container"
+        app:size="SIZE_35" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_view_moment_name_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintEnd_toStartOf="@id/iv_view_moment_menu"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vv_view_moment_avatar"
+        app:layout_constraintTop_toBottomOf="@id/epmv_moments_progress_bar">
+
+        <TextView
+            android:id="@+id/tv_view_moment_name"
+            style="@style/UiKit.Display.Medi_14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textColor="@color/uiKitColorForegroundInvers"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Илья" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_view_moment_date"
+        style="@style/UiKit.Display.Normal_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:tag="view_may_be_hidden"
+        android:textColor="@color/uiKitColorForegroundInvers"
+        app:layout_constraintStart_toStartOf="@id/vg_view_moment_name_container"
+        app:layout_constraintTop_toBottomOf="@id/vg_view_moment_name_container"
+        tools:text="10 мин" />
+
+    <TextView
+        android:id="@+id/tv_view_moment_geo_location"
+        style="@style/WhiteRegular14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/tv_view_moment_date"
+        app:layout_constraintEnd_toStartOf="@+id/iv_view_moment_menu"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/tv_view_moment_date"
+        app:layout_constraintTop_toTopOf="@id/tv_view_moment_date"
+        tools:text="Ленинград" />
+
+    <ImageView
+        android:id="@+id/iv_view_moment_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_horizontal_content_general"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintBottom_toBottomOf="@id/iv_view_moment_close"
+        app:layout_constraintEnd_toStartOf="@id/iv_view_moment_close"
+        app:layout_constraintTop_toTopOf="@id/iv_view_moment_close"
+        app:srcCompat="@drawable/ic_outlined_kebab_m"
+        app:tint="@color/uiKitColorForegroundInvers"/>
+
+    <ImageView
+        android:id="@+id/iv_view_moment_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="@dimen/margin_horizontal_content_general"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/epmv_moments_progress_bar"
+        app:srcCompat="@drawable/ic_outlined_close_m"
+        app:tint="@color/uiKitColorForegroundInvers"/>
+
+    <com.numplates.nomera3.modules.moments.show.presentation.view.music.MeeraSelectedTrackView
+        android:id="@+id/stv_view_moment_selected_track"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:tag="view_may_be_hidden"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/cab_view_moment_action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:state="view"
+        tools:visibility="visible" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/cpi_view_moment_loader"
+        style="@style/MomentLoaderCircleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="@color/uiKitColorAccentPrimary"
+        app:minHideDelay="@integer/loader_hide_delay"
+        app:showDelay="@integer/loader_show_delay" />
+
+    <com.numplates.nomera3.modules.feed.ui.adapter.MeeraContentActionBar
+        android:id="@+id/cab_view_moment_action_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:elevation="2dp"
+        android:tag="view_may_be_hidden"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fl_fragment_moment_fullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_view_moment_date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</com.meera.core.utils.layouts.intercept.MeeraMomentInterceptTouchFrameLayout>
+

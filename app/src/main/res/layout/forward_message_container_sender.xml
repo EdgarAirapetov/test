@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fwd_container_send"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="4dp" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/ui_color_chat_send_grey"
+        android:text="@string/chat_fwd_message"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:textSize="14sp"
+            android:textColor="@color/ui_white"
+            android:text="@string/chat_fwd_message_author"/>
+
+        <TextView
+            android:id="@+id/tv_fwd_author_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/WhiteSemiBold14"
+            android:maxLines="1"
+            android:ellipsize="end"
+            tools:text="Иван Иванов dhshs shgdgshd ghsgd shgdg dshg s dghsdghs d sghdshd  sd"/>
+
+    </LinearLayout>
+
+</LinearLayout>

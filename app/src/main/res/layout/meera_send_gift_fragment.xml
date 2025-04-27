@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/ui_white"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/about_fragment_fake_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        tools:visibility="gone" />
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_gift_user_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_fragment_fake_status_bar"
+        tools:title="@string/gifts_send_gift_to_me" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_content_gift"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/v_gift_user_nav_view"
+            android:clipToPadding="false"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_gift_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    tools:src="@drawable/ic_i_dont_know" />
+
+                <TextView
+                    android:id="@+id/tv_title_gift_message"
+                    style="@style/UiKit.Header.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:textColor="@color/color_soft_black"
+                    tools:text="Новогодняя шкатулка"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/tv_subtitle_gift_message"
+                    style="@style/UiKit.Body.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@color/color_soft_black"
+                    tools:text="Принесёт успех и удачу в грядущем году"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+                <com.meera.uikit.widgets.UiKitCellInput
+                    android:id="@+id/v_write_gift_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginBottom="45dp"
+                    android:maxLength="180"
+                    android:maxLines="5"
+                    app:cellInputContentHeight="96dp"
+                    app:cellInputHint="@string/general_hint_write_message"
+                    app:showInputCellDescription="true"
+                    app:showInputIcon="false"
+                    app:singleLine="false" />
+
+                <com.meera.uikit.widgets.cell.UiKitCell
+                    android:id="@+id/v_anonim_checkbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cellRightElement="right_checkbox"
+                    app:cellTitleValue="@string/gifts_visibility"
+                    tools:cellCityValue="" />
+
+                <com.meera.uikit.widgets.buttons.UiKitButton
+                    android:id="@+id/v_send_gift"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/general_send" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lav_progress_purchase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:id="@+id/v_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_loading_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</RelativeLayout>
+

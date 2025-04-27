@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="80dp">
+
+    <FrameLayout
+        android:id="@+id/fl_post_multimedia_item_media_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_road_media"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_post_multimedia_item_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:minWidth="40dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:src="@drawable/dialog_gift"
+            tools:visibility="visible" />
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/pv_post_multimedia_item_video_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:visibility="gone"
+            app:resize_mode="zoom"
+            app:shutter_background_color="@color/colorTransparent"
+            app:surface_type="texture_view"
+            app:use_controller="false"
+            tools:visibility="visible" />
+
+        <com.numplates.nomera3.modules.posts.ui.view.VideoDurationView
+            android:id="@+id/vdv_post_multimedia_video_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/video_duration_margin"
+            android:layout_marginEnd="@dimen/video_duration_margin"
+            android:visibility="gone"
+            android:layout_gravity="end|bottom" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

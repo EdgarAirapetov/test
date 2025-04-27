@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:elevation="10dp"
+    android:id="@+id/snippet_root"
+    android:background="@drawable/bg_bottomsheet_header"
+    android:layout_height="wrap_content">
+
+    <com.numplates.nomera3.modules.maps.ui.view.MapSnippetViewPager
+        android:id="@+id/msvp_snippet_items"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/vg_snippet_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.numplates.nomera3.modules.maps.ui.snippet.view.ViewPagerBottomSheetBehavior">
+
+            <com.numplates.nomera3.modules.maps.ui.view.MapSnippetViewPager
+                android:id="@+id/msvp_snippet_itemss"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include android:id="@+id/layout_snippet_error"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/view_snippet_error" />
+
+        </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/vg_snippet_onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b3000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_snippet_onboarding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="120dp"
+            app:lottie_autoPlay="false"
+            app:lottie_enableMergePathsForKitKatAndAbove="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/snippet_onboarding"
+            app:lottie_renderMode="hardware"
+            app:lottie_speed="1" />
+
+    </FrameLayout>
+
+    <!-- Вью добавлена для отлавливания жеста свайпа за вернюю часть шторки сниппета -->
+    <FrameLayout
+        android:id="@+id/top_snippet"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+</FrameLayout>

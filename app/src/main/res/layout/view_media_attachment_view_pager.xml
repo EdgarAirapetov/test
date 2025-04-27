@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/pager_root_container"
+    android:visibility="gone"
+    tools:visibility="visible"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:animateLayoutChanges="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/media_attachment_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:layout_height="300dp"/>
+
+    <View
+        tools:visibility="visible"
+        android:id="@+id/attachment_view_pager_view_gradient"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:background="@drawable/gradient_smooth_bottom"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/media_attachment_view_pager"
+        app:layout_constraintStart_toStartOf="@id/media_attachment_view_pager" />
+
+    <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+        android:id="@+id/attachment_view_pager_spi_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/offset_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:spi_dotColor="@color/white_alpha_40"
+        app:spi_dotSelectedColor="@color/white"
+        app:spi_dotSelectedSize="@dimen/material6"
+        app:spi_dotSize="@dimen/material6"
+        app:spi_dotSpacing="@dimen/material6"
+        app:spi_visibleDotCount="5"
+        app:spi_visibleDotThreshold="2" />
+
+    <FrameLayout
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/fl_count_order_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="@id/media_attachment_view_pager"
+        app:layout_constraintTop_toTopOf="@id/media_attachment_view_pager">
+
+        <TextView
+            android:id="@+id/tv_count_order_attachment"
+            style="@style/WhiteRegular13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_attachment_counter"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="5dp"
+            tools:text="3/3" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        app:layout_constraintBottom_toBottomOf="@id/media_attachment_view_pager"
+        app:layout_constraintEnd_toEndOf="@id/media_attachment_view_pager"
+        android:padding="10dp"
+        android:id="@+id/fl_edit_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_edit_attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_edit_transparent"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <ProgressBar
+            android:background="@drawable/ic_attachment_icon_circle"
+            android:id="@+id/pb_edit_attachment"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:padding="2dp"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintTop_toTopOf="@id/media_attachment_view_pager"
+        app:layout_constraintStart_toStartOf="@id/media_attachment_view_pager"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/iv_delete_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:src="@drawable/ic_trash_transparent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        app:layout_constraintBottom_toBottomOf="@id/media_attachment_view_pager"
+        app:layout_constraintStart_toStartOf="@id/media_attachment_view_pager"
+        android:id="@+id/iv_open_editor_stickers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:visibility="gone"
+        android:backgroundTint="@color/ui_black_50"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:src="@drawable/ic_open_editor_sticker"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

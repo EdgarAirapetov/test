@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_ui_kit_bottom_sheet_dialog_background"
+    android:orientation="vertical"
+    android:stateListAnimator="@null"
+    android:translationZ="00dp"
+    app:elevation="0dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <com.numplates.nomera3.presentation.view.ui.SwipeSwitchableViewPager
+        android:id="@+id/roads_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/default_ui_kit_bottom_sheet_dialog_background"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/abl_main_roads_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:stateListAnimator="@null"
+        android:background="@drawable/default_ui_kit_bottom_sheet_dialog_background"
+        app:elevation="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.meera.uikit.widgets.tablayout.UiKitRowTabLayout
+            android:id="@+id/tl_main_roads_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:visibility="invisible"
+            app:enableSmallBadge="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showTabIndicator="false"
+            app:tabGravity="fill"
+            app:tabMinWidth="0dp"
+            app:tabMode="fixed"
+            app:tabTitleIds="meera_road_type_main_posts, meera_road_type_subscriptions_posts" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_main_roads_header"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/default_ui_kit_bottom_sheet_dialog_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.meera.uikit.widgets.grabber.UiKitGrabberView
+                android:id="@+id/gv_main_roads_grabber"
+                android:layout_width="80dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="8dp"
+                app:grabber_background_color="#E1E4E6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.meera.uikit.widgets.tablayout.UiKitRowTabLayout
+                android:id="@+id/rtl_main_roads_tab_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                app:enableSmallBadge="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gv_main_roads_grabber"
+                app:showTabIndicator="false"
+                app:tabGravity="center"
+                app:tabMinWidth="0dp"
+                app:tabTitleIds="meera_road_type_main_posts, meera_road_type_subscriptions_posts" />
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/btn_main_roads_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:padding="6dp"
+                android:src="@drawable/ic_outlined_sort_m"
+                android:tint="@color/uiKitColorForegroundPrimary"
+                app:buttonHeightMode="buttonIcon36"
+                app:buttonType="transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gv_main_roads_grabber" />
+
+            <ImageView
+                android:id="@+id/iv_main_roads_filter_badge"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="7.5dp"
+                android:layout_marginEnd="6dp"
+                android:src="@drawable/bg_circle"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/btn_main_roads_filter"
+                app:layout_constraintTop_toTopOf="@id/btn_main_roads_filter"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_main_roads_tabs_dublicate"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abl_main_roads_appbar"
+        app:tabBackground="@color/ui_white"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/uiKitColorAccentPrimary"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabTextAppearance="@style/GraySemiBold18"
+        app:tabTextColor="@color/colorTransparent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

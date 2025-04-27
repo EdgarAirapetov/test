@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_add_admin_group_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_admin_add_m"
+        app:cellTitleValue="@string/meera_add_administrators"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_remove_admin_group_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="top"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_admin_add_m"
+        app:cellTitleValue="@string/menu_chat_delete_admin"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/cell_remove_from_group_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellLeftIconAndTitleColor="@color/uiKitColorAccentWrong"
+        app:cellPosition="bottom"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_user_minus_m"
+        app:cellTitleValue="@string/menu_chat_delete_from_chat"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"/>
+
+</LinearLayout>

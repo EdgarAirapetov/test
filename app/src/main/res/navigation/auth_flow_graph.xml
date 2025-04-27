@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_flow_graph"
+    app:startDestination="@id/meeraRegistrationContainerFragment">
+
+    <fragment
+        android:id="@+id/meeraRegistrationContainerFragment"
+        android:name="com.numplates.nomera3.modules.registration.ui.MeeraRegistrationContainerFragment"
+        android:label="MeeraRegistrationContainerFragment"
+        tools:layout="@layout/meera_fragment_registration_container">
+        <action
+            android:id="@+id/action_meeraRegistrationContainerFragment_to_meeraPickerFragment"
+            app:destination="@id/meeraPickerFragment" />
+        <action
+            android:id="@+id/action_meeraRegistrationContainerFragment_to_meeraContainerAvatarFragment"
+            app:destination="@id/meeraContainerAvatarFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraPickerFragment"
+        android:name="com.numplates.nomera3.modules.chat.mediakeyboard.picker.ui.fragment.MeeraPickerFragment"
+        android:label="MeeraPickerFragment"
+        tools:layout="@layout/meera_mediakeyboard_picker_fragment">
+        <argument
+            android:name="MEERA_PICKER_KEY_MAP"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraContainerAvatarFragment"
+        android:name="com.numplates.nomera3.modules.avatar.MeeraContainerAvatarFragment"
+        android:label="MeeraContainerAvatarFragment"
+        tools:layout="@layout/fragment_container_avatar">
+        <argument
+            android:name="ARG_AVATAR_STATE"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+</navigation>

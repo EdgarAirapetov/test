@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rect_rounded_top_16"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="375:280"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ImageViewRoundedTopCorners_16dp"
+            tools:src="@tools:sample/avatars" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/gradient_top_black_top_rounded_16dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+            app:layout_constraintEnd_toEndOf="@id/iv_avatar"
+            app:layout_constraintStart_toStartOf="@id/iv_avatar"
+            app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+        <com.meera.uikit.widgets.grabber.UiKitGrabberView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/nav_view_vehicle_info"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/nav_view_vehicle_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:backgroundColorRes="@color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBackArrow="false"
+            app:showCloseButton="false">
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/button_menu_vehicle_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outlined_kebab_m"
+                android:tint="@color/uiKitColorForegroundInvers"
+                app:buttonHeightMode="buttonIcon36"
+                app:buttonType="transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/button_close_vehicle_info"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/button_close_vehicle_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/ic_outlined_close_m"
+                android:tint="@color/uiKitColorForegroundInvers"
+                app:buttonHeightMode="buttonIcon36"
+                app:buttonType="transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </com.meera.uikit.widgets.nav.UiKitNavView>
+
+        <ImageView
+            android:id="@+id/iv_car_maker"
+            android:layout_width="48dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_avatar" />
+
+        <TextView
+            android:id="@+id/tv_make"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:singleLine="true"
+            android:textAppearance="@style/UiKit.Header.H2"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_car_maker"
+            tools:text="Make" />
+
+
+        <com.meera.uikit.widgets.UiKitVehiclePlateView
+            android:id="@+id/vehicle_plate_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_make"
+            app:vehiclePlateTypeSize="large_auto" />
+
+
+        <com.meera.uikit.widgets.cell.UiKitCell
+            android:id="@+id/cell_main_vehicle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
+            app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+            app:cellDescription="false"
+            app:cellPosition="alone"
+            app:cellRightElement="right_switch"
+            app:cellTitleValue="@string/garage_main_vehicle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vehicle_plate_view" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_settings_user_list_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:title="@string/settings_privacy_hidden_posts">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/v_settings_user_list_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_outlined_add_m"
+            app:buttonHeightMode="buttonIcon36"
+            app:buttonType="filled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+    <TextView
+        android:id="@+id/tv_settings_user_list_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_settings_user_list_nav_view"
+        android:layout_margin="16dp"
+        android:text="@string/settings_privacy_list_user_new_post_not_show" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_settings_user_list_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_settings_user_list_description"
+        app:layout_constraintBottom_toTopOf="@+id/v_settings_user_list_delete_all_btn"
+        tools:listitem="@layout/meera_profile_settings_user_cell"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_settings_shimmer_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_settings_user_list_description"
+        app:layout_constraintBottom_toTopOf="@+id/v_settings_user_list_delete_all_btn"
+        tools:listitem="@layout/meera_moment_settings_shimmer_item"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/pb_load_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_settings_user_list_description"
+        app:layout_constraintBottom_toTopOf="@+id/v_settings_user_list_delete_all_btn"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/v_settings_user_list_delete_all_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/settings_privacy_list_user_delete_all"
+        android:tint="@color/error_dark_error_disabled_primary"
+        app:buttonHeightMode="buttonText48"
+        app:buttonType="transparent" />
+
+    <ImageView
+        android:id="@+id/iv_settings_user_list_empty_pic"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_i_dont_know"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/tv_settings_user_list_empty_text"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_settings_user_list_empty_pic"
+        android:text="@string/meera_settings_privacy_no_user_in_list"
+        android:textColor="@color/colorGray9298A0"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

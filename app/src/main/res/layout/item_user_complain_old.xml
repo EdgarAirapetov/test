@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="?selectableItemBackground">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/BlackRegular18"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="42dp"
+            tools:text="Title hsgdhs hgsdh dshgdhs dgdshd d hdgshdg dshdghdg sdhgshdgh sd  dhsghdgs  shdgshdg"/>
+
+        <FrameLayout
+            android:id="@+id/show_more"
+            android:layout_width="36dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|end"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:layout_marginEnd="16dp">
+
+            <ImageView
+                android:id="@+id/iv_show_more"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center|end"
+                app:srcCompat="@drawable/ic_arrow_more"/>
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+    <!-- Нижние разделители пока отключены в этом меню. После переработки всех меню, включим -->
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/separator_gray_color" />-->
+
+</LinearLayout>

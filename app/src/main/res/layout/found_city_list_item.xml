@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_root_city"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/found_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:includeFontPadding="false"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:text="Магадан" />
+
+            <TextView
+                android:id="@+id/found_city_name_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:includeFontPadding="false"
+                android:textColor="#4D000000"
+                android:textSize="13sp"
+                tools:text="Россия" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/found_city_checkbox"
+            android:layout_width="26dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_gravity="center_vertical|end"
+            android:theme="@style/CheckboxStyle" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/found_city_bottom_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="#1A000000"/>
+</LinearLayout>

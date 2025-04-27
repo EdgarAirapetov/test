@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.UiKitInputSearch
+        android:id="@+id/appbar_share_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        app:searchHint="@string/share_search"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_share_users"
+        android:layout_width="match_parent"
+        android:layout_height="185dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_share_search"
+        app:layout_constraintBottom_toTopOf="@+id/cv_menu_container"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb_share_bottom_sheet"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/uiKitColorForegroundPrimary"
+        app:indicatorSize="24dp"
+        app:trackThickness="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/cv_menu_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_share_search" />
+
+    <include
+        android:id="@+id/no_matches_placeholder"
+        layout="@layout/meera_no_matches_placeholder"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/cv_menu_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar_share_search" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_menu_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/ui_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
+
+            <com.meera.uikit.widgets.UiKitInput
+                android:id="@+id/v_share_input"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+                android:layout_marginVertical="8dp"
+                app:inputHint="@string/meera_general_text"/>
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/btn_share_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonHeightMode="buttonIcon36"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="14dp"
+                android:src="@drawable/ic_outlined_send_m"
+                android:layout_marginVertical="12dp"
+                app:buttonType="filled" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

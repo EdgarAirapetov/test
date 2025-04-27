@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadius="0dp"
+    android:shape="ring"
+    android:thicknessRatio="2"
+    android:useLevel="false" >
+    <solid android:color="@android:color/transparent" />
+
+    <stroke
+        android:width="1dp"
+        android:color="#9298A0" />
+
+    <path
+        android:pathData="M11.889,6.314c0.29,-0.29 0.76,-0.29 1.05,0 0.29,0.29 0.29,0.76 0,1.051l-4.845,4.846L5.06,9.178c-0.29,-0.29 -0.29,-0.76 0,-1.05 0.29,-0.29 0.76,-0.29 1.05,0L8.095,10.11l3.795,-3.796z"
+        android:fillColor="@color/ui_white"
+        android:fillType="nonZero"/>
+</shape>

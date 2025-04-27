@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="start|center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/nickname_edit_text_header"
+            android:textColor="#80000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="start|center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/nickname_edit_text_error"
+            android:textColor="#D61835"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:text="Не может быть несколько точек подряд" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_profile_custom_edittext">
+
+        <TextView
+            android:id="@+id/content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:hint="@string/nickname_edit_text_hint"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:hint="Введите ник" />
+
+        <TextView
+            android:id="@+id/hint_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:hint="@string/nickname_edit_text_hint"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:singleLine="true"
+            android:textColor="#61000000"
+            android:textSize="16sp"
+            tools:hint="Введите ник" />
+
+
+        <FrameLayout
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end|center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/downward_arrow" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

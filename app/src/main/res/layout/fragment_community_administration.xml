@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundLightPurple"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/statusBarStub"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/ui_white_100" />
+
+    <FrameLayout
+        android:id="@+id/toolbarContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white_100">
+
+        <FrameLayout
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/iv_group_info_toolbar_arrow_back"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/arrowback" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/headerTextView"
+            style="@style/BlackSemibold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="@string/community_toolbar_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_gravity="bottom"
+            android:background="@color/gray_separator" />
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray_separator" />
+
+    <!--    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white_100">
+
+        <ImageView
+            android:id="@+id/communityCoverImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginBottom="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="#F2F2F7" />
+
+        <FrameLayout
+            android:id="@+id/communityNameContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/communityCoverImage"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/communityNameProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/ui_purple"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/communityNameInnerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="invisible"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/communityName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/source_sanspro_semibold"
+                    android:gravity="start|center_vertical"
+                    android:lineSpacingExtra="2sp"
+                    android:maxLines="2"
+                    android:textColor="@color/color_soft_black"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@+id/communityStartEdit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/communityStartEdit"
+                    app:layout_constraintTop_toTopOf="@+id/communityCoverImage"
+                    tools:text="BMW - жизнь на скорости BMW - жизнь на скорости" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/communityStartEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/source_sanspro_semibold"
+                    android:text="@string/community_edit_text"
+                    android:textColor="@color/ui_purple_text"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="14sp"
+                    android:textSize="16sp"
+                    android:lines="1"
+                    app:layout_constraintBottom_toBottomOf="@+id/communityCoverImage"
+                    app:layout_constraintStart_toEndOf="@+id/communityCoverImage" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_separator" />
+
+    <!--  Участники  -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray_separator" />
+
+
+    <LinearLayout
+        android:id="@+id/communityMembersOption"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/ui_white_100"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_community_members" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/source_sanspro_regular_odl_2"
+            android:lines="1"
+            android:text="@string/community_members_text"
+            android:textColor="@color/color_soft_black"
+            android:textSize="16sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp">
+
+            <TextView
+                android:id="@+id/communityMembersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/source_sanspro_regular_odl_2"
+                android:lines="1"
+                android:textColor="@color/community_member_count_color"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                tools:text="54" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/communityMembersCountProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/ui_purple"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_separator" />
+
+
+    <!--  Черный список  -->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray_separator" />
+
+
+    <LinearLayout
+        android:id="@+id/communityBlacklistOption"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/ui_white_100"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_community_blacklist" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/source_sanspro_regular_odl_2"
+            android:lines="1"
+            android:text="@string/community_blacklist_text"
+            android:textColor="@color/color_soft_black"
+            android:textSize="16sp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp">
+
+            <TextView
+                android:id="@+id/communityBlacklistMembersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/source_sanspro_regular_odl_2"
+                android:lines="1"
+                android:textColor="@color/community_member_count_color"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                tools:text="2" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/communityBlacklistMembersCountProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/ui_purple"
+                tools:visibility="visible" />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray_separator" />
+
+    <!--  Черный список  -->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/communityDeleteOptionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_separator" />
+
+        <LinearLayout
+            android:id="@+id/communityDeleteOption"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@color/ui_white_100"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/delete_red_menu_item" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/source_sanspro_regular_odl_2"
+                android:lines="1"
+                android:text="@string/community_delete_text"
+                android:textColor="@color/color_soft_black"
+                android:textSize="16sp" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/communityDeletionProgressBar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:indeterminateTint="@color/ui_purple"
+                android:visibility="invisible"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_separator" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

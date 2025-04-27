@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_white"
+    android:orientation="vertical"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ui_white"
+        >
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_subscriptions_road"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            >
+
+            <com.numplates.nomera3.presentation.view.ui.FeedRecyclerView
+                android:id="@+id/rv_subscriptions_road"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/subscriptionRefreshButton"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="14dp"
+            app:cardCornerRadius="@dimen/material16"
+            app:cardElevation="@dimen/material8"
+            >
+
+            <TextView
+                style="@style/PurpleRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/notification_show_new"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/btn_scroll_refresh_subscriptions_road"
+            android:layout_width="138dp"
+            android:layout_height="138dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-30dp"
+            android:visibility="gone"
+            app:lottie_loop="false"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_subscriptions_road"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+
+        <include layout="@layout/placeholder_empty_subscription" />
+
+    </FrameLayout>
+
+</LinearLayout>

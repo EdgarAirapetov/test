@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/closed_profile_label"
+    style="@style/UiKit.Body.Normal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingVertical="54dp"
+    android:layout_marginHorizontal="16dp"
+    android:text="@string/meera_profile_is_closed"
+    android:visibility="visible" />

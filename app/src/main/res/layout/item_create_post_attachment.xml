@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/material16"
+    android:layout_marginTop="@dimen/material16"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_media_attachment"
+        android:layout_width="wrap_content"
+        android:layout_height="144dp"
+        android:adjustViewBounds="true"
+        android:minWidth="40dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageViewRoundedCorners_4dp"
+        tools:src="@drawable/dialog_gift"
+        tools:visibility="visible" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_play_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:cardBackgroundColor="#26000000"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_media_attachment"
+        app:layout_constraintEnd_toEndOf="@id/iv_media_attachment"
+        app:layout_constraintStart_toStartOf="@+id/iv_media_attachment"
+        app:layout_constraintTop_toTopOf="@+id/iv_media_attachment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_play_button_gray" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_delete_attachment"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:src="@drawable/ic_close_purple"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_media_attachment"
+        app:layout_constraintTop_toTopOf="@+id/iv_media_attachment"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_edit_attachment"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:src="@drawable/ic_edit_purple"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_media_attachment"
+        app:layout_constraintBottom_toBottomOf="@id/iv_media_attachment"
+        tools:visibility="visible" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

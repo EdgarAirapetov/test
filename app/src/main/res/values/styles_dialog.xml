@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MultilineDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="materialAlertDialogTitleTextStyle">@style/TitleStyle</item>
+    </style>
+
+    <style name="TitleStyle" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:maxLines">99</item>
+        <item name="android:singleLine">false</item>
+    </style>
+</resources>

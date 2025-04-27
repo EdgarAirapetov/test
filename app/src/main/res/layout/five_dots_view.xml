@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="280dp"
+    android:layout_height="48dp">
+
+    <ImageView
+        android:id="@+id/iv_dots_silver_bg1"
+        android:layout_width="@dimen/five_dots_view_bg_silver_size"
+        android:layout_height="@dimen/five_dots_view_bg_silver_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_dots_silver_bg2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_silver"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_silver_bg2"
+        android:layout_width="@dimen/five_dots_view_bg_silver_size"
+        android:layout_height="@dimen/five_dots_view_bg_silver_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_dots_silver_bg1"
+        app:layout_constraintEnd_toStartOf="@+id/iv_dots_silver_bg3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_silver"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_silver_bg3"
+        android:layout_width="@dimen/five_dots_view_bg_silver_size"
+        android:layout_height="@dimen/five_dots_view_bg_silver_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_dots_silver_bg2"
+        app:layout_constraintEnd_toStartOf="@+id/iv_dots_silver_bg4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_silver"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_silver_bg4"
+        android:layout_width="@dimen/five_dots_view_bg_silver_size"
+        android:layout_height="@dimen/five_dots_view_bg_silver_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_dots_silver_bg3"
+        app:layout_constraintEnd_toStartOf="@+id/iv_dots_silver_bg5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_silver"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_silver_bg5"
+        android:layout_width="@dimen/five_dots_view_bg_silver_size"
+        android:layout_height="@dimen/five_dots_view_bg_silver_size"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_dots_silver_bg4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_silver"
+        />
+
+    <!-- WHITES -->
+
+    <ImageView
+        android:id="@+id/iv_dots_white_bg1"
+        android:layout_width="@dimen/five_dots_view_bg_white_size"
+        android:layout_height="@dimen/five_dots_view_bg_white_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_silver_bg1"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_silver_bg1"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_silver_bg1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_silver_bg1"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_white"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_white_bg2"
+        android:layout_width="@dimen/five_dots_view_bg_white_size"
+        android:layout_height="@dimen/five_dots_view_bg_white_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_silver_bg2"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_silver_bg2"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_silver_bg2"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_silver_bg2"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_white"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_white_bg3"
+        android:layout_width="@dimen/five_dots_view_bg_white_size"
+        android:layout_height="@dimen/five_dots_view_bg_white_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_silver_bg3"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_silver_bg3"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_silver_bg3"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_silver_bg3"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_white"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_white_bg4"
+        android:layout_width="@dimen/five_dots_view_bg_white_size"
+        android:layout_height="@dimen/five_dots_view_bg_white_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_silver_bg4"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_silver_bg4"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_silver_bg4"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_silver_bg4"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_white"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_white_bg5"
+        android:layout_width="@dimen/five_dots_view_bg_white_size"
+        android:layout_height="@dimen/five_dots_view_bg_white_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_silver_bg5"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_silver_bg5"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_silver_bg5"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_silver_bg5"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_white"
+        />
+
+    <!-- COLORED -->
+
+    <ImageView
+        android:id="@+id/iv_dots_red"
+        android:layout_width="@dimen/five_dots_view_colored_size"
+        android:layout_height="@dimen/five_dots_view_colored_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_white_bg1"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_white_bg1"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_white_bg1"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_white_bg1"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_red"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_green"
+        android:layout_width="@dimen/five_dots_view_colored_size"
+        android:layout_height="@dimen/five_dots_view_colored_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_white_bg2"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_white_bg2"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_white_bg2"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_white_bg2"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_green"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_blue"
+        android:layout_width="@dimen/five_dots_view_colored_size"
+        android:layout_height="@dimen/five_dots_view_colored_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_white_bg3"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_white_bg3"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_white_bg3"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_white_bg3"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_blue"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_purple"
+        android:layout_width="@dimen/five_dots_view_colored_size"
+        android:layout_height="@dimen/five_dots_view_colored_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_white_bg4"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_white_bg4"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_white_bg4"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_white_bg4"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_purple"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dots_pink"
+        android:layout_width="@dimen/five_dots_view_colored_size"
+        android:layout_height="@dimen/five_dots_view_colored_size"
+        app:layout_constraintTop_toTopOf="@+id/iv_dots_white_bg5"
+        app:layout_constraintStart_toStartOf="@+id/iv_dots_white_bg5"
+        app:layout_constraintEnd_toEndOf="@+id/iv_dots_white_bg5"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_dots_white_bg5"
+        android:scaleType="centerCrop"
+        android:background="@drawable/vipview_premium_pink"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

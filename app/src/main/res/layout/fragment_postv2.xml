@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_post_details_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:orientation="vertical"
+    android:tag="post_detail_container"> <!-- Используется в NeedToShowSuccessDownloadToastUtil -->
+
+    <View
+        android:id="@+id/view_map_drag"
+        android:layout_width="80dp"
+        android:layout_height="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/meera_modal_drag_view"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_1000"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_post_comments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+
+            <com.numplates.nomera3.modules.posts.ui.view.MeeraPostHeaderView
+                android:id="@+id/phv_postv2_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout
+        android:id="@+id/srl_post_frg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/vg_create_block_main_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout3">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_posts_comments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="60dp" />
+    </com.numplates.nomera3.presentation.view.ui.MeeraPullToRefreshLayout>
+
+    <!-- Send comment container -->
+    <LinearLayout
+        android:id="@+id/vg_create_block_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/ui_white"
+        android:elevation="@dimen/material16"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rellay_extra_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_response_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:text="@string/answer_txt"
+                android:textAppearance="@style/UiKit.Body.Description"
+                android:textColor="@color/colorGrayA7A5"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_comment_owner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="14dp"
+                android:layout_toStartOf="@+id/iv_cancel_btn"
+                android:layout_toEndOf="@+id/tv_response_label"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="4dp"
+                android:textAppearance="@style/UiKit.Body.Description"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_cancel_btn"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/tv_response_label"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Owner Name" />
+
+            <ImageView
+                android:id="@+id/iv_cancel_btn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_outlined_close_m" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_separator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/iv_cancel_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_comment_owner" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_quick_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp" />
+
+        <FrameLayout
+            android:id="@+id/text_input_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/meera_chat_input_background"
+                    android:orientation="horizontal">
+
+                    <com.meera.core.views.MeeraEditTextExtended
+                        android:id="@+id/et_write_comment"
+                        style="@style/UiKit.Body.Normal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/comment"
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:maxLength="1000"
+                        android:maxLines="3"
+                        android:saveEnabled="false"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/uiKitColorForegroundPrimary"
+                        android:textColorHint="@color/uiKitColorForegroundSecondary"
+                        android:textCursorDrawable="@null"
+                        android:textSize="16sp"
+                        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore " />
+
+                </LinearLayout>
+
+                <com.meera.uikit.widgets.buttons.UiKitButton
+                    android:id="@+id/iv_send_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="14dp"
+                    android:enabled="false"
+                    android:src="@drawable/ic_outlined_send_m"
+                    app:buttonHeightMode="buttonIcon36" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_scroll_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/srl_post_frg"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_outlined_chevron_down_l"
+        app:buttonHeightMode="buttonIcon48"
+        app:buttonType="elevated" />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/btn_scroll_down"-->
+<!--        android:layout_width="53dp"-->
+<!--        android:layout_height="53dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginBottom="17dp"-->
+<!--        android:scaleX="0"-->
+<!--        android:scaleY="0"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/srl_post_frg"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:srcCompat="@drawable/comment_down_img" />-->
+
+    <!-- меню с рекомендациями уник имен-->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/vg_post_unique_names"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/srl_post_frg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout3">
+
+        <include
+            android:id="@+id/tags_list"
+            layout="@layout/user_tags_coordinator" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- Blocked by user holder -->
+    <LinearLayout
+        android:id="@+id/vg_blocked_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="@dimen/material16"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_block_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="33dp"
+            android:layout_marginEnd="33dp"
+            android:gravity="center"
+            android:paddingTop="@dimen/padding10"
+            android:paddingBottom="@dimen/padding10"
+            android:text="@string/comments_disabled"
+            android:textAppearance="@style/UiKit.Body.Description"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_not_available_post"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout3"
+        tools:visibility="visible">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="152dp"
+            android:src="@drawable/meera_ic_subscriptions_empty" />
+
+        <TextView
+            android:id="@+id/tv_post_not_available_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/meera_post_is_not_available"
+            android:textAppearance="@style/UiKit.Header.Subtitle"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_post_not_available_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

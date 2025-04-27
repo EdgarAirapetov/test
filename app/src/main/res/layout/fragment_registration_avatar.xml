@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_reg_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBackIcon"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:padding="8dp"
+            android:src="@drawable/arrowback_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/WhiteBold36"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/add_photo_question"
+            app:layout_constraintBottom_toTopOf="@id/flPhotoContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivBackIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/flPhotoContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="40dp"
+            android:elevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/tvAddPhotoButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.noomeera.nmravatarssdk.ui.view.AvatarView
+                    android:id="@+id/v_avatar_view"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="visible"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:quality="1.0"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/user_photo"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivGenerateAvatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_random_avatar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/avatar_progress_bar"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/progress_animation_white"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_renderMode="hardware"
+                app:lottie_enableMergePathsForKitKatAndAbove="true"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddPhotoButton"
+            style="@style/PurpleRegular14"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/background_white_rounded_6dp"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/add_photo_short"
+            app:layout_constraintBottom_toTopOf="@id/tvNameDescription"
+            app:layout_constraintStart_toStartOf="@id/flPhotoContainer"
+            app:layout_constraintTop_toBottomOf="@id/flPhotoContainer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEditAvatarButton"
+            style="@style/PurpleRegular14"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/background_white_rounded_6dp"
+            android:gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/edit_avatar"
+            app:layout_constraintStart_toEndOf="@id/tvAddPhotoButton"
+            app:layout_constraintTop_toTopOf="@id/tvAddPhotoButton" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNameDescription"
+            style="@style/WhiteRegular16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/uniquename_label"
+            app:layout_constraintBottom_toTopOf="@id/llUniqueName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddPhotoButton" />
+
+        <LinearLayout
+            android:id="@+id/llUniqueName"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/background_uniquename_editor"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/referralContainer"
+            app:layout_constraintEnd_toEndOf="@id/flPhotoContainer"
+            app:layout_constraintStart_toStartOf="@id/flPhotoContainer"
+            app:layout_constraintTop_toBottomOf="@id/tvNameDescription"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/BlackRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/uniquename_prefix" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etUniqueName"
+                style="@style/BlackRegular16"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:gravity="start|center"
+                tools:text="id1212123" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUniqueNameError"
+            style="@style/WhiteRegular16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:textColor="@color/wrong_code_color"
+            app:layout_constraintBottom_toTopOf="@id/referralContainer"
+            app:layout_constraintStart_toStartOf="@id/llUniqueName"
+            app:layout_constraintTop_toBottomOf="@id/llUniqueName"
+            tools:text="@string/unickname_not_allowed" />
+
+        <LinearLayout
+            android:id="@+id/referralContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/cvNextButton"
+            app:layout_constraintStart_toStartOf="@id/llUniqueName"
+            app:layout_constraintTop_toBottomOf="@id/tvUniqueNameError"
+            app:layout_constraintVertical_bias="0">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivReferralIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:tint="@color/white_1000"
+                app:srcCompat="@drawable/ic_gift" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReferralText"
+                style="@style/WhiteSemiBold16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/have_promocode_question" />
+        </LinearLayout>
+
+        <com.numplates.nomera3.modules.registration.ui.NextStepButtonView
+            android:id="@+id/cvNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/referralContainer"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/tvStep"
+            style="@style/WhiteRegular16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/gray_background_button"
+            app:layout_constraintBottom_toBottomOf="@id/cvNextButton"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Шаг 1 из 5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

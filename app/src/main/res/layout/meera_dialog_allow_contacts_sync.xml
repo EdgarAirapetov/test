@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_allow_contacts_sync"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    android:fillViewport="true">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/nv_contacts_sync"
+            app:showBackArrow="false"
+            app:showCloseButton="true"
+            android:title="@string/contacts_synchronization_allow_access"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_allow_contacts_icon"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            tools:src="@drawable/meera_ic_sync_contacts_dialog" />
+
+        <TextView
+            android:id="@+id/tv_allow_contacts_message"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            tools:text="@string/contacts_sync_allow_access_description" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_allow_contacts_positive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:buttonHeightMode="buttonText48"
+            app:buttonType="filled"
+            tools:text="@string/general_allow" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_allow_contacts_negative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:buttonHeightMode="buttonText48"
+            app:buttonType="transparent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginHorizontal="16dp"
+            tools:text="@string/general_later" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

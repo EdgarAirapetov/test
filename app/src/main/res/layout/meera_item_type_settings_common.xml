@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_profile_header"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:text="@string/settings_profile_visibility"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_friends_followers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="top"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellRightTextValue="@string/mini_map_visibility_everyone"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/friends_and_followers"
+        app:cellWidthType="with_margins"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile_header" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_about_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="middle"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellRightTextValue="@string/mini_map_visibility_everyone"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/about_me"
+        app:cellWidthType="with_margins"
+        app:layout_constraintTop_toBottomOf="@id/cell_privacy_friends_followers" />
+
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_privacy_garage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_none"
+        app:cellPosition="bottom"
+        app:cellRightElement="right_text"
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellRightTextValue="@string/mini_map_visibility_everyone"
+        app:cellSubtitle="false"
+        app:cellTitleValue="@string/settings_garage"
+        app:cellWidthType="with_margins"
+        app:layout_constraintTop_toBottomOf="@id/cell_privacy_about_me" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cell_privacy_garage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

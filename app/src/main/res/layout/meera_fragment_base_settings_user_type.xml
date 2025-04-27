@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:id="@+id/nv_settings_user_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBackArrow="false"
+            app:showCloseButton="true" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_users"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            android:saveEnabled="false"
+            android:stateListAnimator="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nv_settings_user_type">
+
+            <TextView
+                android:id="@+id/tv_setting_type_title"
+                style="@style/BlackSemibold16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                tools:text="Setting type" />
+
+            <com.meera.uikit.widgets.cell.UiKitCell
+                android:id="@+id/cell_settings_user_type_everything"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+                app:cellDescription="false"
+                app:cellLeftElement="left_icon"
+                app:cellLeftIconSrc="@drawable/ic_outlined_planet_m"
+                app:cellPosition="top"
+                app:cellRightElement="right_radio"
+                app:cellSubtitle="false"
+                app:cellTitleValue="@string/settings_everybody"
+                app:layout_constraintTop_toBottomOf="@id/nv_settings_user_type" />
+
+            <com.meera.uikit.widgets.cell.UiKitCell
+                android:id="@+id/cell_settings_user_type_friends"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+                app:cellDescription="false"
+                app:cellLeftElement="left_icon"
+                app:cellLeftIconSrc="@drawable/ic_outlined_user_m"
+                app:cellPosition="middle"
+                app:cellRightElement="right_radio"
+                app:cellSubtitle="false"
+                app:cellTitleValue="@string/settings_friends"
+                app:layout_constraintTop_toBottomOf="@id/nv_settings_user_type" />
+
+            <com.meera.uikit.widgets.cell.UiKitCell
+                android:id="@+id/cell_settings_user_type_nobody"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+                app:cellDescription="false"
+                app:cellLeftElement="left_icon"
+                app:cellLeftIconSrc="@drawable/ic_outlined_circle_block_m"
+                app:cellPosition="bottom"
+                app:cellRightElement="right_radio"
+                app:cellSubtitle="false"
+                app:cellTitleValue="@string/settings_nobody"
+                app:layout_constraintTop_toBottomOf="@id/nv_settings_user_type" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/bellow_action_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="38dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_users">
+
+            <TextView
+                android:id="@+id/tv_action_description"
+                style="@style/GrayRegular14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/material16"
+                android:layout_marginTop="@dimen/material8"
+                android:layout_marginEnd="@dimen/material16"
+                android:layout_marginBottom="12dp"
+                android:visibility="gone"
+                tools:text="Description"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vg_exceptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/ui_white"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bellow_action_description">
+
+            <TextView
+                style="@style/UiKit.Header.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/settings_exclude"
+                android:textColor="@color/uiKitColorForegroundSecondary" />
+
+
+            <com.meera.uikit.widgets.cell.UiKitCell
+                android:id="@+id/cell_settings_exception_not_allow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:cellArrowRight="true"
+                app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+                app:cellDescription="false"
+                app:cellLeftElement="left_none"
+                app:cellPosition="top"
+                app:cellRightElement="right_text"
+                app:cellRightElementColor="@color/uiKitColorForegroundLink"
+                app:cellRightTextValue="@string/settings_add"
+                app:cellSubtitle="false"
+                app:cellTitleValue="@string/settings_never_let"
+                app:layout_constraintTop_toBottomOf="@id/nv_settings_user_type" />
+
+
+            <com.meera.uikit.widgets.cell.UiKitCell
+                android:id="@+id/cell_settings_exception_always_allow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:cellArrowRight="true"
+                app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+                app:cellDescription="false"
+                app:cellLeftElement="left_none"
+                app:cellPosition="bottom"
+                app:cellRightElement="right_text"
+                app:cellRightElementColor="@color/uiKitColorForegroundLink"
+                app:cellRightTextValue="@string/one_person"
+                app:cellSubtitle="false"
+                app:cellTitleValue="@string/settings_always_allow"
+                app:layout_constraintTop_toBottomOf="@id/nv_settings_user_type" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_exception_description"
+            style="@style/GrayRegular14"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/settings_add_users_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vg_exceptions"
+            android:visibility="gone"/>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_exception_description"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

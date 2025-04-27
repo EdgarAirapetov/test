@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_chat_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <!-- Incoming call  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_incoming"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/chat_message_shape_others"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/ll_call_incoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buble_circle_white"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_type_of_call_incoming"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_call_incoming" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title_incoming"
+            style="@style/BlackBold14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="31dp"
+            android:text="@string/incoming_call"
+            app:layout_constraintBottom_toTopOf="@+id/tv_call_description_incoming"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ll_call_incoming"
+            app:layout_constraintTop_toTopOf="@+id/ll_call_incoming"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_call_description_incoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textColor="#ee2121"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_call_incoming"
+            app:layout_constraintEnd_toStartOf="@+id/tv_call_time_incoming"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_incoming"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_incoming"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Call reject dsjbjkksdjbksjdbc" />
+
+        <TextView
+            android:id="@+id/tv_call_time_incoming"
+            style="@style/PurpleRegular14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="00:00"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Outgoing call   -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_outgoing"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@drawable/chat_message_shape_my"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_call_outgoing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buble_circle_white"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_type_of_call_outgoing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_call_outgoing" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title_outgoing"
+            style="@style/WhiteBold14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="@string/outgoing_call"
+            app:layout_constraintBottom_toTopOf="@+id/tv_call_description_outgoing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ll_call_outgoing"
+            app:layout_constraintTop_toTopOf="@+id/ll_call_outgoing"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_call_description_outgoing"
+            style="@style/WhiteRegular12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ll_call_outgoing"
+            app:layout_constraintEnd_toStartOf="@+id/container_call_time_outgoing"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_outgoing"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_outgoing"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Outgoing call" />
+
+        <LinearLayout
+            android:id="@+id/container_call_time_outgoing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tv_call_time_outgoing"
+                style="@style/WhiteRegular14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00" />
+
+            <ImageView
+                android:id="@+id/iv_call_outgoing_marker_sent"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_sent_message"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_call_outgoing_marker_delivered"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_delivered_message"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_call_outgoing_marker_read"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_read_message"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

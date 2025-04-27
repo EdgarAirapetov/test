@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/ll_comment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="start"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/vg_comment_bubble"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/meera_comment_shape"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingBottom="9dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/vv_comment_author_avatar"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.meera.uikit.widgets.people.UiKitUsernameView
+                    android:id="@+id/tv_comment_author"
+                    style="@style/UiKit.Display.Medi_14"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/uiKitColorForegroundPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_comment_date"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_comment_date"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_constraintWidth_default="wrap"
+                    tools:text="Иннокентий 27RU Многообеща " />
+
+                <TextView
+                    android:id="@+id/tv_comment_date"
+                    style="@style/UiKit.Display.Caps_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="14dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="@color/uiKitColorForegroundSecondary"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment_text"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="59 сек" />
+
+                <com.numplates.nomera3.presentation.view.ui.MeeraTextViewWithImages
+                    android:id="@+id/tv_comment_text"
+                    style="@style/UiKit.Body.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/uiKitColorForegroundPrimary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment_author"
+                    tools:text="Рассказываем, какие сложности и особенности есть в этой нише, по каким
+            направлениям рекламировались и какие результаты удалось получить в
+            Директе и Google Ads." />
+
+                <TextView
+                    android:id="@+id/tv_show_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:gravity="start"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:paddingBottom="2dp"
+                    android:paddingTop="2dp"
+                    android:text="@string/more"
+                    android:textColor='@color/uiKitColorForegroundLink'
+                    style="@style/UiKit.Body.Normal"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_comment_text"
+                    tools:visibility="gone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/reaction_tip"
+                style="@style/UiKit.Display.Caps_12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/uiKitColorForegroundSecondary"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/vg_comment_bubble"
+                app:layout_constraintTop_toBottomOf="@+id/vg_comment_bubble"
+                tools:text="проведите для выбора реакции"
+                tools:visibility="visible" />
+
+            <com.numplates.nomera3.modules.reaction.ui.custom.MeeraReactionLikeButton
+                android:id="@+id/tv_comment_like"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintStart_toStartOf="@+id/vg_comment_bubble"
+                app:layout_constraintTop_toBottomOf="@+id/vg_comment_bubble"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp" />
+
+            <TextView
+                android:id="@+id/tv_answer_comment"
+                style="@style/UiKit.Display.Caps_12"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/responce_to_comment"
+                android:textColor="@color/uiKitColorForegroundSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_comment_like"
+                app:layout_constraintStart_toEndOf="@+id/tv_comment_like"
+                app:layout_constraintTop_toTopOf="@+id/tv_comment_like" />
+
+            <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+                android:id="@+id/vv_comment_author_avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/vg_comment_bubble"
+                app:userpicStories="NoStories"
+                tools:userpicSize="Size40" />
+
+            <com.numplates.nomera3.modules.reaction.ui.custom.FlyingReaction
+                android:id="@+id/flying_reaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment_like"
+                app:layout_constraintEnd_toEndOf="@+id/rb_list"
+                app:layout_constraintTop_toTopOf="@+id/tv_comment_like" />
+
+            <com.numplates.nomera3.modules.reaction.ui.custom.MeeraReactionBadge
+                android:id="@+id/rb_list"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment_like"
+                app:layout_constraintEnd_toStartOf="@id/rb_add"
+                app:layout_constraintTop_toTopOf="@+id/tv_comment_like"
+                tools:layout_height="20dp"
+                tools:layout_width="80dp" />
+
+            <com.numplates.nomera3.modules.reaction.ui.custom.MeeraReactionBadge
+                android:id="@+id/rb_add"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_comment_like"
+                app:layout_constraintEnd_toEndOf="@id/vg_comment_bubble"
+                app:layout_constraintTop_toTopOf="@+id/tv_comment_like"
+                tools:layout_height="20dp"
+                tools:layout_width="80dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:background="#FFF6DF" >
+
+    <View
+        android:id="@+id/tb_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:background="@drawable/meera_map_gradient"
+        android:elevation="10dp" />
+
+    <ImageView
+        android:id="@+id/iv_no_show_on_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:srcCompat="@drawable/no_show_on_map_placeholder"/>
+
+    <TextView
+        android:id="@+id/tv_no_show_on_map_own_profile_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        style="@style/UiKit.Body.Normal"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:text="@string/meera_map_text_nobody_visible_regular"/>
+
+    <TextView
+        android:id="@+id/tv_no_show_on_map_other_profile_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:gravity="center"
+        style="@style/UiKit.Header.Subtitle"
+        android:textSize="16sp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:text="@string/meera_map_geo_hidden"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_goto_map_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:buttonHeightMode="buttonText36"
+        android:layout_marginTop="12dp"
+        android:text="@string/meera_goto_profile_settings"/>
+
+</LinearLayout>

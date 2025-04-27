@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/blacklistItemRootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorTransparent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/ui_white_100"
+        android:foreground="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/blacklistMemberName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/community_blacklist_clear_all_item"
+            android:textAppearance="@style/RedRegular16"
+            android:textColor="#EE2121" />
+
+
+    </FrameLayout>
+
+
+</FrameLayout>

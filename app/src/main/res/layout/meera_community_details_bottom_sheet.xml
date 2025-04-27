@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp"
+        style="@style/UiKit.Header.Subtitle"
+        android:textSize="16sp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:text="@string/meera_general_creation_date" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_input_group_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        tools:cellCityValue=""
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        tools:cellTitleValue="26 сентября 2019"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        style="@style/UiKit.Header.Subtitle"
+        android:textSize="16sp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:text="@string/group_description_label_text" />
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+        <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+            android:id="@+id/cell_input_group_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/uiKitColorBackgroundSecondary"
+            style="@style/UiKit.Body.Normal"
+            android:minLines="10"
+            android:maxLines="10"
+            android:editable="false"
+            android:gravity="top"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:nestedScrollingEnabled="true"
+            android:inputType="none"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:textColor="@color/uiKitColorForegroundPrimary" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_community_members_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="8dp"
+        style="@style/UiKit.Header.Subtitle"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:textSize="16sp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:text="@string/community_members_text" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_input_group_members"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellRightElement="right_icon"
+        app:cellRightIconSrc="@drawable/ic_outlined_arrow_right_s"
+        tools:cellCityValue=""
+        tools:visibility="visible">
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_community_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="16dp"
+        app:buttonType="outline"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:text="@string/common_edit" />
+
+</LinearLayout>

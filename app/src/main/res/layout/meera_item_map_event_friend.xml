@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.uikit.widgets.cell.UiKitCell xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_friend_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    app:cellCityValue="@string/map_events_type_education"
+    app:cellLeftElement="left_userPic72"
+    app:cellRightElement="right_icon"
+    app:cellRightElementColor="@color/uiKitColorForegroundLink"
+    app:cellRightIconSrc="@drawable/ic_outlined_message_l"
+    app:cellTitleValue="Nastasikffdsfdsffdsfsdfsfdkldkl" />

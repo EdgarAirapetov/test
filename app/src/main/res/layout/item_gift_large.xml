@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivGift"
+        android:layout_width="162dp"
+        android:layout_height="162dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="26dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date_when_sent_gift"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_date_when_sent_gift"
+        style="@style/GrayRegular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/padding20"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_user_who_sent_gift"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_user_who_sent_gift"
+        tools:text="123123123" />
+
+    <TextView
+        android:id="@+id/tv_user_who_sent_gift"
+        style="@style/BlackSemibold18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_user_who_sent_gift"
+        app:layout_constraintEnd_toStartOf="@+id/tv_date_when_sent_gift"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/iv_user_who_sent_gift"
+        app:layout_constraintTop_toTopOf="@+id/iv_user_who_sent_gift"
+        tools:text="123123123"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_custom_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text= "Custom title"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black_1000"
+        app:layout_constraintEnd_toEndOf="@+id/ivGift"
+        app:layout_constraintStart_toStartOf="@+id/ivGift"
+        app:layout_constraintTop_toBottomOf="@+id/ivGift" />
+
+    <TextView
+        android:id="@+id/tv_holiday_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Holiday title"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:textColor="@color/ui_gray"
+        app:layout_constraintEnd_toEndOf="@+id/tv_custom_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_custom_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_custom_title" />
+
+    <TextView
+        android:id="@+id/tv_message_gift"
+        style="@style/BlackRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_holiday_title"
+        tools:text="@tools:sample/lorem/random"
+        android:maxLength="180"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_btn_action"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_gray_rounded_corners_6dp"
+        android:fontFamily="@font/source_sanspro_semibold"
+        android:paddingStart="16dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/to_choose_coffee"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:gravity="center"
+        style="@style/BlackSemibold16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_message_gift"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/label_new"
+        android:layout_width="88dp"
+        android:layout_height="30dp"
+        android:background="@drawable/rounded_gradient"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/new_gift"
+        android:textColor="@color/white_1000"
+        android:textSize="14sp"
+        android:translationX="-20dp"
+        android:translationY="-20dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/ivGift"
+        app:layout_constraintTop_toTopOf="@+id/ivGift"
+        tools:visibility="visible" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="16dp"
+        android:background="@color/separator_gray_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_btn_action" />
+
+    <com.numplates.nomera3.presentation.view.widgets.VipView
+        android:id="@+id/iv_user_who_sent_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:size="SIZE_45"
+        tools:visibility="invisible" />
+
+    <View
+        android:id="@+id/vSenderClickArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/iv_user_who_sent_gift"
+        app:layout_constraintTop_toTopOf="@id/iv_user_who_sent_gift"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user_who_sent_gift"
+        app:layout_constraintEnd_toStartOf="@id/tv_date_when_sent_gift"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/mm"
+            android:background="@color/uiKitColorBackgroundPrimary"
+            android:clickable="true"
+            android:fitsSystemWindows="false"
+            android:focusable="true"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinator"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <com.numplates.nomera3.presentation.view.ui.MeeraFeedRecyclerView
+                        android:id="@+id/rv_community_posts"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp" />
+
+                    <include
+                        android:id="@+id/placeholder"
+                        layout="@layout/meera_no_group_posts_placeholder"
+                        android:visibility="gone"
+                        tools:visibility="gone" />
+
+                </FrameLayout>
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/ui_white"
+                    app:elevation="0dp">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/collapsing_toolbar_community_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:saveEnabled="false"
+                        app:collapsedTitleGravity="center_horizontal|bottom"
+                        app:collapsedTitleTextAppearance="@style/UiKit.Header.H3"
+                        app:collapsedTitleTextColor="@color/uiKitColorForegroundPrimary"
+                        app:contentScrim="@color/white_1000"
+                        app:expandedTitleGravity="bottom"
+                        app:expandedTitleMarginBottom="195dp"
+                        app:expandedTitleMarginStart="16dp"
+                        app:expandedTitleTextAppearance="@style/UiKit.Header.H2"
+                        app:expandedTitleTextColor="@color/uiKitColorForegroundInvers"
+                        app:maxLines="2"
+                        app:scrimAnimationDuration="200"
+                        tools:title="Title You Want">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_container_header_community"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_collapseMode="pin"
+                            app:layout_collapseParallaxMultiplier="0.4">
+
+                            <FrameLayout
+                                android:id="@+id/communityCoverImageContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="360dp"
+                                app:layout_constraintBottom_toTopOf="@id/image_space"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/communityCoverImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop" />
+
+                                <LinearLayout
+                                    android:id="@+id/communityCoverImageGradient"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="140dp"
+                                        android:background="@drawable/meera_community_cover_image_gradient_top" />
+
+                                    <ImageView
+                                        android:id="@+id/iv_community_placeholder"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="26dp"
+                                        android:src="@drawable/ic_outlined_photo_l"
+                                        app:tint="@color/uiKitColorForegroundSecondary" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="140dp"
+                                        android:background="@drawable/meera_community_cover_image_gradient_bottom" />
+
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_private_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginBottom="22dp"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toTopOf="@id/cl_description_container"
+                                app:layout_constraintStart_toStartOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/iv_private_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_outlined_lock_m"
+                                    android:visibility="gone"
+                                    app:tint="@color/uiKitColorBackgroundPrimary"
+                                    tools:visibility="visible" />
+
+                                <ImageView
+                                    android:id="@+id/iv_private_divider"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:src="@drawable/ic_vertical_short_line"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/tv_user_count"
+                                    style="@style/WhiteRegular16"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_outlined_user_m"
+                                    android:drawablePadding="6dp"
+                                    android:drawableTint="@color/uiKitColorBackgroundPrimary"
+                                    android:gravity="center"
+                                    tools:text="1001" />
+                            </LinearLayout>
+
+
+                            <androidx.legacy.widget.Space
+                                android:id="@+id/image_space"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="0dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/cl_description_container" />
+
+                            <ProgressBar
+                                android:id="@+id/loading_circle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toTopOf="@id/cl_description_container"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:visibility="visible" />
+
+                            <LinearLayout
+                                android:id="@+id/cl_description_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/uiKitColorForegroundInvers"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@id/fl_add_post_container"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/communityCoverImageContainer">
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <com.meera.uikit.widgets.buttons.UiKitButton
+                                        android:id="@+id/btn_community_join"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="16dp"
+                                        android:layout_marginTop="16dp"
+                                        android:layout_marginEnd="16dp"
+                                        android:text="@string/group_join"
+                                        android:visibility="gone"
+                                        app:buttonHeightMode="buttonText48"
+                                        tools:visibility="visible" />
+
+                                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                                        android:id="@+id/pb_subscribe"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_gravity="center"
+                                        android:layout_marginBottom="4dp"
+                                        android:indeterminate="true"
+                                        android:padding="8dp"
+                                        android:visibility="gone"
+                                        app:indicatorColor="@color/uiKitColorForegroundPrimary"
+                                        app:indicatorSize="24dp"
+                                        app:trackThickness="1dp"
+                                        tools:visibility="visible" />
+
+                                </FrameLayout>
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/tv_description_text_container"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginBottom="8dp">
+
+                                    <com.meera.uikit.widgets.readmore.UiKitReadMoreTextView
+                                        android:id="@+id/tv_description_text"
+                                        style="@style/UiKit.Body.Normal"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="5dp"
+                                        android:textColor="@color/uiKitColorForegroundPrimary"
+                                        app:layout_constraintEnd_toStartOf="@+id/tv_more"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:readMoreMaxLines="2"
+                                        app:readMoreToggleArea="more"
+                                        tools:ellipsize="end"
+                                        tools:maxLines="2"
+                                        tools:text="фы авfasdfasdf a fasd fasd fdfasd fs fsadsdfsdf sd \n" />
+
+                                    <TextView
+                                        android:id="@+id/tv_more"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/more"
+                                        android:textColor="@color/uiKitColorForegroundLink"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                <View
+                                    android:id="@+id/app_bar_divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="12dp"
+                                    android:background="@color/colorBackgroundLightPurple"
+                                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/fl_add_post_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorBackgroundLightPurple"
+                                android:orientation="vertical"
+                                android:paddingBottom="12dp"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cl_description_container"
+                                tools:visibility="visible">
+
+                                <include
+                                    android:id="@+id/add_group_post"
+                                    layout="@layout/meera_layout_new_post"
+                                    android:visibility="visible" />
+
+                            </FrameLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_gravity="top"
+                            android:background="@color/colorTransparent"
+                            android:gravity="bottom"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp"
+                            app:contentInsetStart="0dp"
+                            app:layout_collapseMode="pin"
+                            app:titleMarginBottom="18dp">
+
+                            <ImageView
+                                android:id="@+id/iv_back"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginBottom="14dp"
+                                android:background="?attr/actionBarItemBackground"
+                                android:paddingStart="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingEnd="6dp"
+                                android:paddingBottom="10dp"
+                                android:src="@drawable/ic_outlined_arrow_left_m"
+                                app:tint="@color/uiKitColorBackgroundPrimary" />
+
+                            <ImageView
+                                android:id="@+id/iv_dots_menu"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="end"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="14dp"
+                                android:background="?attr/actionBarItemBackground"
+                                android:padding="5dp"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/ic_outlined_kebab_m"
+                                app:tint="@color/uiKitColorBackgroundPrimary"
+                                tools:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/iv_notification_bell"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="14dp"
+                                android:background="?attr/actionBarItemBackground"
+                                android:padding="8dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_outlined_bell_m"
+                                app:tint="@color/uiKitColorBackgroundPrimary"
+                                tools:visibility="visible" />
+
+                            <com.google.android.material.progressindicator.CircularProgressIndicator
+                                android:id="@+id/pb_notifications"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_gravity="end"
+                                android:layout_marginBottom="4dp"
+                                android:indeterminate="true"
+                                android:padding="8dp"
+                                android:visibility="gone"
+                                app:indicatorColor="@color/uiKitColorForegroundPrimary"
+                                app:indicatorSize="24dp"
+                                app:trackThickness="1dp"
+                                tools:visibility="visible" />
+
+                        </androidx.appcompat.widget.Toolbar>
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                </com.google.android.material.appbar.AppBarLayout>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </LinearLayout>
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/btn_scroll_refresh_community_road"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/ic_outlined_chevron_up_l"
+            android:visibility="gone"
+            app:buttonHeightMode="buttonIcon48"
+            app:buttonType="elevated" />
+
+    </FrameLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

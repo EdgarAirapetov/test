@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <View
+        android:id="@+id/v_view_multimedia_status_bar"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:background="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <com.numplates.nomera3.presentation.view.ui.ExtendedGestureOverlayView
+        android:id="@+id/gov_view_multimedia_gesture_interceptor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gestureColor="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_view_multimedia_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.numplates.nomera3.presentation.view.ui.ExtendedGestureOverlayView>
+
+    <FrameLayout
+        android:id="@+id/fl_view_multimedia_toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/v_view_multimedia_status_bar">
+
+        <ImageView
+            android:id="@+id/iv_view_multimedia_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="6dp"
+            android:layout_marginEnd="12dp"
+            android:layout_gravity="end|center_vertical"
+            app:tint="@color/uiKitColorForegroundInvers"
+            tools:tint="@color/uiKitColorForegroundInvers"
+            android:src="@drawable/ic_outlined_close_m" />
+
+        <ImageView
+            android:id="@+id/iv_view_multimedia_video_menu"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="6dp"
+            android:layout_marginEnd="52dp"
+            android:layout_gravity="end|center_vertical"
+            app:tint="@color/uiKitColorForegroundInvers"
+            tools:tint="@color/uiKitColorForegroundInvers"
+            android:src="@drawable/ic_outlined_kebab_m" />
+
+        <TextView
+            android:id="@+id/tv_view_multimedia_media_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:textAppearance="@style/UiKit.Header.H3"
+            android:textColor="@color/uiKitColorForegroundInvers"
+            android:layout_marginStart="16dp"
+            android:textSize="20sp"
+            tools:text="1 из 3" />
+
+    </FrameLayout>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/cpi_view_multimedia_loader"
+        style="@style/ViewVideoLoaderCircleStyle"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:minHideDelay="@integer/loader_hide_delay"
+        app:showDelay="@integer/loader_show_delay"
+        tools:visibility="visible" />
+
+    <com.numplates.nomera3.modules.feed.ui.view.MeeraPostLoaderView
+        android:id="@+id/plv_view_multimedia_post_loader"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:elevation="1dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:plv_maxSize="36dp"
+        app:plv_minSize="36dp"
+        app:plv_percentageHeight="0.3" />
+
+    <com.numplates.nomera3.modules.feed.ui.adapter.MeeraContentActionBar
+        android:visibility="gone"
+        android:id="@+id/cab_view_multimedia_video_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/inc_view_multimedia_unavailable_layout"
+        layout="@layout/layout_media_unavailable"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

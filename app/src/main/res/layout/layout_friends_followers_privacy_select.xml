@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_followers_privacy_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/colorWhite"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5">
+
+            <TextView
+                android:id="@+id/tv_privacy_description"
+                style="@style/BlackSemibold28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/material40"
+                android:layout_marginTop="@dimen/material16"
+                android:layout_marginEnd="@dimen/material40"
+                android:fontFamily="@font/source_sanspro_bold"
+                android:text="@string/who_can_see_my_followers_friends" />
+
+            <TextView
+                android:id="@+id/tv_privacy_can_be_changed"
+                style="@style/GraySoftBlackSmall16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/material40"
+                android:layout_marginTop="@dimen/padding10"
+                android:layout_marginEnd="@dimen/material40"
+                android:text="@string/you_can_change_settings_anytime" />
+
+
+            <com.numplates.nomera3.presentation.view.widgets.CustomRowSelector
+                android:id="@+id/vg_privacy_selector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/material36"
+                android:layout_marginTop="@dimen/offset_32dp"
+                android:layout_marginEnd="@dimen/material36" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

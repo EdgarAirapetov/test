@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivBackIcon"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:src="@drawable/arrowback_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/WhiteBold36"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/your_birthday_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivBackIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvBirthdayTitleDescription"
+        style="@style/WhiteRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/birthdate_title_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <br.com.sapereaude.maskedEditText.MaskedEditText
+        android:id="@+id/etBirthday"
+        style="@style/WhiteBold36"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:hint="@string/birthdate_hint"
+        android:inputType="number"
+        android:maxLines="3"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textColor="@color/ui_white"
+        android:textColorHint="@color/white_alpha_40"
+        android:textCursorDrawable="@drawable/cursor_white"
+        android:textSize="36sp"
+        app:allowed_chars="1234567890"
+        app:keep_hint="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:mask="##.##.####" />
+
+    <TextView
+        android:id="@+id/tvBirthdayDescription"
+        style="@style/WhiteRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="25dp"
+        android:textColor="@color/wrong_code_color"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etBirthday"
+        tools:text="@string/age_should_not_be_less_than_17"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/gHiding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tvHideAgeDescription,switchHideAge" />
+
+    <TextView
+        android:id="@+id/tvHideAgeDescription"
+        style="@style/WhiteRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/birthdate_hide_description"
+        android:textColor="@color/gray_background_button"
+        app:layout_constraintBottom_toBottomOf="@id/switchHideAge"
+        app:layout_constraintEnd_toStartOf="@id/switchHideAge"
+        app:layout_constraintStart_toStartOf="@id/etBirthday"
+        app:layout_constraintTop_toTopOf="@id/switchHideAge" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchHideAge"
+        style="@style/SwitchRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBirthdayDescription" />
+
+    <com.numplates.nomera3.modules.registration.ui.NextStepButtonView
+        android:id="@+id/cvNextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStep"
+        style="@style/WhiteRegular16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:textColor="@color/gray_background_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Шаг 1 из 5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

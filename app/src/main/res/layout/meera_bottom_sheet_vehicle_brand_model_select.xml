@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.meera.uikit.widgets.UiKitInputSearch
+        android:id="@+id/input_search_vehicle_brand_model_select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        app:closeButtonText="@string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:searchHint="@string/general_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_vehicle_brand_model_select"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_search_vehicle_brand_model_select" />
+
+
+    <ImageView
+        android:id="@+id/iv_empty_state"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        android:layout_marginVertical="64dp"
+        android:src="@drawable/meera_ic_search_empty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_search_vehicle_brand_model_select" />
+
+
+    <TextView
+        android:id="@+id/tv_empty_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/friends_list_search_is_empty"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/messengerColorForegroundTertiary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty_state" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_empty_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_empty_state,tv_empty_state"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

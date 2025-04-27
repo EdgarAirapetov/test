@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_group_info"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cellLeftElement="left_userPic72"
+        app:cellRightElement="right_icon"
+        app:cellRightIconSrc="@drawable/ic_outlined_create_m"
+        app:cellRightElementColor="@color/uiKitColorForegroundPrimary"
+        tools:cellTitleValue="Клуб ботаников экстраверт..."
+        tools:cellCityValue=""
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        android:layout_marginHorizontal="16dp">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_group_info"
+            style="?android:attr/progressBarStyleSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:indeterminateTint="@color/uiKitColorForegroundLightGreen"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

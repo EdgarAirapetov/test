@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_moments_confirm_dialog_header"
+        style="@style/BlackSemibold20"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Удалить момент\nбезвозвратно?" />
+
+    <TextView
+        android:id="@+id/tv_moments_confirm_dialog_text"
+        style="@style/BlackRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/tv_moments_confirm_dialog_header"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_moments_confirm_dialog_header"
+        app:layout_constraintTop_toBottomOf="@+id/tv_moments_confirm_dialog_header"
+        tools:text="Действие нельзя отменить" />
+
+    <View
+        android:id="@+id/v_moments_confirm_dialog_top_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/color_moments_confirm_dialog_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tv_moments_confirm_dialog_text" />
+
+    <TextView
+        android:id="@+id/tv_moments_confirm_dialog_confirm_button"
+        style="@style/SansProSemiBold14Purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_moments_confirm_dialog_top_divider"
+        tools:text="Удалить" />
+
+    <View
+        android:id="@+id/v_moments_confirm_dialog_bottom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_moments_confirm_dialog_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tv_moments_confirm_dialog_confirm_button" />
+
+    <TextView
+        android:id="@+id/tv_moments_confirm_dialog_cancel_button"
+        style="@style/SansProSemiBold14Purple"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:background="?attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_moments_confirm_dialog_bottom_divider"
+        tools:text="Отмена" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_map_events_configuration_dates"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/map_item_event_date_height"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_map_event_date" />
+
+    <TextView
+        android:id="@+id/tv_map_events_configuration_time"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_map_events_time_selection"
+        android:drawablePadding="4dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textAppearance="@style/BlackRegular16"
+        android:textColor="@color/color_soft_black"
+        app:drawableStartCompat="@drawable/ic_clock"
+        tools:text="20:00" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_map_events_configuration_types"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/map_item_event_type_height"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_map_event_type" />
+
+    <TextView
+        android:id="@+id/tv_map_events_configuration_about"
+        style="@style/BlackRegular16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:drawablePadding="4dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_events_info_about"
+        android:textColor="@color/ui_gray_80"
+        app:drawableStartCompat="@drawable/ic_events_info" />
+
+    <TextView
+        android:id="@+id/tv_map_events_configuration_continue"
+        style="@style/MapPopupActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/map_events_configuration_continue" />
+
+</LinearLayout>
+

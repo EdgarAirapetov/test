@@ -1,0 +1,62 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/openGroupTypeOptionInclude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/openGroupOptionIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
+        android:src="@drawable/ic_open_group_type"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/open_group_option_description_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/openGroupOptionIcon"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/BlackSemibold16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/group_edit_fragment_open_option_name" />
+
+        <TextView
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/group_edit_fragment_open_option_description"
+            android:textColor="@color/ui_black_50"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <com.numplates.nomera3.presentation.view.ui.customView.CustomCheckBox
+        android:id="@+id/openGroupOptionCheckbox"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        app:buttonText=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

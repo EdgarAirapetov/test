@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.piasy.biv.view.BigImageView
+        android:id="@+id/big_image_profile_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.blur.UiKitRealtimeBlurView
+        android:id="@+id/bv_sensitive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:realtimeBlurRadius="11dp"
+        app:realtimeOverlayColor="@color/ui_black_80"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_sensitive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:paddingVertical="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_outlined_attention_l"
+            app:tint="@color/uiKitColorForegroundInvers"/>
+
+        <TextView
+            style="@style/UiKit.Header.Subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="36dp"
+            android:gravity="center"
+            android:text="@string/sensetive_content_title"
+            android:textColor="@color/uiKitColorForegroundInvers" />
+
+        <TextView
+            style="@style/UiKit.Body.Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="44dp"
+            android:gravity="center"
+            android:textColor="@color/uiKitColorForegroundSecondary"
+            android:text="@string/sensetive_content_description" />
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:layout_marginTop="12dp"
+            android:id="@+id/btn_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/general_show"
+            app:buttonHeightMode="buttonText36"
+            app:buttonType="filled" />
+
+    </LinearLayout>
+
+
+    <com.numplates.nomera3.modules.feed.ui.adapter.MeeraContentActionBar
+        android:id="@+id/post_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_height="72dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

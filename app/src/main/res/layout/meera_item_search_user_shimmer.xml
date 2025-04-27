@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/v_search_result_shimmer_avatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/circle_shimmer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_search_result_shimmer_avatar"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="222dp"
+                android:layout_height="12dp"
+                app:cardBackgroundColor="@color/shimmer_color"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="106dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/shimmer_color"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="106dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/shimmer_color"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.facebook.shimmer.ShimmerFrameLayout>

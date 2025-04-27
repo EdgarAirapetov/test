@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_expandable_container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_arrow_expanded"
+            android:layout_width="25dp"
+            android:layout_marginStart="@dimen/material16"
+            android:layout_gravity="center"
+            android:rotation="-90"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_arrow_gray"/>
+
+        <TextView
+            android:id="@+id/tv_expanded_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:text="Заголовок"
+            android:gravity="start|center"
+            android:maxLines="1"
+            android:paddingStart="@dimen/material16"
+            android:textColor="@color/black_1000"
+            android:textSize="@dimen/textSize16"
+            android:paddingTop="@dimen/material16"
+            android:paddingBottom="@dimen/material16"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ui_gray"/>
+</LinearLayout>

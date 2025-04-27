@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white_1000"
+	android:fitsSystemWindows="false"
+	android:orientation="vertical">
+
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/srl_notifications"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+
+		<FrameLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<TextView
+				android:id="@+id/tv_notifications_zero_data"
+				style="@style/GrayRegular16"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="@string/notifications_zero_data"
+				android:visibility="gone"
+				tools:visibility="visible"
+				app:drawableTopCompat="@drawable/ic_notification_placeholder" />
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_separator" />
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/rv_notifications"
+				android:layout_width="match_parent"
+                android:layout_marginTop="1dp"
+				android:paddingBottom="82dp"
+				android:clipToPadding="false"
+				android:layout_height="match_parent"/>
+
+
+			<androidx.cardview.widget.CardView
+				android:id="@+id/btn_refresh_new"
+				android:layout_gravity="center|top"
+				android:layout_marginTop="14dp"
+				android:layout_width="wrap_content"
+				android:layout_height="32dp"
+                android:visibility="gone"
+				app:cardElevation="@dimen/material8"
+				app:cardCornerRadius="@dimen/material16">
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:paddingStart="12dp"
+					android:paddingEnd="12dp"
+					style="@style/PurpleRegular16"
+					android:text="@string/notification_show_new"/>
+
+			</androidx.cardview.widget.CardView>
+
+		</FrameLayout>
+
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

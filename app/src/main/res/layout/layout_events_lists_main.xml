@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    app:layout_behavior="com.meera.uikit.bottomsheet.UiKitViewPagerBottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_map_bottomsheet"
+        android:elevation="1dp">
+
+        <com.meera.uikit.widgets.grabber.UiKitGrabberView
+            android:id="@+id/ukgv_events_lists_main_grabber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.meera.uikit.widgets.tablayout.UiKitRowTabLayout
+            android:id="@+id/ukrtl_events_lists_main_tabs"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="8dp"
+            app:isLegacy="@bool/isLegacy"
+            app:tabPaddingStart="8dp"
+            app:tabPaddingEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/iv_events_lists_main_filters"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ukgv_events_lists_main_grabber" />
+
+        <ImageView
+            android:id="@+id/iv_events_lists_main_filters"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_map_events_lists_filters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ukgv_events_lists_main_grabber" />
+
+        <View
+            android:id="@+id/v_events_lists_main_filters_non_default"
+            android:layout_width="7dp"
+            android:layout_height="7dp"
+            android:layout_marginStart="-3dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="-2dp"
+            android:background="@drawable/bg_non_default_indicator"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/iv_events_lists_main_filters"
+            app:layout_constraintStart_toEndOf="@id/iv_events_lists_main_filters"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_events_lists_main_pages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+</LinearLayout>

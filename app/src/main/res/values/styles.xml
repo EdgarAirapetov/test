@@ -1,0 +1,1087 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/uiKitColorAccentPrimary</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
+        <item name="spinnerStyle">@style/SpinnerwithNoArrow</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <style name="Theme.Translucent" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+
+    <style name="dynamic_dialog_style" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <!--        <item name="android:windowFullscreen">true</item>-->
+    </style>
+
+    <style name="AppThemeSplash" parent="Theme.SplashScreen">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowBackground">@drawable/splash_screen_drawable</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.Transparent</item>
+    </style>
+
+    <style name="AppTheme.Transparent" parent="AppTheme">
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogThemeDefault</item>
+
+        <!--<item name="android:ambientShadowAlpha">0.1</item>
+        <item name="android:spotShadowAlpha">0.15</item>-->
+    </style>
+
+
+    <style name="SpinnerwithNoArrow" parent="@android:style/Widget.Spinner">
+        <item name="android:background">@android:drawable/edit_text</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabIndicatorColor">@color/ui_purple</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="tabTextAppearance">@style/BlackRegular16</item>
+        <item name="tabSelectedTextColor">@color/ui_purple</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayoutRegular" parent="android:Widget">
+        <item name="tabIndicatorColor">@color/ui_purple</item>
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+        <item name="tabTextAppearance">@style/BlackRegular16</item>
+        <item name="tabSelectedTextColor">@color/ui_purple</item>
+    </style>
+
+    <style name="CustomTabText16" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- THIS is where you can color the arrow! -->
+
+        <item name="colorControlNormal">@color/ui_black</item>
+
+    </style>
+
+    <style name="MyApp.ActionBarThemeRedesign" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- THIS is where you can color the arrow! -->
+
+        <item name="colorControlNormal">@color/transparent</item>
+
+    </style>
+
+    <style name="mm">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="common_text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="sub_text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_dark_disabled</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="numplate_input_number" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorControlActivated">@color/text_light_secondary</item>
+        <item name="colorControlHighlight">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorDarkGrey</item>
+        <!--<item name="android:textSize">36sp</item>-->
+        <item name="android:fontFamily">@font/road_numbers_bold</item>
+        <!--<item name="android:letterSpacing">1</item>-->
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/text_dark_disabled</item>
+        <item name="android:textCursorDrawable">@drawable/numplate_cursor</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="numplate_input_number_gray" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorControlActivated">@color/text_light_secondary</item>
+        <item name="colorControlHighlight">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorDarkGrey</item>
+        <!--<item name="android:textSize">36sp</item>-->
+        <item name="android:fontFamily">@font/road_numbers_bold</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/text_dark_disabled</item>
+        <item name="android:textCursorDrawable">@drawable/numplate_cursor</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <!--<style name="numplate_input_region" parent="numplate_input_number">-->
+    <!--<item name="android:textSize">24sp</item>-->
+    <!--</style>-->
+
+    <style name="post_actions" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/text_dark_primary</item>
+        <item name="colorControlActivated">@color/text_dark_secondary</item>
+        <item name="colorControlHighlight">@color/text_dark_primary</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@string/roboto_regular</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <!--<style name="Base.Widget.AppCompat.SearchView" parent="android:Widget">-->
+    <!--<item name="layout">@layout/abc_search_view</item>-->
+    <!--<item name="queryBackground">@drawable/abc_textfield_search_material</item>-->
+    <!--<item name="submitBackground">@drawable/abc_textfield_search_material</item>-->
+    <!--<item name="closeIcon">@drawable/abc_ic_clear_mtrl_alpha</item>-->
+    <!--<item name="searchIcon">@drawable/abc_ic_search_api_mtrl_alpha</item>-->
+    <!--<item name="goIcon">@drawable/abc_ic_go_search_api_mtrl_alpha</item>-->
+    <!--<item name="voiceIcon">@drawable/abc_ic_voice_search_api_mtrl_alpha</item>-->
+    <!--<item name="commitIcon">@drawable/abc_ic_commit_search_api_mtrl_alpha</item>-->
+    <!--<item name="suggestionRowLayout">@layout/abc_search_dropdown_item_icons_2line</item>-->
+    <!--</style>-->
+
+
+    <style name="ReactionCounterOther" parent="FontRegular">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/ui_gray_80</item>
+    </style>
+
+    <style name="ReactionCounterMine" parent="FontBold">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/soft_black</item>
+    </style>
+
+    <style name="FontBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sanspro_bold</item>
+    </style>
+
+    <style name="FontRegular" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="FontSemiBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+    </style>
+
+    <style name="BlackBold28" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/huge_text</item>
+    </style>
+
+    <style name="Black39Bold28" parent="FontBold">
+        <item name="android:textColor">#9C000000</item>
+        <item name="android:textSize">@dimen/huge_text</item>
+    </style>
+
+    <style name="BlackBold24New" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/material24</item>
+    </style>
+
+    <style name="WhiteBold28" parent="FontBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/huge_text</item>
+    </style>
+
+    <style name="WhiteBold36" parent="FontBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/huge_text_36</item>
+    </style>
+
+    <style name="WhiteBold24" parent="FontBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/quite_large_text</item>
+    </style>
+
+    <style name="WhiteBold22" parent="FontBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/textSize22</item>
+    </style>
+
+    <style name="BlackBold18" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="BlackBold20" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/big_text</item>
+    </style>
+
+    <style name="BlackBold16" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="BlackBold14" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="BlackBold36" parent="FontBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/huge_text_36</item>
+    </style>
+
+    <style name="BlackSemibold18" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="BlackSemibold28" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/textSize28</item>
+    </style>
+
+    <style name="BlackSemibold20" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/textSize20</item>
+    </style>
+
+    <style name="BlackSemibold22" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/textSize22</item>
+    </style>
+
+    <style name="BlackSemibold12" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/very_small_text</item>
+    </style>
+
+    <style name="BlackSemibold14" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="BlackSemibold16" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+
+    <style name="BlackSemibold36" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/huge_text_36</item>
+    </style>
+
+    <style name="BlackRegular18" parent="FontRegular">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+
+    <style name="PinkRegular18Light" parent="FontRegular">
+        <item name="android:textColor">#d7d0f3</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="PinkRegular14Light" parent="FontRegular">
+        <item name="android:textColor">#d7d0f3</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="GrayRegular18" parent="FontRegular">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="GrayA7A5SemiBold22" parent="FontSemiBold">
+        <item name="android:textColor">@color/colorGrayA7A5</item>
+        <item name="android:textSize">@dimen/textSize22</item>
+    </style>
+
+    <style name="GraySemiBold18" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="GraySoftBlackSmall16" parent="FontRegular">
+        <item name="android:textSize">@dimen/textSize16</item>
+        <item name="android:textColor">@color/color_soft_black</item>
+    </style>
+
+    <style name="GraySemiBold16" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="Gray80Regular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_gray_80</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="Gray80Regular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_gray_80</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="Gray80Semibold16" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_gray_80</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="WhiteBold16" parent="FontBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="WhiteRegular17" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/textSize17</item>
+    </style>
+
+    <style name="WhiteRegular18" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="WhiteSemiBold14" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+
+    <style name="WhiteSemiBold16" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="WhiteSemiBold18" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="BlackRegular12" parent="FontRegular">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/very_small_text</item>
+    </style>
+
+    <style name="BlackRegular13" parent="FontRegular">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/small_text13</item>
+    </style>
+
+    <style name="BlackRegular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="Black85Regular14" parent="FontRegular">
+        <item name="android:textColor">@color/black_85</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+
+    <style name="BlackRegular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="Black85Regular16" parent="FontRegular">
+        <item name="android:textColor">@color/black_85</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="PurpleRegular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="PurpleRegular18" parent="FontRegular">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="PurpleSemiBold16" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="PurpleSemiBold14" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="SansProSemiBold14Purple" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/little_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+    </style>
+
+    <style name="SansProRegular14Gray" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_gray</item>
+        <item name="android:textSize">@dimen/little_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="SansProRegular18Gray" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_gray_80</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="SansProRegular18Black" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="SansProSemibold18Black" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_black</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+    </style>
+
+    <style name="SansProRegular18Purple" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+    </style>
+
+    <style name="SansProSemibold18Gray" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_gray</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+    </style>
+
+    <style name="PurpleSemiBold18" parent="FontSemiBold">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="WhiteRegular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="WhiteRegular22" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/textSize22</item>
+    </style>
+
+    <style name="GrayRegular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="LightGrayRegular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_gray</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="GrayRegular12" parent="FontRegular">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/xtra_small_text</item>
+    </style>
+
+    <style name="GrayA7A5Regular13" parent="FontRegular">
+        <item name="android:textColor">@color/colorGrayA7A5</item>
+        <item name="android:textSize">@dimen/small_text13</item>
+    </style>
+
+    <style name="GrayA7A5Regular14" parent="FontRegular">
+        <item name="android:textColor">@color/colorGrayA7A5</item>
+        <item name="android:textSize">@dimen/textSize14</item>
+    </style>
+
+    <style name="GrayRegular13" parent="FontRegular">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/small_text13</item>
+    </style>
+
+    <style name="GrayA7A5Regular16" parent="FontRegular">
+        <item name="android:textColor">@color/colorGrayA7A5</item>
+        <item name="android:textSize">@dimen/textSize16</item>
+    </style>
+
+    <style name="GrayA7A5Regular18" parent="FontRegular">
+        <item name="android:textColor">@color/colorGrayA7A5</item>
+        <item name="android:textSize">@dimen/textSize18</item>
+    </style>
+
+    <style name="GrayRegular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="GrayRegular22" parent="FontRegular">
+        <item name="android:textColor">@color/ui_text_gray</item>
+        <item name="android:textSize">@dimen/big_text</item>
+    </style>
+
+    <style name="WhiteRegular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="WhiteRegular13" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/small_text13</item>
+    </style>
+
+
+    <style name="White85Regular14" parent="FontRegular">
+        <item name="android:textColor">@color/white_85</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="White70Regular15" parent="FontRegular">
+        <item name="android:textColor">@color/white_70</item>
+        <item name="android:textSize">@dimen/textSize15</item>
+    </style>
+
+    <style name="WhiteBold14" parent="FontBold">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="WhiteRegular12" parent="FontRegular">
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:textSize">@dimen/xtra_small_text</item>
+    </style>
+
+    <style name="RedBold18" parent="FontBold">
+        <item name="android:textColor">@color/ui_red</item>
+        <item name="android:textSize">@dimen/normal_text</item>
+    </style>
+
+    <style name="RedRegular16" parent="FontRegular">
+        <item name="android:textColor">#ed2220</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="RedRegular16V2" parent="FontRegular">
+        <item name="android:textColor">@color/colorVipRed</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="PurpleRegular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="PurpleBlueRegular14" parent="FontRegular">
+        <item name="android:textColor">@color/ui_blue_purple</item>
+        <item name="android:textSize">@dimen/little_text</item>
+    </style>
+
+    <style name="TextUiGrayRegular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_gray_80</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="UiGrayRegular13" parent="FontRegular">
+        <item name="android:textColor">@color/ui_gray</item>
+        <item name="android:textSize">@dimen/small_text13</item>
+    </style>
+
+    <style name="UiGrayRegular16" parent="FontRegular">
+        <item name="android:textColor">@color/ui_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TooltipText" parent="FontRegular">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Black2626Regular16" parent="FontRegular">
+        <item name="android:textColor">@color/color_soft_black</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="Black2626BoldRegular16" parent="FontSemiBold">
+        <item name="android:textColor">@color/color_soft_black</item>
+        <item name="android:textSize">@dimen/small_text</item>
+    </style>
+
+    <style name="UiPurpleBold8" parent="FontBold">
+        <item name="android:textColor">@color/ui_purple</item>
+        <item name="android:textSize">8sp</item>
+    </style>
+
+    <style name="SwitchRegistration" parent="AppTheme.Transparent">
+        <item name="track">@drawable/switch_registration_track</item>
+        <item name="android:switchMinWidth">51dp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="SwitchAvatarPost">
+        <item name="track">@drawable/switch_avatar_post_track</item>
+        <item name="thumb_diameter">27dp</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="MapFiltersHeaderStyle" parent="@style/TextUiGrayRegular16">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:gravity">start|bottom</item>
+    </style>
+
+    <style name="MapFiltersSwitchStyle" parent="@style/BlackRegular16">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:maxHeight">44dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="MapFiltersDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">0dp</item>
+        <item name="android:background">@color/gray_separator</item>
+    </style>
+
+    <style name="MapFiltersRadioButtonStyle" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textAppearance">@style/BlackRegular16</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawableEnd">@drawable/selector_settings_checkbox</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:maxHeight">44dp</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="MapFiltersLocationHintStyle" parent="@style/BlackRegular16" />
+
+    <style name="MapFiltersCheckableItemContainer" parent="AppTheme">
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="alignContent">flex_start</item>
+        <item name="flexDirection">row</item>
+        <item name="flexWrap">wrap</item>
+        <item name="showDivider">middle</item>
+        <item name="dividerDrawable">@drawable/divider_map_chip</item>
+    </style>
+
+    <style name="MapFiltersCheckableItem">
+        <item name="chip_size">size_32</item>
+        <item name="isLegacy">@bool/isLegacy</item>
+    </style>
+
+    <style name="MapFiltersCheckableItemNotLegacy">
+        <item name="chip_size">size_32</item>
+    </style>
+
+    <style name="MyCollapsedAppBarProfile" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorGrey</item>
+    </style>
+
+    <style name="MyCollapsedAppBarProfileExpanded" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">28dp</item>
+        <item name="android:textColor">@color/white_1000</item>
+        <item name="android:fontFamily">@font/source_sanspro_bold</item>
+    </style>
+
+    <style name="MyCollapsedAppBarProfileCenter" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/white_1000</item>
+    </style>
+
+    <style name="MyCollapsedAppBarProfileExpandedCenter" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/white_1000</item>
+    </style>
+
+    <style name="MyCollapsedAppBarCommunity" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorGrey</item>
+        <item name="android:layout_gravity">bottom|center_horizontal</item>
+    </style>
+
+    <style name="EditTextGrayTheme">
+        <item name="colorControlNormal">@color/color_divider_gray</item>
+        <item name="colorControlActivated">@color/color_divider_gray</item>
+        <item name="colorControlHighlight">@color/color_divider_gray</item>
+    </style>
+
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/rating_star</item>
+        <item name="android:minWidth">42dip</item>
+    </style>
+
+    <style name="meeraRatingBarStars" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/meera_rate_us_star_selector</item>
+        <item name="android:minWidth">42dip</item>
+        <item name="android:maxHeight">42dip</item>
+    </style>
+
+    <style name="TextInputLayoutHintTheme" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_gray</item>
+    </style>
+
+    <style name="TextInputLayoutTheme">
+        <item name="colorControlNormal">@color/color_divider_gray</item>
+        <item name="colorControlActivated">@color/ui_purple</item>
+        <item name="android:textColorHint">@color/ui_gray</item>
+    </style>
+
+    <style name="AppBottomSheetDialogThemeDefault" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyleTransparent</item>
+    </style>
+
+    <style name="AppModalStyleTransparent" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@color/colorTransparent</item>
+    </style>
+
+
+    <style name="CheckboxStyle" parent="AppTheme">
+        <item name="colorAccent">@color/colorAccent</item>
+        // for checked
+        <item name="android:textColorSecondary">@color/ui_gray</item>
+        // for unchecked
+    </style>
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/top_rounded_bottom_sheet</item>
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
+    </style>
+
+    <style name="BottomSheetTransparent" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/ui_white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="colorControlActivated">@color/ui_purple</item>
+        <item name="colorAccent">@color/ui_purple</item>
+    </style>
+
+    <style name="AppTheme.DatePickerDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:colorAccent">@color/white</item>
+        <item name="android:colorControlActivated">@color/map_friend_A6C90D</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/AppTheme.Alert.Button.Positive</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/AppTheme.Alert.Button.Positive</item>
+        <item name="android:buttonBarNeutralButtonStyle">@style/AppTheme.Alert.Button.Positive</item>
+        <item name="android:headerMonthTextAppearance">@style/AppTheme.Alert.Header.MonthAndYear</item>
+    </style>
+
+    <style name="AppTheme.Alert.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/map_friend_A6C90D</item>
+    </style>
+
+    <style name="AppTheme.Alert.Header.MonthAndYear" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">#1C1B1F</item>
+    </style>
+
+    <style name="LayersBottomSheetDialogTheme" parent="BaseBottomSheetDialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/ui_white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorControlActivated">@color/ui_purple</item>
+        <item name="colorAccent">@color/ui_purple</item>
+        <item name="android:windowBackground">#5CFFFFFF</item>
+        <item name="bottomSheetStyle">@style/LayersBottomSheet</item>
+    </style>
+
+    <style name="MapInfoDialog" parent="BaseUiKitBottomSheetDialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="bottomSheetStyle">@style/UiKitBackgroundBottomSheet</item>
+        <!--        <item name="android:windowBackground">#5C000000</item>-->
+    </style>
+
+    <style name="LayersBottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@null</item>
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
+    </style>
+
+    <style name="BottomSheetDialogTransparentTheme" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/ui_white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="colorControlActivated">@color/ui_purple</item>
+        <item name="colorAccent">@color/ui_purple</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheetTransparent</item>
+    </style>
+
+    <style name="BottomSheetDialogTransparentResizeableTheme" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/ui_white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="colorControlActivated">@color/ui_purple</item>
+        <item name="colorAccent">@color/ui_purple</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/BottomSheetTransparent</item>
+    </style>
+
+    <style name="popup_window_animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <style name="MediaViewerDialog.Default" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:thumb">@drawable/switch_registration_thumb</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    </style>
+
+    <style name="MomentLoaderCircleStyle" parent="@style/Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="android:background">@drawable/moment_loader_background</item>
+        <item name="trackThickness">2dp</item>
+        <item name="indicatorSize">24dp</item>
+        <item name="indicatorInset">12dp</item>
+        <item name="indicatorColor">@color/white</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/ui_purple</item>
+    </style>
+
+    <style name="ImageViewRoundedCorners_4dp" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="ImageViewRoundedCorners_12dp" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.ImageViewOval" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ImageViewRoundedCorners_6dp" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="ImageViewRoundedCorners_16dp" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.VehiclePhoto" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerLeftBottom">12dp</item>
+        <item name="cornerLeftTop">12dp</item>
+    </style>
+
+    <style name="ImageViewRoundedTopCorners_16dp" parent="AppTheme">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+    </style>
+
+    <style name="ButtonPurpleGradient" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:background">@drawable/btn_purple_gradient</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+        <item name="backgroundTint">@null</item>
+        <item name="cornerRadius">100dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:letterSpacing">0.00714285714</item>
+    </style>
+
+    <declare-styleable name="BlurView">
+        <attr name="blurOverlayColor" format="color" />
+    </declare-styleable>
+
+    <style name="ChatServiceMessageTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/ui_gray_80</item>
+        <item name="android:textSize">@dimen/textSize16</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+        <item name="android:lineHeight">@dimen/textSize20</item>
+    </style>
+
+    <style name="SearchBarTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+        <item name="lineHeight">20sp</item>
+    </style>
+
+    <style name="UserSnippetErrorButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:theme">@style/Theme.AppCompat</item>
+        <item name="android:background">@drawable/bg_user_snippet_error_btn</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@null</item>
+        <item name="android:textColor">@color/ui_purple</item>
+    </style>
+
+    <style name="MapPopupActionButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:theme">@style/Theme.AppCompat</item>
+        <item name="android:background">@drawable/bg_map_popup_action_btn</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@null</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MeeraMapPopupActionButton" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="android:theme">@style/Theme.AppCompat</item>
+        <item name="android:background">@drawable/meera_bg_map_popup_action_btn</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">@null</item>
+        <item name="android:textColor">@color/uiKitColorForegroundPrimary</item>
+    </style>
+
+    <style name="MapOnboardingBulletContainer">
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="MapOnboardingBullet">
+        <item name="android:src">@drawable/ic_map_events_onboarding_bullet</item>
+        <item name="android:layout_marginTop">7dp</item>
+    </style>
+
+    <style name="MeeraMapOnboardingBullet">
+        <item name="android:src">@drawable/meera_ic_map_events_onboarding_bullet</item>
+        <item name="android:layout_marginTop">7dp</item>
+    </style>
+
+    <style name="MapOnboardingMessageBullet" parent="BlackRegular16">
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="MapEventLabelItemWithDivider" parent="MapEventLabelItem">
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="drawableStartCompat">@drawable/divider_event_label</item>
+    </style>
+
+    <style name="MapEventLabelItem" parent="BlackRegular16">
+        <item name="android:textColor">@color/ui_gray_80</item>
+    </style>
+
+    <style name="ShakeButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:minHeight">34dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/bg_map_popup_action_btn</item>
+        <item name="android:fontFamily">@font/source_sanspro_semibold</item>
+        <item name="textAllCaps">false</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:letterSpacing">0.00714285714</item>
+    </style>
+
+    <style name="LavLoader">
+        <item name="android:background">@drawable/white_rectangle_11_radus</item>
+        <item name="backgroundTint">@color/transparent_black</item>
+    </style>
+
+    <style name="RoadPrivacyDialog" parent="AppTheme">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="PlacesSearchCancelButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:fontFamily">@font/source_sanspro_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="EventParticipantAvatarImageView" parent="AppTheme">
+        <item name="android:padding">1dp</item>
+        <item name="android:background">@drawable/avatar_view_background</item>
+    </style>
+
+    <style name="EventPinLargeImageShapeOverlay">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="DialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="ViewVideoLoaderCircleStyle" parent="@style/Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="android:background">@drawable/view_video_loader_background</item>
+        <item name="trackThickness">1dp</item>
+        <item name="indicatorSize">35dp</item>
+        <item name="indicatorInset">1dp</item>
+        <item name="indicatorColor">@color/white</item>
+    </style>
+
+</resources>

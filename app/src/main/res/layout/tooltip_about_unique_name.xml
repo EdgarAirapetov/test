@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hint_text"
+    style="@style/TooltipText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_hint_about_unique_name"
+    android:gravity="start|top"
+    android:includeFontPadding="false"
+    android:paddingStart="10dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="10dp"
+    android:paddingBottom="14dp"
+    android:text="@string/app_hint_about_unique_name_user_info"
+    android:textColor="#BFFFFFFF"
+    android:textSize="11sp" />

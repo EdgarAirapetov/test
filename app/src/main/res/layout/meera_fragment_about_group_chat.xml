@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/uiKitColorBackgroundSecondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/about_group_chat_naw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/about_chat"
+        android:background="@color/uiKitColorBackgroundPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/tv_change_group_chat"
+            style="@style/UiKit.Body.Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:text="@string/change"
+            android:textColor="@color/uiKitColorForegroundLink"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+
+    <FrameLayout
+        android:id="@+id/view8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="116dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/meera_bg_white_corners_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_group_chat_naw">
+
+        <ImageView
+            android:id="@+id/iv_avatar_about_group_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="26dp"
+            app:srcCompat="@drawable/meera_group_chat_avatar_placeholder"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="118dp"
+            android:showDividers="middle"
+            android:divider="@drawable/group_chat_about_card_empty_divider"
+            android:layout_marginStart="104dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginVertical="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title_about_group_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                tools:text="Jupiterians"
+                style="@style/UiKit.Header.H3"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_date_about_group_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Date"
+                style="@style/UiKit.Body.Description"
+                android:textColor="@color/uiKitColorForegroundSecondary"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_description_about_group_chat"
+                style="@style/UiKit.Body.Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                android:textSize="14sp"
+                android:ellipsize="end"
+                tools:text="Description hsgdhs shdg hgdhs\njdhssjhd hsgd\nhdgsg hsgdg" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_about_group_chat_members"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cellArrowRight="true"
+        app:cellPosition="top"
+        app:cellTitleValue="@string/members"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view8">
+
+        <com.meera.uikit.widgets.groupusersrow.UiKitGroupUsersRow
+            android:id="@+id/row_about_group_chat_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:maxWidth="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_about_group_chat_admins"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="16dp"
+        app:cellArrowRight="true"
+        app:cellPosition="bottom"
+        app:cellTitleValue="@string/administrators"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cell_about_group_chat_members">
+
+        <com.meera.uikit.widgets.groupusersrow.UiKitGroupUsersRow
+            android:id="@+id/row_about_group_chat_admins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:maxWidth="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+    <TextView
+        android:id="@+id/tv_add_members"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/add_members"
+        style="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundLink"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cell_about_group_chat_admins" />
+
+    <TextView
+        android:id="@+id/tv_delete_groupchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/delete_chat"
+        style="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorAccentDarkError"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

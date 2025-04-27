@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/room_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/birthday_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/birthday_list_item_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/vipview_room"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars[14]" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_icon_badge"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:elevation="8dp"
+        android:visibility="gone"
+        app:cardCornerRadius="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/vipview_room"
+        app:layout_constraintEnd_toEndOf="@id/vipview_room"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_gradient_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_gradient_bg"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_icon_image"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="center" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_text_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/material16"
+        app:layout_constraintEnd_toStartOf="@+id/tv_time_room"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/vipview_room"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15">
+
+        <TextView
+            android:id="@+id/tv_room_header"
+            style="@style/BlackBold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/iv_mute"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Username"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_mute"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="4dp"
+            android:src="@drawable/ic_mute"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_room_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_room_header"
+            app:layout_constraintTop_toTopOf="@id/tv_room_header"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_time_room"
+        style="@style/GrayRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="16dp"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="00:00" />
+
+    <TextView
+        android:id="@+id/tv_room_draft"
+        style="@style/BlackSemibold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/ui_red"
+        android:maxLines="1"
+        android:text="@string/draft"
+        app:layout_constraintStart_toStartOf="@+id/cl_text_container"
+        app:layout_constraintTop_toBottomOf="@+id/cl_text_container" />
+
+    <TextView
+        android:id="@+id/tv_room_message"
+        style="@style/Black85Regular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout7"
+        app:layout_constraintStart_toEndOf="@+id/tv_room_draft"
+        app:layout_constraintTop_toBottomOf="@+id/cl_text_container"
+        app:layout_goneMarginStart="0dp"
+        tools:text="Last message sample text" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="2dp"
+        app:layout_constraintTop_toBottomOf="@+id/cl_text_container"
+        app:layout_constraintEnd_toEndOf="@+id/tv_time_room">
+
+        <TextView
+            android:id="@+id/tv_mentions_unread_count"
+            style="@style/WhiteRegular14"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/circle_tab_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingBottom="2dp"
+            android:text="\ufeff@"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <!-- Container for some room statuses -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_room_message"
+            app:layout_constraintEnd_toEndOf="@+id/tv_time_room">
+
+            <TextView
+                android:id="@+id/tv_unread_count"
+                style="@style/WhiteRegular14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_tab_bg"
+                android:gravity="center"
+                android:maxLines="1"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_undelivered_last_message"
+                style="@style/WhiteRegular14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginStart="34dp"
+                android:src="@drawable/ic_send_error"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_status_read_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_read_rooms_list"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

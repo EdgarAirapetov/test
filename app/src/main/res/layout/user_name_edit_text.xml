@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="start|center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/user_name_edit_text_header"
+            android:textColor="#80000000"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="start|center_vertical"
+            android:includeFontPadding="false"
+            android:text="@string/nickname_edit_text_error"
+            android:textColor="#D61835"
+            android:textSize="13sp"
+            android:visibility="gone"
+            tools:text="Не может быть несколько точек подряд" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_profile_custom_edittext"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:includeFontPadding="false"
+            android:layout_marginStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:text="\@"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:digits="0,1,2,3,4,5,6,7,8,9,.,abcdefghijklmnopqrstuvwxyz,ABCDEFGHIJKLMNOPQRSTUVWXYZ,_"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:imeOptions="actionDone"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:maxLines="1"
+            android:maxLength="25"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:text="id1234567" />
+
+    </LinearLayout>
+
+</LinearLayout>

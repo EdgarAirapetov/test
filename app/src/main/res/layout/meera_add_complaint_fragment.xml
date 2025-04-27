@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:clickable="true"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_close_add_complain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/meera_send_complaint">
+
+        <ImageView
+            android:id="@+id/v_send_add_complain"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_complaint_button_send_post"
+            android:padding="7dp"
+            android:src="@drawable/ic_outlined_send_m"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:tint="@color/gray_20" />
+
+        <ProgressBar
+            android:id="@+id/pb_send_complain"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/material16"
+            android:indeterminateTint="@color/uiKitColorForegroundPrimary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/add_complaint_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/uiKitColorBackgroundSecondary"
+            android:orientation="vertical">
+
+            <com.numplates.nomera3.modules.uploadpost.ui.view.MeeraAddPostAttachmentItemView
+                android:id="@+id/apai_attachment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/material12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/mediaAttachmentProgress"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/apai_attachment"
+                app:layout_constraintEnd_toEndOf="@id/apai_attachment"
+                app:layout_constraintStart_toStartOf="@id/apai_attachment"
+                app:layout_constraintTop_toTopOf="@id/apai_attachment" />
+
+            <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+                android:id="@+id/etWrite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="@string/user_complain_break_rules"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="2500"
+                android:saveEnabled="false"
+                android:textAppearance="@style/BlackRegular16"
+                android:textColorHint="#a7a5b1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/apai_attachment"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_goneMarginTop="16dp" />
+
+            <com.numplates.nomera3.modules.uploadpost.ui.view.PostTextBackgroundView
+                android:id="@+id/v_post_text_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_actions_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="top"
+            android:background="@color/ui_transparent_gray" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAttach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="?attr/selectableItemBackground"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="14dp"
+            android:src="@drawable/ic_outlined_gallery_m"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+
+</LinearLayout>

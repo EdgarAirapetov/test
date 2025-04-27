@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_reactions_statistics_flow"
+    app:startDestination="@id/meeraReactionsStatisticsBottomSheetFragment">
+
+    <navigation
+        android:id="@+id/userInfoNavGraph"
+        app:startDestination="@id/user_nav_graph">
+
+        <include app:graph="@navigation/user_nav_graph" />
+
+    </navigation>
+
+    <fragment
+        android:id="@+id/meeraReactionsStatisticsBottomSheetFragment"
+        android:name="com.numplates.nomera3.modules.reactionStatistics.ui.MeeraReactionsStatisticsBottomSheetFragment"
+        android:label="MeeraReactionsStatisticsBottomSheetFragment"
+        tools:layout="@layout/meera_bottom_sheet_reactions_statistics" >
+
+        <action
+            android:id="@+id/action_meeraReactionsStatisticsBottomSheetFragment_to_userInfoFragment"
+            app:destination="@id/userInfoNavGraph"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+    </fragment>
+
+</navigation>

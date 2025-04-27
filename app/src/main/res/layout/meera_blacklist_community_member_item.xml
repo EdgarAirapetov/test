@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.meera.uikit.widgets.cell.UiKitCell xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/group_blacklist_member_cell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cellDescription="true"
+    app:cellLeftElement="left_userPic40"
+    app:cellPosition="middle"
+    app:cellRightElement="right_icon"
+    android:layout_marginEnd="16dp"
+    app:cellRightIconSrc="@drawable/ic_outlined_delete_m"/>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_create_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellPosition="alone"
+        android:layout_marginHorizontal="16dp"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_post_m"
+        app:cellTitleValue="@string/post"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_create_moment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="alone"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_duration_m"
+        app:cellTitleValue="@string/moment_title"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_create_event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="alone"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_calendar_m"
+        app:cellTitleValue="@string/event"/>
+
+</LinearLayout>

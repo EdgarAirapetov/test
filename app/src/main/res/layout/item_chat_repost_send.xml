@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_chat_message_repost_sender"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:orientation="vertical">
+
+    <!-- image message view == images block + bottom bar -->
+    <LinearLayout
+        android:id="@+id/ll_chat_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/chat_bubble_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- images block -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ll_message_bubble_container_image_sender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/left_image_post_limit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.20" />
+
+                <!-- Chat bubble container -->
+                <LinearLayout
+                    android:id="@+id/ll_chat_bubble_background"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/chat_message_shape_my"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/left_image_post_limit"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <include
+                        android:id="@+id/reply_container"
+                        layout="@layout/layout_reply_send"/>
+
+                    <include
+                        android:id="@+id/forward_container_send"
+                        android:visibility="visible"
+                        tools:visibility="visible"
+                        layout="@layout/forward_message_container_sender"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_chat_image_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        app:cardBackgroundColor="@color/ui_purple"
+                        app:cardCornerRadius="6dp"
+                        app:cardElevation="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cl_repost_container_sender"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:id="@+id/imageView32"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_pencil_light"
+                                app:tint="@color/ui_white_80" />
+
+                            <TextView
+                                android:id="@+id/tv_repost_type_sender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:textColor="@color/ui_white_80"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView32"
+                                app:layout_constraintStart_toEndOf="@+id/imageView32"
+                                app:layout_constraintTop_toTopOf="@+id/imageView32"
+                                tools:text="@string/chat_repost_user_title" />
+
+                            <View
+                                android:id="@+id/imageView36"
+                                android:layout_width="1dp"
+                                android:layout_height="0dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@color/ui_white_50"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView32" />
+
+                            <ImageView
+                                android:id="@+id/iv_repost_user_avatar_sender"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="12dp"
+                                app:layout_constraintStart_toEndOf="@+id/imageView36"
+                                app:layout_constraintTop_toBottomOf="@+id/imageView32"
+                                app:srcCompat="@drawable/fill_8_round" />
+
+                            <LinearLayout
+                                android:id="@+id/vg_name_container"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="16dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/iv_repost_user_avatar_sender"
+                                app:layout_constraintTop_toTopOf="@+id/iv_repost_user_avatar_sender">
+
+                                <TextView
+                                    android:id="@+id/tv_repost_user_name_sender"
+                                    style="@style/WhiteSemiBold14"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    tools:text="User name" />
+
+                                <TextView
+                                    android:id="@+id/tv_repost_created_sender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="10 min ago"
+                                    android:textColor="@color/ui_white_50"
+                                    android:textSize="11sp" />
+
+                            </LinearLayout>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cv_repost_image_sender_container"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="@dimen/material8"
+                                app:cardCornerRadius="7dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView36"
+                                app:layout_constraintTop_toBottomOf="@+id/vg_name_container">
+
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ImageView
+                                        android:id="@+id/iv_repost_image_sender"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:visibility="visible"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="0.0"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:src="@tools:sample/avatars" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/iv_repost_multimedia_view_sender"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="2dp"
+                                        android:layout_marginTop="2dp"
+                                        android:visibility="gone"
+                                        tools:visibility="visible"
+                                        app:srcCompat="@drawable/ic_multiple_media_repost"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <include
+                                        android:id="@+id/repost_image_sender_video_duration"
+                                        layout="@layout/feed_exo_player_control_chat_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:layout_marginTop="6dp"
+                                        android:visibility="gone"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        tools:visibility="visible" />
+
+                                    <include
+                                        android:id="@+id/sensitive_chat_sender"
+                                        layout="@layout/sensetive_content_chat"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/iv_repost_image_sender"
+                                        app:layout_constraintTop_toTopOf="@+id/iv_repost_image_sender" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <LinearLayout
+                                android:id="@+id/post_text_container_sender"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="3dp"
+                                android:layout_marginEnd="16dp"
+                                android:orientation="vertical"
+                                android:visibility="visible"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView36"
+                                app:layout_constraintTop_toBottomOf="@+id/cv_repost_image_sender_container">
+
+                                <TextView
+                                    android:id="@+id/iv_repost_post_deleted_sender"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="@string/chat_repost_post_deleted"
+                                    android:textColor="@color/colorWhite"
+                                    android:textSize="18sp"
+                                    android:alpha="0.5"
+                                    android:visibility="gone"
+                                    tools:visibility="visible" />
+
+                                <include
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="8dp"
+                                    layout="@layout/chat_music_container"/>
+
+                                <com.numplates.nomera3.modules.maps.ui.events.EventChipsView
+                                    android:id="@+id/ecv_event_chips"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginBottom="4dp" />
+
+                                <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+                                    android:id="@+id/tv_repost_title_sender"
+                                    style="@style/WhiteSemiBold18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:text="Post title" />
+
+                                <com.numplates.nomera3.presentation.view.ui.TextViewWithImages
+                                    android:id="@+id/tv_repost_text_sender"
+                                    style="@style/WhiteRegular18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:text="Post text" />
+
+                                <TextView
+                                    android:id="@+id/tv_show_more_text_sender"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:gravity="start"
+                                    android:text="@string/general_read_more"
+                                    android:textColor="#c7b7fc"
+                                    android:textSize="18sp"
+                                    android:visibility="invisible"
+                                    tools:visibility="visible" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/post_repost_container_sender"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="6dp"
+                                android:orientation="horizontal"
+                                android:visibility="visible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/imageView36"
+                                app:layout_constraintTop_toBottomOf="@+id/post_text_container_sender">
+
+                                <ImageView
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center|start"
+                                    android:src="@drawable/ic_repost_list_light" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="6dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_post_repost_user_name_sender"
+                                        style="@style/WhiteSemiBold14"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="User name" />
+
+                                    <TextView
+                                        android:id="@+id/tv_post_repost_type_sender"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:drawableStart="@drawable/ic_repost_sign_light"
+                                        android:drawablePadding="4dp"
+                                        android:text="@string/post"
+                                        android:textColor="#c3b5ef"
+                                        android:textSize="11sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Message text container -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bottom_block"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_chat_msg_repost_send"
+                            style="@style/WhiteRegular18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:autoLink="web|email"
+                            android:paddingStart="@dimen/material16"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="@dimen/material16"
+                            android:paddingBottom="8dp"
+                            android:text="Its a repost message text"
+                            android:textColorLink="#d8d0f6"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Its a repost message text" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="6dp"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_chat_msg_repost_send"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent">
+
+                            <TextView
+                                android:id="@+id/tv_message_edited"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/secondary_purple"
+                                android:text="@string/chat_edit_message_edit_label"
+                                android:fontFamily="@font/source_sanspro_regular"
+                                android:textSize="14sp"
+                                android:visibility="gone"
+                                android:layout_marginEnd="4dp"
+                                android:layout_gravity="center"
+                                tools:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/tv_chat_time_repost_send"
+                                style="@style/WhiteRegular14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ui_light_purple"
+                                android:layout_marginEnd="3dp"
+                                android:layout_gravity="center"
+                                tools:text="12:01" />
+
+                            <ImageView
+                                android:id="@+id/iv_marker_sent_repost_sender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_sent_message"
+                                android:layout_gravity="center"
+                                android:visibility="gone" />
+
+                            <ImageView
+                                android:id="@+id/iv_marker_delivered_repost_sender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_delivered_message"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                tools:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/iv_marker_read_repost_sender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_read_message"
+                                android:layout_gravity="center"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_sender_repost_message_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/left_image_post_limit"
+                    app:srcCompat="@drawable/ic_send_error" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <!-- bottom bar of image message -->
+        <!-- try send message again  -->
+        <LinearLayout
+            android:id="@+id/ll_resend_container_repost_sender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material8"
+            android:layout_marginEnd="@dimen/padding20"
+            android:layout_marginBottom="@dimen/material8"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_resend_message" />
+
+            <TextView
+                style="@style/PurpleRegular16"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/chat_resend_message" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/nav_view_vehicle_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:title="@string/garage_setup_vehicle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:showBackArrow="true" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_vehicle_edit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nav_view_vehicle_edit">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.meera.uikit.widgets.picicon.UiKitPicIcon
+                android:id="@+id/pic_icon_vehicle_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="64dp"
+                app:piciconCenterSrc="@drawable/ic_outlined_cam_m"
+                app:piciconCenterTint="@color/uiKitColorForegroundLink"
+                app:piciconSize="Size180" />
+
+            <com.meera.uikit.widgets.UiKitCellInput
+                android:id="@+id/input_vehicle_edit_reg_plate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                app:cellInputHint="@string/meera_garage_numplate_hint"
+                app:inputCellInformationText="@string/meera_vehicle_edit_reg_num"
+                app:showInputCellInformation="true"
+                app:showInputIcon="true"
+                app:showInputIconDown="true" />
+
+            <com.meera.uikit.widgets.UiKitCellInput
+                android:id="@+id/input_vehicle_edit_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                app:inputCellInformationText="@string/vehicle_brand_txt"
+                app:showInputCellInformation="true"
+                app:showInputIcon="false">
+
+                <ImageView
+                    android:id="@+id/iv_brand_arrow"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_outlined_arrow_right_s"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:tint="@color/uiKitColorForegroundSecondary" />
+
+            </com.meera.uikit.widgets.UiKitCellInput>
+
+            <com.meera.uikit.widgets.UiKitCellInput
+                android:id="@+id/input_vehicle_edit_model"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="24dp"
+                app:inputCellInformationText="@string/vehicle_model_txt"
+                app:showInputCellInformation="true"
+                app:showInputIcon="false">
+
+                <ImageView
+                    android:id="@+id/iv_model_arrow"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/ic_outlined_arrow_right_s"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:tint="@color/uiKitColorForegroundSecondary" />
+
+            </com.meera.uikit.widgets.UiKitCellInput>
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/button_ready"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/ready_button" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

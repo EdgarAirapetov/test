@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_container_ted_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/view_title_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/tedbottompicker_title"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/selected_photos_container_frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tedbottompicker_selected_image_height"
+        android:visibility="gone">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/tedbottompicker_selected"
+            android:fillViewport="false"
+            android:foregroundGravity="left">
+
+            <LinearLayout
+                android:id="@+id/selected_photos_container"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:animateLayoutChanges="false"
+                android:gravity="start"
+                android:orientation="horizontal"
+                android:visibility="gone" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/selected_photos_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/no_image"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?attr/colorAccent" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="@drawable/meera_corner_bottom_sheet">
+
+        <ImageButton
+            android:id="@+id/cancelBtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="false"
+            android:src="@drawable/arrowback"
+            android:visibility="invisible" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_rect"
+            android:layout_width="80dp"
+            android:layout_height="3dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="9dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/uiKitColorLegacyTertiary"/>
+
+        <LinearLayout
+            android:id="@+id/ll_recent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="false"
+            android:layout_marginTop="17dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_toolbar_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/recent"
+                android:textSize="16sp"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                android:textAppearance="@style/UiKit.Body.Normal" />
+
+            <ImageView
+                android:id="@+id/iv_toolbar_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_outlined_chevron_down_s"
+                app:tint="@color/uiKitColorForegroundPrimary" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_img_count"
+            style="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/btn_done"
+            android:layout_toEndOf="@id/cancelBtn"
+            android:gravity="center"
+            android:visibility="invisible"
+            tools:text="Выбрано 5 фотографий" />
+
+        <ImageButton
+            android:id="@+id/btn_done"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="13dp"
+            android:src="@drawable/icon_check_violet"
+            android:textColor="?attr/colorAccent"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/ui_white"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_dragging_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/material8"
+            android:layout_marginBottom="@dimen/material8"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/btn_done_1"
+                android:layout_width="@dimen/material24"
+                android:layout_height="@dimen/material24"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/icon_check_violet"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="50dp"
+                android:layout_height="3dp"
+                app:cardBackgroundColor="#d8d8d8"
+                app:cardCornerRadius="1.5dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_media_counter"
+                style="@style/BlackSemibold16"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/padding20"
+                android:text="Выбрано 5 фотографий"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C7C7C7" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/vg_permission_media_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                style="@style/Legacy.Body.Description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="14sp"
+                android:text="@string/meera_permission_message"
+                android:textColor="@color/uiKitColorForegroundPrimary"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_change_permission_red_media_visual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:lineHeight="20dp"
+                android:text="@string/change"
+                android:textAppearance="@style/UiKit.Body.Normal"
+                android:textColor="@color/uiKitColorForegroundLink"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.meera.core.utils.layouts.FrameTouchEventInterceptorLayout
+            android:id="@+id/fteil_gallery_touch_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1AC8C8CC"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp">
+
+                <com.meera.uikit.widgets.buttons.UiKitButton
+                    android:id="@+id/v_cancel_btn"
+                    style="@style/UiKit.Body.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/uiKitColorForegroundInvers"
+                    android:text="@string/cancel"
+                    android:visibility="gone"
+                    app:buttonType="filled"
+                    tools:visibility="visible" />
+
+                <com.meera.uikit.widgets.buttons.UiKitButton
+                    android:id="@+id/v_done_btn"
+                    style="@style/UiKit.Body.Normal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:text="@string/meera_ready_button"
+                    android:visibility="gone"
+                    app:buttonType="filled"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+
+        </com.meera.core.utils.layouts.FrameTouchEventInterceptorLayout>
+
+    </LinearLayout>
+
+    <com.meera.core.views.MeeraSetupPermissionsView
+        android:id="@+id/spv_permission_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ui_white"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+</LinearLayout>

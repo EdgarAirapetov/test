@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/vg_bottom_sheet_snippet_error"
+        android:layout_width="match_parent"
+        android:layout_height="586dp"
+        android:layout_margin="16dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:background="@drawable/meera_bg_bottomsheet_header"
+            android:layout_height="570dp" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/v_drag"
+                    android:layout_width="80dp"
+                    android:layout_height="3dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/meera_modal_drag_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view_shimmer_media"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view_shimmer_title"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_margin="16dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_shimmer_media" />
+
+                <View
+                    android:id="@+id/view_shimmer_description"
+                    android:layout_width="132dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_shimmer_title" />
+
+                <View
+                    android:id="@+id/view_shimmer_userpic"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/view_shimmer_description" />
+
+                <View
+                    android:id="@+id/view_shimmer_participant_one"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintStart_toEndOf="@id/view_shimmer_userpic"
+                    app:layout_constraintTop_toTopOf="@id/view_shimmer_userpic" />
+
+                <View
+                    android:id="@+id/view_shimmer_participant_two"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintStart_toEndOf="@id/view_shimmer_userpic"
+                    app:layout_constraintTop_toTopOf="@id/view_shimmer_userpic" />
+
+                <View
+                    android:id="@+id/view_shimmer_participant_three"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintStart_toEndOf="@id/view_shimmer_userpic"
+                    app:layout_constraintTop_toTopOf="@id/view_shimmer_userpic" />
+
+                <View
+                    android:id="@+id/view_shimmer_button"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintBottom_toBottomOf="@id/view_shimmer_participant_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/view_shimmer_participant_three"
+                    app:layout_constraintTop_toTopOf="@id/view_shimmer_participant_one" />
+
+                <com.numplates.nomera3.modules.feed.ui.adapter.MeeraContentActionBar
+                    android:id="@+id/post_action_bar_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_shimmer_participant_one"
+                    tools:layout_height="72dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

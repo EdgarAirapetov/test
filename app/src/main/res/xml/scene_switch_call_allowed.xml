@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/switch_call_transition"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="300"
+        motion:motionInterpolator="easeOut">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:maxAcceleration="40"
+            motion:touchAnchorSide="right"
+            motion:touchAnchorId="@+id/iv_switch_button_right" />
+
+    </Transition>
+
+    <!--<OnClick
+        motion:clickAction="transitionToEnd|transitionToStart"
+        motion:targetId="@+id/iv_button_4" />-->
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/iv_switch_button_left"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="27dp"
+            android:layout_marginStart="2dp"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@+id/mcv_text_container"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/mcv_text_container" />
+
+        <Constraint
+            android:id="@+id/iv_switch_button_right"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@+id/iv_switch_button_left"
+            motion:layout_constraintEnd_toEndOf="@+id/iv_switch_button_left"
+            motion:layout_constraintStart_toStartOf="@+id/iv_switch_button_left"
+            motion:layout_constraintTop_toTopOf="@+id/iv_switch_button_left" />
+
+        <Constraint
+            android:id="@+id/tv_text_left">
+            <PropertySet android:visibility="gone"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tv_text_right">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+        <Constraint android:id="@+id/mcv_text_container">
+            <CustomAttribute
+                motion:attributeName="cardBackgroundColor"
+                motion:customColorValue="@color/color_call_switch_button_background_gray" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/iv_switch_button_left"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="43dp"
+            android:layout_marginStart="0dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@+id/mcv_text_container"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/mcv_text_container" />
+
+        <Constraint
+            android:id="@+id/iv_switch_button_right"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:alpha="1"
+            android:layout_marginTop="4dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/iv_switch_button_left"
+            motion:layout_constraintEnd_toEndOf="@+id/iv_switch_button_left"
+            motion:layout_constraintStart_toStartOf="@+id/iv_switch_button_left"
+            motion:layout_constraintTop_toTopOf="@+id/iv_switch_button_left" />
+
+        <Constraint
+            android:id="@+id/tv_text_left">
+            <PropertySet android:visibility="visible"/>
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/tv_text_right">
+            <PropertySet android:visibility="gone"/>
+        </Constraint>
+
+        <Constraint android:id="@+id/mcv_text_container">
+            <CustomAttribute
+                motion:attributeName="cardBackgroundColor"
+                motion:customColorValue="@color/ui_light_purple" />
+        </Constraint>
+    </ConstraintSet>
+
+
+    <!--    <KeyFrameSet>
+
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="10"
+                motion:motionTarget="@id/tv_text_left" />
+
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="20"
+                motion:motionTarget="@id/tv_text_right" />
+
+        </KeyFrameSet>-->
+</MotionScene>
+
+
+
+<!--
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/switch_call_transition"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="300"
+        motion:motionInterpolator="easeOut">
+
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:maxAcceleration="40"
+            motion:touchAnchorSide="right"
+            motion:touchAnchorId="@+id/iv_switch_button_right" />
+
+    </Transition>
+
+    &lt;!&ndash;<OnClick
+        motion:clickAction="transitionToEnd|transitionToStart"
+        motion:targetId="@+id/iv_button_4" />&ndash;&gt;
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/iv_switch_button_left"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="0dp"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@+id/mcv_text_container"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/mcv_text_container"
+            android:layout_marginLeft="0dp" />
+
+        <Constraint
+            android:id="@+id/iv_switch_button_right"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@+id/iv_switch_button_left"
+            motion:layout_constraintEnd_toEndOf="@+id/iv_switch_button_left"
+            motion:layout_constraintStart_toStartOf="@+id/iv_switch_button_left"
+            motion:layout_constraintTop_toTopOf="@+id/iv_switch_button_left" />
+
+        <Constraint
+            android:id="@+id/tv_text_left"
+            android:visibility="gone" />
+
+        <Constraint
+            android:id="@+id/tv_text_right"
+            android:visibility="visible" />
+
+        <Constraint android:id="@+id/mcv_text_container">
+            <CustomAttribute
+                motion:attributeName="cardBackgroundColor"
+                motion:customColorValue="@color/color_call_switch_button_background_gray" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/iv_switch_button_left"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="0dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@+id/mcv_text_container"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/mcv_text_container" />
+
+        <Constraint
+            android:id="@+id/iv_switch_button_right"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@+id/iv_switch_button_left"
+            motion:layout_constraintEnd_toEndOf="@+id/iv_switch_button_left"
+            motion:layout_constraintStart_toStartOf="@+id/iv_switch_button_left"
+            motion:layout_constraintTop_toTopOf="@+id/iv_switch_button_left" />
+
+        <Constraint
+            android:id="@+id/tv_text_left"
+            android:visibility="visible" />
+
+        <Constraint
+            android:id="@+id/tv_text_right"
+            android:visibility="gone" />
+
+        <Constraint android:id="@+id/mcv_text_container">
+            <CustomAttribute
+                motion:attributeName="cardBackgroundColor"
+                motion:customColorValue="@color/ui_light_purple" />
+        </Constraint>
+    </ConstraintSet>
+
+</MotionScene>-->

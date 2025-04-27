@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:elevation="10dp"
+    android:layout_height="wrap_content">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/vg_snippet_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.numplates.nomera3.modules.maps.ui.snippet.view.ViewPagerBottomSheetBehavior">
+
+            <com.numplates.nomera3.modules.maps.ui.view.MapSnippetViewPager
+                android:id="@+id/msvp_snippet_items"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include android:id="@+id/layout_snippet_error"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/view_snippet_error" />
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <View
+        android:id="@+id/v_user_snippet_fade_in"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/fade_in_white"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/vg_snippet_onboarding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b3000000"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_snippet_onboarding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="120dp"
+            app:lottie_autoPlay="false"
+            app:lottie_enableMergePathsForKitKatAndAbove="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/snippet_onboarding"
+            app:lottie_renderMode="hardware"
+            app:lottie_speed="1" />
+
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alpha="0" />
+
+    <FrameLayout
+        android:id="@+id/dismissContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="84dp">
+
+        <FrameLayout
+            android:id="@+id/transitionImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/transitionImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+        <com.numplates.nomera3.presentation.view.ui.mediaViewer.common.pager.MultiTouchViewPager
+            android:id="@+id/imagesPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_overlay_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        tools:alpha="1">
+
+        <View
+            android:id="@+id/view_overlay_statusbar"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:background="@color/uiKitColorBackgroundInvers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/sv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@color/status_bar_semi_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="200dp"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_overlay_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoLink="web"
+                android:clickable="false"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/ui_white"
+                android:textColorLink="@color/ui_white"
+                android:textIsSelectable="true"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:text="fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh"
+                tools:visibility="visible" />
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/uiKitColorBackgroundInvers"
+            app:layout_constraintTop_toBottomOf="@+id/view_overlay_statusbar">
+
+            <ImageButton
+                android:id="@+id/ib_cancel_preview"
+                android:layout_width="?attr/actionBarSize"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/arrowback"
+                android:tint="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_overlay_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="@color/ui_white"
+                android:textSize="20dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1 из 3"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/iv_overlay_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="4dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:padding="10dp"
+                android:src="@drawable/ic_dots_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white_1000" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

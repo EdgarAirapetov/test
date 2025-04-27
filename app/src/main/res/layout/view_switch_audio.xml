@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="28dp"
+    android:layout_height="28dp"
+    android:id="@+id/control_view_duration_container"
+    android:background="@drawable/back_circle_transparent_shape">
+
+    <ImageView
+        android:id="@+id/control_view_icon_sound_on"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_meera_sound_on"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/control_view_icon_sound_off"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_meera_sound_off"
+        android:visibility="invisible" />
+</FrameLayout>

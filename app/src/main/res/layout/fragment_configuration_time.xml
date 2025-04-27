@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="314dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".modules.redesign.fragments.main.map.configuration.MeeraConfigurationTimeFragment">
+
+    <com.numplates.nomera3.modules.maps.ui.events.CustomTimePicker
+        android:id="@+id/tp_time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="44dp"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_timezone_hint"
+        style="@style/BlackRegular14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:drawablePadding="6dp"
+        android:paddingStart="17dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_events_time_picker_timezone_hint"
+        android:textColor="@color/ui_gray_80"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_map_timezone_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tp_time_picker"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

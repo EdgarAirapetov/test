@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_band_members"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_group_m"
+        app:cellRightElement="right_text"
+        app:cellRightIconSrc="@drawable/ic_outlined_arrow_right_m"
+        app:cellTitleValue="@string/community_members_text"
+        tools:cellCityValue=""
+        app:cellRightElementColor="@color/uiKitColorForegroundLink"
+        app:cellArrowRight="true"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cellPosition="top" >
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_users"
+            style="?android:attr/progressBarStyleSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:indeterminateTint="@color/uiKitColorForegroundLightGreen"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_black_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_blacklist_m"
+        app:cellArrowRight="true"
+        tools:cellTitleValue="Чёрный список"
+        tools:cellCityValue=""
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        android:layout_marginHorizontal="16dp"
+        app:cellPosition="bottom" >
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/pb_black_list"
+            style="?android:attr/progressBarStyleSmall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:indeterminateTint="@color/uiKitColorForegroundLightGreen"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

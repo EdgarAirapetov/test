@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="referral_remain_count">Осталось приглашений до VIP: %d</string>
+    <string name="referral_available_vips">Количество месяцев: %d</string>
+    <string name="referral_vip_activation_title">Активировать VIP</string>
+    <string name="referral_send_invitation">Отправить приглашение</string>
+    <string name="referral_share_code_text">Скорее регистрируйся в Noomeera! Обязательно укажи промокод %s – тогда сразу получишь VIP-статус! %s</string>
+    <string name="referral_get_vip_dialog_title">Активировать VIP?</string>
+    <string name="referral_get_vip_dialog_description_premium">У вас уже есть Premium аккаунт, он станет VIP до %s</string>
+    <string name="referral_get_vip_dialog_description_regular">Профиль станет VIP до %s</string>
+    <string name="general_activate">Активировать</string>
+    <string name="general_cancel">Отмена</string>
+    <string name="referral_code_copy">Код скопирован</string>
+    <string name="referral_vip_activated_until">VIP активирован до %s</string>
+    <string name="error_try_later">Попробуй позже</string>
+    <string name="referral_vip_activated_fail">Не удалось активировать VIP. Проблемы с интернет-соединением</string>
+    <string name="get_vip">Получи VIP!</string>
+    <string name="enter_referral_code_one_day_txt">Введи промокод – и получи день бесплатно!</string>
+    <string name="activate_code">Активировать код</string>
+    <string name="general_close">Закрыть</string>
+    <string name="wrong_code_try_again">Неверный код. Попробуй снова</string>
+
+</resources>

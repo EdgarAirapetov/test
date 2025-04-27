@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/config_event_cl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <com.numplates.nomera3.modules.redesign.stickyscroll.StickyScrollView
+        android:id="@+id/nsv_root"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_config_photo_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="184dp"
+                android:background="@drawable/bg_bottomsheet_header"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/view_photo_bg"
+                    android:layout_width="0dp"
+                    android:layout_height="168dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="@drawable/bg_config_step_photo"
+                    android:backgroundTint="@color/uiKitColorBackgroundSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iv_placeholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_filled_photo_l"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_config_step2_title"
+                    app:layout_constraintEnd_toEndOf="@+id/view_photo_bg"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/view_photo_bg"
+                    app:layout_constraintTop_toTopOf="@+id/view_photo_bg"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:tint="@color/uiKitColorForegroundSecondary" />
+
+
+                <TextView
+                    android:id="@+id/tv_config_step2_title"
+                    style="@style/UiKit.Body.Description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="42dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/meera_configuratoin_step2_title"
+                    android:textColor="@color/uiKitColorForegroundSecondary"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_photo_bg"
+                    app:layout_constraintEnd_toEndOf="@+id/view_photo_bg"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/view_photo_bg"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_placeholder" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/v_attachment_bg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_bottomsheet_header"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.numplates.nomera3.modules.redesign.fragments.main.map.MeeraAddPostAttachmentItemViewNew
+                android:id="@+id/apai_attachment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/bg_bottomsheet_header"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="apai_attachment, cl_config_photo_placeholder" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@color/colorE1E4E6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ukrtl_events_lists_main_tabs" />
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/config_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ukrtl_events_lists_main_tabs,vp_events_lists_main_pages" />
+
+            <LinearLayout
+                android:id="@+id/ll_step_third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_map_config_bottom"
+                android:minHeight="400dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_barrier"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                tools:visibility="visible">
+
+                <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+                    android:id="@+id/et_add_post_title"
+                    style="@style/UiKit.Header.Subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/map_events_configuration_title_hint"
+                    android:imeOptions="actionNext"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="70"
+                    android:nextFocusForward="@id/etWrite"
+                    android:saveEnabled="false"
+                    android:textAppearance="@style/UiKit.Body.Normal"
+                    android:textColor="@color/uiKitColorForegroundPrimary"
+                    android:textColorHint="@color/uiKitColorForegroundSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+                    android:id="@+id/etWrite"
+                    style="@style/UiKit.Body.Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/map_events_configuration_description_hint"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="2500"
+                    android:saveEnabled="false"
+                    android:textAppearance="@style/UiKit.Body.Normal"
+                    android:textColor="@color/uiKitColorForegroundPrimary"
+                    android:textColorHint="@color/uiKitColorForegroundSecondary"
+                    android:textColorLink="@color/uiKitColorAccentPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_add_post_title"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:layout_goneMarginTop="16dp"
+                    tools:visibility="visible" />
+
+                <View
+                    android:id="@+id/stub_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp" />
+            </LinearLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_events_lists_main_pages"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_map_config_bottom"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/bottom_barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:constraint_referenced_ids="frameLayout2" />
+
+            <com.meera.uikit.widgets.tablayout.UiKitRowTabLayout
+                android:id="@+id/ukrtl_events_lists_main_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/barrier"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barrier"
+                app:tabPaddingEnd="16dp"
+                app:tabPaddingStart="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.numplates.nomera3.modules.redesign.stickyscroll.StickyScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_event_media"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/ll_actions_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/fl_settings_container"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_attach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackground"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:src="@drawable/ic_outlined_gallery_m"
+                tools:ignore="RtlSymmetry" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <com.numplates.nomera3.modules.uploadpost.ui.view.PostSelectBackgroundView
+            android:id="@+id/v_post_select_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/fl_settings_container"
+            android:visibility="invisible" />
+
+        <FrameLayout
+            android:id="@+id/fl_settings_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:elevation="1dp"
+            android:outlineProvider="none">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_comments_setting"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:paddingHorizontal="16dp"
+                android:src="@drawable/ic_outlined_settings_m" />
+
+            <View
+                android:id="@+id/v_comment_setting_indicator"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/meera_bg_hashtag_info"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="72dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.meera.uikit.widgets.buttons.UiKitButton
+            android:id="@+id/tv_map_events_configuration_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/map_events_configuration_continue" />
+
+        <TextView
+            android:id="@+id/tv_map_events_configuration_category"
+            style="@style/UiKit.Body.Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="14dp"
+            android:gravity="center"
+            android:text="@string/map_events_configuration_continue"
+            android:textColor="@color/uiKitColorForegroundLink"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

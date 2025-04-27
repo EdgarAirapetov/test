@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Noomeera dev</string>
+
+    <string name="general_yesterday">Yesterday</string>
+    <string name="general_progress_percent">Загрузка %d\%%</string>
+
+    <string name="general_send_email">Send email</string>
+    <string name="auth_write_to_support_email">help@noomeera.com</string>
+    <string name="auth_write_to_support_message_plain">Service information that will help us solve your problem.\nDevice: %s\nAndroid version: %s\nApplication version: %s \nDevice id: %s</string>
+
+    <string name="add_photo_txt">Добавить фотографию</string>
+    <string name="add_one_photo">Добавить фотографию</string>
+    <string name="add_few_photo">Добавить %d фотографии</string>
+    <string name="add_many_photo">Добавить %d фотографий</string>
+    <string name="common_edit">Редактировать</string>
+
+    <string name="everyone">Все</string>
+    <string name="nobody">Никто</string>
+    <string name="friends">Друзья</string>
+
+    <string name="meera_user_complain_additional_subtitle">Принять дополнительные меры?</string>
+    <string name="meera_user_complain_hide_profile_posts">Скрыть посты профиля</string>
+    <string name="meera_user_complain_hide_profile_moments">Скрыть моменты профиля</string>
+    <string name="meera_user_complain_blocked">Заблокировать</string>
+    <string name="meera_user_complain_additional_title">Модераторы вскоре рассмотрят её и вынесут\nрешение. Спасибо, что помогаешь улучшить\nсообщество</string>
+    <string name="user_complain_aplpy">Применить</string>
+
+    <string name="of">из</string>
+    <string name="more">Ещё</string>
+    <string name="save_image">Сохранить на устройстве</string>
+
+    <string name="add_image_description">Добавить подпись…</string>
+    <string name="you_can_add_5_objects">Можно добавить до 5 объектов</string>
+
+    <string name="invalid_duration">Недопустимая длительность</string>
+    <string name="you_cant_send_video_more">Нельзя загрузить видео длительностью более 5 минут</string>
+    <string name="you_cant_send_video_more_duration">Нельзя загрузить видео длительностью более %1$s</string>
+    <string name="unsubscribe_dialog_cancel_subs">ОТМЕНИТЬ</string>
+    <string name="to_editor">В РЕДАКТОР</string>
+    <string name="photo_adding_not_allowed">Добавить фото нельзя</string>
+    <string name="video_adding_not_allowed">Добавить видео нельзя</string>
+    <string name="delete_photo_txt">Удалить фото</string>
+
+    <string name="select_min_count">You have to choice %1$d images</string>
+    <string name="max_video_chat_len_desc">Максимальная продолжительность видео в чате - 5 мин. Обрезать ролик можно в нашем редакторе</string>
+    <string name="max_video_duration_desc">Максимальная продолжительность видео в чате - %1$s. Обрезать ролик можно в нашем редакторе</string>
+    <string name="one_video_selected">Выбрано 1 видео</string>
+    <string name="select_max_count">Выбрано %1$d фото</string>
+    <string name="meeera_maximum_photo_files_selected">Максимальное количество изображений: 5</string>
+    <string name="media_picker_select_media_count">Выбрано %1$d медиа</string>
+    <string name="may_only_pick_n_media">Можно выбрать максимум %1$d медиа</string>
+    <string name="may_only_edit_n_media">Можно отредактировать максимум %1$d медиа</string>
+    <string name="btn_ready">Готово</string>
+    <string name="ready_with_count">Готово (%1$s)</string>
+    <string name="add_message">Добавь подпись</string>
+    <string name="warning_video_duration_title">Недопустимая длительность</string>
+    <string name="cancel_caps">ОТМЕНИТЬ</string>
+    <string name="cancel">Отменить</string>
+    <string name="meera_ready_button">Готово</string>
+    <string name="open_editor_caps">В РЕДАКТОР</string>
+    <string name="tedbottompicker_title">Медиа</string>
+    <string name="no_image">Пусто</string>
+    <string name="permission_message">Предоставлен частичный доступ\nк фото и видео</string>
+    <string name="meera_permission_message">Частичный доступ к фото и видео</string>
+    <string name="change">Изменить</string>
+    <string name="recent">Недавние</string>
+    <string name="general_hint_write_message">Сообщение</string>
+    <string name="latest">Новинка</string>
+    <string name="post_reset_media_dialog_title">Удалить медиа?</string>
+    <string name="post_reset_media_dialog_description">Изменения не будут сохранены</string>
+    <string name="post_reset_media_dialog_cancel">Отмена</string>
+    <string name="post_reset_media_dialog_action">Удалить</string>
+
+    <string name="allow_access_to_photo">Разреши доступ к фото</string>
+    <string name="meera_allow_access_to_galery">Разреши доступ к галерее</string>
+    <string name="meera_photos_and_videos_not_showing">Не отображаются фото и видео?</string>
+    <string name="allow_access_to_photo_desc">И тогда мы сможем показать фотографии из твоей галереи</string>
+    <string name="meera_allow_access_to_photo_desc">И тогда мы сможем показать фото и видео из твоей галереи</string>
+    <string name="meera_photos_not_showing_desc">Доступ к галерее не был предоставлен. Предоставить доступ можно в настройках</string>
+    <string name="allow_access">Разрешить доступ</string>
+    <string name="photos_not_showing">Не отображаются фото?</string>
+    <string name="photos_not_showing_desc">Доступ к фото не был предоставлен. Предоставить доступ можно в настройках</string>
+    <string name="open_settings">Открыть настройки</string>
+
+    <string name="gallery_title">Галерея</string>
+
+    <string name="meera_gifts_delete">Удалить подарок</string>
+
+    <!-- Times -->
+    <string name="recently">Недавно</string>
+    <string name="now">Сейчас</string>
+    <string name="long_time_ago">Давно</string>
+    <string name="days_ago_today">Today</string>
+    <string name="days_ago_yesterday">Yesterday</string>
+    <string name="chat_status_last_seen_at">Last seen at %s</string>
+    <string-array name="time_ago_units_1_comment">
+        <item>1 cек.</item>
+        <item>сек.</item>
+        <item>мин.</item>
+        <item>ч.</item>
+        <item>дн.</item>
+        <item>нед.</item>
+        <item>мес.</item>
+        <item>год</item>
+    </string-array>
+    <string-array name="time_ago_units_2_3_4_comment">
+        <item>1 cек.</item>
+        <item>сек.</item>
+        <item>мин.</item>
+        <item>ч.</item>
+        <item>дн.</item>
+        <item>нед.</item>
+        <item>мес.</item>
+        <item>года</item>
+    </string-array>
+    <string-array name="time_ago_units_5_and_more_comment">
+        <item>1 cек.</item>
+        <item>сек.</item>
+        <item>мин.</item>
+        <item>ч.</item>
+        <item>дн.</item>
+        <item>нед.</item>
+        <item>мес.</item>
+        <item>лет</item>
+    </string-array>
+    <plurals name="days_ago">
+        <item quantity="one">%1$d день назад</item>
+        <item quantity="two">%1$d дня назад</item>
+        <item quantity="few">%1$d дня назад</item>
+        <item quantity="many">%1$d дней назад</item>
+        <item quantity="other">%1$d дней назад</item>
+    </plurals>
+
+    <plurals name="days_without_ago">
+        <item quantity="one">%1$d день</item>
+        <item quantity="few">%1$d дня</item>
+        <item quantity="many">%1$d дней</item>
+        <item quantity="other">%1$d дней</item>
+    </plurals>
+
+    <string name="million_subscribers">м подписчиков</string>
+    <string name="thousand_subscribers">к подписчиков</string>
+
+    <!-- System -->
+    <string name="roboto_regular" translatable="false">sans-serif</string>
+
+    <plurals name="minutes">
+        <item quantity="one">%1$d минута</item>
+        <item quantity="few">%1$d минуты</item>
+        <item quantity="many">%1$d минут</item>
+        <item quantity="other">%1$d минут</item>
+    </plurals>
+
+    <plurals name="seconds">
+        <item quantity="one">%1$d секунда</item>
+        <item quantity="few">%1$d секунды</item>
+        <item quantity="many">%1$d секунд</item>
+        <item quantity="other">%1$d секунд</item>
+    </plurals>
+
+    <plurals name="in_minutes">
+        <item quantity="one">%1$d минуту</item>
+        <item quantity="few">%1$d минуты</item>
+        <item quantity="many">%1$d минут</item>
+        <item quantity="other">%1$d минут</item>
+    </plurals>
+
+    <plurals name="in_seconds">
+        <item quantity="one">%1$d секунду</item>
+        <item quantity="few">%1$d секунды</item>
+        <item quantity="many">%1$d секунд</item>
+        <item quantity="other">%1$d секунд</item>
+    </plurals>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="78dp">
+
+    <com.meera.uikit.widgets.roomcell.UiKitRoomCellView
+        android:id="@+id/uk_room_cell"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@color/uiKitColorBackgroundPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TODO Закоментировал т.к. это надо будет вернуть во 2й итерации -->
+    <!--<com.meera.uikit.widgets.buttons.UiKitButtonSlide
+        android:id="@+id/bs_bell_off"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:background="@color/uiKitColorBackgroundSecondary"
+        android:src="@drawable/ic_outlined_bell_off_m"
+        android:text="@string/general_bell_off"
+        android:tint="@color/uiKitColorAccentAlert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/uk_room_cell"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <com.meera.uikit.widgets.buttons.UiKitButtonSlide
+        android:id="@+id/bs_delete"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:background="@color/uiKitColorBackgroundSecondary"
+        android:src="@drawable/ic_outlined_delete_m"
+        android:text="@string/delete"
+        android:tint="@color/uiKitColorAccentDarkError"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/uiKitColorForegroundTertiary"
+        app:layout_constraintBottom_toBottomOf="@+id/bs_delete"
+        app:layout_constraintStart_toStartOf="@+id/bs_delete"
+        app:layout_constraintTop_toTopOf="@+id/bs_delete" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

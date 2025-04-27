@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/rate_us_star_1"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/meera_rate_us_star_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/rate_us_star_2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/rate_us_star_2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/meera_rate_us_star_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/rate_us_star_1"
+        app:layout_constraintEnd_toStartOf="@+id/rate_us_star_3"
+        app:layout_constraintStart_toEndOf="@+id/rate_us_star_1"
+        app:layout_constraintTop_toTopOf="@+id/rate_us_star_1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/rate_us_star_3"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/meera_rate_us_star_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/rate_us_star_2"
+        app:layout_constraintEnd_toStartOf="@+id/rate_us_star_4"
+        app:layout_constraintStart_toEndOf="@+id/rate_us_star_2"
+        app:layout_constraintTop_toTopOf="@+id/rate_us_star_2" />
+
+    <View
+        android:id="@+id/rate_us_star_4"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/meera_rate_us_star_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/rate_us_star_3"
+        app:layout_constraintEnd_toStartOf="@+id/rate_us_star_5"
+        app:layout_constraintStart_toEndOf="@+id/rate_us_star_3"
+        app:layout_constraintTop_toTopOf="@+id/rate_us_star_3" />
+
+    <View
+        android:id="@+id/rate_us_star_5"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="2dp"
+        android:background="@drawable/meera_rate_us_star_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/rate_us_star_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rate_us_star_4"
+        app:layout_constraintTop_toTopOf="@+id/rate_us_star_4" />
+
+</merge>

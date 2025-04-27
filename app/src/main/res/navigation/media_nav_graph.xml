@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/media_nav_graph"
+    app:startDestination="@id/meeraViewMultimediaFragment">
+
+    <fragment
+        android:id="@+id/meeraViewMultimediaFragment"
+        android:name="com.numplates.nomera3.modules.feedmediaview.ui.fragment.MeeraViewMultimediaFragment"
+        android:label="MeeraViewMultimediaFragment"
+        tools:layout="@layout/meera_fragment_view_multimedia" >
+
+        <action
+            android:id="@+id/action_meeraViewMultimediaFragment_to_meeraCommunitiesListsContainerFragment"
+            app:destination="@id/communities_nav_graph"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraViewMultimediaFragment_to_meeraSearchFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            app:destination="@id/searchNavGraph" />
+
+        <action
+            android:id="@+id/action_meeraViewMultimediaFragment_to_userInfoFragment"
+            app:destination="@id/user_nav_graph"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+    </fragment>
+
+</navigation>

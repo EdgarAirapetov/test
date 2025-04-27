@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:id="@+id/ll_root_layout"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+    android:background="@color/uiKitColorBackgroundSecondary">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/abl_create_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <com.meera.uikit.widgets.nav.UiKitNavView
+            android:background="@color/uiKitColorBackgroundPrimary"
+            android:id="@+id/toolbar_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/meera_new_post"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <com.meera.uikit.widgets.buttons.UiKitButton
+                android:id="@+id/tvSend"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="@dimen/material16"
+                app:buttonHeightMode="buttonIcon36"
+                app:buttonType="filled"
+                android:src="@drawable/ic_outlined_send_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ProgressBar
+                android:id="@+id/pb_send_post"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/material16"
+                android:indeterminateTint="@color/uiKitColorAccentPrimary"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+        </com.meera.uikit.widgets.nav.UiKitNavView>
+
+        <LinearLayout
+            android:id="@+id/vg_add_post_event_label_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:background="@color/transparent"
+            tools:visibility="visible">
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:clipToPadding="false"
+        android:id="@+id/cl_add_post_content_root"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:clipToPadding="false"
+            android:id="@+id/nsv_add_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/add_post_content_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/uiKitColorBackgroundSecondary"
+                android:orientation="vertical">
+
+                <com.numplates.nomera3.modules.uploadpost.ui.view.MeeraMediaAttachmentViewPager
+                    android:layout_marginTop="@dimen/material12"
+                    android:id="@+id/add_post_media_attachment_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.constraintlayout.widget.Barrier
+                    app:constraint_referenced_ids="add_post_media_attachment_view_pager,vg_add_post_event_label_layout"
+                    android:id="@+id/barrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom" />
+
+                <LinearLayout
+                    android:id="@+id/vg_add_post_event_label_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toBottomOf="@+id/add_post_media_attachment_view_pager"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:gravity="center_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@drawable/bg_event_label"
+                    tools:visibility="visible">
+
+                    <com.numplates.nomera3.modules.redesign.fragments.main.map.configuration.MeeraEventLabelView
+                        android:id="@+id/elv_add_post_even_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="0dp" />
+
+                    <View
+                        android:id="@+id/v_add_post_event_label_divider"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/gray_separator" />
+
+                </LinearLayout>
+
+                <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+                    android:id="@+id/et_add_post_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@null"
+                    android:textAppearance="@style/UiKit.Body.Normal"
+                    android:textColor="@color/uiKitColorForegroundPrimary"
+                    android:gravity="top"
+                    android:hint="@string/map_events_configuration_title_hint"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="70"
+                    android:saveEnabled="false"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@id/etWrite"
+                    android:textColorHint="@color/uiKitColorForegroundSecondary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.numplates.nomera3.presentation.view.ui.edittextautocompletable.EditTextAutoCompletable
+                    android:id="@+id/etWrite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_goneMarginTop="16dp"
+                    android:textAppearance="@style/UiKit.Body.Normal"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/what_is_new"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:maxLength="2500"
+                    android:saveEnabled="false"
+                    android:textColor="@color/uiKitColorForegroundPrimary"
+                    android:textColorHint="@color/uiKitColorForegroundSecondary"
+                    android:textColorLink="@color/uiKitColorAccentPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_add_post_title"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <com.numplates.nomera3.modules.uploadpost.ui.view.MeeraPostTextBackgroundView
+                    android:layout_marginTop="@dimen/material12"
+                    android:layout_marginHorizontal="@dimen/offset_16dp"
+                    android:id="@+id/v_post_text_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+
+                <androidx.legacy.widget.Space
+                    android:minHeight="60dp"
+                    android:importantForAccessibility="no"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/etWrite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/s_music"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:background="@color/uiKitColorBackgroundPrimary"
+            android:layout_gravity="bottom"
+            android:id="@+id/fl_music_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <com.numplates.nomera3.presentation.view.ui.customView.MusicPlayerCell
+                android:id="@+id/mpc_media"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingVertical="10dp"
+                app:action_btn_src="@drawable/ic_outlined_close_s" />
+
+        </FrameLayout>
+
+        <include
+            android:id="@+id/tags_list"
+            tools:visibility="visible"
+            layout="@layout/user_tags_coordinator" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_actions"
+            android:background="@color/uiKitColorBackgroundPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_marginTop="6dp"
+                android:id="@+id/ll_actions_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_toStartOf="@+id/fl_settings_container">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_attach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:src="@drawable/ic_outlined_gallery_m"
+                    tools:ignore="RtlSymmetry" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_add_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:src="@drawable/ic_outlined_music_m"
+                    tools:ignore="RtlSymmetry" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_add_background"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:src="@drawable/ic_post_text_bg_button"
+                    tools:ignore="RtlSymmetry" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <com.numplates.nomera3.modules.uploadpost.ui.view.PostSelectBackgroundView
+                android:id="@+id/v_post_select_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_toStartOf="@+id/fl_settings_container"/>
+
+            <FrameLayout
+                android:layout_marginTop="8dp"
+                android:id="@+id/fl_settings_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:elevation="1dp"
+                android:outlineProvider="none">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_comments_setting"
+                    android:layout_width="60dp"
+                    android:layout_height="36dp"
+                    android:paddingHorizontal="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_outlined_settings_m" />
+
+
+                <View
+                    android:id="@+id/v_comment_setting_indicator"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/meera_bg_hashtag_info"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+</LinearLayout>

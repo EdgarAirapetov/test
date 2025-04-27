@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <View
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0" />
+
+    <View
+        android:id="@+id/fake_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:layout_height="25dp"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"/>
+
+    <RelativeLayout
+        android:id="@+id/dismissContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_nav_view">
+
+        <FrameLayout
+            android:id="@+id/transitionImageContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:id="@+id/transitionImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription" />
+
+        </FrameLayout>
+
+        <com.numplates.nomera3.presentation.view.ui.mediaViewer.common.pager.MultiTouchViewPager
+            android:id="@+id/imagesPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_overlay_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0">
+
+        <ScrollView
+            android:id="@+id/sv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:background="@color/status_bar_semi_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_max="200dp"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_overlay_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoLink="web"
+                android:clickable="false"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:textColor="@color/ui_white"
+                android:textColorLink="@color/ui_white"
+                android:textIsSelectable="true"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:text="fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh
+                fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh fkdjah disajh"
+                tools:visibility="visible" />
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fake_status_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/transparent"
+        android:layout_marginHorizontal="8dp"
+        app:showBackArrow="false"
+        app:iconsTint="@color/uiKitColorForegroundInvers"
+        tools:title="1 из 5">
+        <ImageView
+            android:id="@+id/iv_selected_media_btn"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginVertical="4dp"
+            app:srcCompat="@drawable/white_ring_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/ui_light_green"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/iv_dots_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="64dp"
+            android:src="@drawable/ic_outlined_kebab_m"
+            app:tint="@color/uiKitColorForegroundInvers"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </com.meera.uikit.widgets.nav.UiKitNavView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

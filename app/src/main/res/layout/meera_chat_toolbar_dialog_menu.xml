@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="#6600AA00"
+    tools:layout_height="58dp"
+    tools:layout_width="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <FrameLayout
+        android:id="@+id/left_item_touch_area"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@+id/center_item_touch_area"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_left_image_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:duplicateParentState="true"
+            app:srcCompat="@drawable/ic_outlined_user_m" />
+
+        <TextView
+            android:id="@+id/tv_left_icon_description"
+            style="@style/Legacy.Display.Normal_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:duplicateParentState="true"
+            android:text="@string/chat_profile"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/center_item_touch_area"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toStartOf="@+id/right_item_touch_area"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/left_item_touch_area"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_center_image_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:duplicateParentState="true"
+            app:srcCompat="@drawable/ic_outlined_bell_on_m" />
+
+        <TextView
+            android:id="@+id/tv_center_icon_description"
+            style="@style/Legacy.Display.Normal_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:duplicateParentState="true"
+            android:text="@string/chat_sound"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/right_item_touch_area"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@+id/center_item_touch_area"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_right_image_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:duplicateParentState="true"
+            app:srcCompat="@drawable/ic_outlined_more_m" />
+
+        <TextView
+            android:id="@+id/tv_right_icon_description"
+            style="@style/Legacy.Display.Normal_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="4dp"
+            android:duplicateParentState="true"
+            android:text="@string/more"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+
+</merge>

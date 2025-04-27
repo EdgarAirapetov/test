@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraLoaderView
+        android:id="@+id/lv_progress_view"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"/>
+
+</LinearLayout>

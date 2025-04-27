@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_search_number_graph"
+    app:startDestination="@id/meeraSearchNumberFragment">
+
+    <fragment
+        android:id="@+id/meeraSearchNumberFragment"
+        android:name="com.numplates.nomera3.modules.search.number.ui.fragment.MeeraSearchNumberFragment"
+        android:label="MeeraSearchNumberFragment"
+        tools:layout="@layout/meera_fragment_search_number">
+        <action
+            android:id="@+id/action_meeraSearchNumberFragment_to_meeraSearchNumberCountriesFragment"
+            app:destination="@id/meeraSearchNumberCountriesFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraSearchNumberCountriesFragment"
+        android:name="com.numplates.nomera3.modules.search.number.ui.fragment.MeeraSearchNumberCountriesFragment"
+        android:label="MeeraSearchNumberCountriesFragment"
+        tools:layout="@layout/meera_fragment_search_number_countries"/>
+
+</navigation>

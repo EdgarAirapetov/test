@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_nav_graph"
+    app:startDestination="@id/emptyMapFragment">
+
+    <fragment
+        android:id="@+id/emptyMapFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.main.MeeraEmptyMapFragment"
+        android:label="EmptyMapFragment"
+        tools:layout="@layout/empty_layout" >
+        <action
+            android:id="@+id/action_emptyFragment_to_searchNavGraph"
+            app:destination="@id/searchNavGraph" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainMapFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.main.map.MainMapFragment"
+        android:label="MainMapFragment"
+        tools:layout="@layout/meera_fragment_map">
+
+        <action
+            android:id="@+id/action_mainMapFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_mainMapFragment_to_userSnippetSheetFragment"
+            app:destination="@id/mapUserSnippetSheetFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_mainMapFragment_to_meeraChatFragment"
+            app:destination="@id/meeraChatFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.numplates.nomera3.modules.userprofile.ui.fragment.MeeraUserInfoFragment"
+        android:label="MeeraUserInfoFragment"
+        tools:layout="@layout/meera_fragment_user_info" >
+
+        <action
+            android:id="@+id/action_meeraUserInfoFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_meeraHashtagFragment"
+        app:destination="@id/meeraHashTagFragment"
+        app:enterAnim="@anim/meera_slide_left"
+        app:exitAnim="@anim/meera_wait_anim"
+        app:popEnterAnim="@anim/meera_wait_anim"
+        app:popExitAnim="@anim/meera_slide_right" />
+
+    <fragment
+        android:id="@+id/meeraHashTagFragment"
+        android:name="com.numplates.nomera3.modules.hashtag.ui.fragment.MeeraHashtagFragment"
+        tools:layout="@layout/meera_fragment_hashtag"
+        android:label="MeeraHashTagFragment" >
+
+        <action
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            android:id="@+id/action_meeraHashTagFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCreatePostFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.secondary.MeeraCreatePostFragment"
+        android:label="MeeraCreatePostFragment"
+        tools:layout="@layout/meera_create_post_fragment" />
+
+    <fragment
+        android:id="@+id/meeraPrivacyFragment"
+        android:name="com.numplates.nomera3.presentation.view.fragments.privacysettings.MeeraPrivacyFragment"
+        android:label="MeeraPrivacyFragment"
+        tools:layout="@layout/meera_fragment_privacy"/>
+
+    <navigation
+        android:id="@+id/searchNavGraph"
+        app:startDestination="@id/search_nav_graph">
+
+        <include app:graph="@navigation/search_nav_graph" />
+
+    </navigation>
+</navigation>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource"
+    >
+
+    <ImageView
+        android:id="@+id/iv_zoom_video_precache_screenshot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/pv_zoom_video_duplicate"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:resize_mode="zoom"
+        app:shutter_background_color="@color/colorTransparent"
+        app:surface_type="texture_view"
+        app:use_controller="false"
+        />
+</FrameLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
+
+    <TextView
+        android:id="@+id/tv_main_road_forbidden"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/meera_main_publication_forbidden"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_block_reason_title"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/popup_block_user_reason"
+        android:textColor="@color/uiKitColorForegroundPrimary" />
+
+    <TextView
+        android:id="@+id/tv_block_reason"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        tools:text="Ненормативная и грубая лексика (оскорбления)" />
+
+    <TextView
+        android:id="@+id/tv_block_period_title"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/popup_block_user_period"
+        android:textColor="@color/uiKitColorForegroundPrimary" />
+
+    <TextView
+        android:id="@+id/tv_block_period"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        tools:text="До 12.12.2019" />
+
+    <TextView
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/meera_desc_block_user_any_questions"
+        android:textColor="@color/uiKitColorForegroundPrimary" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/popup_block_user_write_support" />
+
+</LinearLayout>

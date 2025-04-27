@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_feature_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/v_separator_top"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/uiKitColorBackgroundSecondary"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBaseline_toTopOf="@+id/ivPicture"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivPicture"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:paddingHorizontal="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_separator_top"
+        app:shapeAppearanceOverlay="@style/ImageViewRoundedCorners_12dp" />
+
+    <FrameLayout
+        android:id="@+id/media_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivPicture"
+        app:layout_constraintEnd_toEndOf="@+id/ivPicture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivPicture"
+        tools:visibility="visible">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_post_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            app:resize_mode="zoom"
+            app:shutter_background_color="@color/colorTransparent"
+            app:surface_type="texture_view"
+            app:use_controller="false" />
+
+    </FrameLayout>
+
+    <com.numplates.nomera3.modules.posts.ui.view.SwitchAudioView
+        android:id="@+id/vdv_feature_video_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/video_duration_margin"
+        android:layout_marginBottom="@dimen/video_duration_margin"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/ivPicture"
+        app:layout_constraintEnd_toEndOf="@id/ivPicture"
+        tools:visibility="visible" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_loader"
+        style="@style/LavLoader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/media_container"
+        app:layout_constraintEnd_toEndOf="@id/media_container"
+        app:layout_constraintStart_toStartOf="@id/media_container"
+        app:layout_constraintTop_toTopOf="@id/media_container"
+        app:lottie_renderMode="software" />
+
+    <ProgressBar
+        android:id="@+id/pb_video_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/media_container"
+        app:layout_constraintEnd_toEndOf="@id/media_container"
+        app:layout_constraintStart_toStartOf="@id/media_container"
+        app:layout_constraintTop_toTopOf="@id/media_container" />
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraTextViewWithImages
+        android:id="@+id/tv_text_post"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivPicture" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/tv_btn_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="16dp"
+        app:buttonType="filled"
+        android:text="@string/meera_feature_try"
+        app:buttonHeightMode="buttonText48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_text_post" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/tv_btn_dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/i_have_read"
+        app:buttonHeightMode="buttonText48"
+        app:buttonType="transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_btn_action" />
+
+    <View
+        android:id="@+id/v_separator_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/uiKitColorBackgroundSecondary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_btn_dismiss" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/ivPicture"
+        app:layout_constraintTop_toTopOf="@+id/ivPicture"
+        app:srcCompat="@drawable/ic_over_media" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

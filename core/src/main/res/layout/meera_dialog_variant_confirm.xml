@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        style="@style/UiKit.Body.Normal"
+        android:textSize="16sp"
+        tools:text="Description - hsdgd hgsdhgs hgdhgs hghds hsdgh  shdghs hdsgd "/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_dialog_confirm_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellPosition="top"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellLeftElement="left_icon"
+        app:cellRightElement="right_radio"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellTitleValue="@string/everyone"
+        app:cellCityValue="" />
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_dialog_confirm_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellPosition="middle"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellLeftElement="left_icon"
+        app:cellRightElement="right_radio"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellTitleValue="@string/friends"
+        app:cellCityValue="" />
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_dialog_confirm_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellPosition="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cellLeftElement="left_icon"
+        app:cellRightElement="right_radio"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellTitleValue="@string/nobody"
+        app:cellCityValue="" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
+
+</LinearLayout>

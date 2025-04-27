@@ -1,0 +1,52 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="false"
+    android:id="@+id/tv_container">
+
+    <com.meera.uikit.widgets.userpic.UiKitUserpicImage
+        android:id="@+id/user_image_personal_info"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_outlined_cam_m"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:userpicSize="Size180"
+        app:userpicStories="NoStories"
+        tools:visibility="visible">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/v_avatar_view_container"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            app:cardElevation="0dp"
+            android:visibility="gone"
+            app:cardCornerRadius="180dp">
+
+            <com.noomeera.nmravatarssdk.ui.view.AvatarView
+                android:id="@+id/v_avatar_view"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:quality="1.0" />
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageButton
+            android:id="@+id/ib_add_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/avatar_view_name_background"
+            android:src="@drawable/ic_outlined_cam_m" />
+
+    </com.meera.uikit.widgets.userpic.UiKitUserpicImage>
+</androidx.constraintlayout.widget.ConstraintLayout>

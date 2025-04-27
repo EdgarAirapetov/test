@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_marginHorizontal="16dp">
+
+    <LinearLayout
+        android:id="@+id/vg_services_events"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/meera_bg_services_events_button"
+            android:scaleType="center"
+            app:tint="#19867F"
+            android:src="@drawable/ic_outlined_map_pin_m"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            style="@style/UiKit.Display.Caps_12"
+            android:text="@string/map_layers_content_events"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vg_services_people"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/meera_bg_services_people_button"
+            android:scaleType="center"
+            app:tint="#8248DF"
+            android:src="@drawable/ic_outlined_group_m"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            style="@style/UiKit.Display.Caps_12"
+            android:text="@string/map_layers_content_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vg_services_communities"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/meera_bg_services_communities_button"
+            android:scaleType="center"
+            app:tint="#1A96FC"
+            android:src="@drawable/ic_outlined_channel_m"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            style="@style/UiKit.Display.Caps_12"
+            android:text="@string/profile_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vg_services_settings"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/meera_bg_services_settings_button"
+            android:scaleType="center"
+            app:tint="#9298A0"
+            android:src="@drawable/ic_outlined_settings_m"/>
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            style="@style/UiKit.Display.Caps_12"
+            android:text="@string/profile_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_nav_graph"
+    app:startDestination="@id/meeraSearchMainFragment">
+
+    <fragment
+        android:id="@+id/meeraSearchMainFragment"
+        android:name="com.numplates.nomera3.modules.search.ui.fragment.MeeraSearchMainFragment"
+        tools:layout="@layout/meera_fragment_search_main"
+        android:label="MeeraSearchMainFragment" >
+        <action
+            android:id="@+id/action_meeraSearchMainFragment_to_communities_graph"
+            app:destination="@id/communities_graph" />
+        <action
+            android:id="@+id/action_meeraSearchMainFragment_to_user_graph"
+            app:destination="@id/user_nav_graph" />
+        <action
+            android:id="@+id/action_meeraSearchMainFragment_to_meeraHashTagFragment"
+            app:destination="@id/meeraHashTagFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_meeraHashtagFragment"
+        app:destination="@id/meeraHashTagFragment"
+        app:enterAnim="@anim/meera_slide_left"
+        app:exitAnim="@anim/meera_wait_anim"
+        app:popEnterAnim="@anim/meera_wait_anim"
+        app:popExitAnim="@anim/meera_slide_right" />
+
+    <fragment
+        android:id="@+id/meeraHashTagFragment"
+        android:name="com.numplates.nomera3.modules.hashtag.ui.fragment.MeeraHashtagFragment"
+        tools:layout="@layout/meera_fragment_hashtag"
+        android:label="MeeraHashTagFragment" >
+
+        <action
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right"
+            android:id="@+id/action_meeraHashTagFragment_to_meeraCreatePostFragment"
+            app:destination="@id/meeraCreatePostFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraCreatePostFragment"
+        android:name="com.numplates.nomera3.modules.redesign.fragments.secondary.MeeraCreatePostFragment"
+        android:label="MeeraCreatePostFragment"
+        tools:layout="@layout/meera_create_post_fragment" />
+
+    <include app:graph="@navigation/communities_nav_graph" />
+
+    <include app:graph="@navigation/user_nav_graph" />
+</navigation>

@@ -1,0 +1,185 @@
+buildscript {
+    apply from: 'dependencies-versions.gradle'
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+
+        maven { url "https://jitpack.io" }
+        maven { url 'https://artifactory.img.ly/artifactory/imgly' }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+//        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+//        classpath "com.osacky.doctor:doctor-plugin:0.8.1"
+        classpath 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0'
+        classpath "com.android.tools.build:gradle:$gradle_version"
+        classpath "com.google.gms:google-services:$google_services_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$firebase_crashlytics_gradle_version"
+        classpath "ly.img.android.pesdk:plugin:$pesdk_version"
+        classpath 'com.yandex.android:appmetrica-build-plugin:0.6.2'
+    }
+}
+//Доктора включать только когда надо
+//apply plugin: "com.osacky.doctor"
+apply plugin: "io.gitlab.arturbosch.detekt"
+
+detekt {
+    // Version of Detekt that will be used. When unspecified the latest detekt
+    // version found will be used. Override to stay on the same version.
+    toolVersion = "1.22.0"
+
+    // The directories where detekt looks for source files.
+    // Defaults to `files("src/main/java", "src/test/java", "src/main/kotlin", "src/test/kotlin")`.
+    source = files(
+        "app/src/main/java",
+        "core/src/main/java",
+        "feature/referrals/src/main/java",
+//        "src/main/kotlin",
+//        "gensrc/main/kotlin"
+    )
+
+    // Builds the AST in parallel. Rules are always executed in parallel.
+    // Can lead to speedups in larger projects. `false` by default.
+    parallel = false
+
+    // Define the detekt configuration(s) you want to use.
+    // Defaults to the default detekt configuration.
+    config = files("detekt/detekt_config.yml")
+
+    // Applies the config files on top of detekt's default config file. `false` by default.
+    buildUponDefaultConfig = false
+
+    // Turns on all the rules. `false` by default.
+    allRules = false
+
+    // Specifying a baseline file. All findings stored in this file in subsequent runs of detekt.
+    baseline = file("path/to/baseline.xml")
+
+    // Disables all default detekt rulesets and will only run detekt with custom rules
+    // defined in plugins passed in with `detektPlugins` configuration. `false` by default.
+    disableDefaultRuleSets = false
+
+    // Adds debug output during task execution. `false` by default.
+    debug = false
+
+    // If set to `true` the build does not fail when the
+    // maxIssues count was reached. Defaults to `false`.
+    ignoreFailures = false
+
+    // Android: Don't create tasks for the specified build types (e.g. "release")
+    ignoredBuildTypes = ["release"]
+
+    // Android: Don't create tasks for the specified build flavor (e.g. "production")
+    ignoredFlavors = ["production"]
+
+    // Android: Don't create tasks for the specified build variants (e.g. "productionRelease")
+    ignoredVariants = ["productionRelease"]
+
+    // Specify the base path for file paths in the formatted reports.
+    // If not set, all file paths reported will be absolute file path.
+    basePath = projectDir
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url 'http://developer.huawei.com/repo/'
+            allowInsecureProtocol = true
+        }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+
+        maven {
+            //WebRtcModule
+            url "https://repo.escape-team.tech/repository/meera-android/"
+            credentials {
+                username "$webRtcName"
+                password "$webRtcToken"
+            }
+            content {
+                includeGroup "tech.escape-team.meera"
+            }
+        }
+        maven {
+            url "https://git.nomera.com/api/v4/projects/196/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = "$uiKitName"
+                //Read token
+                value = "$uiKitToken"
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+        // Приватный репозиторий Noomera
+        maven {
+            url "https://git.nomera.com/api/v4/projects/117/packages/maven"
+            name "GitLab"
+            credentials(HttpHeaderCredentials) {
+                name = "$editorName"
+                value = "$editorToken"
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+        mavenLocal()
+    }
+}
+
+//tasks.named("compileDebugKotlin").configure {
+//    outputs.files.forEach {
+//        println(it)
+//    }
+//}
+
+tasks.named("detekt").configure {
+    reports {
+        // Enable/Disable XML report (default: true)
+        xml.required.set(true)
+        xml.outputLocation.set(file("build/reports/detekt.xml"))
+        // Enable/Disable HTML report (default: true)
+        html.required.set(true)
+        html.outputLocation.set(file("build/reports/detekt.html"))
+        // Enable/Disable TXT report (default: true)
+        txt.required.set(true)
+        txt.outputLocation.set(file("build/reports/detekt.txt"))
+        // Enable/Disable SARIF report (default: false)
+        sarif.required.set(true)
+        sarif.outputLocation.set(file("build/reports/detekt.sarif"))
+        // Enable/Disable MD report (default: false)
+        md.required.set(true)
+        md.outputLocation.set(file("build/reports/detekt.md"))
+        custom {
+            // The simple class name of your custom report.
+            reportId = "CustomJsonReport"
+            outputLocation.set(file("build/reports/detekt.json"))
+        }
+    }
+}
+
+ext {
+    compileSdkVersion = 34
+    buildToolsVersion = "28.0.3"
+    minSdkVersion = 26
+    targetSdkVersion = compileSdkVersion
+    javaVersion = JavaVersion.VERSION_1_8
+}
+
+task installGitHook(type: Copy) {
+    from new File(rootProject.rootDir, 'scripts/pre-commit')
+    into { new File(rootProject.rootDir, '.git/hooks') }
+    fileMode 0777
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

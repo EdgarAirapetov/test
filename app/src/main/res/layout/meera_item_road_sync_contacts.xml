@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:background="@color/uiKitColorBackgroundSecondary"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"/>
+
+    <TextView
+        style="@style/UiKit.Header.H3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/road_sync_contacts_title"
+        android:textColor="@color/uiKitColorForegroundPrimary" />
+
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/meera_ic_sync_contacts_item" />
+
+    <TextView
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:layout_marginHorizontal="34dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:text="@string/meera_road_contacts_sync_description" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_sync_contacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        app:buttonHeightMode="buttonText36"
+        android:layout_gravity="center_horizontal"
+        android:stateListAnimator="@null"
+        android:text="@string/synchronize" />
+
+    <View
+        android:background="@color/uiKitColorBackgroundSecondary"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"/>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/moments_settings_graph"
+    app:startDestination="@id/meeraMomentSettingsFragment">
+
+    <fragment
+        android:id="@+id/meeraMomentSettingsFragment"
+        android:name="com.numplates.nomera3.modules.moments.settings.presentation.MeeraMomentSettingsFragment"
+        android:label="MeeraMomentSettingsFragment"
+        tools:layout="@layout/meera_moment_settings_fragment">
+
+        <action
+            android:id="@+id/action_meeraMomentSettingsFragment_to_meeraMomentSettingsNotShowFragment"
+            app:destination="@id/meeraMomentSettingsNotShowFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraMomentSettingsFragment_to_meeraMomentSettingsHideFromFragment"
+            app:destination="@id/meeraMomentSettingsHideFromFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+
+        <action
+            android:id="@+id/action_meeraMomentSettingsFragment_to_meeraMomentSettingsHideFromAddUserFragment"
+            app:destination="@id/meeraMomentSettingsHideFromAddUserFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraMomentSettingsNotShowFragment"
+        android:name="com.numplates.nomera3.modules.moments.settings.notshow.presentation.MeeraMomentSettingsNotShowFragment"
+        android:label="MeeraMomentSettingsNotShowFragment"
+        tools:layout="@layout/meera_base_settings_user_list_fragment">
+        <action
+            android:id="@+id/action_meeraMomentSettingsNotShowFragment_to_MeeraMomentSettingsNotShowAddUserFragment"
+            app:destination="@id/meeraMomentSettingsNotShowAddUserFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraMomentSettingsHideFromAddUserFragment"
+        android:name="com.numplates.nomera3.modules.moments.settings.hidefrom.presentation.MeeraMomentSettingsHideFromAddUserFragment"
+        android:label="MeeraMomentSettingsHideFromAddUserFragment"
+        tools:layout="@layout/meera_moment_settings_user_add_fragment" />
+
+    <fragment
+        android:id="@+id/meeraMomentSettingsHideFromFragment"
+        android:name="com.numplates.nomera3.modules.moments.settings.hidefrom.presentation.MeeraMomentSettingsHideFromFragment"
+        android:label="MeeraMomentSettingsHideFromFragment"
+        tools:layout="@layout/meera_base_settings_user_list_fragment">
+        <action
+            android:id="@+id/action_meeraMomentSettingsHideFromFragment_to_meeraMomentSettingsHideFromAddUserFragment"
+            app:destination="@id/meeraMomentSettingsHideFromAddUserFragment"
+            app:enterAnim="@anim/meera_slide_left"
+            app:exitAnim="@anim/meera_wait_anim"
+            app:popEnterAnim="@anim/meera_wait_anim"
+            app:popExitAnim="@anim/meera_slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meeraMomentSettingsNotShowAddUserFragment"
+        android:name="com.numplates.nomera3.modules.moments.settings.notshow.presentation.MeeraMomentSettingsNotShowAddUserFragment"
+        android:label="MeeraMomentSettingsNotShowAddUserFragment"
+        tools:layout="@layout/meera_moment_settings_user_add_fragment" />
+
+</navigation>

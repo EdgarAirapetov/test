@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout-->
+
+<com.meera.uikit.widgets.cell.UiKitCell
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/cell_with_right_icon"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cellDescription="true"
+    app:cellLeftElement="left_userPic72"
+    app:cellPosition="top"
+    app:cellRightElement="right_checkbox"
+    app:cellTitleVerified="true"
+    app:cellWidthType="without_margins"
+    tools:cellCityValue="Москва"
+    tools:cellDescriptionValue="\@admin"
+    tools:cellLeftUserPicSrc="@drawable/above_shadow"
+    tools:cellTitleValue="Александр" />

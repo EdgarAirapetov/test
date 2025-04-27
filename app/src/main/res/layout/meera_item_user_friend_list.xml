@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/friend_cell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        app:cellDescription="true"
+        tools:cellDescriptionValue="Vika192"
+        app:cellLeftElement="left_userPic40"
+        tools:cellLeftUserPicSrc="@drawable/avatar_gradient_bottom"
+        tools:cellPosition="top"
+        tools:cellTitleValue="Мария Мороз"
+        tools:cellTitleVerified="true" />
+
+</FrameLayout>

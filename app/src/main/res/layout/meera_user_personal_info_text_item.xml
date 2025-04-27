@@ -1,0 +1,41 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_container">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/personal_info_text_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="23dp"
+        tools:cellTitleValue="+7 986 454-23-56"
+        app:cellDescription="true"
+        tools:cellCityValue=""
+        tools:cellDescriptionValue="@string/account_phone_number"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <FrameLayout
+        android:id="@+id/iv_eye_container"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/personal_info_text_item"
+        app:layout_constraintTop_toTopOf="@+id/personal_info_text_item"
+        app:layout_constraintBottom_toBottomOf="@+id/personal_info_text_item">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_eye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_outlined_eye_off_m" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

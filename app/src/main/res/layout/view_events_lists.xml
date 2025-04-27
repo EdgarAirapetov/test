@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <FrameLayout
+            android:id="@+id/vg_events_lists_bottomsheet"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/map_events_lists_height"
+            android:layout_marginHorizontal="@dimen/map_events_lists_bottomsheet_horizontal_margin"
+            android:background="@drawable/bg_map_bottomsheet"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_behavior="com.numplates.nomera3.modules.maps.ui.snippet.view.ViewPagerBottomSheetBehavior">
+
+            <include
+                android:id="@+id/layout_events_lists_main"
+                layout="@layout/layout_events_lists_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                android:id="@+id/layout_events_lists_filters"
+                layout="@layout/layout_events_lists_filters"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp">
+
+        <com.numplates.nomera3.modules.maps.ui.view.MapSnippetBackgroundCardView
+            android:id="@+id/vg_event_post"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_map_bottomsheet"
+            android:elevation="5dp"
+            app:cardElevation="5dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:background="@color/white"
+        android:layout_marginHorizontal="16dp"
+        android:id="@+id/ll_uksc_events_lists_filter_participation"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="bottom"
+            android:background="@color/colorGreyF4F4F4"/>
+
+        <com.meera.uikit.widgets.segmentcontrols.UiKitSegmentControl
+            android:id="@+id/uksc_events_lists_filter_participation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp"
+            app:checkedSegment="map_events_list_filters_participant"
+            app:isLegacy="@bool/isLegacy"
+            app:segments="map_events_list_filters_participant,map_events_list_filters_host" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

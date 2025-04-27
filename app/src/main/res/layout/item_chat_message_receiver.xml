@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_layout_chat_message"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/message_head_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_chat_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_image_post_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <ImageView
+            android:id="@+id/iv_user_avatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="top"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/anonymous"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/vg_chat_bubble_background"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/vg_chat_bubble_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_message_shape_others"
+            android:orientation="vertical"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/right_image_post_limit"
+            app:layout_constraintStart_toEndOf="@+id/iv_user_avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginStart="16dp">
+
+            <include
+                android:id="@+id/reply_container"
+                layout="@layout/layout_reply_recived" />
+
+            <include
+                android:id="@+id/forward_container_receive"
+                layout="@layout/forward_message_container_receiver"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/ui_blue_purple"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="User name user name user name user name user name user name user name user name user name user name user name user name "
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout_width="match_parent">
+
+                <com.numplates.nomera3.modules.chat.helpers.ChatImagesRecycler
+                    android:id="@+id/rv_receiver_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="153dp"
+                    android:layout_gravity="center"
+                    android:padding="1dp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_chat_msg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible" />
+
+                <include
+                    layout="@layout/chat_request_blur_background"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rv_receiver_recycler"
+                    app:layout_constraintEnd_toEndOf="@+id/rv_receiver_recycler"
+                    app:layout_constraintStart_toStartOf="@+id/rv_receiver_recycler"
+                    app:layout_constraintTop_toTopOf="@+id/rv_receiver_recycler"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_chat_msg"
+                    style="@style/BlackRegular18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web|email"
+                    android:paddingStart="@dimen/material16"
+                    android:paddingEnd="@dimen/material16"
+                    android:textColorLink="#6040c1"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_receiver_recycler"
+                    tools:text="frsdkj fkdsj fsdkjb fsdkjb fsdkjb fsdkjb fsdkjbs skdjb sdkfjb" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="6dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_message_edited"
+                    style="@style/PurpleRegular14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:text="@string/chat_edit_message_edit_label"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_chat_time"
+                    style="@style/PurpleRegular14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ui_purple"
+                    tools:text="12:01" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

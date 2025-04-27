@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorWhite"
+    android:fillViewport="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_calls_enabled"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/material24"
+            app:layout_constraintBottom_toTopOf="@+id/cv_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+            android:id="@+id/spi_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vp_calls_enabled" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_next"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="@dimen/padding20"
+            android:layout_marginTop="@dimen/material16"
+            android:layout_marginEnd="@dimen/padding20"
+            android:layout_marginBottom="@dimen/material16"
+            android:background="@color/colorPrimary"
+            android:elevation="@dimen/material8"
+            app:cardCornerRadius="23dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+
+            <FrameLayout
+                android:id="@+id/tvUpgrade"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_gravity="center"
+                android:foreground="@drawable/ripple_background_23"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tv_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btnviolet"
+                    android:fontFamily="@font/source_sanspro_regular"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="@string/next"
+                    android:textColor="@color/ui_white"
+                    android:textSize="16sp" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

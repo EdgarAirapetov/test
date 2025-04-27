@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:paddingHorizontal="16dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_sticker_pack_title"
+        style="@style/UiKit.Header.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        app:lineHeight="20sp"
+        tools:text="Фиалка" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_clear_recent_stickers"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_gravity="end|center_vertical"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/ic_outlined_close_m"
+        app:tint="@color/uiKitColorForegroundPrimary" />
+
+</FrameLayout>

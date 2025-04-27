@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_container_ted_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_media_buttons_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_media_keyboard_dismiss"
+            style="@style/PurpleRegular16"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:gravity="start|center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:text="@string/cancel"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_chosen_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_chosen_count"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_chosen_count"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Отменить" />
+
+        <TextView
+            android:id="@+id/tv_chosen_count"
+            style="@style/BlackSemibold18"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Выбрано 1 из 27"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_media_keyboard_add_selected"
+            style="@style/PurpleRegular16"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:gravity="center_vertical|end"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp"
+            android:text="@string/general_add"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_chosen_count"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_chosen_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_chosen_count"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Добавить" />
+
+        <LinearLayout
+            android:id="@+id/vg_recent"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:background="?selectableItemBackground"
+            android:clickable="false"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_folder"
+                style="@style/BlackSemibold18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/source_sanspro_regular"
+                android:includeFontPadding="false"
+                android:text="@string/recent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="1dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_arrow_down"
+                app:tint="@color/colorGrayC4C4C4" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vg_permission_media_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:text="@string/permission_message"
+            style="@style/SourceSansProRegular.14_18"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_change_permission_red_media_visual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:text="@string/change"
+            android:textColor="#6A48D9"
+            android:clickable="true"
+            android:textSize="16sp"
+            android:lineHeight="20dp"
+            android:fontFamily="@font/source_sanspro_semibold" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_gallery_header"
+        style="@style/BlackSemibold18"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:fontFamily="@font/source_sanspro_regular"
+        android:gravity="center"
+        android:text="@string/gallery_title"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="false"
+        android:layout_height="wrap_content">
+
+        <com.meera.core.views.SetupPermissionsView
+            android:id="@+id/spv_permission_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp" />
+
+</LinearLayout>

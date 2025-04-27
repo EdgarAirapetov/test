@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_outlined_arrow_left_m"
+        android:tint="@color/uiKitColorForegroundPrimary"
+        app:buttonHeightMode="buttonIcon36"
+        app:buttonType="transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/vg_error_container"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/et_name"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/ic_outlined_attention_s"
+            app:tint="@color/uiKitColorAccentDarkError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_marginStart="4dp"
+            style="@style/UiKit.Body.Normal"
+            android:textColor="@color/uiKitColorAccentDarkError"
+            android:includeFontPadding="false"
+            tools:text="Может содержать не более 30 символов"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/UiKit.Header.H1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:includeFontPadding="false"
+        android:text="@string/meera_registration_name_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_name"
+        style="@style/UiKit.Header.H1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="276dp"
+        android:layout_marginHorizontal="24dp"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:imeOptions="actionDone"
+        android:hint="@string/name"
+        android:textCursorDrawable="@color/uiKitColorForegroundLink"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:textColorHint="@color/uiKitColorForegroundSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_continue"
+        app:buttonHeightMode="buttonIcon48"
+        android:src="@drawable/ic_outlined_arrow_right_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

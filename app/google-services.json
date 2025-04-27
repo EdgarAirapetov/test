@@ -1,0 +1,79 @@
+{
+  "project_info": {
+    "project_number": "751596011244",
+    "firebase_url": "https://nomera-android.firebaseio.com",
+    "project_id": "nomera-android",
+    "storage_bucket": "nomera-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751596011244:android:388b6adff37f8af2",
+        "android_client_info": {
+          "package_name": "com.numplates.nomera3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751596011244-7jvc4nd8pctemnogln7d8k852ps1p7bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHazKl-a83JfcqYFTmomZj9qwL4tTinx8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751596011244:android:621f6a8d8326a7d1ce2fc9",
+        "android_client_info": {
+          "package_name": "com.numplates.nomera3.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751596011244-7jvc4nd8pctemnogln7d8k852ps1p7bq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHazKl-a83JfcqYFTmomZj9qwL4tTinx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751596011244-7jvc4nd8pctemnogln7d8k852ps1p7bq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "751596011244-aucksecbmvdcc2jfsd1ffiumh8resjq9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tiar.numbers",
+                "app_store_id": "583704287"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

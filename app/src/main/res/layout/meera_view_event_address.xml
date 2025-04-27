@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <TextView
+        android:id="@+id/tv_event_address_distance"
+        style="@style/BlackRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:drawablePadding="2dp"
+        android:textColor="@color/ui_gray_80"
+        app:drawableStartCompat="@drawable/ic_outlined_send_s"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="2км" />
+
+    <ImageView
+        android:id="@+id/iv_event_address_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/divider_event_label"
+        app:layout_constraintBottom_toBottomOf="@id/tv_event_address_distance"
+        app:layout_constraintStart_toEndOf="@id/tv_event_address_distance"
+        app:layout_constraintTop_toTopOf="@id/tv_event_address_distance" />
+
+    <TextView
+        android:id="@+id/tv_event_address_address"
+        style="@style/BlackRegular14"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginStart="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/ui_gray_80"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/iv_event_address_arrow"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/iv_event_address_divider"
+        tools:text="Россия, Санкт-Петербург, улица , 45аРоссия, Санкт-Петербург, улица , 45а" />
+
+    <ImageView
+        android:id="@+id/iv_event_address_arrow"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_event_address_navigation"
+        app:layout_constraintBottom_toBottomOf="@id/tv_event_address_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="0.0"
+        app:layout_constraintStart_toEndOf="@id/tv_event_address_address"
+        app:layout_constraintTop_toTopOf="@id/tv_event_address_address" />
+</merge>

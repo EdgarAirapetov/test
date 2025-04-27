@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_map_bottomsheet"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_config_location"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_grey_100r"
+        android:layout_marginHorizontal="16dp"
+        android:layout_width="match_parent"
+        style="@style/GraphikCompactRegular.16_22"
+        android:textColor="@color/color_soft_black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        tools:text="test text"
+        android:paddingHorizontal="16dp"
+        android:gravity="center|start"
+        android:layout_height="48dp"/>
+
+    <TextView
+        android:id="@+id/tv_map_events_configuration_about"
+        style="@style/BlackRegular16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:drawablePadding="4dp"
+        android:gravity="start|center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="@string/map_events_info_about"
+        android:textColor="@color/ui_gray_80"
+        app:drawableStartCompat="@drawable/ic_events_info" />
+
+    <TextView
+        android:id="@+id/tv_map_events_configuration_continue"
+        style="@style/MeeraMapPopupActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/map_events_configuration_continue" />
+
+</LinearLayout>

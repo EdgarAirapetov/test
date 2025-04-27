@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivBackIcon"
+        android:layout_width="40dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:src="@drawable/arrowback_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/WhiteBold36"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/code_confirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivBackIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCodeSentDescription"
+        style="@style/WhiteRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"
+        android:text="@string/code_sent_to_number"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_send_code"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/tvCodeSentDescription"
+        app:layout_constraintStart_toStartOf="@+id/mcvCodeInput"
+        app:layout_constraintTop_toBottomOf="@id/tvCodeSentDescription"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_send_to_country_code"
+            style="@style/WhiteRegular22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/tvCodeSentDescription"
+            app:layout_constraintEnd_toStartOf="@+id/et_code_send_to"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/mcvCodeInput"
+            app:layout_constraintTop_toBottomOf="@id/tvCodeSentDescription"
+            tools:text="+7"
+            tools:visibility="visible" />
+
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/et_code_send_to"
+            style="@style/WhiteRegular22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:autoSizeMaxTextSize="22sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeMinTextSize="16sp"
+            android:background="@null"
+            android:enabled="false"
+            android:focusable="false"
+            android:inputType="none"
+            android:visibility="invisible"
+            app:allowed_chars="1234567890"
+            app:mask="### ###-##-##"
+            tools:text="999 999 99 932132131232133213219"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvCodeInput"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        app:cardCornerRadius="6dp"
+        android:layout_marginTop="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_send_code"
+        app:strokeColor="@color/ui_white"
+        app:strokeWidth="2dp">
+
+        <br.com.sapereaude.maskedEditText.MaskedEditText
+            android:id="@+id/etCode"
+            style="@style/BlackBold36"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/colorTransparent"
+            android:cursorVisible="true"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number|textNoSuggestions"
+            android:letterSpacing="0.4"
+            android:maxLines="1"
+            android:saveEnabled="false"
+            android:textCursorDrawable="@drawable/cursor_sms"
+            android:textSize="36sp"
+            app:allowed_chars="1234567890"
+            app:keep_hint="true"
+            app:mask="######" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/tvCodeIncorrectText"
+        style="@style/WhiteRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/incorrect_code"
+        android:textAlignment="center"
+        android:textColor="@color/wrong_code_color"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcvCodeInput"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvCodeText"
+        style="@style/WhiteRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/gray_background_button"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCodeIncorrectText"
+        tools:text="Можно запросить код повторно\n через 50 секунд" />
+
+    <TextView
+        android:id="@+id/tvResendCodeText"
+        style="@style/WhiteSemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/resend_again"
+        android:textAlignment="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCodeText"
+        tools:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tvHelp"
+        style="@style/WhiteSemiBold16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/help"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

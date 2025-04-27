@@ -1,0 +1,11 @@
+package com.numplates.nomera3.modules.user.domain.usecase
+
+import com.numplates.nomera3.modules.user.data.repository.UserRepository
+import javax.inject.Inject
+
+class PushBlockStatusChangedUseCase @Inject constructor(
+    private val repository: UserRepository
+) {
+    suspend fun invoke(userId: Long, isBlocked: Boolean) =
+        repository.setBlockStatus(userId, isBlocked)
+}

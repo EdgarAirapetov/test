@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="18dp"
+    android:layout_height="48dp">
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:background="@color/uiKitColorForegroundSecondary" />
+
+</FrameLayout>

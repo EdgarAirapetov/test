@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_video_unavailable_icon"
+        android:layout_width="136dp"
+        android:layout_height="136dp"
+        app:srcCompat="@drawable/meera_ghost_placeholder" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_media_unavailable_header"
+        android:textAppearance="@style/UiKit.Header.Subtitle"
+        android:textColor="@color/uiKitColorForegroundInvers"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/video_unavailable_default_title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/tv_video_unavailable_message"
+        android:textAppearance="@style/UiKit.Body.Normal"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/video_unavailable_default_message" />
+
+</LinearLayout>

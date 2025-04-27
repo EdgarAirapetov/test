@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_blured_content"
+        android:layout_width="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_stop32"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_stop" />
+
+        <ImageView
+            android:id="@+id/iv_stop60"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_stop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:lines="1"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/material16"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="@dimen/material16"
+            android:fontFamily="@font/source_sanspro_semibold"
+            android:gravity="center"
+            app:autoSizeMinTextSize="8sp"
+            android:lineSpacingExtra="4sp"
+            app:autoSizeTextType="uniform"
+            android:text="@string/sensetive_content_title"
+            android:textColor="#ffffff"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_extra_sensitive_content_description"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/material16"
+            android:layout_marginEnd="@dimen/material16"
+            android:fontFamily="@font/source_sanspro_regular"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeMaxTextSize="16sp"
+            android:text="@string/sensetive_content_description"
+            android:textColor="#c1c0c8" />
+
+        <FrameLayout
+            android:id="@+id/cv_show_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_show_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginStart="21dp"
+                android:layout_marginEnd="21dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white_1000"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="8sp"
+                app:autoSizeMaxTextSize="16sp"
+                android:text="@string/general_show" />
+        </FrameLayout>
+
+    </LinearLayout>
+</FrameLayout>

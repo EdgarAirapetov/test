@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:foreground="?android:selectableItemBackground"
+    tools:ignore="UnusedAttribute">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvChatMessageDisallowByMeTitle"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material16"
+        android:layout_marginTop="@dimen/material16"
+        android:gravity="center"
+        android:text="@string/personal_messages_chat_blocked_by_me"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvChatMessageDisallowByMeDesc"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material16"
+        android:layout_marginTop="@dimen/material24"
+        android:layout_marginBottom="@dimen/material24"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/personal_messages_chat_blocked_by_me_unblock_companion"
+        android:textColor="@color/uiKitColorForegroundLink"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChatMessageDisallowByMeTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,133 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+android {
+    compileSdk rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    namespace 'com.meera.core'
+}
+
+dependencies {
+    implementation project(':database')
+    implementation project(':analytics')
+    implementation project(':bridge')
+    implementation project(':feature:mediacontroller:media_controller_common')
+
+    debugImplementation project(':devtools')
+
+    api "androidx.core:core-ktx:$android_core_ctx"
+    api "androidx.appcompat:appcompat:$appcompat_version"
+    api "com.google.android.material:material:$material_version"
+    api "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_version"
+    api "com.google.code.gson:gson:$gson_version"
+
+    api "com.meera:uikit:$uikit_version"
+
+    implementation "androidx.datastore:datastore:$datastore_version"
+    implementation "androidx.datastore:datastore-preferences:$datastore_version"
+
+    api "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    api "androidx.room:room-ktx:$room_version"
+    api "androidx.room:room-rxjava2:$room_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+
+    api "com.google.code.gson:gson:$gson_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:converter-gson:$gson_converter_version"
+    api "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    api "com.squareup.okhttp3:okhttp:$okhttp_version"
+    api "com.squareup.okio:okio:$okio_version"
+    api "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    api("io.socket:socket.io-client:$socket_io_version") {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    api "com.github.dsrees:JavaPhoenixClient:$java_phoenix_client_version"
+
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    api "com.google.dagger:dagger:$dagger_main_version"
+    kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:$kotlinx_metadata_version"
+
+    api "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    api "com.github.bumptech.glide:okhttp3-integration:$glide_version"
+
+    api "com.f2prateek.rx.preferences2:rx-preferences:$rx_preferences_version"
+    api "com.tbruyelle.rxpermissions2:rxpermissions:$rx_permissions_version"
+
+    implementation "androidx.preference:preference-ktx:$androidx_preference"
+    implementation "com.androidadvance:topsnackbar:$topsnackbar_version"
+    implementation "gun0912.ted:tedonactivityresult:$tedonactivityresult_version"
+    implementation "com.github.chrisbanes:PhotoView:$photo_view_version"
+    implementation "com.google.android.exoplayer:exoplayer:$exo_player_version"
+    implementation "com.google.android.exoplayer:exoplayer-ui:$exo_player_version"
+
+    implementation "androidx.camera:camera-view:$camera_view_version"
+    implementation "androidx.camera:camera-lifecycle:$camera_version"
+
+    implementation "io.reactivex.rxjava2:rxandroid:$rx_android2_version"
+
+    api "com.amplitude:android-sdk:$amplitude_version"
+    api "com.yandex.android:mobmetricalib:$app_metrica"
+    api "com.yandex.android:mobmetricapushlib:$app_metrica_push"
+
+    api "com.jakewharton.timber:timber:$timber_version"
+
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    debugImplementation "com.github.chuckerteam.chucker:library:$chucker_version"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chucker_version"
+}

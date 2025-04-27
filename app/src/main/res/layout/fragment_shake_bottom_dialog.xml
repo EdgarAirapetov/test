@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vg_shake_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@drawable/background_bottom_sheet"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <ImageView
+        android:id="@+id/iv_shake_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:padding="@dimen/offset_16dp"
+        android:src="@drawable/ic_black_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_shake"
+        android:layout_width="match_parent"
+        android:layout_height="274dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_shake_close"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/bump"
+        app:lottie_renderMode="hardware"
+        tools:src="@drawable/ic_dialog_shake_ui_purple" />
+
+    <TextView
+        android:id="@+id/tv_shake_label"
+        style="@style/BlackSemibold28"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shake"
+        app:layout_constraintEnd_toEndOf="@+id/lav_shake"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lav_shake"
+        app:layout_constraintTop_toBottomOf="@+id/lav_shake" />
+
+    <TextView
+        android:id="@+id/tv_shake_description"
+        style="@style/BlackRegular16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:text="@string/shake_dialog_description"
+        app:layout_constraintEnd_toEndOf="@+id/tv_shake_label"
+        app:layout_constraintStart_toStartOf="@+id/tv_shake_label"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shake_label" />
+
+    <TextView
+        android:id="@+id/tv_shake_location_enable_description"
+        style="@style/GrayA7A5Regular13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="12dp"
+        android:visibility="gone"
+        android:text="@string/shake_you_can_turn_off_shake_descrption"
+        app:layout_constraintEnd_toEndOf="@+id/tv_shake_description"
+        app:layout_constraintStart_toStartOf="@+id/tv_shake_description"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shake_description" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_turn_on_accurate_location"
+        style="@style/ShakeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:text="@string/shake_turn_on_accurate_location"
+        android:visibility="visible"
+        app:icon="@drawable/ic_shake_geo_white_16"
+        app:iconGravity="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_shake_label"
+        app:layout_constraintStart_toStartOf="@+id/tv_shake_label"
+        app:layout_constraintTop_toBottomOf="@+id/tv_shake_location_enable_description" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

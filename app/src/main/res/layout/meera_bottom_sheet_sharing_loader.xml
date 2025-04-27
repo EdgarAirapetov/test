@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/pb_load_progress"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:indeterminate="true"
+        app:indicatorColor="@color/uiKitColorForegroundPrimary"
+        app:indicatorSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackThickness="1dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_complete_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerInside"
+        android:visibility="gone"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/uiKitColorForegroundPrimary"
+        app:srcCompat="@drawable/ic_outline_check_circle_m"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_share_upload_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        style="@style/UiKit.Body.Normal"
+        android:textSize="16sp"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        tools:text="Loading 27%"
+        app:layout_constraintBottom_toBottomOf="@+id/pb_load_progress"
+        app:layout_constraintStart_toEndOf="@+id/pb_load_progress"
+        app:layout_constraintTop_toTopOf="@+id/pb_load_progress" />
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/cell_menu_close_share_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        app:cellBackgroundColor="@color/uiKitColorBackgroundSecondary"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_close_m"
+        app:cellPosition="alone"
+        app:cellTitleValue="@string/general_cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pb_load_progress" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

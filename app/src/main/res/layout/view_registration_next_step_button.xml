@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/continueButtonCard"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:minWidth="60dp"
+        app:cardCornerRadius="30dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivContinueArrow"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:paddingStart="12dp"
+            android:paddingEnd="15dp"
+            android:src="@drawable/ic_next_purple" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvContinueText"
+            style="@style/PurpleSemiBold18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/ready"
+            android:visibility="gone" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progressBar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/progress_animation"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_renderMode="hardware"
+            app:lottie_enableMergePathsForKitKatAndAbove="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

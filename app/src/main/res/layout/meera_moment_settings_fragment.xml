@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/uiKitColorBackgroundPrimary">
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_moments_settings_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="@string/moment_author_menu_settings"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/moments_settings_description_title"
+        android:layout_margin="16dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_moments_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/meera_moment_settings_single_item"/>
+
+</LinearLayout>

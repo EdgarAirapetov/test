@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_white"
+    android:orientation="vertical"
+    >
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ui_white"
+        >
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_custom_road"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            >
+
+            <com.numplates.nomera3.presentation.view.ui.FeedRecyclerView
+                android:id="@+id/rv_custom_road"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                />
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progress_my_road"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+        <include layout="@layout/placeholder_empty_posts" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/btn_scroll_refresh_my_road"
+            android:layout_width="138dp"
+            android:layout_height="138dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-30dp"
+            android:visibility="gone"
+            app:lottie_loop="false"
+            />
+
+    </FrameLayout>
+
+</LinearLayout>

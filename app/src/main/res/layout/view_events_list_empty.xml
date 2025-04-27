@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:parentTag="androidx.appcompat.widget.LinearLayoutCompat">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerInside"
+        android:src="@drawable/img_map_events_stub" />
+
+    <TextView
+        android:id="@+id/tv_events_list_empty_title"
+        style="@style/SansProSemibold18Black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="Нет подходящего события?" />
+
+    <TextView
+        android:id="@+id/tv_events_list_empty_message"
+        style="@style/GrayA7A5Regular16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        tools:text="Будь первым, кто его создаст" />
+
+    <TextView
+        android:id="@+id/tv_events_list_empty_action"
+        style="@style/PurpleRegular16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:textColor="@color/uiKitColorForegroundLink"
+        tools:text="Создать событие" />
+
+</merge>

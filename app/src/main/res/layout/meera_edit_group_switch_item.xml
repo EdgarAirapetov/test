@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_white"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/UiKit.Header.Subtitle"
+        android:text="@string/group_edit_fragment_extra_info_header"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:layout_marginBottom="12dp"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_open_community"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellRightElement="right_checkbox"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_world_l"
+        app:cellTitleValue="@string/group_edit_fragment_open_option_name"
+        app:cellCityValue="@string/group_edit_fragment_open_option_description"
+        app:cellPosition="top"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_close_community"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellRightElement="right_checkbox"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_lock_l"
+        app:cellTitleValue="@string/groups_closed_group"
+        app:cellCityValue="@string/group_edit_fragment_close_option_description"
+        app:cellPosition="middle"/>
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_only_administration_writes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellRightElement="right_switch"
+        app:cellLeftElement="left_icon"
+        app:cellLeftIconSrc="@drawable/ic_outlined_to_message_m"
+        app:cellTitleValue="@string/group_edit_fragment_write_only_admin"
+        app:cellCityValue="@string/group_edit_fragment_write_only_admin_description"/>
+
+</LinearLayout>

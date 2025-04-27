@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.cell.UiKitCell
+        android:id="@+id/v_user_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cellLeftElement="left_userPic72"
+        app:cellDescription="true"
+        tools:cellDescriptionValue="@string/nobody"
+        app:cellSubtitle="true"
+        tools:cellSubtitleValue="@string/cancel"
+        tools:cellTitleVerified="true"
+        app:cellPosition="top">
+
+        <ImageView
+            android:id="@+id/iv_delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_outlined_delete_m"/>
+
+    </com.meera.uikit.widgets.cell.UiKitCell>
+
+</LinearLayout>

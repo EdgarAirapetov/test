@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root"
+    android:layout_marginHorizontal="16dp">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/vg_map_lists_bottomsheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_sheet"
+            android:orientation="vertical"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/cl_top_drag"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/root2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/layout_dialog_map_topbar"
+                    tools:layout_height="100dp"
+                    tools:visibility="visible" />
+
+                <include
+                    android:id="@+id/layout_dialog_map_topbar"
+                    layout="@layout/layout_map_dialog_topbar_redisgn"
+                    tools:layout_height="400dp"
+                    app:layout_constraintEnd_toEndOf="@+id/root2"
+                    app:layout_constraintStart_toStartOf="@+id/root2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/root3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <com.meera.uikit.widgets.UiKitInputSearch
+                    android:id="@+id/is_friend_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    app:closeButtonText="@string/cancel"
+                    app:searchHint="@string/chat_find_friend" />
+
+
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:id="@+id/cl_root"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="4dp"
+                    android:nestedScrollingEnabled="true"
+                    app:layout_anchorGravity="top">
+
+                    <com.numplates.nomera3.modules.redesign.fragments.main.map.friends.MeeraMapFriendsListRecyclerView
+                        android:id="@+id/rv_participants_list_items"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:nestedScrollingEnabled="true"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="30"
+                        tools:listitem="@layout/item_map_event_friend" />
+
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>

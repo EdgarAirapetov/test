@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white_1000">
+    <View
+        android:id="@+id/about_fragment_fake_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        tools:visibility="gone"/>
+
+    <com.meera.uikit.widgets.nav.UiKitNavView
+        android:id="@+id/v_gift_user_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_fragment_fake_status_bar"
+        android:title="@string/my_gifts" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_gift_user_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_sent_me_gift"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_gift_user_nav_view"
+        tools:listitem="@layout/meera_gift_item" />
+
+    <ImageView
+        android:id="@+id/iv_empty_gift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_no_gifts"
+        tools:visibility="visible"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_empty_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_empty_gift"
+        android:text="@string/profile_gifts_empty"
+        tools:visibility="visible"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_sent_me_gift"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="@string/gifts_send_gift_to_me_btn_label"
+        android:textColor="@color/map_friend_A6C90D"
+        android:background="@color/ui_white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

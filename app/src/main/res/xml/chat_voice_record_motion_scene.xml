@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Transition right to left -->
+    <Transition
+        android:id="@+id/horizontal_transition"
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="200"
+        motion:autoTransition="animateToStart">
+        <KeyFrameSet>
+        </KeyFrameSet>
+        <OnSwipe
+            motion:touchAnchorId="@+id/btn_voice_message"
+            motion:touchRegionId="@id/btn_voice_message"
+            motion:touchAnchorSide="right"
+            motion:onTouchUp="autoCompleteToStart"
+            motion:dragDirection="dragLeft"
+            motion:maxAcceleration="40"/>
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/btn_voice_message"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="14dp"
+            android:alpha="1.0"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/btn_voice_message_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="21dp"
+            android:alpha="1.0"
+            app:visibilityMode="ignore"/>
+
+
+        <Constraint
+            android:id="@+id/btn_lock"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="80dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/tv_cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            android:alpha="1.0"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/voice_blink"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginBottom="-6dp"
+            app:visibilityMode="ignore" />
+
+    </ConstraintSet>
+
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/btn_voice_message"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="150dp"
+            android:layout_marginBottom="14dp"
+            android:alpha="0.0"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/btn_voice_message_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="158dp"
+            android:layout_marginBottom="22dp"
+            android:alpha="-2.0"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/btn_lock"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="80dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/tv_cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintHorizontal_bias="0.4"
+            android:alpha="-1.5"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/voice_blink"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="132dp"
+            android:layout_marginBottom="-6dp"
+            android:alpha="0.0"
+            app:visibilityMode="ignore" />
+
+    </ConstraintSet>
+
+
+    <!-- Transition to top -->
+    <Transition
+        android:id="@+id/vertical_transition"
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/top_lock"
+        motion:duration="300"
+        motion:autoTransition="animateToStart">
+        <KeyFrameSet>
+        </KeyFrameSet>
+        <OnSwipe
+            motion:touchAnchorId="@+id/btn_voice_message"
+            motion:touchRegionId="@id/btn_voice_message"
+            motion:onTouchUp="autoCompleteToStart"
+            motion:touchAnchorSide="bottom"
+            motion:dragDirection="dragUp"
+            motion:maxAcceleration="40"/>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/top_lock">
+
+        <Constraint
+            android:id="@+id/btn_voice_message"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="36dp"
+            android:layout_marginEnd="16dp"
+            android:alpha="1.0"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/btn_voice_message_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="44dp"
+            android:layout_marginEnd="20dp"
+            android:alpha="1.0"
+            app:visibilityMode="ignore" />
+
+
+        <Constraint
+            android:id="@+id/btn_lock"
+            android:layout_width="40dp"
+            android:layout_height="80dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="110dp"
+            android:layout_marginEnd="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            app:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/tv_cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            app:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/voice_blink"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginBottom="16dp"
+            app:visibilityMode="ignore" />
+
+    </ConstraintSet>
+
+</MotionScene>

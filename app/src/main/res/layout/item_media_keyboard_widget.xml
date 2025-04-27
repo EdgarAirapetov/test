@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:background="@color/editor_widgets_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:gravity="center"
+        android:text="@string/widgets"
+        android:textAppearance="@style/UiKit.Header.Subtitle"
+        android:textColor="@color/ui_white_50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/ll_widget_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_widget_time"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_image_bg"
+                android:backgroundTint="@color/ui_white_10"
+                android:gravity="center"
+                android:textAppearance="@style/UiKit.Display.Caps_14"
+                android:textColor="@color/white"
+                tools:text="14:58" />
+
+            <TextView
+                android:id="@+id/tv_widget_time_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/widget_time"
+                android:textAppearance="@style/UiKit.Display.Caps_12"
+                android:textColor="@color/white_alpha_50" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_widget_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical"
+            tools:background="@color/editor_widgets_content">
+
+            <ImageView
+                android:id="@+id/iv_widget_music"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/circle_image_bg"
+                android:backgroundTint="@color/ui_white_10"
+                android:padding="10dp"
+                android:src="@drawable/ic_music_widget" />
+
+            <TextView
+                android:id="@+id/tv_widget_music_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="@string/widget_music"
+                android:textAppearance="@style/UiKit.Display.Caps_12"
+                android:textColor="@color/white_alpha_50" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

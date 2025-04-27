@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/v_screenshot_content_background"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/map_event_pin_img_error_bg"
+        android:minHeight="88dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_screenshot_content_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/v_screenshot_content_background"
+        app:layout_constraintStart_toStartOf="@+id/v_screenshot_content_background"
+        app:layout_constraintTop_toTopOf="@+id/v_screenshot_content_background"
+        app:srcCompat="@drawable/ic_meera_screenshot_no_image_placeholder" />
+
+    <FrameLayout
+        android:id="@+id/vg_title_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/v_screenshot_content_background"
+        app:layout_constraintStart_toEndOf="@+id/iv_screenshot_content_image"
+        app:layout_constraintTop_toTopOf="@+id/v_screenshot_content_background">
+
+        <com.meera.uikit.widgets.people.UiKitUsernameView
+            android:id="@+id/tv_screenshot_content_title"
+            style="@style/UiKit.Header.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/uiKitColorForegroundPrimary"
+            android:textSize="16sp"
+            tools:text="Free community jfgdf gdjf  gjdgf  fdj  fdj fdj" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_screenshot_content_description"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/uiKitColorForegroundSecondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/v_screenshot_content_background"
+        app:layout_constraintStart_toStartOf="@+id/vg_title_container"
+        app:layout_constraintTop_toBottomOf="@+id/vg_title_container"
+        tools:text="Community" />
+
+    <com.numplates.nomera3.presentation.view.ui.MeeraTextViewWithImages
+        android:id="@+id/tv_screenshot_content_additional_info"
+        style="@style/UiKit.Body.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/uiKitColorForegroundPrimary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/v_screenshot_content_background"
+        app:layout_constraintStart_toStartOf="@+id/vg_title_container"
+        app:layout_constraintTop_toBottomOf="@+id/tv_screenshot_content_description"
+        tools:text="Additional description dhgssh hdgshg hgsdh hdgs " />
+
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_screenshot_content_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_screenshot_content_background"
+        tools:text="Поделиться сообществом" />
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/btn_screenshot_copy_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/copy_link"
+        app:buttonType="transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_screenshot_content_action" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

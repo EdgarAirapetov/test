@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiKitColorBackgroundPrimary"
+    android:orientation="vertical">
+
+    <com.meera.uikit.widgets.tablayout.UiKitRowTabLayout
+        android:id="@+id/tab_layout_rooms"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        app:tabIndicatorFullWidth="false"
+        app:tabMode="scrollable"
+        app:tabPaddingEnd="8dp"
+        app:tabPaddingStart="8dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.meera.core.views.CustomViewPager
+            android:id="@+id/vp_rooms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+</LinearLayout>

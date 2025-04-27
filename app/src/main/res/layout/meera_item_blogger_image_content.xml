@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vg_blogger_video_root"
+    android:layout_width="146dp"
+    android:layout_height="225dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/vg_media_content_shimmer"
+        android:background="@drawable/meera_blogger_media_content_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/iv_blogger_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/vg_media_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/uiKitColorBackgroundSecondary"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_blogger_media_placeholder"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/meera_img_show_all_blogger_content" />
+
+        <TextView
+            android:id="@+id/tv_blogger_media_placeholder"
+            style="@style/UiKit.Body.Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/watch_all"
+            android:textColor="@color/uiKitColorForegroundSecondary" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

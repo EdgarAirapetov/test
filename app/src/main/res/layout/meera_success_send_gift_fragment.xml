@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/meera_shake_friend_requests_gradient">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_gift_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="34dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="16dp"/>
+
+    <ImageView
+        android:id="@+id/iv_gift_picture"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:layout_marginTop="196dp"
+        android:layout_alignStart="@+id/cv_gift_container"
+        android:layout_alignEnd="@+id/cv_gift_container"
+        android:gravity="center_horizontal"
+        android:layout_marginHorizontal="24dp"
+        tools:src="@drawable/ic_i_dont_know"/>
+
+    <TextView
+        style="@style/UiKit.Header.H3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_gift_picture"
+        android:gravity="center_horizontal"
+        android:layout_alignStart="@+id/iv_gift_picture"
+        android:layout_alignEnd="@+id/iv_gift_picture"
+        android:layout_marginTop="16dp"
+        android:text="@string/meera_gift_send"
+        android:textColor="@color/color_soft_black"/>
+
+    <com.meera.uikit.widgets.buttons.UiKitButton
+        android:id="@+id/v_gift_done_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/cv_gift_container"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/ready_button"/>
+
+</RelativeLayout>
+

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/ui_white"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_1000"
+            android:stateListAnimator="@drawable/selector_appbar_elevation"
+            >
+
+            <View
+                android:id="@+id/status_bar_send_gift"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/ui_white"
+                app:layout_collapseMode="pin"
+                app:titleTextColor="@color/ui_black"
+                >
+
+                <TextView
+                    android:id="@+id/tv_send_gift_toolbar"
+                    style="@style/BlackSemibold18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    tools:text="Kddals alsdkn daslkn"
+                    />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv_content_gift"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="100dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/ivPicture"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    />
+
+                <!-- Description -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/color_separator"
+                    android:visibility="visible"
+                    />
+
+                <EditText
+                    android:id="@+id/etWrite_gift_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@null"
+                    android:hint="@string/general_hint_write_message"
+                    android:maxLength="180"
+                    android:maxLines="5"
+                    android:saveEnabled="false"
+                    android:textAppearance="@style/BlackRegular16"
+                    android:textColorHint="@color/ui_transparent_black"
+                    tools:text="Привет, возьми этот кофе в подарок!"
+                    tools:visibility="visible"
+                    />
+
+                <!-- Visible to everyone -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/color_separator"
+                    />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/cbVisibility"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:checked="false"
+                    android:text="@string/gifts_visibility"
+                    android:textAppearance="@style/BlackRegular16"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/color_separator"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_holiday_gift_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_drawable_gift"
+                    android:padding="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_holiday_gift_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sanspro_semibold"
+                        tools:text="Тыквенный кот"
+                        android:textSize="18sp"
+                        android:textColor="@color/black_1000" />
+
+                    <TextView
+                        android:id="@+id/tv_holiday_gift_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/source_sanspro_regular"
+                        android:textColor="@color/black_1000"
+                        android:textSize="14sp"
+                        android:layout_marginTop="5dp"
+                        tools:text="Подарит уют и хорошее настроение!"/>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_coffee_of_choice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/rounded_background_gray"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/coffee_of_choice"
+                        android:textAppearance="@style/BlackSemibold18"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Кофе на выбор"
+                        />
+
+                    <TextView
+                        android:id="@+id/subTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/coffee_like_desct_v2"
+                        android:textAppearance="@style/BlackRegular16"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/title"
+                        app:layout_constraintTop_toBottomOf="@+id/title"
+                        tools:text="Хороший кофе - отличный подарок! \nМожно получить во всех заведениях сети \nCoffee Like."
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_where_can_get_coffe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_map_purple"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_where_can_get_coffee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:clickable="true"
+                        android:drawablePadding="10dp"
+                        android:focusable="true"
+                        android:padding="5dp"
+                        android:text="@string/where_can_get_coffee"
+                        android:textAppearance="@style/PurpleRegular16"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+
+                        />
+                </FrameLayout>
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_coffee_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="cl_coffee_of_choice,tv_where_can_get_coffee"
+                    />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_send_gift"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/material24"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        android:foreground="@drawable/ripple_background_100"
+        app:cardBackgroundColor="#F7D354"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/btn"
+            >
+
+            <TextView
+                android:id="@+id/tvSend"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@string/general_send"
+                android:textAppearance="@style/BlackRegular16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lav_progress_purchase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/tvSend"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvSend"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
